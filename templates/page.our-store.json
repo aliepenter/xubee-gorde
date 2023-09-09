@@ -1,0 +1,80 @@
+{
+  "sections": {
+    "heading": {
+      "type": "page-heading",
+      "blocks": {
+        "1495193f-112e-4c2a-a3dc-8eeb451b2c8b": {
+          "type": "title",
+          "settings": {
+            "page_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "1495193f-112e-4c2a-a3dc-8eeb451b2c8b"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "text_alignment": "center",
+        "eb_breadcrumb": true,
+        "padding_top": 80,
+        "padding_bottom": 8
+      }
+    },
+    "main": {
+      "type": "main-page-our-store",
+      "blocks": {
+        "5a776fdf-be8c-4311-b6b7-e3ad0ab8e273": {
+          "type": "item",
+          "settings": {
+            "store_lng": "-118.24643034372079",
+            "store_lat": "34.05252870074888",
+            "store_name": "Los Angeles, CA",
+            "store_address": "223 Thatched Road St, Los Angeles, CA 90026",
+            "store_phone": "(+945) 2680 78 89",
+            "store_email": "contact@gordeshopify.com",
+            "store_link": "https:\/\/goo.gl\/maps\/XCFUiKqGGRCsJdz38"
+          }
+        },
+        "7bf0ecea-6022-4ddb-a14e-de915448aede": {
+          "type": "item",
+          "settings": {
+            "store_lng": "-73.99349079394648",
+            "store_lat": "40.74716979706564",
+            "store_name": "New York, NY",
+            "store_address": "68 Atlantic Ave St, Brooklyn, NY 90002",
+            "store_phone": "(+005) 5371 26 05",
+            "store_email": "contact@gordeshopify.com",
+            "store_link": "https:\/\/goo.gl\/maps\/orx8yFnjEgSqSjKy9"
+          }
+        },
+        "a011001b-ffdd-4f01-8bf3-aa66bab873ad": {
+          "type": "item",
+          "settings": {
+            "store_lng": "105.79681809760912",
+            "store_lat": "21.007640510870043",
+            "store_name": "Ha Noi, VN",
+            "store_address": "68 Tran Duy Hung, Ha Noi",
+            "store_phone": "(+84) 2365 7962",
+            "store_email": "gorde@gmail.com",
+            "store_link": "https:\/\/goo.gl\/maps\/BVqEEqDvxiGKAice7"
+          }
+        }
+      },
+      "block_order": [
+        "5a776fdf-be8c-4311-b6b7-e3ad0ab8e273",
+        "7bf0ecea-6022-4ddb-a14e-de915448aede",
+        "a011001b-ffdd-4f01-8bf3-aa66bab873ad"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "heading",
+    "main"
+  ]
+}

@@ -1,0 +1,27 @@
+{% if review_star %}
+  {%- if product.metafields.judgeme.badge -%}
+    <div style='{{ jm_style }}' class='jdgm-widget jdgm-preview-badge bls__pro-reviews no-js-hidden mt-5'  data-id='{{ product.id }}'
+      {%- if block -%}
+        {{ block.shopify_attributes }}
+      {%- endif -%}
+    >
+      {{ product.metafields.judgeme.badge }}
+    </div>
+  {% endif %}
+  {%- if product.metafields.spr.reviews -%}
+  <div class="bls__pro-reviews no-js-hidden mt-5"
+    {%- if block -%}
+      {{ block.shopify_attributes }}
+    {%- endif -%}
+  >
+    <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+  </div>
+  {%- endif -%}
+{% endif %}
+{% if review_widget %}
+  <div id="shopify-product-reviews" data-id="{{ product.id }}"
+    {%- if block -%}
+      {{ block.shopify_attributes }}
+    {%- endif -%}
+  >{{ product.metafields.spr.reviews }}</div>
+{% endif %}

@@ -1,0 +1,279 @@
+{%- liquid
+  assign section_width = ''
+  if section.settings.section_width == 'fix_width'
+    assign section_width = ' container'
+  elsif section.settings.section_width == 'expand_full_width'
+    assign section_width = ' full-width'
+  else
+    assign section_width = ' full-width-gap'
+  endif
+
+  assign tb_top_spacing = ''
+  if section.settings.padding_top > settings.vertical_space_tablet
+    assign tb_top_spacing = ' top-tb'
+  endif
+  assign tb_bottom_spacing = ''
+  if section.settings.padding_bottom > settings.vertical_space_tablet
+    assign tb_bottom_spacing = ' bottom-tb'
+  endif
+
+  assign mb_top_spacing = ''
+  if section.settings.padding_top > settings.vertical_space_mobile
+    assign mb_top_spacing = ' top-mb'
+  endif
+  assign mb_bottom_spacing = ''
+  if section.settings.padding_bottom > settings.vertical_space_mobile
+    assign mb_bottom_spacing = ' bottom-mb'
+  endif
+
+  assign img_size = ''
+  if section.settings.scrolling_size == '30'
+    assign img_size = '40'
+  elsif section.settings.scrolling_size == '70'
+    assign img_size = '80'
+  else
+    assign img_size = '100'
+  endif
+-%}
+
+{%- capture style -%}
+--section-padding-top: {{ section.settings.padding_top }}px; --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+      --marquee-speed: {{ section.settings.marquee_speed }}s;
+  {%- endcapture -%}
+
+<div
+  class="color-{{ section.settings.color_scheme }} gradient bls__section scrolling-text section-padding{{ tb_top_spacing }}{{ tb_bottom_spacing }}{{ mb_top_spacing }}{{ mb_bottom_spacing }}"
+  aria-label="{{ 'sections.scrolling_text.name' | t }}"
+  {{ block.shopify_attributes }}
+  style="{{ style | strip | strip_newlines }}"
+>
+  <div class="{{ section_width }}">
+    <div class="marquee d-flex overflow-hidden w-full justify-content-center heading-color{% if section.settings.use_heading_font %} heading-font{% endif %}">
+      {%- for i in (0..5) -%}
+        <div class="d-flex animation-marquee direction-{{ section.settings.direction }}">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.text != blank -%}
+              <a
+                tabindex="-1"
+                {% if block.settings.link == blank %}
+                  role="link" aria-disabled="true" {{ block.shopify_attributes }}
+                {% else %}
+                  href="{{ block.settings.link }}"
+                  target="_blank"
+                {% endif %}
+                class="scrolling__bar-link lh-1 remove-underline d-flex justify-content-center link link--text align-center nowrap size-{{ section.settings.scrolling_size }}{% if section.settings.use_heading_font == blank %} body-size{% endif %}{% if section.settings.uppercase %} uppercase{% endif %}{% if section.settings.style_between_item %} show-dot relative z--1{% endif %}{% if block.settings.accent_color %} accent-color{% endif %}{% if section.settings.use_heading_font != blank and block.settings.accent_color == blank %} heading-color{% endif %}"
+              >
+                {%- if block.settings.image != blank -%}
+                  <div
+                    class="bls__scrolling-img d-flex align-center"
+                    style="--img-width: {{ img_size }}px"
+                  >
+                    {{
+                      block.settings.image
+                      | image_url: width: 3840
+                      | image_tag:
+                        loading: 'lazy',
+                        sizes: '100vw',
+                        widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+                    }}
+                  </div>
+                {%- endif -%}
+                {{ block.settings.text }}
+              </a>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.scrolling-text.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer",
+      "custom.overlay"
+    ]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_width",
+      "options": [
+        {
+          "value": "fix_width",
+          "label": "t:sections.all.layout.fix_width"
+        },
+        {
+          "value": "stretch_width",
+          "label": "t:sections.all.layout.stretch_width"
+        },
+        {
+          "value": "expand_full_width",
+          "label": "t:sections.all.layout.expand_full_width"
+        }
+      ],
+      "default": "expand_full_width",
+      "label": "t:sections.all.layout.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "default-color-scheme"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.announcement-bar.settings.scrolling-text.header"
+    },
+    {
+      "type": "select",
+      "id": "direction",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.announcement-bar.settings.scrolling-text.left"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.announcement-bar.settings.scrolling-text.right"
+        }
+      ],
+      "default": "left",
+      "label": "t:sections.announcement-bar.settings.scrolling-text.direction"
+    },
+    {
+      "type": "range",
+      "id": "marquee_speed",
+      "default": 20,
+      "label": "t:sections.announcement-bar.settings.marquee_speed.label",
+      "min": 5,
+      "max": 50,
+      "step": 1,
+      "unit": "s"
+    },
+    {
+      "type": "checkbox",
+      "id": "style_between_item",
+      "default": true,
+      "label": "t:sections.icon-with-text.settings.icon.style_between_item"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.content_setting.label"
+    },
+    {
+      "type": "select",
+      "id": "scrolling_size",
+      "options": [
+        {
+          "value": "small",
+          "label": "t:sections.all.size.small.label"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.all.size.medium.label"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.all.size.large.label"
+        }
+      ],
+      "default": "large",
+      "label": "t:sections.all.content_setting.text.text-size"
+    },
+    {
+      "type": "checkbox",
+      "id": "uppercase",
+      "default": true,
+      "label": "t:settings_schema.typography.settings.heading.text_transform.uppercase"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_heading_font",
+      "default": true,
+      "label": "t:settings_schema.typography.settings.heading.use_heading_font"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.colors.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    }
+  ],
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "scrolling-text",
+      "name": "t:sections.all.content_setting.text.label",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.all.image.label"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "default": "Free shipping and returns",
+          "label": "t:sections.all.content_setting.content"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.all.colors.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "accent_color",
+          "label": "t:sections.scrolling-text.settings.accent_color"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.scrolling-text.name",
+      "blocks": [
+        {
+          "type": "scrolling-text"
+        },
+        {
+          "type": "scrolling-text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

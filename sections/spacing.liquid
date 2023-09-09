@@ -1,0 +1,48 @@
+{%- capture style -%}
+    --desktop-height: {{ section.settings.desktop_spacing }}px; --mobile_height: {{ section.settings.mobile_spacing }}px;
+  {%- endcapture -%}
+<section class="bls__section bls__spacing" style="{{ style | strip | strip_newlines }}"></section>
+
+{% schema %}
+{
+  "name": "t:sections.spacing.name",
+  "tag": "section",
+  "class": "section remove-space",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer",
+      "custom.overlay"
+    ]
+  },
+  "settings": [
+    {
+      "type": "range",
+      "id": "desktop_spacing",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.spacing.settings.desktop",
+      "info": "t:sections.spacing.settings.desktop_info",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_spacing",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 30,
+      "label": "t:sections.spacing.settings.mobile",
+      "info": "t:sections.spacing.settings.mobile_info"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.spacing.name"
+    }
+  ]
+}
+{% endschema %}

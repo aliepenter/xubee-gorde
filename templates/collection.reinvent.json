@@ -1,0 +1,212 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "color-scheme-1",
+        "desktop_content_position": "middle-center",
+        "show_collection_image": true,
+        "show_breadcrumb": true,
+        "show_collection_description": true,
+        "heading_overlay": true,
+        "desktop_height": "based_on_content",
+        "image_overlay_opacity": 45,
+        "padding_top": 70,
+        "padding_bottom": 50
+      }
+    },
+    "3e8db2db-a0db-492c-9ef2-f468cbfb9e60": {
+      "type": "scrolling-text",
+      "blocks": {
+        "template--20246412624186__3e8db2db-a0db-492c-9ef2-f468cbfb9e60-scrolling-text-1": {
+          "type": "scrolling-text",
+          "settings": {
+            "text": "Summer sale",
+            "link": "",
+            "accent_color": false
+          }
+        },
+        "template--20246412624186__3e8db2db-a0db-492c-9ef2-f468cbfb9e60-scrolling-text-2": {
+          "type": "scrolling-text",
+          "settings": {
+            "text": "Sale off",
+            "link": "shopify:\/\/collections\/maxi",
+            "accent_color": true
+          }
+        },
+        "5d86d8db-68b6-4bfd-acd4-b3d73d074f54": {
+          "type": "scrolling-text",
+          "settings": {
+            "text": "Limit time offers",
+            "link": "",
+            "accent_color": false
+          }
+        }
+      },
+      "block_order": [
+        "template--20246412624186__3e8db2db-a0db-492c-9ef2-f468cbfb9e60-scrolling-text-1",
+        "template--20246412624186__3e8db2db-a0db-492c-9ef2-f468cbfb9e60-scrolling-text-2",
+        "5d86d8db-68b6-4bfd-acd4-b3d73d074f54"
+      ],
+      "settings": {
+        "section_width": "expand_full_width",
+        "color_scheme": "default-color-scheme",
+        "direction": "left",
+        "marquee_speed": 20,
+        "style_between_item": true,
+        "scrolling_size": "large",
+        "uppercase": true,
+        "use_heading_font": true,
+        "padding_top": 70,
+        "padding_bottom": 35
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "57304c9a-ecdb-4596-8f8d-2e59b59c7067": {
+          "type": "promotion",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Pro.jpg",
+            "promotion_link": "shopify:\/\/products\/floral-maxi-dress",
+            "banner_position": 7
+          }
+        }
+      },
+      "block_order": [
+        "57304c9a-ecdb-4596-8f8d-2e59b59c7067"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "enable_sorting": true,
+        "enable_filtering": true,
+        "show_count": true,
+        "filter_type": "horizontal",
+        "products_to_show": 11,
+        "columns_desktop": 4,
+        "column_gap": "small",
+        "pagination_type": "button",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "c068bb5f-2747-4eba-9a22-a3a56b509577": {
+      "type": "rich-text",
+      "blocks": {
+        "template--20380570812730__c068bb5f-2747-4eba-9a22-a3a56b509577-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Shop by Occasion",
+            "heading_size": "h2",
+            "remove_space": true
+          }
+        },
+        "64a613c4-11cc-44e9-9177-aa3292620141": {
+          "type": "spacing",
+          "settings": {
+            "desktop_spacing": 15,
+            "mobile_spacing": 10
+          }
+        },
+        "template--20380570812730__c068bb5f-2747-4eba-9a22-a3a56b509577-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Seeking the perfect dress for any occasion? Explore our curated collection below.<\/p>",
+            "description_size": "",
+            "remove_space": false
+          }
+        }
+      },
+      "block_order": [
+        "template--20380570812730__c068bb5f-2747-4eba-9a22-a3a56b509577-heading-1",
+        "64a613c4-11cc-44e9-9177-aa3292620141",
+        "template--20380570812730__c068bb5f-2747-4eba-9a22-a3a56b509577-text-1"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "",
+        "text_alignment": "center",
+        "content_max_width": 100,
+        "padding_top": 40,
+        "padding_bottom": 35
+      }
+    },
+    "924f48f3-866d-4cb4-b071-c60376f5f6cf": {
+      "type": "collection-list",
+      "blocks": {
+        "template--18765520863523__924f48f3-866d-4cb4-b071-c60376f5f6cf-1684721817ff43acc0-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "summer",
+            "collection_title": ""
+          }
+        },
+        "template--18765520863523__924f48f3-866d-4cb4-b071-c60376f5f6cf-1684721817ff43acc0-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "night-out",
+            "collection_title": ""
+          }
+        },
+        "template--18765520863523__924f48f3-866d-4cb4-b071-c60376f5f6cf-1684721817ff43acc0-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "party",
+            "collection_title": ""
+          }
+        },
+        "31b857a4-533c-4b5d-a8ea-50e9aa77fff2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "work",
+            "collection_title": ""
+          }
+        },
+        "d48b9d06-1b66-42be-b09b-189dea4c809c": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "cooktail",
+            "collection_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18765520863523__924f48f3-866d-4cb4-b071-c60376f5f6cf-1684721817ff43acc0-0",
+        "template--18765520863523__924f48f3-866d-4cb4-b071-c60376f5f6cf-1684721817ff43acc0-1",
+        "template--18765520863523__924f48f3-866d-4cb4-b071-c60376f5f6cf-1684721817ff43acc0-2",
+        "31b857a4-533c-4b5d-a8ea-50e9aa77fff2",
+        "d48b9d06-1b66-42be-b09b-189dea4c809c"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "color-scheme-1",
+        "title": "",
+        "description": "",
+        "text_alignment": "center",
+        "show_view_all": false,
+        "image_ratio": "adapt",
+        "information_position": "overlay",
+        "show_product_count": true,
+        "text_information_alignment": "left",
+        "columns_desktop": 5,
+        "column_gap": "small",
+        "enable_carousel": true,
+        "show_navigation": true,
+        "show_pagination": false,
+        "padding_top": 0,
+        "padding_bottom": 33
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "3e8db2db-a0db-492c-9ef2-f468cbfb9e60",
+    "product-grid",
+    "c068bb5f-2747-4eba-9a22-a3a56b509577",
+    "924f48f3-866d-4cb4-b071-c60376f5f6cf"
+  ]
+}

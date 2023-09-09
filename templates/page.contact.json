@@ -1,0 +1,112 @@
+{
+  "sections": {
+    "heading": {
+      "type": "page-heading",
+      "blocks": {
+        "aaf124db-2379-4372-a1d4-25053472a222": {
+          "type": "title",
+          "settings": {
+            "page_title": "Contact Gorde"
+          }
+        },
+        "e663fd80-954f-4ea2-b291-784a1828120e": {
+          "type": "description",
+          "settings": {
+            "page_description": "Give us a chance to sell and serve you."
+          }
+        }
+      },
+      "block_order": [
+        "aaf124db-2379-4372-a1d4-25053472a222",
+        "e663fd80-954f-4ea2-b291-784a1828120e"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "text_alignment": "center",
+        "eb_breadcrumb": true,
+        "padding_top": 80,
+        "padding_bottom": 65
+      }
+    },
+    "2b863182-8de1-4d58-914a-aed70ab246be": {
+      "type": "rich-text",
+      "blocks": {
+        "template--19296362037539__2b863182-8de1-4d58-914a-aed70ab246be-168619065039c006af-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Drop us a line",
+            "heading_size": "h2",
+            "remove_space": false
+          }
+        },
+        "template--19296362037539__2b863182-8de1-4d58-914a-aed70ab246be-168619065039c006af-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If you have any questions or comments, please feel free to reach out to us. We will contact you within 24 hours of receiving your message.<\/p>",
+            "description_size": "",
+            "remove_space": false
+          }
+        },
+        "526e3a0e-a620-4233-9573-cc5598100639": {
+          "type": "spacing",
+          "settings": {
+            "desktop_spacing": 1,
+            "mobile_spacing": 3
+          }
+        },
+        "c4199c95-e295-433a-9975-a1f2d73cb202": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Opening Hours:",
+            "subheading_size": "h5",
+            "remove_space": false
+          }
+        },
+        "9af5fd46-15f0-489c-b661-fde639e25b72": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Monday - Sunday:  9:00am – 5:00pm PST<br\/>*Excludes Holidays<\/p>",
+            "description_size": "",
+            "remove_space": false
+          }
+        }
+      },
+      "block_order": [
+        "template--19296362037539__2b863182-8de1-4d58-914a-aed70ab246be-168619065039c006af-0",
+        "template--19296362037539__2b863182-8de1-4d58-914a-aed70ab246be-168619065039c006af-1",
+        "526e3a0e-a620-4233-9573-cc5598100639",
+        "c4199c95-e295-433a-9975-a1f2d73cb202",
+        "9af5fd46-15f0-489c-b661-fde639e25b72"
+      ],
+      "settings": {
+        "section_width": "fix_width",
+        "color_scheme": "",
+        "text_alignment": "left",
+        "content_max_width": 100,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "4ac52765-9fc2-46b3-b34b-bb9d89968057": {
+      "type": "contact-form",
+      "settings": {
+        "section_width": "fix_width",
+        "color_scheme": "",
+        "title": "",
+        "description": "",
+        "text_alignment": "left",
+        "name": "Your name",
+        "email_placeholder": "Enter your email",
+        "message": "Your comment",
+        "button_label": "Send message",
+        "padding_top": 60,
+        "padding_bottom": 15
+      }
+    }
+  },
+  "order": [
+    "heading",
+    "2b863182-8de1-4d58-914a-aed70ab246be",
+    "4ac52765-9fc2-46b3-b34b-bb9d89968057"
+  ]
+}

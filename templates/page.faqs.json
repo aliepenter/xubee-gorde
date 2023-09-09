@@ -1,0 +1,136 @@
+{
+  "sections": {
+    "heading": {
+      "type": "page-heading",
+      "blocks": {
+        "b0ff9e5a-308f-475d-a65f-c1da02283b3f": {
+          "type": "title",
+          "settings": {
+            "page_title": "FAQ"
+          }
+        },
+        "4008fbba-47ab-4250-9113-02a6e587c343": {
+          "type": "description",
+          "settings": {
+            "page_description": "If you have a question, please consult our list of frequently asked questions \nbefore seeking assistance."
+          }
+        }
+      },
+      "block_order": [
+        "b0ff9e5a-308f-475d-a65f-c1da02283b3f",
+        "4008fbba-47ab-4250-9113-02a6e587c343"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "text_alignment": "center",
+        "eb_breadcrumb": true,
+        "padding_top": 80,
+        "padding_bottom": 25
+      }
+    },
+    "main": {
+      "type": "main-page-faqs",
+      "blocks": {
+        "5e09c6c6-81a9-42f8-ac44-e883139aaa55": {
+          "type": "faq",
+          "settings": {
+            "faq_title": "Shipping Information",
+            "question_1": "How long does it take to get my products?",
+            "answer_1": "<p>Domestic shipping can take up to 5 business days.<br\/>Foreign shipping could take up to 14 business days.<br\/>Due to global supply chain challenges, shipping times could be longer than usual.<\/p>",
+            "question_2": "How do I set up a subscription order?",
+            "answer_2": "<p>We will deliver products to you as soon as reasonably possible. Orders are usually dispatched between 1-3 days from the date of the order being placed. Please contact us our customer service team if your delivery has not been received within the dates described.<\/p>",
+            "question_3": "How much does it cost?",
+            "answer_3": "<p>Shipping rates can vary depending on your region and are calculated at checkout.<br\/>Here are the full details of our Shipping Policy.<\/p>",
+            "question_4": "How to return my items?",
+            "answer_4": "<p>We do not currently offer free returns to overseas customers. You will therefore need to cover all costs of returning any items to us yourself. We advise that you mark your package ‘returned goods’ to avoid further duties. Remember: We strongly recommend that you return any items via a registered trackable service and obtain and retain proof of posting as we do not accept responsibility for items that fail to arrive with us.<\/p>",
+            "question_5": "",
+            "answer_5": "",
+            "question_6": "",
+            "answer_6": "",
+            "question_7": "",
+            "answer_7": "",
+            "question_8": "",
+            "answer_8": "",
+            "question_9": "",
+            "answer_9": "",
+            "question_10": "",
+            "answer_10": ""
+          }
+        },
+        "1c2236da-dda3-4e0d-93d0-fdd63e27235a": {
+          "type": "faq",
+          "settings": {
+            "faq_title": "Order & Return",
+            "question_1": "How can I choose the right size for me?",
+            "answer_1": "<p>Habitat has created a universal sizing system that aims to provide a unique reference for all countries. You can easily spot the best size for you by referring to our Size Guide that provides a conversion table to all major country size systems.<\/p><p>The Size Guide is conveniently available on the page of each product.<\/p>",
+            "question_2": "How much can I get refunded?",
+            "answer_2": "<p>In the case when the <strong>product and packaging are unopened and undamaged<\/strong>, you are <strong>eligible<\/strong>for a full refund.<br\/>In the case when <strong>the packaging has been opened and the product has been used<\/strong>, you are<strong>eligible <\/strong>for a partial refund.<br\/>In the case when a <strong>product has been damaged<\/strong>, and the damage is not covered by your warranty, you are <strong>not eligible <\/strong>for a refund.<br\/><\/p>",
+            "question_3": "How long after I complete a purchase can I ask for a refund?",
+            "answer_3": "<p>A refund request can be submitted within a month after the purchase is made.<\/p>",
+            "question_4": "Who pays the shipping costs in the case of a refund when the order has free shipping?",
+            "answer_4": "<p>When an order includes free shipping, only the cost of the return shipping is handled by the customer.<\/p>",
+            "question_5": "",
+            "answer_5": "",
+            "question_6": "",
+            "answer_6": "",
+            "question_7": "",
+            "answer_7": "",
+            "question_8": "",
+            "answer_8": "",
+            "question_9": "",
+            "answer_9": "",
+            "question_10": "",
+            "answer_10": ""
+          }
+        },
+        "4dbaf9c5-b7e5-4a3e-938d-488130bae9c3": {
+          "type": "faq",
+          "settings": {
+            "faq_title": "Payment",
+            "question_1": "Which payment methods do you accept?",
+            "answer_1": "<p>When an order includes free shipping, only the cost of the return shipping is handled by the customer.<\/p>",
+            "question_2": "Do you accept online payments?",
+            "answer_2": "<p>Yes, we accept online payments. All payment processing and vital customer information is quick, easy, and secure.<br\/>Learn more about our store's safe checkout experience (powered by Shopify.<\/p>",
+            "question_3": "What forms of payment do you accept?",
+            "answer_3": "<p>We accept payments from major credit card companies like Visa, Mastercard, and American Express.<\/p>",
+            "question_4": "Is my payment data safe with you?",
+            "answer_4": "<p>All direct payment gateways adhere to the standards set by PCI-DSS as managed by the PCI Security Standards Council, which is a joint effort of brands like Visa, MasterCard, American Express, and Discover.<\/p>",
+            "question_5": "",
+            "answer_5": "",
+            "question_6": "",
+            "answer_6": "",
+            "question_7": "",
+            "answer_7": "",
+            "question_8": "",
+            "answer_8": "",
+            "question_9": "",
+            "answer_9": "",
+            "question_10": "",
+            "answer_10": ""
+          }
+        }
+      },
+      "block_order": [
+        "5e09c6c6-81a9-42f8-ac44-e883139aaa55",
+        "1c2236da-dda3-4e0d-93d0-fdd63e27235a",
+        "4dbaf9c5-b7e5-4a3e-938d-488130bae9c3"
+      ],
+      "settings": {
+        "section_width": "fix_width",
+        "show_number": false,
+        "heading_help": "Need Help?",
+        "text": "<p>If you have an issue or question that requires immediate assistance, you can click the button below to chat live with a Customer Service representative.<\/p><p>Please allow 06 - 12 business days from the time your package arrives back to us for a refund to be issued.<\/p>",
+        "label_1": "Message Us",
+        "link_1": "shopify:\/\/pages\/contact",
+        "label_2": "Our store",
+        "link_2": "shopify:\/\/pages\/about-us",
+        "padding_top": 40,
+        "padding_bottom": 15
+      }
+    }
+  },
+  "order": [
+    "heading",
+    "main"
+  ]
+}

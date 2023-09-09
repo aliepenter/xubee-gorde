@@ -1,0 +1,91 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "dd057969-14a9-4a9b-8fea-11b9191df6df": {
+          "type": "store_info",
+          "settings": {
+            "store_heading": "Company",
+            "image_width": 178,
+            "store_description": "",
+            "store_address_heading": "Address",
+            "store_address": "<p>Street Address 2571 Oakridge<\/p>",
+            "working_hours": "",
+            "store_phone_heading": "Phone",
+            "store_phone": "+1-123-555-6789",
+            "store_email_heading": "Email",
+            "store_email": "yourstore@gmail.com",
+            "content_width": "33%"
+          }
+        },
+        "b3628586-461c-4237-8b07-795e94ae225e": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Social",
+            "menu": "social",
+            "content_width": "16.666%"
+          }
+        },
+        "e2be6945-a2fc-4a1d-a6b6-9aedad3273e1": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop",
+            "menu": "shop",
+            "content_width": "16.666%"
+          }
+        },
+        "b8d3a559-55fb-44fc-be5d-38d17c93d6e6": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Sitemap",
+            "menu": "sitemap",
+            "content_width": "16.666%"
+          }
+        },
+        "1c6e4809-1590-403e-883c-6574cc53a24b": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Help",
+            "menu": "help",
+            "content_width": "16.666%"
+          }
+        },
+        "11b7a8da-0f2e-46f5-bc75-6ec10f589c94": {
+          "type": "newsletter",
+          "settings": {
+            "heading": "Subscribe and Get 10% Discount",
+            "description": "",
+            "email_placeholder": "Enter your email address",
+            "content_width": "100%"
+          }
+        }
+      },
+      "block_order": [
+        "dd057969-14a9-4a9b-8fea-11b9191df6df",
+        "b3628586-461c-4237-8b07-795e94ae225e",
+        "e2be6945-a2fc-4a1d-a6b6-9aedad3273e1",
+        "b8d3a559-55fb-44fc-be5d-38d17c93d6e6",
+        "1c6e4809-1590-403e-883c-6574cc53a24b",
+        "11b7a8da-0f2e-46f5-bc75-6ec10f589c94"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "",
+        "enable_back_top": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "payment_enable": true,
+        "padding_top": 72,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "current": {
+    "page_width": 1290,
+    "body_font": "inter_n4",
+    "heading_font": "playfair_display_n4",
+    "heading_text_transform": "unset",
+    "button_text_transform": "uppercase",
+    "product_enable_quickview": true,
+    "product_show_image_hover": true,
+    "product_show_color_swatch": true,
+    "product_show_vendor": true,
+    "product_show_rate": false,
+    "product_show_badges": true,
+    "color_product_rate": "#ff9a00",
+    "product_notify_re_stock": true,
+    "color_swatch_custom": "Light Blue: rgb(201 215 231), Pine: #313730, Forest: #15524b, Orange: #e56f51, Mutil Coral: #b3cfcc, Floral: #be4797, Caro: #869e87, Leopard: #9f6a4d,Brown: #9e5d38, Navy: #06376a, Coral: #f68e54, Khaki: #cc9f73, Hot Pink: #f66d95,  Pink: #fec2b9, Blue: #6b9ecd",
+    "animations_reveal_on_scroll": true,
+    "enable_zoom_effect": true,
+    "cart_type": "drawer",
+    "show_in_minicart": true,
+    "show_in_cart_page": true,
+    "minimum_amount": 500,
+    "recommendation_product_type": "selected",
+    "select_product_recommendation": [
+      "brown-bucket-hat",
+      "floral-jumpsuit",
+      "floral-lace-dress"
+    ],
+    "enable_cookies": true,
+    "show_in_editor": false,
+    "sections": {
+      "product-quickview": {
+        "type": "product-quickview",
+        "blocks": {
+          "d14f4a75-278d-4fd9-95dc-f5bb4fedb4bb": {
+            "type": "title",
+            "settings": {
+            }
+          },
+          "eb3268ad-0bdc-45e5-904c-9fa021679d3f": {
+            "type": "price",
+            "settings": {
+            }
+          },
+          "70bd1a33-272f-40ca-b9b4-0ec65d84a443": {
+            "type": "product_image",
+            "settings": {
+            }
+          },
+          "49de0899-623e-44ae-b20c-d9870385243b": {
+            "type": "variant_picker",
+            "settings": {
+            }
+          },
+          "f6c15bfb-fb71-4ac7-b21f-62ecbff15de2": {
+            "type": "inventory_status",
+            "settings": {
+              "inventory_threshold": 20,
+              "inventory_base": 50,
+              "show_bar": true,
+              "show_transfer_notice": true
+            }
+          },
+          "87e3cde5-55cb-4452-a7d6-a340fdf98098": {
+            "type": "description",
+            "settings": {
+            }
+          }
+        },
+        "block_order": [
+          "d14f4a75-278d-4fd9-95dc-f5bb4fedb4bb",
+          "eb3268ad-0bdc-45e5-904c-9fa021679d3f",
+          "70bd1a33-272f-40ca-b9b4-0ec65d84a443",
+          "49de0899-623e-44ae-b20c-d9870385243b",
+          "f6c15bfb-fb71-4ac7-b21f-62ecbff15de2",
+          "87e3cde5-55cb-4452-a7d6-a340fdf98098"
+        ],
+        "settings": {
+        }
+      },
+      "mobile-navigation-bar": {
+        "type": "mobile-navigation-bar",
+        "settings": {
+          "eb_mobile_navbar": true,
+          "show_homepage": true,
+          "show_shop": true,
+          "show_account": true,
+          "show_cart": true
+        }
+      },
+      "sticky-add-cart": {
+        "type": "sticky-add-cart",
+        "settings": {
+          "enable_sticky_add_cart": true,
+          "enable_sticky_add_cart_mobile": true,
+          "variant_type": "swatches"
+        }
+      },
+      "cart-drawer": {
+        "type": "cart-drawer",
+        "settings": {
+          "enable_promotion": true,
+          "promotion_code": "NEW10",
+          "message": "10% OFF for first customer. Use code [promotion_code]",
+          "show_cart_note": true
+        }
+      },
+      "header-search": {
+        "type": "header-search",
+        "settings": {
+          "search_popular_keywords": "t-shirt, dress, Hot",
+          "search_collection_recommended": "cooktail",
+          "predictive_search_enabled": true
+        }
+      }
+    },
+    "content_for_index": [
+
+    ],
+    "color_schemes": {
+      "default-color-scheme": {
+        "settings": {
+          "background": "#ffffff",
+          "background_gradient": "",
+          "color_general_accent": "#e40202",
+          "color_general_text": "#666666",
+          "color_general_heading": "#000000",
+          "color_general_border": "#cccccc",
+          "color_button_background": "#000000",
+          "color_button_text": "#ffffff",
+          "color_button_background_hover": "#ffffff",
+          "color_button_text_hover": "#000000",
+          "fill_button_border_hover": "#000000",
+          "color_button_outline": "#000000",
+          "color_button_outline_border": "#999999"
+        }
+      },
+      "color-scheme-1": {
+        "settings": {
+          "background": "#ffffff",
+          "background_gradient": "",
+          "color_general_accent": "#e40202",
+          "color_general_text": "#ffffff",
+          "color_general_heading": "#ffffff",
+          "color_general_border": "#cccccc",
+          "color_button_background": "#ffffff",
+          "color_button_text": "#000000",
+          "color_button_background_hover": "#000000",
+          "color_button_text_hover": "#ffffff",
+          "fill_button_border_hover": "#000000",
+          "color_button_outline": "#ffffff",
+          "color_button_outline_border": "#ffffff"
+        }
+      },
+      "color-scheme-2": {
+        "settings": {
+          "background": "#e6e7ec",
+          "background_gradient": "",
+          "color_general_accent": "#e40202",
+          "color_general_text": "#333333",
+          "color_general_heading": "#000000",
+          "color_general_border": "#cccccc",
+          "color_button_background": "#ffffff",
+          "color_button_text": "#000000",
+          "color_button_background_hover": "#000000",
+          "color_button_text_hover": "#ffffff",
+          "fill_button_border_hover": "#000000",
+          "color_button_outline": "#ffffff",
+          "color_button_outline_border": "#999999"
+        }
+      },
+      "scheme-0ba1b009-7eed-45cd-b0f5-57fda3e81ca0": {
+        "settings": {
+          "background": "#a0522d",
+          "background_gradient": "",
+          "color_general_accent": "#e40202",
+          "color_general_text": "#f9f514",
+          "color_general_heading": "#000000",
+          "color_general_border": "#000000",
+          "color_button_background": "#000000",
+          "color_button_text": "#ffffff",
+          "color_button_background_hover": "#ffffff",
+          "color_button_text_hover": "#000000",
+          "fill_button_border_hover": "#000000",
+          "color_button_outline": "#000000",
+          "color_button_outline_border": "#999999"
+        }
+      },
+      "scheme-957ad1f6-ead2-4f72-bdba-ddfe8f341c9e": {
+        "settings": {
+          "background": "#ebe0d4",
+          "background_gradient": "",
+          "color_general_accent": "#e40202",
+          "color_general_text": "#666666",
+          "color_general_heading": "#000000",
+          "color_general_border": "#ccc1b6",
+          "color_button_background": "#ffffff",
+          "color_button_text": "#050505",
+          "color_button_background_hover": "#000000",
+          "color_button_text_hover": "#ffffff",
+          "fill_button_border_hover": "#000000",
+          "color_button_outline": "#000000",
+          "color_button_outline_border": "#999999"
+        }
+      },
+      "scheme-9992034c-51d7-4a47-92a6-2d680b0b20b4": {
+        "settings": {
+          "background": "#ffffff",
+          "background_gradient": "",
+          "color_general_accent": "#e40202",
+          "color_general_text": "#666666",
+          "color_general_heading": "#000000",
+          "color_general_border": "#cccccc",
+          "color_button_background": "#000000",
+          "color_button_text": "#ffffff",
+          "color_button_background_hover": "#ffffff",
+          "color_button_text_hover": "#000000",
+          "fill_button_border_hover": "#000000",
+          "color_button_outline": "#000000",
+          "color_button_outline_border": "#999999"
+        }
+      }
+    }
+  }
+}

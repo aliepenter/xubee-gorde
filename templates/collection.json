@@ -1,0 +1,185 @@
+{
+  "sections": {
+    "85c86895-d3e6-4879-8c04-186884a188bb": {
+      "type": "scrolling-text",
+      "blocks": {
+        "template--18765520470307__85c86895-d3e6-4879-8c04-186884a188bb-168258868565790a02-0": {
+          "type": "scrolling-text",
+          "settings": {
+            "text": "Free Shipping for all order over $99",
+            "link": "",
+            "accent_color": false
+          }
+        },
+        "63c8c7aa-070f-4bf7-b2f2-e39befc7ae6f": {
+          "type": "scrolling-text",
+          "settings": {
+            "text": "30 days return guarantee",
+            "link": "",
+            "accent_color": false
+          }
+        },
+        "c811f06e-b5df-4bd1-95b3-30b7d3151075": {
+          "type": "scrolling-text",
+          "settings": {
+            "text": "buy now, pay later with klarna",
+            "link": "",
+            "accent_color": false
+          }
+        },
+        "268c5309-94f8-4520-a172-4acff07043e5": {
+          "type": "scrolling-text",
+          "settings": {
+            "text": "100% secure online payment",
+            "link": "",
+            "accent_color": false
+          }
+        }
+      },
+      "block_order": [
+        "template--18765520470307__85c86895-d3e6-4879-8c04-186884a188bb-168258868565790a02-0",
+        "63c8c7aa-070f-4bf7-b2f2-e39befc7ae6f",
+        "c811f06e-b5df-4bd1-95b3-30b7d3151075",
+        "268c5309-94f8-4520-a172-4acff07043e5"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "scheme-0ba1b009-7eed-45cd-b0f5-57fda3e81ca0",
+        "direction": "left",
+        "marquee_speed": 18,
+        "style_between_item": true,
+        "scrolling_size": "small",
+        "uppercase": true,
+        "use_heading_font": false,
+        "padding_top": 24,
+        "padding_bottom": 26
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "default-color-scheme",
+        "desktop_content_position": "middle-center",
+        "show_collection_image": false,
+        "show_breadcrumb": true,
+        "show_collection_description": true,
+        "heading_overlay": false,
+        "desktop_height": "adapt",
+        "image_overlay_opacity": 50,
+        "padding_top": 80,
+        "padding_bottom": 37
+      }
+    },
+    "35e5831c-e158-4777-8667-636cde3a9adf": {
+      "type": "collection-list",
+      "blocks": {
+        "template--20246367306042__35e5831c-e158-4777-8667-636cde3a9adf-featured_collection-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "minis",
+            "collection_title": ""
+          }
+        },
+        "template--20246367306042__35e5831c-e158-4777-8667-636cde3a9adf-featured_collection-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "maxi",
+            "collection_title": ""
+          }
+        },
+        "template--20246367306042__35e5831c-e158-4777-8667-636cde3a9adf-featured_collection-3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "midis",
+            "collection_image": "shopify:\/\/shop_images\/midis.png",
+            "collection_title": ""
+          }
+        },
+        "template--20246367306042__35e5831c-e158-4777-8667-636cde3a9adf-featured_collection-4": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "knitwear",
+            "collection_title": ""
+          }
+        },
+        "template--20246367306042__35e5831c-e158-4777-8667-636cde3a9adf-featured_collection-5": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "knee-lneght",
+            "collection_title": ""
+          }
+        },
+        "template--20246367306042__35e5831c-e158-4777-8667-636cde3a9adf-featured_collection-6": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "cooktail",
+            "collection_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20246367306042__35e5831c-e158-4777-8667-636cde3a9adf-featured_collection-1",
+        "template--20246367306042__35e5831c-e158-4777-8667-636cde3a9adf-featured_collection-2",
+        "template--20246367306042__35e5831c-e158-4777-8667-636cde3a9adf-featured_collection-3",
+        "template--20246367306042__35e5831c-e158-4777-8667-636cde3a9adf-featured_collection-4",
+        "template--20246367306042__35e5831c-e158-4777-8667-636cde3a9adf-featured_collection-5",
+        "template--20246367306042__35e5831c-e158-4777-8667-636cde3a9adf-featured_collection-6"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "color-scheme-1",
+        "title": "",
+        "description": "",
+        "text_alignment": "left",
+        "show_view_all": true,
+        "image_ratio": "adapt",
+        "information_position": "overlay",
+        "show_product_count": true,
+        "text_information_alignment": "left",
+        "columns_desktop": 5,
+        "column_gap": "small",
+        "enable_carousel": true,
+        "show_navigation": true,
+        "show_pagination": false,
+        "padding_top": 40,
+        "padding_bottom": 37
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "f3fe7ce8-fbe5-4560-8e2f-356dc0ff1985": {
+          "type": "promotion",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Pro.jpg",
+            "promotion_link": "shopify:\/\/products\/floral-maxi-dress",
+            "banner_position": 7
+          }
+        }
+      },
+      "block_order": [
+        "f3fe7ce8-fbe5-4560-8e2f-356dc0ff1985"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "enable_sorting": true,
+        "enable_filtering": true,
+        "show_count": true,
+        "filter_type": "vertical",
+        "products_to_show": 15,
+        "columns_desktop": 4,
+        "column_gap": "small",
+        "pagination_type": "default",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "85c86895-d3e6-4879-8c04-186884a188bb",
+    "banner",
+    "35e5831c-e158-4777-8667-636cde3a9adf",
+    "product-grid"
+  ]
+}

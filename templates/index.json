@@ -1,0 +1,667 @@
+{
+  "sections": {
+    "85c86895-d3e6-4879-8c04-186884a188bb": {
+      "type": "scrolling-text",
+      "blocks": {
+        "c811f06e-b5df-4bd1-95b3-30b7d3151075": {
+          "type": "scrolling-text",
+          "settings": {
+            "text": "Viện thẩm mỹ XUBEE",
+            "link": "https:\/\/www.facebook.com\/thammyxubee?locale=vi_VN",
+            "accent_color": false
+          }
+        },
+        "268c5309-94f8-4520-a172-4acff07043e5": {
+          "type": "scrolling-text",
+          "settings": {
+            "text": "CS1: Số 176, Đ.Thống nhất, P. Đồng Quang, TP. Thái Nguyên",
+            "link": "https:\/\/goo.gl\/maps\/CuRQcesfV3QUqBcU8",
+            "accent_color": false
+          }
+        },
+        "template--18765520470307__85c86895-d3e6-4879-8c04-186884a188bb-168258868565790a02-0": {
+          "type": "scrolling-text",
+          "settings": {
+            "text": "CS2: Số 4 Tôn Đức Thắng, Phường Ba Hàng , Tp Phổ Yên",
+            "link": "https:\/\/goo.gl\/maps\/3W7fS6maBukzUpKEA",
+            "accent_color": false
+          }
+        }
+      },
+      "block_order": [
+        "c811f06e-b5df-4bd1-95b3-30b7d3151075",
+        "268c5309-94f8-4520-a172-4acff07043e5",
+        "template--18765520470307__85c86895-d3e6-4879-8c04-186884a188bb-168258868565790a02-0"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "default-color-scheme",
+        "direction": "left",
+        "marquee_speed": 18,
+        "style_between_item": true,
+        "scrolling_size": "small",
+        "uppercase": true,
+        "use_heading_font": false,
+        "padding_top": 24,
+        "padding_bottom": 26
+      }
+    },
+    "ad27c797-e75c-4265-88b2-1286682d8ddd": {
+      "type": "slideshow",
+      "blocks": {
+        "template--19462698533155__ad27c797-e75c-4265-88b2-1286682d8ddd-168777562653c7cca3-0": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/z4517253973575_aa4e16fa6fdb07e5692576808defbe77.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/2376fb257c6a8c34d57b.jpg",
+            "image_overlay_opacity": 20,
+            "subheading": "",
+            "heading": "",
+            "description": "",
+            "button_label": "",
+            "link": "",
+            "button_style": "fill",
+            "desktop_content_position": "bottom-left",
+            "text_alignment": "left"
+          }
+        },
+        "template--19462698533155__ad27c797-e75c-4265-88b2-1286682d8ddd-168777562653c7cca3-1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/346066270_3458608624456930_4954984972692026565_n.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/329371166_1522511764909659_4202423949314310494_n_02138121-d605-4858-96ce-fcb7d6a7f060.jpg",
+            "image_overlay_opacity": 25,
+            "subheading": "",
+            "heading": "",
+            "description": "",
+            "button_label": "",
+            "link": "",
+            "button_style": "fill",
+            "desktop_content_position": "bottom-left",
+            "text_alignment": "left"
+          }
+        },
+        "0274012d-10b1-49af-a3d7-babd3390f26e": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/z4240834564799_400d0045d52ca6a5128f7d327cfd906b.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/279297218_1354826581684712_2766214260417055027_n.jpg",
+            "image_overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "description": "",
+            "button_label": "",
+            "link": "",
+            "button_style": "fill",
+            "desktop_content_position": "bottom-left",
+            "text_alignment": "left"
+          }
+        }
+      },
+      "block_order": [
+        "template--19462698533155__ad27c797-e75c-4265-88b2-1286682d8ddd-168777562653c7cca3-0",
+        "template--19462698533155__ad27c797-e75c-4265-88b2-1286682d8ddd-168777562653c7cca3-1",
+        "0274012d-10b1-49af-a3d7-babd3390f26e"
+      ],
+      "custom_css": [
+        ".item-hero-full_screen {min-height: calc(100vh - 93px - var(--header-height, 8.6rem)) !important;}",
+        "@media screen and (max-width: 1024.98px) {.item-hero-full_screen {min-height: calc(100vh - 93px - var(--header-height, 8.6rem)) !important; }}"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "",
+        "size": "medium",
+        "show_navigation": true,
+        "show_pagination": true,
+        "desktop_panigation_position": "right",
+        "slide_auto_change": true,
+        "change_slide_every": 4,
+        "image_height": "full_screen",
+        "show_text_bellow": false,
+        "reset_color": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "default-color-scheme",
+        "title": "Featured Dress",
+        "description": "<p>Discover your unique style today.<\/p>",
+        "show_view_all": true,
+        "text_alignment": "left",
+        "collection": "new-arrivals",
+        "products_to_show": 6,
+        "columns_desktop": 4,
+        "column_gap": "small",
+        "enable_carousel": true,
+        "show_navigation": true,
+        "show_pagination": false,
+        "padding_top": 31,
+        "padding_bottom": 71
+      }
+    },
+    "3e8db2db-a0db-492c-9ef2-f468cbfb9e60": {
+      "type": "scrolling-text",
+      "blocks": {
+        "template--20246412624186__3e8db2db-a0db-492c-9ef2-f468cbfb9e60-scrolling-text-1": {
+          "type": "scrolling-text",
+          "settings": {
+            "text": "Summer sale",
+            "link": "",
+            "accent_color": false
+          }
+        },
+        "template--20246412624186__3e8db2db-a0db-492c-9ef2-f468cbfb9e60-scrolling-text-2": {
+          "type": "scrolling-text",
+          "settings": {
+            "text": "Sale off",
+            "link": "shopify:\/\/collections\/maxi",
+            "accent_color": true
+          }
+        },
+        "5d86d8db-68b6-4bfd-acd4-b3d73d074f54": {
+          "type": "scrolling-text",
+          "settings": {
+            "text": "Limit time offers",
+            "link": "",
+            "accent_color": false
+          }
+        }
+      },
+      "block_order": [
+        "template--20246412624186__3e8db2db-a0db-492c-9ef2-f468cbfb9e60-scrolling-text-1",
+        "template--20246412624186__3e8db2db-a0db-492c-9ef2-f468cbfb9e60-scrolling-text-2",
+        "5d86d8db-68b6-4bfd-acd4-b3d73d074f54"
+      ],
+      "settings": {
+        "section_width": "expand_full_width",
+        "color_scheme": "default-color-scheme",
+        "direction": "left",
+        "marquee_speed": 20,
+        "style_between_item": true,
+        "scrolling_size": "large",
+        "uppercase": true,
+        "use_heading_font": true,
+        "padding_top": 0,
+        "padding_bottom": 75
+      }
+    },
+    "65b3d10b-5b9c-4717-bcfc-846907672f04": {
+      "type": "divider",
+      "settings": {
+        "section_width": "expand_full_width",
+        "divider_height": 1,
+        "divider_color": "#cccccc",
+        "border_style": "solid",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "dc7270cc-f3d5-470f-83fa-607409275d84": {
+      "type": "spacing",
+      "settings": {
+        "desktop_spacing": 30,
+        "mobile_spacing": 20
+      }
+    },
+    "7af70c30-856d-467b-a99b-2abad6681c8a": {
+      "type": "rich-text",
+      "blocks": {
+        "71c76ddf-acfd-44da-84f4-46b5dfe2c14d": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our purpose is to Inspire a Better way of Living by creating conscious products that last through time.",
+            "heading_size": "h2",
+            "remove_space": true
+          }
+        },
+        "5b96d5d8-af03-4eb0-98ee-f2351951908e": {
+          "type": "spacing",
+          "settings": {
+            "desktop_spacing": 37,
+            "mobile_spacing": 25
+          }
+        },
+        "ea92b601-5d7d-4986-8e0a-5c54debaf071": {
+          "type": "text",
+          "settings": {
+            "text": "<p>By marrying innovation with eco-friendly processes, we strive to help shape a cleaner, healthier, and more mindful world where human progress is in harmony with the planet's well-being.<\/p>",
+            "description_size": "fs-bigger-2",
+            "remove_space": true
+          }
+        }
+      },
+      "block_order": [
+        "71c76ddf-acfd-44da-84f4-46b5dfe2c14d",
+        "5b96d5d8-af03-4eb0-98ee-f2351951908e",
+        "ea92b601-5d7d-4986-8e0a-5c54debaf071"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "",
+        "text_alignment": "center",
+        "content_max_width": 50,
+        "padding_top": 98,
+        "padding_bottom": 40
+      }
+    },
+    "768a7ccc-ccc3-4ca0-b745-1d7897be59a0": {
+      "type": "icon-with-text",
+      "blocks": {
+        "template--18765520470307__768a7ccc-ccc3-4ca0-b745-1d7897be59a0-1682589234768eeb9c-0": {
+          "type": "icon-with-text",
+          "settings": {
+            "icon_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 32 32\"><path d=\"M 16 2.125 L 15.09375 4.1875 L 11.84375 11.46875 L 3.90625 12.3125 L 1.65625 12.5625 L 3.34375 14.0625 L 9.25 19.40625 L 7.59375 27.21875 L 7.125 29.40625 L 9.09375 28.28125 L 16 24.28125 L 22.90625 28.28125 L 24.875 29.40625 L 24.40625 27.21875 L 22.75 19.40625 L 28.65625 14.0625 L 30.34375 12.5625 L 28.09375 12.3125 L 20.15625 11.46875 L 16.90625 4.1875 Z M 16 7.03125 L 18.5625 12.8125 L 18.8125 13.34375 L 19.375 13.40625 L 25.65625 14.0625 L 20.96875 18.28125 L 20.53125 18.6875 L 20.65625 19.25 L 21.96875 25.40625 L 16.5 22.28125 L 16 21.96875 L 15.5 22.28125 L 10.03125 25.40625 L 11.34375 19.25 L 11.46875 18.6875 L 11.03125 18.28125 L 6.34375 14.0625 L 12.625 13.40625 L 13.1875 13.34375 L 13.4375 12.8125 Z\"><\/path><\/svg>",
+            "heading": "",
+            "description": "<p>ATELIER-GRADE MATERIALS<\/p>",
+            "uppercase": true
+          }
+        },
+        "template--18765520470307__768a7ccc-ccc3-4ca0-b745-1d7897be59a0-1682589234768eeb9c-1": {
+          "type": "icon-with-text",
+          "settings": {
+            "icon_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 32 32\"><path d=\"M 23.398438 14.023438 C 23.058594 14.042969 22.835938 13.933594 22.808594 13.914063 L 21.121094 14.992188 C 21.492188 15.574219 22.257813 15.96875 23.117188 16.019531 C 23.183594 16.023438 23.25 16.023438 23.316406 16.023438 C 24.445313 16.023438 25.554688 15.453125 26.394531 14.4375 C 27.828125 12.695313 28.835938 10.847656 28.878906 10.769531 L 29.332031 9.929688 L 28.515625 9.4375 C 23.984375 6.714844 21.394531 8.007813 20.492188 8.691406 C 19.328125 9.574219 18.796875 11.019531 19.089844 12.429688 C 18.160156 13.023438 17.234375 13.773438 16.496094 14.6875 C 16.070313 13.691406 15.40625 12.796875 14.632813 12.007813 C 14.703125 11.824219 14.75 11.644531 14.78125 11.511719 C 14.796875 11.441406 14.8125 11.375 14.832031 11.316406 C 15.34375 9.601563 14.640625 7.601563 13.082031 6.34375 C 11.972656 5.449219 8.820313 3.683594 3.519531 6.605469 L 2.835938 6.980469 L 3.03125 7.730469 C 3.070313 7.882813 4.015625 11.445313 5.894531 13.53125 C 6.707031 14.433594 7.726563 14.941406 8.847656 14.996094 C 8.917969 15 8.988281 15 9.054688 15 C 10.3125 15 11.390625 14.441406 11.828125 14.042969 L 10.484375 12.5625 C 10.46875 12.574219 8.789063 13.753906 7.382813 12.191406 C 6.292969 10.984375 5.550781 9.046875 5.199219 7.984375 C 8.984375 6.160156 11.078125 7.296875 11.824219 7.898438 C 12.699219 8.605469 13.132813 9.648438 12.953125 10.554688 C 10.800781 8.960938 8.558594 8.070313 8.378906 8.003906 L 7.65625 9.867188 C 9.699219 10.65625 15 13.484375 15 17 L 15 20.144531 C 14.238281 20.34375 13.542969 20.753906 13.019531 21.34375 C 12.550781 21.117188 12.035156 21 11.5 21 C 10.070313 21 8.839844 21.859375 8.296875 23.09375 C 8.035156 23.03125 7.769531 23 7.5 23 C 5.570313 23 4 24.570313 4 26.5 L 4 27 L 6 27 L 6 26.5 C 6 25.671875 6.671875 25 7.5 25 C 7.902344 25 8.210938 25.167969 8.398438 25.308594 L 10 24.511719 L 10 24.496094 C 10.003906 23.671875 10.675781 23 11.5 23 C 11.902344 23 12.28125 23.160156 12.566406 23.449219 L 14.1875 23.167969 C 14.515625 22.457031 15.226563 22 16 22 C 16.726563 22 17.398438 22.40625 17.75 23.0625 L 19.328125 23.304688 C 19.527344 23.109375 19.792969 23 20.070313 23 C 20.65625 23 21.136719 23.480469 21.136719 24.066406 C 21.136719 24.183594 21.113281 24.300781 21.066406 24.429688 L 22.671875 25.519531 C 22.9375 25.28125 23.382813 25 24 25 C 25.101563 25 26 25.898438 26 27 L 28 27 C 28 24.792969 26.207031 23 24 23 C 23.65625 23 23.316406 23.046875 22.992188 23.132813 C 22.59375 21.894531 21.433594 21 20.070313 21 C 19.652344 21 19.253906 21.082031 18.878906 21.238281 C 18.367188 20.703125 17.714844 20.332031 17 20.144531 L 17 19 L 17.003906 19 L 17.003906 18.671875 C 17.003906 14.519531 23.535156 12.53125 23.601563 12.511719 L 23.039063 10.59375 C 22.9375 10.621094 22.121094 10.871094 21.046875 11.363281 C 21.125 10.949219 21.339844 10.5625 21.703125 10.289063 C 22.761719 9.484375 24.558594 9.636719 26.617188 10.675781 C 26.214844 11.332031 25.589844 12.273438 24.851563 13.167969 C 24.300781 13.835938 23.757813 14.003906 23.398438 14.023438 Z M 13.484375 10.820313 L 13.496094 10.976563 C 13.445313 10.9375 13.390625 10.898438 13.339844 10.855469 C 13.386719 10.84375 13.429688 10.824219 13.484375 10.820313 Z\"><\/path><\/svg>",
+            "heading": "",
+            "description": "<p>SUSTAINABLE and LUXURY<\/p>",
+            "uppercase": true
+          }
+        },
+        "template--18765520470307__768a7ccc-ccc3-4ca0-b745-1d7897be59a0-1682589234768eeb9c-2": {
+          "type": "icon-with-text",
+          "settings": {
+            "icon_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 32 32\"><path d=\"M 22 3.5859375 L 17.478516 8.1074219 L 10.738281 10.035156 C 9.4172813 10.392156 8.3715 11.380547 7.9375 12.685547 L 3.859375 25.273438 L 5.2929688 26.707031 L 6.7265625 28.140625 L 19.320312 24.060547 C 20.618313 23.628547 21.606938 22.581437 21.960938 21.273438 L 23.888672 14.525391 L 28.414062 10 L 22 3.5859375 z M 22 6.4140625 L 25.585938 10 L 23 12.585938 L 19.414062 9 L 22 6.4140625 z M 17.710938 10.125 L 21.875 14.289062 L 20.033203 20.738281 C 19.851203 21.410281 19.349266 21.942156 18.697266 22.160156 L 7.6894531 25.724609 L 13.484375 19.929688 A 2 2 0 0 0 14 20 A 2 2 0 0 0 14 16 A 2 2 0 0 0 12.070312 18.515625 L 6.2753906 24.310547 L 9.8378906 13.310547 C 10.057891 12.649547 10.590391 12.148891 11.275391 11.962891 L 17.710938 10.125 z\"><\/path><\/svg>",
+            "heading": "",
+            "description": "<p>DESIGN in-HOUSE VALUES<\/p>",
+            "uppercase": true
+          }
+        }
+      },
+      "block_order": [
+        "template--18765520470307__768a7ccc-ccc3-4ca0-b745-1d7897be59a0-1682589234768eeb9c-0",
+        "template--18765520470307__768a7ccc-ccc3-4ca0-b745-1d7897be59a0-1682589234768eeb9c-1",
+        "template--18765520470307__768a7ccc-ccc3-4ca0-b745-1d7897be59a0-1682589234768eeb9c-2"
+      ],
+      "settings": {
+        "section_width": "fix_width",
+        "color_scheme": "",
+        "icon_position": "left",
+        "icon_width": 30,
+        "heading_size": "large",
+        "text_alignment": "left",
+        "column_gap": "medium",
+        "padding_top": 54,
+        "padding_bottom": 50
+      }
+    },
+    "cdbe4686-18ae-40df-a4c8-ce22e6ac4910": {
+      "type": "rich-text",
+      "blocks": {
+        "template--18765520470307__cdbe4686-18ae-40df-a4c8-ce22e6ac4910-16825891535f748334-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "see our philosophy",
+            "button_link": "shopify:\/\/pages\/about-us",
+            "button_style": "outline"
+          }
+        }
+      },
+      "block_order": [
+        "template--18765520470307__cdbe4686-18ae-40df-a4c8-ce22e6ac4910-16825891535f748334-2"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "",
+        "text_alignment": "center",
+        "content_max_width": 100,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "f3d14daf-daad-4e89-9078-ee42766b63d2": {
+      "type": "spacing",
+      "settings": {
+        "desktop_spacing": 70,
+        "mobile_spacing": 30
+      }
+    },
+    "6af665b2-95ad-4222-88fb-5129fb5eb7bb": {
+      "type": "promotion-banner",
+      "blocks": {
+        "template--19462698303779__6af665b2-95ad-4222-88fb-5129fb5eb7bb-image_with_text_overlay-1": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "color_scheme": "",
+            "image_overlay_opacity": 0,
+            "show_text_bellow": false,
+            "reset_color": false,
+            "subheading": "TOP ITEMS IN GORDE",
+            "heading": "Best Seller",
+            "description": "",
+            "button_label": "Shop now",
+            "button_style": "outline",
+            "button_link": "shopify:\/\/collections\/all",
+            "desktop_content_position": "end",
+            "text_alignment": "left",
+            "content_size": "medium",
+            "vertical": "center",
+            "content_width": "50%"
+          }
+        },
+        "template--19462698303779__6af665b2-95ad-4222-88fb-5129fb5eb7bb-image_with_text_overlay-2": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "color_scheme": "",
+            "image_overlay_opacity": 0,
+            "show_text_bellow": false,
+            "reset_color": false,
+            "subheading": "NEW ITEMS AND MORE",
+            "heading": "Just Landing",
+            "description": "",
+            "button_label": "Shop now",
+            "button_style": "outline",
+            "button_link": "shopify:\/\/collections\/all",
+            "desktop_content_position": "end",
+            "text_alignment": "left",
+            "content_size": "medium",
+            "vertical": "center",
+            "content_width": "50%"
+          }
+        }
+      },
+      "block_order": [
+        "template--19462698303779__6af665b2-95ad-4222-88fb-5129fb5eb7bb-image_with_text_overlay-1",
+        "template--19462698303779__6af665b2-95ad-4222-88fb-5129fb5eb7bb-image_with_text_overlay-2"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "column_gap": "small",
+        "padding_top": 40,
+        "padding_bottom": 30
+      }
+    },
+    "3f60e9ee-6df6-4ad3-b8df-6e62e1ecd764": {
+      "type": "collection-list",
+      "blocks": {
+        "3c7ce010-a693-43c2-b357-22dd9eb44933": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "minis",
+            "collection_title": ""
+          }
+        },
+        "afc80ef1-fe19-43c2-96c7-70bd5c87d6dd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "maxi",
+            "collection_title": ""
+          }
+        },
+        "846ad540-cb33-450f-bc54-ca82689a7624": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "midis",
+            "collection_title": ""
+          }
+        },
+        "9b3a654a-16dc-4887-9683-b84d296c4bb8": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "knitwear",
+            "collection_title": ""
+          }
+        },
+        "d0026279-6caa-4d5c-acba-13aee22243cd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "knee-lneght",
+            "collection_title": ""
+          }
+        },
+        "9e05c18c-0e16-40e1-8c36-2cd8a657c24f": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "smock",
+            "collection_title": ""
+          }
+        },
+        "7ad8546f-9342-482c-b10a-18300c8af9b1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "night-out",
+            "collection_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "3c7ce010-a693-43c2-b357-22dd9eb44933",
+        "afc80ef1-fe19-43c2-96c7-70bd5c87d6dd",
+        "846ad540-cb33-450f-bc54-ca82689a7624",
+        "9b3a654a-16dc-4887-9683-b84d296c4bb8",
+        "d0026279-6caa-4d5c-acba-13aee22243cd",
+        "9e05c18c-0e16-40e1-8c36-2cd8a657c24f",
+        "7ad8546f-9342-482c-b10a-18300c8af9b1"
+      ],
+      "custom_css": [
+        ".collection__inner .absolute {--heading-color: #ffffff; --text-color: 255, 255, 255;}",
+        ".collection__inner .absolute .product-count {color: #fff;}"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "scheme-9992034c-51d7-4a47-92a6-2d680b0b20b4",
+        "title": "Shop by Categories",
+        "description": "<p>Select any category that match your style.<\/p>",
+        "text_alignment": "left",
+        "show_view_all": true,
+        "image_ratio": "adapt",
+        "information_position": "overlay",
+        "show_product_count": true,
+        "text_information_alignment": "left",
+        "columns_desktop": 5,
+        "column_gap": "small",
+        "enable_carousel": true,
+        "show_navigation": true,
+        "show_pagination": false,
+        "padding_top": 40,
+        "padding_bottom": 60
+      }
+    },
+    "33189fb0-1ca6-4e30-be60-2179e14182cc": {
+      "type": "shopable-image",
+      "blocks": {
+        "template--18765520470307__33189fb0-1ca6-4e30-be60-2179e14182cc-16841417042578ed10-0": {
+          "type": "product",
+          "settings": {
+            "position_top": 53,
+            "position_left": 61,
+            "position_top_mb": 50,
+            "position_left_mb": 50,
+            "product": "floral-pink-dress"
+          }
+        }
+      },
+      "block_order": [
+        "template--18765520470307__33189fb0-1ca6-4e30-be60-2179e14182cc-16841417042578ed10-0"
+      ],
+      "custom_css": [
+        ".banner__media {border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;}"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "default-color-scheme",
+        "title": "",
+        "description": "",
+        "text_alignment": "left",
+        "image_overlay_opacity": 0,
+        "lookbook_type": "default",
+        "column_gap": "medium",
+        "show_navigation": false,
+        "show_pagination": true,
+        "slideshow_style": "style_1",
+        "padding_top": 18,
+        "padding_bottom": 0
+      }
+    },
+    "0c257e43-6f29-4641-a500-74a9e8a5f4bc": {
+      "type": "countdown-timer",
+      "custom_css": [
+        ".rounded-corner-item {border-top-left-radius: 0px; border-top-right-radius: 0px;}"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "scheme-957ad1f6-ead2-4f72-bdba-ddfe8f341c9e",
+        "countdown_layout": "horizontal",
+        "subheading": "",
+        "heading": "NEXT DROP SALE!",
+        "description": "<p>Gear up and brace yourself for the exhilarating Next Drop Sale! You won't want to overlook the incredible discounts and exclusive offers available.<\/p>",
+        "end_times": "10-30-2023",
+        "button_label": "Shop now",
+        "link": "shopify:\/\/collections\/all",
+        "button_style": "fill",
+        "content_size": "small",
+        "desktop_content_position": "middle-left",
+        "text_alignment": "left",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "show_text_bellow": false,
+        "reset_color": false,
+        "padding_top": 20,
+        "padding_bottom": 12
+      }
+    },
+    "53660c74-f921-4e8f-b82f-972d71466baf": {
+      "type": "spacing",
+      "settings": {
+        "desktop_spacing": 0,
+        "mobile_spacing": 18
+      }
+    },
+    "4c96c224-fc56-4b72-b031-df76b1b025b4": {
+      "type": "testimonials",
+      "blocks": {
+        "template--19130357317923__4c96c224-fc56-4b72-b031-df76b1b025b4-168578529285d9937f-2": {
+          "type": "testimonials_items",
+          "settings": {
+            "author_rating": 5,
+            "author_text": "<p>“Fashion is the seasonal offering from designers, while style is the personal selection you make”<\/p>",
+            "author_name": "Johnson",
+            "author_address": "Gorde",
+            "author_published": "Published on 02\/6\/2023"
+          }
+        },
+        "template--19130357317923__4c96c224-fc56-4b72-b031-df76b1b025b4-168578529285d9937f-0": {
+          "type": "testimonials_items",
+          "settings": {
+            "author_rating": 5,
+            "author_text": "<p>“Designers showcase fashion trends four times a year, but your personal style is your own choice.”<\/p>",
+            "author_name": "Youngly",
+            "author_address": "Gorde",
+            "author_published": "Published on 06\/6\/2023"
+          }
+        },
+        "template--19130357317923__4c96c224-fc56-4b72-b031-df76b1b025b4-168578529285d9937f-1": {
+          "type": "testimonials_items",
+          "settings": {
+            "author_rating": 5,
+            "author_text": "<p>“Fashion is what you're offered four times a year by designers. And style is what you choose.”<\/p>",
+            "author_name": "Bright Magazine",
+            "author_address": "Gorde",
+            "author_published": "Published on 26\/6\/2023"
+          }
+        }
+      },
+      "block_order": [
+        "template--19130357317923__4c96c224-fc56-4b72-b031-df76b1b025b4-168578529285d9937f-2",
+        "template--19130357317923__4c96c224-fc56-4b72-b031-df76b1b025b4-168578529285d9937f-0",
+        "template--19130357317923__4c96c224-fc56-4b72-b031-df76b1b025b4-168578529285d9937f-1"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "",
+        "title": "",
+        "description": "",
+        "text_alignment": "left",
+        "show_rate": false,
+        "show_date_published": true,
+        "show_author_image": true,
+        "show_author_name": true,
+        "show_author_info": false,
+        "design": "design_1",
+        "testimonial_to_show": "1",
+        "show_navigation": true,
+        "show_pagination": true,
+        "enable_autoplay": false,
+        "carousel_time": 3,
+        "column_gap": "medium",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "53537227-7544-4836-909a-d312a5921d0a": {
+      "type": "spacing",
+      "settings": {
+        "desktop_spacing": 37,
+        "mobile_spacing": 27
+      }
+    },
+    "26189112-7fb0-4c65-b5a9-e5ad40d3f11e": {
+      "type": "divider",
+      "settings": {
+        "section_width": "stretch_width",
+        "divider_height": 1,
+        "divider_color": "#cccccc",
+        "border_style": "solid",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "52a68114-1692-436d-9184-e2c9c765f264": {
+      "type": "blog-post",
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "",
+        "title": "The world of Gorde",
+        "description": "<p>Latest from our journal<\/p>",
+        "show_view_all": true,
+        "text_alignment": "left",
+        "blog": "news",
+        "aspect_ratio": "adapt",
+        "post_limit": 4,
+        "columns_desktop": 3,
+        "column_gap": "small",
+        "show_blog": true,
+        "show_date": true,
+        "show_author": true,
+        "show_excerpt": true,
+        "enable_carousel": true,
+        "show_navigation": true,
+        "show_pagination": false,
+        "padding_top": 71,
+        "padding_bottom": 21
+      }
+    }
+  },
+  "order": [
+    "85c86895-d3e6-4879-8c04-186884a188bb",
+    "ad27c797-e75c-4265-88b2-1286682d8ddd",
+    "featured_collection",
+    "3e8db2db-a0db-492c-9ef2-f468cbfb9e60",
+    "65b3d10b-5b9c-4717-bcfc-846907672f04",
+    "dc7270cc-f3d5-470f-83fa-607409275d84",
+    "7af70c30-856d-467b-a99b-2abad6681c8a",
+    "768a7ccc-ccc3-4ca0-b745-1d7897be59a0",
+    "cdbe4686-18ae-40df-a4c8-ce22e6ac4910",
+    "f3d14daf-daad-4e89-9078-ee42766b63d2",
+    "6af665b2-95ad-4222-88fb-5129fb5eb7bb",
+    "3f60e9ee-6df6-4ad3-b8df-6e62e1ecd764",
+    "33189fb0-1ca6-4e30-be60-2179e14182cc",
+    "0c257e43-6f29-4641-a500-74a9e8a5f4bc",
+    "53660c74-f921-4e8f-b82f-972d71466baf",
+    "4c96c224-fc56-4b72-b031-df76b1b025b4",
+    "53537227-7544-4836-909a-d312a5921d0a",
+    "26189112-7fb0-4c65-b5a9-e5ad40d3f11e",
+    "52a68114-1692-436d-9184-e2c9c765f264"
+  ]
+}

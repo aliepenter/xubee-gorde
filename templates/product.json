@@ -1,0 +1,377 @@
+{
+  "sections": {
+    "85c86895-d3e6-4879-8c04-186884a188bb": {
+      "type": "scrolling-text",
+      "blocks": {
+        "template--18765520470307__85c86895-d3e6-4879-8c04-186884a188bb-168258868565790a02-0": {
+          "type": "scrolling-text",
+          "settings": {
+            "text": "Free Shipping for all order over $99",
+            "link": "",
+            "accent_color": false
+          }
+        },
+        "63c8c7aa-070f-4bf7-b2f2-e39befc7ae6f": {
+          "type": "scrolling-text",
+          "settings": {
+            "text": "30 days return guarantee",
+            "link": "",
+            "accent_color": false
+          }
+        },
+        "c811f06e-b5df-4bd1-95b3-30b7d3151075": {
+          "type": "scrolling-text",
+          "settings": {
+            "text": "buy now, pay later with klarna",
+            "link": "",
+            "accent_color": false
+          }
+        },
+        "268c5309-94f8-4520-a172-4acff07043e5": {
+          "type": "scrolling-text",
+          "settings": {
+            "text": "100% secure online payment",
+            "link": "",
+            "accent_color": false
+          }
+        }
+      },
+      "block_order": [
+        "template--18765520470307__85c86895-d3e6-4879-8c04-186884a188bb-168258868565790a02-0",
+        "63c8c7aa-070f-4bf7-b2f2-e39befc7ae6f",
+        "c811f06e-b5df-4bd1-95b3-30b7d3151075",
+        "268c5309-94f8-4520-a172-4acff07043e5"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "scheme-0ba1b009-7eed-45cd-b0f5-57fda3e81ca0",
+        "direction": "left",
+        "marquee_speed": 18,
+        "style_between_item": true,
+        "scrolling_size": "small",
+        "uppercase": true,
+        "use_heading_font": false,
+        "padding_top": 24,
+        "padding_bottom": 26
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "e87dc1f7-bf45-4747-9c1e-0c052df9c1e1": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}"
+          }
+        },
+        "7e8144f5-85a4-4ce3-ae36-3642c2a86671": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "bce72341-48c8-423b-a415-9802602cd667": {
+          "type": "rating",
+          "settings": {
+          }
+        },
+        "dbbb53df-1760-4340-89c3-aa86b98815ca": {
+          "type": "price",
+          "settings": {
+            "sale_badge": true
+          }
+        },
+        "c13de19e-7fe5-4aea-b790-2f485ec17b6d": {
+          "type": "divider",
+          "settings": {
+            "divider_height": 1,
+            "divider_color": "#cccccc",
+            "border_style": "solid"
+          }
+        },
+        "3a9bea85-245b-474c-82a4-229cd543c5cb": {
+          "type": "text",
+          "settings": {
+            "text": "This demo store does not offer goods for purchase. You can purchase similar products on <a href=\"https:\/\/www.stfrock.com.au\/\" target=\"_blank\" title=\"https:\/\/www.stfrock.com.au\/\">St Frock<\/a>"
+          }
+        },
+        "42a2fa4c-03d0-419a-8c59-f64cb7a2d33e": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_type": "swatches",
+            "show_size_guide": true,
+            "size_guide_label": "Size guide",
+            "size_guide_page": "size-guide"
+          }
+        },
+        "1a936bff-8dbd-4e80-b590-76b6c5b5ca7a": {
+          "type": "inventory_status",
+          "settings": {
+            "inventory_threshold": 20,
+            "inventory_base": 500,
+            "show_bar": true,
+            "show_transfer_notice": true
+          }
+        },
+        "d600ba6f-d4f5-4aa5-a263-d0dd4ed0efa5": {
+          "type": "countdown_timer",
+          "settings": {
+            "block_heading": "PROMOTION WILL END IN:",
+            "timer_style": "normal"
+          }
+        },
+        "089b5775-012b-4fb2-9578-2f8180d69dd4": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "1bbfebae-563a-41d8-bb88-d9cd529b3dd2": {
+          "type": "trust_seal",
+          "settings": {
+            "heading": "Guarantee Safe Checkout"
+          }
+        },
+        "5821008b-9b15-4dc5-8ea3-c393312c6c98": {
+          "type": "divider",
+          "settings": {
+            "divider_height": 1,
+            "divider_color": "#cccccc",
+            "border_style": "solid"
+          }
+        },
+        "5dedf6b8-a623-4669-9bf4-971df616f6b7": {
+          "type": "description",
+          "settings": {
+            "description_type": "canvas",
+            "icon": "info"
+          }
+        },
+        "1b3988fb-db24-46c7-8c00-e0cabc072a76": {
+          "type": "popup",
+          "settings": {
+            "heading": "Shipping",
+            "icon": "shipping",
+            "page": "shipping"
+          }
+        },
+        "e3332414-4f10-4e51-b9c6-9f0cff9c14d4": {
+          "type": "askquestion",
+          "settings": {
+            "askquestion_type": "popup",
+            "icon": "question"
+          }
+        },
+        "b999d55e-7428-426d-b307-4088f94aa35e": {
+          "type": "share",
+          "settings": {
+            "copy": true,
+            "facebook": true,
+            "twitter": true,
+            "pinterest": true,
+            "share_label": "Share"
+          }
+        },
+        "29b4980c-8e62-40de-8589-15cd7f2b191c": {
+          "type": "complementary",
+          "settings": {
+            "block_heading": "Pairs well with",
+            "product_list_limit": 10,
+            "products_per_page": 3,
+            "show_navigation": false,
+            "show_pagination": false,
+            "enable_quick_add": false
+          }
+        }
+      },
+      "block_order": [
+        "e87dc1f7-bf45-4747-9c1e-0c052df9c1e1",
+        "7e8144f5-85a4-4ce3-ae36-3642c2a86671",
+        "bce72341-48c8-423b-a415-9802602cd667",
+        "dbbb53df-1760-4340-89c3-aa86b98815ca",
+        "c13de19e-7fe5-4aea-b790-2f485ec17b6d",
+        "3a9bea85-245b-474c-82a4-229cd543c5cb",
+        "42a2fa4c-03d0-419a-8c59-f64cb7a2d33e",
+        "1a936bff-8dbd-4e80-b590-76b6c5b5ca7a",
+        "d600ba6f-d4f5-4aa5-a263-d0dd4ed0efa5",
+        "089b5775-012b-4fb2-9578-2f8180d69dd4",
+        "1bbfebae-563a-41d8-bb88-d9cd529b3dd2",
+        "5821008b-9b15-4dc5-8ea3-c393312c6c98",
+        "5dedf6b8-a623-4669-9bf4-971df616f6b7",
+        "1b3988fb-db24-46c7-8c00-e0cabc072a76",
+        "e3332414-4f10-4e51-b9c6-9f0cff9c14d4",
+        "b999d55e-7428-426d-b307-4088f94aa35e",
+        "29b4980c-8e62-40de-8589-15cd7f2b191c"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "show_breadcrumb": true,
+        "enable_sticky_desktop": true,
+        "desktop_media_width": "large",
+        "media_position": "left",
+        "gallery_layout": "columns",
+        "thumbnail_position": "left",
+        "image_zoom": "lightbox",
+        "video_looping": false,
+        "image_video_autoplay": false,
+        "mobile_thumbnails": "hide",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "b17db0ca-6fe5-4daf-9729-37871ba3eb40": {
+      "type": "scrolling-text",
+      "blocks": {
+        "template--18765520797987__b17db0ca-6fe5-4daf-9729-37871ba3eb40-16857606796b0d7cf6-0": {
+          "type": "scrolling-text",
+          "settings": {
+            "text": "Sustainability",
+            "link": "",
+            "accent_color": false
+          }
+        },
+        "378ca946-d262-46b0-9778-d374bf40e66e": {
+          "type": "scrolling-text",
+          "settings": {
+            "text": "crafted design",
+            "link": "",
+            "accent_color": true
+          }
+        },
+        "94b6f9be-49e4-4df5-b364-0449bce830b7": {
+          "type": "scrolling-text",
+          "settings": {
+            "text": "Sustainability",
+            "link": "",
+            "accent_color": false
+          }
+        }
+      },
+      "block_order": [
+        "template--18765520797987__b17db0ca-6fe5-4daf-9729-37871ba3eb40-16857606796b0d7cf6-0",
+        "378ca946-d262-46b0-9778-d374bf40e66e",
+        "94b6f9be-49e4-4df5-b364-0449bce830b7"
+      ],
+      "custom_css": [
+        ".size-medium {--scrolling-size: clamp(4.4rem, 5vw, 8rem);}"
+      ],
+      "settings": {
+        "section_width": "expand_full_width",
+        "color_scheme": "",
+        "direction": "left",
+        "marquee_speed": 20,
+        "style_between_item": true,
+        "scrolling_size": "medium",
+        "uppercase": true,
+        "use_heading_font": true,
+        "padding_top": 23,
+        "padding_bottom": 38
+      }
+    },
+    "80bf6040-2c43-45d6-b6e1-e7f2b29139a8": {
+      "type": "video-with-text-overlay",
+      "blocks": {
+        "template--20246367633722__80bf6040-2c43-45d6-b6e1-e7f2b29139a8-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our fabrics are developed specifically for us and we only produce quality apparel that lasts."
+          }
+        },
+        "1170ecb0-2db2-4712-b20d-0b816aebf298": {
+          "type": "spacing",
+          "settings": {
+            "desktop_spacing": 70,
+            "mobile_spacing": 25
+          }
+        },
+        "template--20246367633722__80bf6040-2c43-45d6-b6e1-e7f2b29139a8-description-1": {
+          "type": "description",
+          "settings": {
+            "description": "<p>WE USE 100% GOTS CERTIFIED ORGANIC COTTON, NOTHING IS WASTED.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--20246367633722__80bf6040-2c43-45d6-b6e1-e7f2b29139a8-heading-1",
+        "1170ecb0-2db2-4712-b20d-0b816aebf298",
+        "template--20246367633722__80bf6040-2c43-45d6-b6e1-e7f2b29139a8-description-1"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "",
+        "video_url": "",
+        "video_local": "shopify:\/\/files\/videos\/pexels-thirdman-8484890 (1080p).mp4",
+        "cover_image": "shopify:\/\/shop_images\/gorde-product-thumb.jpg",
+        "alt_description": "Our fabrics are developed\u0003specifically for us and we only produce quality apparel that lasts.",
+        "image_overlay_opacity": 30,
+        "full_screen": false,
+        "desktop_height": 850,
+        "mobile_height": 580,
+        "show_text_bellow": false,
+        "reset_color": false,
+        "content_max_width": 68,
+        "desktop_content_position": "middle-center",
+        "text_alignment": "center",
+        "content_size": "medium",
+        "padding_top": 40,
+        "padding_bottom": 57
+      }
+    },
+    "16857606234d4877c8": {
+      "type": "apps",
+      "blocks": {
+        "eb06097a-d495-46d3-992a-df96a81c9baa": {
+          "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "eb06097a-d495-46d3-992a-df96a81c9baa"
+      ],
+      "settings": {
+        "section_width": "fix_width",
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "96e4dcef-2a4a-4246-90cc-9073eaebb7fd": {
+      "type": "divider",
+      "settings": {
+        "section_width": "stretch_width",
+        "divider_height": 1,
+        "divider_color": "#cccccc",
+        "border_style": "solid",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "e23616e8-c67d-4e81-b0f2-74e08082293d": {
+      "type": "related-products",
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "",
+        "title": "You May Also Like",
+        "description": "<p>Hold and Drag to move items<\/p>",
+        "text_alignment": "left",
+        "products_to_show": 6,
+        "columns_desktop": 4,
+        "column_gap": "small",
+        "enable_carousel": true,
+        "show_navigation": true,
+        "show_pagination": false,
+        "padding_top": 80,
+        "padding_bottom": 30
+      }
+    }
+  },
+  "order": [
+    "85c86895-d3e6-4879-8c04-186884a188bb",
+    "main",
+    "b17db0ca-6fe5-4daf-9729-37871ba3eb40",
+    "80bf6040-2c43-45d6-b6e1-e7f2b29139a8",
+    "16857606234d4877c8",
+    "96e4dcef-2a4a-4246-90cc-9073eaebb7fd",
+    "e23616e8-c67d-4e81-b0f2-74e08082293d"
+  ]
+}
