@@ -112,6 +112,21 @@
           "search_collection_recommended": "cooktail",
           "predictive_search_enabled": true
         }
+      },
+      "main-password-header": {
+        "type": "main-password-header",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/332184433_584819916885479_9055422392377250673_n.jpg",
+          "logo_width": 70,
+          "logo_width_mobile": 60,
+          "color_scheme": ""
+        }
+      },
+      "main-password-footer": {
+        "type": "main-password-footer",
+        "settings": {
+          "color_scheme": ""
+        }
       }
     },
     "content_for_index": [
