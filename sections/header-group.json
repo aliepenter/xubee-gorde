@@ -59,7 +59,7 @@
       ],
       "custom_css": [
         ".header__logo .site-logo {position: relative; top: -3px;}",
-        "img.header__heading-logo {border-radius: 50%;}",
+        "img.header__heading-logo,img.password-logo {border-radius: 50%;}",
         ".custom-header-phone {display: flex; align-items: flex-end; justify-content: center; text-decoration: none; font-weight: 700;}"
       ],
       "settings": {
