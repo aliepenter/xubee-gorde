@@ -115,6 +115,9 @@
       },
       "main-password-header": {
         "type": "main-password-header",
+        "custom_css": [
+          "img.header__heading-logo {border-radius: 50%;}"
+        ],
         "settings": {
           "logo": "shopify:\/\/shop_images\/332184433_584819916885479_9055422392377250673_n.jpg",
           "logo_width": 70,
