@@ -81,7 +81,7 @@ try {
 }
 
 function focusVisiblePolyfill() {
-  const navKeys = ['ARROWUP', 'ARROWDOWN', 'ARROWLEFT', 'ARROWRIGHT', 'TAB', 'ENTER', 'SPACE', 'ESCAPE', 'HOME', 'END', 'PAGEUP', 'PAGEDOWN']
+  const navKeys = ['ARROWUP', 'ARROWDOWN', 'ARROWLEFT', 'ARROWRIGHT', 'TAB', 'ENTER', 'SPACE', 'ESCAPE', 'HOME', 'END', 'PAGEUP', 'PAGEDOWN'];
   let currentFocusedElement = null;
   let mouseClick = null;
 
@@ -91,7 +91,7 @@ function focusVisiblePolyfill() {
     }
   });
 
-  window.addEventListener('mousedown', (event) => {
+  window.addEventListener('mousedown', () => {
     mouseClick = true;
   });
 
@@ -160,7 +160,7 @@ if ((typeof window.Shopify) == 'undefined') {
 Shopify.bind = function(fn, scope) {
   return function() {
     return fn.apply(scope, arguments);
-  }
+  };
 };
 
 Shopify.setSelectorByValue = function(selector, value) {
@@ -223,7 +223,7 @@ Shopify.CountryProvinceSelector.prototype = {
     }
   },
 
-  countryHandler: function(e) {
+  countryHandler: function() {
     var opt       = this.countryEl.options[this.countryEl.selectedIndex];
     var raw       = opt.getAttribute('data-provinces');
     var provinces = JSON.parse(raw);
@@ -376,7 +376,7 @@ class MenuDrawer extends HTMLElement {
           trapFocus(detailsElement.closest('details[open]'), detailsElement.querySelector('summary'));
         }
       }
-    }
+    };
 
     window.requestAnimationFrame(handleAnimation);
   }
@@ -465,7 +465,6 @@ class DeferredMedia extends HTMLElement {
       const deferredElement = this.appendChild(content.querySelector('video, model-viewer, iframe'));
       if (focus) deferredElement.focus();
       if (deferredElement.nodeName == 'VIDEO' && deferredElement.getAttribute('autoplay')) {
-        // force autoplay for safari
         deferredElement.play();
       }
     }

@@ -40,7 +40,6 @@
   class="bls__section section-padding color-{{ section.settings.color_scheme }} gradient"
   style="{{ style | strip | strip_newlines }}"
 >
-  {% comment %} heading {% endcomment %}
   <div class="{{ section_width }}">
     {%- if section.settings.title != blank or section.settings.description != blank -%}
       <div class="bls__section-header mb-40 mb-sm-35 text-{{ section.settings.text_alignment }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">

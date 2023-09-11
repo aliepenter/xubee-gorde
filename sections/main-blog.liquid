@@ -208,7 +208,18 @@
                             </button>
                           </div>
                         </div>
-                        {%- if form.errors -%}
+                        {{form}}
+                        {%- if form.posted_successfully? -%}
+                          <p
+                            class="mb-0 subscribe-form__message subscribe-form__message--success form__message"
+                            id="subscribe-success--{{ section.id }}"
+                            tabindex="-1"
+                            autofocus
+                          >
+                            {% render 'icon-success', custom_width: 16 -%}
+                            {{- 'subscribe.success' | t }}
+                          </p>
+                        {%- elsif form.errors -%}
                           <small class="subscribe-form__message form__message" id="subscribe-error--{{ section.id }}">
                             {%- render 'icon-error' -%}
                             {{- form.errors.translated_fields.email | capitalize }}
@@ -216,17 +227,6 @@
                           </small>
                         {%- endif -%}
                       </div>
-                      {%- if form.posted_successfully? -%}
-                        <p
-                          class="mb-0 subscribe-form__message subscribe-form__message--success form__message"
-                          id="subscribe-success--{{ section.id }}"
-                          tabindex="-1"
-                          autofocus
-                        >
-                          {% render 'icon-success', custom_width: 16 -%}
-                          {{- 'subscribe.success' | t }}
-                        </p>
-                      {%- endif -%}
                     {% endform %}
                     {% if block.settings.form_text_link != blank %}
                       <p class="subscribe-text-link">

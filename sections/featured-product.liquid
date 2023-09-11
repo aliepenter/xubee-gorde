@@ -431,7 +431,6 @@
   }
 </script>
 
-{% comment %} script check trên INTERNET EXPLORER {% endcomment %}
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     function isIE() {
@@ -461,7 +460,11 @@
   "tag": "section",
   "class": "section section-featured-product",
   "disabled_on": {
-    "groups": ["header", "footer", "custom.overlay"]
+    "groups": [
+      "header",
+      "footer",
+      "custom.overlay"
+    ]
   },
   "settings": [
     {

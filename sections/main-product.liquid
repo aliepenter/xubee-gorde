@@ -39,14 +39,14 @@
       onload="this.media='all'"
     >
   {%- endif -%}
-  <script src="{{ 'photoswipe.min.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'photoswipe.js' | asset_url }}" defer="defer"></script>
   {%- if section.settings.image_zoom == 'lightbox' -%}
     {{ 'photoswipe.css' | asset_url | stylesheet_tag }}
     {{ 'default-skin.css' | asset_url | stylesheet_tag }}
-    <script src="{{ 'photoswipe-ui-default.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'photoswipe-ui-default.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'product-zoom.js' | asset_url }}" defer="defer"></script>
   {%- elsif section.settings.image_zoom == 'external_zoom' or section.settings.image_zoom == 'inner_zoom' -%}
-    <script src="{{ 'drift.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'drift.js' | asset_url }}" defer="defer"></script>
     {{ 'drift.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'product-drift-zoom.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}

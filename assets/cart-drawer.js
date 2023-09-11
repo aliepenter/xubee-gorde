@@ -31,7 +31,7 @@ class CartDrawer extends HTMLElement {
     setTimeout(() => {
       trapFocus(document.querySelector("cart-drawer"));
     }, 500);
-    setTimeout(() => {this.classList.add('active')});
+    setTimeout(() => {this.classList.add('active');});
     root.classList.add('open-canvas');
     rootAction.addNoneHeight();
   }
@@ -100,7 +100,6 @@ class CartNoteElement extends HTMLElement {
     this.toggleCartNote();
   }
   toggleCartNote(){
-    const _this = this;
     const title = this.querySelector(".cart-note-title-js");
     if (!title) return;
     title.addEventListener("click", this.onToggle.bind(this), false);
@@ -161,7 +160,9 @@ class MinicartUpsell extends HTMLElement {
       })
       .finally(() =>{
         setTimeout(() => {
-          this.querySelector("slide-section")?.initSlide();
+          if(this.querySelector("slide-section")) {
+            this.querySelector("slide-section").initSlide(); 
+          }
         }, 100);
       })
       .catch(e => {

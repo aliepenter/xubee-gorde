@@ -233,6 +233,9 @@
                                             </span>
                                           </div>
                                         {%- else -%}
+                                          <span class="visually-hidden">
+                                            {{ 'products.product.price.regular_price' | t }}
+                                          </span>
                                           <span class="price price--end">
                                             {{ item.original_line_price | money }}
                                           </span>
@@ -455,72 +458,72 @@
                 </cart-note>
               {%- endif -%}
               <cart-estimate class="d-block bls__addon mt-15 pb-15 no-js-hidden mb-20 mb-lg-40" id="bls__shipping">
-                <div class="bls__addon-title mb-15 active btn-text-transform heading-color border-bottom fs-bigger-2 pointer relative d-flex align-center space-between">
-                  <span>{{ 'sections.cart.shipping.estimate_shipping_title' | t }}</span>
-                  <span class="open-children-toggle touch-target transition no-js-hidden">
-                    {% render 'icon-plus-animation', custom_width: 12 %}
-                  </span>
-                </div>
-                <div class="bls__addon-main-content" style="display: block;">
-                  <div class="bls__addon-content">
-                    <div data-address="root">
-                      <div class="form-group mb-15 d-flex flex-column select">
-                        <label for="address_country" class="mb-5">{{ 'customer.addresses.country' | t }}</label>
-                        <div class="select relative">
-                          <select
-                            id="address_country"
-                            class="form-control w-full"
-                            name="address[country]"
-                            data-default="{{ settings.default_country_estimate_shipping | default: 'United States' }}"
-                          >
-                            {{ country_option_tags }}
-                          </select>
-                          <div class="icon-down absolute right-15 inset-y-0 d-inline-flex align-center pointer-none">
-                            {% render 'icon-caret', custom_width: 12 %}
+                <form>
+                  <div class="bls__addon-title mb-15 active btn-text-transform heading-color border-bottom fs-bigger-2 pointer relative d-flex align-center space-between">
+                    <span>{{ 'sections.cart.shipping.estimate_shipping_title' | t }}</span>
+                    <span class="open-children-toggle touch-target transition no-js-hidden">
+                      {% render 'icon-plus-animation', custom_width: 12 %}
+                    </span>
+                  </div>
+                  <div class="bls__addon-main-content" style="display: block;">
+                    <div class="bls__addon-content">
+                      <div data-address="root">
+                        <div class="form-group mb-15 d-flex flex-column select">
+                          <label for="address_country" class="mb-5">{{ 'customer.addresses.country' | t }}</label>
+                          <div class="select relative">
+                            <select
+                              id="address_country"
+                              class="form-control w-full"
+                              name="address[country]"
+                              data-default="{{ settings.default_country_estimate_shipping | default: 'United States' }}"
+                            >
+                              {{ country_option_tags }}
+                            </select>
+                            <div class="icon-down absolute right-15 inset-y-0 d-inline-flex align-center pointer-none">
+                              {% render 'icon-caret', custom_width: 12 %}
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div
-                        id="address_province_container"
-                        class="address_province_container form-group mb-15 d-flex flex-column"
-                      >
-                        <label for="address_province" class="mb-5">{{ 'customer.addresses.province' | t }}</label>
-                        <div class="select relative">
-                          <select
-                            id="address_province"
-                            class="form-control w-full"
-                            name="address[province]"
-                            data-default="{{ form.province }}"
-                          ></select>
-                          <div class="icon-down absolute right-15 inset-y-0 d-inline-flex align-center pointer-none">
-                            {% render 'icon-caret', custom_width: 12 %}
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-group mb-15 d-flex flex-column">
-                        <label for="AddressZip" class="mb-5">{{ 'customer.addresses.zip' | t }}</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="AddressZip"
-                          name="address[zip]"
-                          value="{{ form.zip }}"
-                          autocapitalize="characters"
-                          autocomplete="postal-code"
+                        <div
+                          id="address_province_container"
+                          class="address_province_container form-group mb-15 d-flex flex-column"
                         >
+                          <label for="address_province" class="mb-5">{{ 'customer.addresses.province' | t }}</label>
+                          <div class="select relative">
+                            <select
+                              id="address_province"
+                              class="form-control w-full"
+                              name="address[province]"
+                              data-default="{{ form.province }}"
+                            ></select>
+                            <div class="icon-down absolute right-15 inset-y-0 d-inline-flex align-center pointer-none">
+                              {% render 'icon-caret', custom_width: 12 %}
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group mb-15 d-flex flex-column">
+                          <label for="AddressZip" class="mb-5">{{ 'customer.addresses.zip' | t }}</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="AddressZip"
+                            name="address[zip]"
+                            value="{{ form.zip }}"
+                            autocapitalize="characters"
+                            autocomplete="postal-code"
+                          >
+                        </div>
                       </div>
                     </div>
+                    <div class="bls__addon-actions">
+                      <button class="button btn-save w-full accent-color-second-bg heading-color" data-action="shipping">
+                        {{ 'sections.cart.shipping.estimate_shipping_button' | t }}
+                      </button>
+                    </div>
+                    <div class="bls__addon-message py-5 mt-15"></div>
                   </div>
-                  <div class="bls__addon-actions">
-                    <button class="button btn-save w-full accent-color-second-bg heading-color" data-action="shipping">
-                      {{ 'sections.cart.shipping.estimate_shipping_button' | t }}
-                    </button>
-                  </div>
-                  <div class="bls__addon-message py-5 mt-15"></div>
-                </div>
+                </form>
               </cart-estimate>
-              {% assign total = cart.total_price | money_with_currency %}
-
               <div class="totals d-flex flex-wrap gap-5 align-center flex-end mb-10 fs-bigger-4">
                 <p class="totals__subtotal-value mb-0 heading-color">
                   <span class="totals__subtotal"> {{ 'sections.cart.subtotal' | t }}:</span>

@@ -23,7 +23,6 @@
                 assign alt = article.image.alt | escape
               endif
             -%}
-            {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
             <a href="{{ article.url }}" class="remove-underline">
               <img
                 srcset="
@@ -44,7 +43,6 @@
                 height="{{ article.image.height }}"
               >
             </a>
-            {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
           </div>
         </div>
       {%- endif -%}

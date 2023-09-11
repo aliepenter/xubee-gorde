@@ -93,7 +93,7 @@ if (!customElements.get('pickup-availability-drawer')) {
       root.classList.add("open-canvas");
       this.classList.add("active");
       setTimeout(() => {
-        trapFocus(this)
+        trapFocus(this);
       }, 400);
     }
   });

@@ -34,7 +34,6 @@
     style="{{ style | strip | strip_newlines }}"
   >
     <div class="section-inner{{ section_width }}">
-      {% comment %} heading {% endcomment %}
       {%- if sec_settings.title != blank or sec_settings.description != blank -%}
         <div class="bls__section-header mb-40 mb-sm-35 text-{{ section.settings.text_alignment }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           {%- if section.settings.title != blank -%}
@@ -47,7 +46,6 @@
           {%- endif -%}
         </div>
       {%- endif -%}
-      {% comment %} content {% endcomment %}
       <logo-list style="--logo-width: {{ sec_settings.logo_width }}px; --logo-opacity: {{ sec_settings.logo_opacity }}%">
         {%- if sec_settings.enable_carousel -%}
           <slide-section

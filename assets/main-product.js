@@ -1,4 +1,4 @@
-'use-strict'
+'use-strict';
 
 class StickyAddCart extends Popup {
     constructor() {
@@ -50,7 +50,7 @@ class StickyAddCart extends Popup {
     }
     toggle(e) {
         const target = e.currentTarget;
-        target.classList.toggle("opened")
+        target.classList.toggle("opened");
         if (!target) return;
         const parent = target.closest("sticky-buy");
         if (!parent) return;
@@ -168,7 +168,7 @@ class StockAlert extends Popup {
         }
         const urlInfo = window.location.href;
         if (urlInfo.indexOf('contact_posted=true') >= 1) {
-          _this.initToastJs(stockalertSuccess)
+          _this.initToastJs(stockalertSuccess);
           const newURL = location.href.split("?")[0];
           window.history.pushState('object', document.title, newURL);
         }
@@ -244,9 +244,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
               }
               rootAction.remove();
-            };
-          })
-        })
+            }
+          });
+        });
       }
     };
   })();

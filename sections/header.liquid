@@ -530,6 +530,7 @@
                                   {% endif %}
                                 </summary>
                               {%- render 'horizontal-menu' | link: link | sub: "sub-menu" | type: "classic" -%}
+                              </details>
                             </noscript>
                             {%- if link.links.size > 0 -%}
                               <header-menu>
@@ -573,6 +574,7 @@
                                 {% endif %}
                               </summary>
                             {%- render 'horizontal-menu' | link: link | sub: "sub-menu" | type: "classic" -%}
+                            </details>
                           </noscript>
                           <header-menu>
                             <details id="Details-HeaderMenu-{{ forloop.index }}">
@@ -722,7 +724,6 @@
         {%- endif -%}
         {%- if section.settings.show_account or section.settings.show_search or section.settings.show_cart or section.settings.show_language or section.settings.show_currency -%}
           <div class="header__action d-flex align-center justify-content-end">
-            {%- render 'custom-header-information' -%}
             {% if section.settings.show_language or section.settings.show_currency %}
               <div class="desktop-localization-wrapper last-r-0 pl-10 d-none d-1025-flex align-center gap-15 pr-30 header-color{% if settings.menu_font == 'heading_font' %} use-heading-font{% endif %}">
                 {% if section.settings.show_currency %}
@@ -795,7 +796,45 @@
     </div>
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
-
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": {{ shop.name | json }},
+    {% if section.settings.logo %}
+      "logo": {{ section.settings.logo | image_url: width: 500 | prepend: "https:" | json }},
+    {% endif %}
+    "sameAs": [
+      {{ settings.social_media_twitter | json }},
+      {{ settings.social_media_facebook | json }},
+      {{ settings.social_media_instagram | json }},
+      {{ settings.social_media_tiktok | json }},
+      {{ settings.social_media_pinterest | json }},
+      {{ settings.social_media_youtube | json }},
+      {{ settings.social_media_vimeo | json }},
+      {{ settings.social_media_linkedin | json }},
+      {{ settings.social_media_whatsapp | json }},
+      {{ settings.social_media_snapchat | json }}
+    ],
+    "url": {{ request.origin | append: page.url | json }}
+  }
+</script>
+{%- if request.page_type == 'index' -%}
+  {% assign potential_action_target = request.origin | append: routes.search_url | append: "?q={search_term_string}" %}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": {{ shop.name | json }},
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {{ potential_action_target | json }},
+        "query-input": "required name=search_term_string"
+      },
+      "url": {{ request.origin | append: page.url | json }}
+    }
+  </script>
+{%- endif -%}
 {% schema %}
 {
   "name": "t:sections.header.name",

@@ -348,7 +348,7 @@
     </script>
   </head>
 
-  <body class="gradient{% if settings.rounded_corner %} rounded-corner{% endif %}{% if template.name == 'collection' %} template-collection {{ template.suffix }}{% endif %}{% if template.name == 'product' %} template-product {% endif %}{% if template.name == 'index' %} template-index{% endif %}">
+  <body class="gradient{% if settings.rounded_corner %} rounded-corner{% endif %}{% if template.name == 'collection' %} template-collection {{ template.suffix }}{% endif %}{% if template.name == 'product' %} template-product{% endif %}{% if template.name == 'index' %} template-index{% endif %}{% if template.name == 'cart' %} template-cart{% endif %}">
     <a class="skip-to-content-link remove-underline visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -378,7 +378,6 @@
       <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
     </ul>
     <script>
-      
       window.themeGlobalVariables = {
         settings: {
           money_format: {{ shop.money_format | json }},
@@ -419,10 +418,9 @@
         pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
         playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
       };
-
     </script>
     <script src="{{ 'tiny-slider.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'easydlg.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'easydlg.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'custom-popup.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
     {%- if template.name == 'collection' -%}

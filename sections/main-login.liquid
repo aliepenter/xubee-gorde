@@ -102,6 +102,7 @@
               aria-invalid="true"
             {% endif %}
             placeholder="{{ 'customer.login_page.place_holder_email' | t }}"
+            required
           >
           <label for="CustomerEmail">
             {{ 'customer.login_page.email' | t }}
@@ -121,6 +122,7 @@
                 aria-invalid="true"
               {% endif %}
               placeholder="{{ 'customer.login_page.place_holder_password' | t }}"
+              required
             >
             <label for="CustomerPassword">
               {{ 'customer.login_page.password' | t }}

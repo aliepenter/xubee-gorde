@@ -86,6 +86,7 @@
               aria-describedby="RegisterForm-email-error"
             {% endif %}
             placeholder="{{ 'customer.register.email_placeholder' | t }}"
+            required
           >
           <label for="RegisterForm-email">
             {{ 'customer.register.email' | t }}
@@ -112,6 +113,7 @@
               aria-describedby="RegisterForm-password-error"
             {% endif %}
             placeholder="{{ 'customer.register.password_place_holder' | t }}"
+            required
           >
           <label for="RegisterForm-password">
             {{ 'customer.register.password' | t }}

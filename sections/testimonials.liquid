@@ -96,6 +96,12 @@
                   style="--aspect-ratio: 1/1"
                 >
                   {% if block.settings.author_image != blank %}
+                    {%- liquid
+                      assign alt = 'sections.testimonial.alt' | t
+                      if block.settings.author_image.alt
+                        assign alt = block.settings.author_image.alt | escape
+                      endif
+                    -%}
                     <img
                       data-src="{{ block.settings.author_image | image_url }}"
                       srcset="
@@ -111,7 +117,7 @@
                       "
                       sizes="100vw"
                       src="{{ block.settings.author_image | image_url }}"
-                      alt="{{ block.settings.author_image.alt | escape }}"
+                      alt="{{ alt }}"
                       loading="lazy"
                       width="{{ block.settings.author_image.width }}"
                       height="{{ block.settings.author_image.width }}"
@@ -178,6 +184,12 @@
         {%- for block in section.blocks -%}
           <div class="slider-thumbnail">
             {% if block.settings.author_image != blank %}
+              {%- liquid
+                assign alt = 'sections.testimonial.alt' | t
+                if block.settings.author_image.alt
+                  assign alt = block.settings.author_image.alt | escape
+                endif
+              -%}
               <div class="tes-logo">
                 <img
                   data-src="{{ block.settings.author_image | image_url }}"
@@ -194,7 +206,7 @@
                   "
                   sizes="100vw"
                   src="{{ block.settings.author_image | image_url }}"
-                  alt="{{ image.alt | escape }}"
+                  alt="{{ alt }}"
                   loading="lazy"
                   width="{{ block.settings.author_image.width }}"
                   height="{{ 110 | divided_by: block.settings.author_image.aspect_ratio | ceil }}"
@@ -216,7 +228,11 @@
   "tag": "section",
   "class": "section",
   "disabled_on": {
-    "groups": ["header", "footer", "custom.overlay"]
+    "groups": [
+      "header",
+      "footer",
+      "custom.overlay"
+    ]
   },
   "settings": [
     {

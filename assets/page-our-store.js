@@ -12,7 +12,7 @@ var BlsCreateMapStoreLocation = (function () {
                 pitch: 60,
                 bearing: 0
             });
-            const stores = document.querySelectorAll('.store-infor__items')
+            const stores = document.querySelectorAll('.store-infor__items');
             const storeArray = Array.from(stores).map((element) => {
                 return {
                     type: 'Feature',

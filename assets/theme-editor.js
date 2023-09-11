@@ -39,7 +39,7 @@ document.addEventListener('shopify:section:select', (e) => {
                 Close.init;
               }
             });
-          };
+          }
           if (window.SPR) {
             window.SPR.registerCallbacks();
             window.SPR.initRatingHandler();
@@ -69,7 +69,7 @@ document.addEventListener('shopify:section:select', (e) => {
     if (JSON.parse(ce).id === e.detail.sectionId) {
       document.querySelector("cart-drawer").open(document.querySelector('#cart-icon-bubble'));
     }else{
-      document.querySelector("cart-drawer").close();;
+      document.querySelector("cart-drawer").close();
     }
   }
   if (
@@ -95,17 +95,17 @@ document.addEventListener('shopify:section:load', (e) => {
             e.querySelector(".slide-container").style.width = `100%`;
             const slide_item = e.querySelectorAll(".tns-item");
             if (slide_item.length != 0) {
-              slide_item.forEach(e => e.style.width = `100%`)
+              slide_item.forEach(e => e.style.width = `100%`);
             }
             e.querySelector(".slide-container").style.width = `100%`;
           }
         }
       });
-    };
+    }
     const announcementbar = target.querySelector("announcement-bar");
     if (announcementbar) {
       announcementbar.reload();
-    };
+    }
   }
 
   const zoomOnHoverScript = document.querySelector('[id^=EnableZoomOnHover]');

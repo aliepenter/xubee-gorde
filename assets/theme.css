@@ -480,6 +480,13 @@ nav details[open]>summary .open-children-toggle svg,
     overflow-y: auto;
   }
 
+  .side-menu {
+    width: 4.4rem;
+    height: 4.4rem;
+    margin: auto;
+    z-index: 3;
+  }
+
   .open-nav .mobile-menu-drawer,
   .side-menu:checked~.mobile-menu-drawer {
     opacity: 1;

@@ -1,14 +1,3 @@
-{% comment %}
-  Renders a list of product's price (regular, sale)
-
-  Accepts:
-
-  Usage:
-  {%- render 'price', product: card_product, use_variant: true -%}
-{% endcomment %}
-
-{% comment %} dev style {% endcomment %}
-
 {%- liquid
   if scope != 'detail'
     assign target = product.variants[0]
@@ -31,14 +20,14 @@
   endif
 -%}
 <div class="card-product-price">
-  <div class="price-regular heading-color">
-    <span class="price{{ special_class }}">
-      {{ money_price }}
-    </span>
-  </div>
   {%- if compare_at_price > price -%}
-    <div class="ml-8 price-sale heading-color">
-      <span>
+    <div class="heading-color price-sale">
+      <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
+      <span class="price{{ special_class }}">
+        {{ money_price }}
+      </span>
+      <div class="ml-8 price-regular heading-color">
+        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
         <s class="price-item compare-price">
           {%- if settings.currency_code_enabled -%}
             {{ compare_at_price | money_with_currency }}
@@ -46,6 +35,13 @@
             {{ compare_at_price | money }}
           {%- endif -%}
         </s>
+      </div>
+    </div>
+  {%- else -%}
+    <div class="price-regular heading-color">
+      <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+      <span class="price">
+        {{ money_price }}
       </span>
     </div>
   {%- endif -%}

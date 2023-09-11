@@ -99,6 +99,9 @@
                         </span>
                       </div>
                     {%- else -%}
+                      <span class="visually-hidden">
+                        {{ 'products.product.price.regular_price' | t }}
+                      </span>
                       <span class="price price--end">
                         {{ item.original_line_price | money }}
                       </span>

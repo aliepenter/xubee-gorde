@@ -1,5 +1,4 @@
-// function tổng
-"use strict";
+"use-strict";
 
 var Shopify = Shopify || {};
 var root = document.getElementsByTagName( 'html' )[0];
@@ -187,11 +186,11 @@ function windowResize() {
       const hasOpens = document.querySelectorAll(".has-open");
       if (hasOpens.length != 0) {
         hasOpens.forEach(e => {
-          e.setAttribute("open", "")
+          e.setAttribute("open", "");
         });
       }
     }
-  })
+  });
 }
 
 windowResize();
@@ -214,9 +213,9 @@ var responsiveImage = (function () {
       if (img.length != 0) {
         img.forEach(e => {
           if (e.offsetWidth != 0) {
-            e.setAttribute("sizes", e.offsetWidth+"px")
+            e.setAttribute("sizes", e.offsetWidth+"px");
           }
-        })
+        });
       }
     }
   };
@@ -237,7 +236,7 @@ var removeIdSvg = (function () {
           if (defs) {	
               g_tag.removeAttribute('clip-path');	
           }	
-        })
+        });
       }
     }
   };
@@ -253,13 +252,13 @@ var closePopup = (function () {
       os.classList.remove("active");
       const fi = os.dataset?.focusItem;
       if (fi && document.querySelector("#"+fi)) {
-        removeTrapFocus(document.querySelector("#"+fi))
+        removeTrapFocus(document.querySelector("#"+fi));
       }
     },
     onEscKeyUp: function () {
       document.addEventListener("keyup", (event) => {
         if(event.code?.toUpperCase() === 'ESCAPE') this.hide();
-      })
+      });
     }
   };
 })();
@@ -270,7 +269,7 @@ var getHeightHeader = (function () {
       const _this = this;
       window.addEventListener("resize", function(){
         _this.getHeight();
-      })
+      });
       _this.getHeight();
     },
     getHeight() {
@@ -354,7 +353,7 @@ class Announcementbar extends HTMLElement {
           maxHeight = e.offsetHeight;
         }
       });
-    };
+    }
     const ss = this.querySelector("slide-section");
     const as = this.querySelector(".announcement-slide");
     if (!ss) return;
@@ -376,7 +375,7 @@ class BaseSlide extends HTMLElement {
     super();
     this.slider = null; 
   }
-  init(){};
+  init(){}
   initSlide() {
     const _this = this;
     const items = this.dataset?.items;
@@ -1617,8 +1616,8 @@ class ActionSearch extends HTMLElement {
     this.fi = this.dataset?.focusItem;
     this.initClear(this.input.value);
     this.addEventListener('keyup', (event) => event.code.toUpperCase() === 'ESCAPE' && this.close());
-    this.form.addEventListener('keyup', this.onKeyup.bind(this));
-    this.form.addEventListener('keydown', this.onKeydown.bind(this));  
+    this.form?.addEventListener('keyup', this.onKeyup.bind(this));
+    this.form?.addEventListener('keydown', this.onKeydown.bind(this));  
   }
   debounce(fn, wait) {
     let t;
@@ -1678,7 +1677,9 @@ class ActionSearch extends HTMLElement {
     setTimeout(() => {this.classList.add('active')});
     root.classList.add('open-canvas', 'open-search');
     setTimeout(() => {
-      trapFocus(this.form);
+      if (this.form) {
+        trapFocus(this.form);
+      }
       this.input.focus();
     }, 300);
     this.setAttribute("open","");
@@ -1967,7 +1968,7 @@ class ModalPopup extends Popup {
           if (content) {
             this.initPopupJs(content.innerHTML, title, id, true, false);
             setTimeout(() => {
-              if (document.querySelector(`#${id}_0_1`)) {
+              if (document.querySelector(`#${id}_0_1`) && id != "ask-question") {
                 trapFocus(document.querySelector(`#${id}_0_1`), document.querySelector(".dlg-close-x"));
               }
             });

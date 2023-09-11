@@ -1,5 +1,3 @@
-"use strict";
-
 class QuantityInput extends HTMLElement {
   constructor() {
     super();
@@ -24,7 +22,7 @@ class QuantityInput extends HTMLElement {
     }
   }
 
-  onInputChange(event) {
+  onInputChange() {
     this.validateQtyRules();
   }
 
@@ -63,7 +61,7 @@ customElements.define('quantity-input', QuantityInput);
       const _this = this;
       this.querySelectorAll(".swatch-items-js").forEach((btn) => {
         _this.checkSwatches(btn);
-        btn.addEventListener("click", this.onVariantChange.bind(this), false)
+        btn.addEventListener("click", this.onVariantChange.bind(this), false);
       });
     }
     onVariantChange(e) {
@@ -86,8 +84,8 @@ customElements.define('quantity-input', QuantityInput);
         this.updateOptions();
         const currentVariant = this.updateMasterId(this.variantData);
         if (currentVariant) {
-          this.updateMedia(type_swatch)
-          this.updatePrice(this.productTarget)
+          this.updateMedia(type_swatch);
+          this.updatePrice(this.productTarget);
           this.renderProductInfor(variantQtyData);
           this.updateShareUrl();
         }
@@ -167,8 +165,8 @@ customElements.define('quantity-input', QuantityInput);
         themeGlobalVariables.settings.money_format
       );
       if (unit_price && unit_price_measurement) {
-        const price_num = Shopify.formatMoney(unit_price, themeGlobalVariables.settings.money_format)
-        const price_unit = unit_price_measurement.reference_value != 1 ? unit_price_measurement.reference_value : unit_price_measurement.reference_unit
+        const price_num = Shopify.formatMoney(unit_price, themeGlobalVariables.settings.money_format);
+        const price_unit = unit_price_measurement.reference_value != 1 ? unit_price_measurement.reference_value : unit_price_measurement.reference_unit;
         if (productTarget.querySelector('.unit-price .number')) {
           productTarget.querySelector('.unit-price .number').innerHTML = price_num;
         }
@@ -191,7 +189,7 @@ customElements.define('quantity-input', QuantityInput);
             "compare-price"
           );
           sp.appendChild(cp);
-          ps.appendChild(sp)
+          ps.appendChild(sp);
           ps.classList.add("price-sale");
           if (productTarget.querySelector(".card-product-price")) {
             productTarget.querySelector(".card-product-price").appendChild(ps);
@@ -238,7 +236,7 @@ customElements.define('quantity-input', QuantityInput);
         }
       }
       const label = this.productTarget.querySelector(".product__badges");
-      const show_badges = this.productTarget.dataset?.showBadges;
+      const show_badges = this.productTarget.dataset.showBadges;
       if (label && show_badges !== 'false') {
         const dsale = label.querySelector(".product__badges-sale");
         const dsoldout = label.querySelector(".product__badges-sold-out");
@@ -253,7 +251,7 @@ customElements.define('quantity-input', QuantityInput);
               "heading-weight",
               "text-center"
             );
-            elementsale.innerHTML = `-${percent.toFixed(0)}%`;
+            elementsale.innerHTML = `${percent.toFixed(0)}% OFF`;
             if (dsoldout) {
               label.insertBefore(elementsale, dsoldout);
   
@@ -263,11 +261,13 @@ customElements.define('quantity-input', QuantityInput);
               label.appendChild(elementsale);
             }
         } else {
-            dsale.innerHTML = `-${percent.toFixed(0)}%`;
+            dsale.innerHTML = `${percent.toFixed(0)}% OFF`;
         }
       }
       else{
-        dsale?.remove();
+          if(dsale){
+            dsale.remove();
+          }
       }
       if (pre_order) {
         if (!dpreorder) {
@@ -285,7 +285,9 @@ customElements.define('quantity-input', QuantityInput);
           dpreorder.innerHTML = window.variantStrings.preOrder?window.variantStrings.preOrder:"Pre-order";
         }
       }else{
-        dpreorder?.remove();
+        if(dpreorder){
+            dpreorder.remove();
+        }
       }
       if (soldOut) {
         if (!dsoldout) {
@@ -303,7 +305,9 @@ customElements.define('quantity-input', QuantityInput);
           dsoldout.innerHTML = window.variantStrings.soldOut?window.variantStrings.soldOut:"Sold out";
         }
       }else{
-        dsoldout?.remove();
+        if(dsoldout){
+            dsoldout.remove();
+        }
       }
      }
     }
@@ -334,12 +338,12 @@ customElements.define('quantity-input', QuantityInput);
       const inventory_status = productTarget.querySelector(".inventory_status");
       if (inventory_status) {
         const divMessage = inventory_status.querySelector(".incoming-message");
+        var options = { month: 'long', day: 'numeric', year: 'numeric' };
+        var dateObj = new Date(date);
+        var formattedDate = dateObj.toLocaleDateString('en-US', options);
         if (divMessage) {
           if (is_coming === "true") {
             if (date) {
-              var dateObj = new Date(date);
-              var options = { month: 'long', day: 'numeric', year: 'numeric' };
-              var formattedDate = dateObj.toLocaleDateString('en-US', options);
               divMessage.innerHTML = window.variantStrings.incoming_with_date?window.variantStrings.incoming_with_date.replace("{{ date }}",formattedDate):"The stock will arrive on "+formattedDate;
             }else{
               divMessage.innerHTML = window.variantStrings.incoming?window.variantStrings.incoming:"Stock in transit";
@@ -352,9 +356,6 @@ customElements.define('quantity-input', QuantityInput);
               var elementso = document.createElement("div");
               elementso.classList.add("incoming-message", "mb-10");
               if (date) {
-              var dateObj = new Date(date);
-              var options = { month: 'long', day: 'numeric', year: 'numeric' };
-              var formattedDate = dateObj.toLocaleDateString('en-US', options);
               elementso.innerHTML = window.variantStrings.incoming_with_date?window.variantStrings.incoming_with_date.replace("{{ date }}",formattedDate):"The stock will arrive on "+formattedDate;
             }else{
               elementso.innerHTML = window.variantStrings.incoming?window.variantStrings.incoming:"Stock in transit";
@@ -491,10 +492,10 @@ customElements.define('quantity-input', QuantityInput);
           soldOut = true;
         }
       }
-      this.renderLabel(sale,pre_order,soldOut,percent)
+      this.renderLabel(sale,pre_order,soldOut,percent);
     }
     checkSwatches(e) {
-      const { color, image, hex } = e?.dataset;
+      const { color, image, hex } = e.dataset;
       if (color) {
         if (this.checkColor(color)) {
           e.style.backgroundColor = color;
@@ -507,7 +508,7 @@ customElements.define('quantity-input', QuantityInput);
             e.style.backgroundColor = hex;
           }else{
             if (image) {
-              e.classList.add("color__" + color.replace(" ", "-"))
+              e.classList.add("color__" + color.replace(" ", "-"));
               e.style.backgroundColor = null;
               e.style.backgroundImage = "url('" + image + "')";
               e.style.backgroundSize = "cover";
@@ -641,9 +642,9 @@ customElements.define('quantity-input', QuantityInput);
         const previousOptionSelected = inputWrappers[index].querySelector(':checked')?.value;
         let inputDetail = null;
         if (is_select != true) {
-          inputDetail = Array.from(inputWrappersDetail[index].querySelectorAll('input'))
+          inputDetail = Array.from(inputWrappersDetail[index].querySelectorAll('input'));
         }else{
-          inputDetail = Array.from(inputWrappersDetail[index].querySelectorAll('option'))
+          inputDetail = Array.from(inputWrappersDetail[index].querySelectorAll('option'));
         }
         const checkedInput = inputDetail.find(e => e.value === previousOptionSelected);
         if (!checkedInput) return;
@@ -1131,7 +1132,6 @@ customElements.define('quantity-input', QuantityInput);
             elementsale.innerHTML = `${window.variantStrings.save?window.variantStrings.save:"Save"} ${prd}`;
             if (dsoldout) {
               label.insertBefore(elementsale, dsoldout);
-  
             }else if (dpreorder){
               label.insertBefore(elementsale, dpreorder);
             }else{

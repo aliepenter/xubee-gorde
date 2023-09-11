@@ -70,20 +70,11 @@ if (!customElements.get('product-form')) {
             if (!this.error)
               publish(PUB_SUB_EVENTS.cartUpdate, { source: 'product-form', productVariantId: formData.get('id'), cartData: response });
             this.error = false;
-            const quickAddModal = this.closest('quick-add-modal');
-            if (quickAddModal) {
-              document.body.addEventListener(
-                'modalClosed',
-                () => {
-                  setTimeout(() => {
-                    this.cart.renderContents(response);
-                  });
-                },
-                { once: true }
-              );
-              quickAddModal.hide(true);
-            } else {
+            const is_cart_page = document.body.classList.contains('template-cart');
+            if (!is_cart_page) {
               this.cart.renderContents(response);
+            }else{
+              closePopup.hide();
             }
           })
           .catch((e) => {

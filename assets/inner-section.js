@@ -1,6 +1,3 @@
-"use strict";
-
-
 class FaqItem extends HTMLElement {
     constructor() {
         super();
@@ -79,12 +76,12 @@ class NewsletterPopup extends Popup {
                 const target = e.target;
                 const newsletterPopup = target.closest('body').querySelector('[id^=newsletterPopup_0]');
                 if (newsletterPopup) {
-                    this.popup.hide()
+                    this.popup.hide();
                     setTimeout(() => {
                         this.initPopupJs(document.querySelector(".bls-newsletter-popup-wrapper").innerHTML, "", "newsletterPopup", true, false);
                     }, 650);
                 }
-            })
+            });
 
         }
     }
@@ -126,18 +123,18 @@ class NewsletterPopup extends Popup {
           const urlInfo = window.location.href;
           if (urlInfo.indexOf('customer_posted=true') >= 1) {
             setCookie("newsletter_popup", 30, "bls");
-            _this.initToastJs(newsletterSuccess)
+            _this.initToastJs(newsletterSuccess);
             if (this.popup) {
                 _this.popup.hide();
-            };
+            }
             const newURL = location.href.split("?")[0];
             window.history.pushState('object', document.title, newURL);
-          };
+          }
           if (urlInfo.indexOf('contact%5Btags%5D=newsletter&form_type=customer') >= 1) {
-            _this.initToastJs(newsletterError)
+            _this.initToastJs(newsletterError);
             const newURL = location.href.split("?")[0];
             window.history.pushState('object', document.title, newURL);
-          };
+          }
         })
         .catch(e => {
           console.error(e);
@@ -177,17 +174,14 @@ class PaginateLoadmore extends HTMLElement {
         this.initLoadMore();
     }
     initLoadMore() {
-        const _this = this;
         this.querySelectorAll('.actions-load-more').forEach(loadMore => {
             var _this = this;
             if (loadMore.classList.contains('infinit-scrolling')) {
                 var observer = new IntersectionObserver(function (entries) {
                     entries.forEach(entry => {
-                        entries.forEach(entry => {
-                            if (entry.intersectionRatio === 1) {
-                                _this.loadMorePosts(loadMore);
-                            }
-                        });
+                        if (entry.intersectionRatio === 1) {
+                            _this.loadMorePosts(loadMore);
+                        }
                     });
                 }, { threshold: 1.0 });
                 observer.observe(loadMore);

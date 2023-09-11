@@ -6,7 +6,7 @@
   data-stock-title="{{ 'products.product.product_notify_re_stock.heading' | t }}"
 >
   <div id="success-message" style="display: none;">
-    Form submitted successfully! Thank you for subscribing to the stock notification.
+    {{- 'products.product.product_notify_re_stock.message_form' | t -}}
   </div>
   {%- form 'contact', id: form_notify_id, class: 'stock-notify-form' -%}
     <p class="fs-14 uppercase mb-10 heading-color">
@@ -53,8 +53,8 @@
         name="contact[product]"
         required="required"
       >
-            {{ product.title }}{% if product.selected_or_first_available_variant.title != blank %}( {{ product.selected_or_first_available_variant.title }} ){% endif %} - {{ request.origin }}{{ product.selected_or_first_available_variant.url }}
-          </textarea>
+        {{ product.title }}{% if product.selected_or_first_available_variant.title != blank %}( {{ product.selected_or_first_available_variant.title }} ){% endif %} - {{ request.origin }}{{ product.selected_or_first_available_variant.url }}
+      </textarea>
     </p>
     <p class="d-none">
       <textarea

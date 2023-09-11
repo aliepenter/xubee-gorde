@@ -7177,20 +7177,21 @@ html:not(.no-js) .hidden-js {
   z-index: 0
 }
 
-.predictive-search__list-item[aria-selected="true"]>*,
-.predictive-search__item[aria-selected="true"],
-.recommend-search__item[aria-selected="true"] {
+.predictive-search__list-item[aria-selected="true"]>* {
   position: relative;
 }
 
-.predictive-search__list-item[aria-selected="true"]>*::after,
-.predictive-search__item[aria-selected="true"]::after,
-.recommend-search__item[aria-selected="true"]::after {
+.predictive-search__list-item[aria-selected="true"]>*::after {
   content: '';
   position: absolute;
   left: -5px;
   right: 0;
   top: -1px;
   bottom: -3px;
+  background-color: rgba(var(--color-foreground), 0.1);
+}
+
+.recommend-search__item[aria-selected="true"],
+.predictive-search__item[aria-selected="true"] {
   background-color: rgba(var(--color-foreground), 0.1);
 }
