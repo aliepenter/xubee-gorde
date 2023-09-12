@@ -281,12 +281,13 @@
                         assign minPrice = minPrice | times: 1
                         assign maxPrice = maxPrice | times: 1
                         assign range_max = filter.range_max | money_without_currency | replace: ',', ''
-                        assign from = minPrice | times: 100 | divided_by: range_max | round: 2
+                        assign range_from = filter.range_max | divided_by: 100
+                        assign from = minPrice | times: 100 | divided_by: range_from | round: 2
                         assign to = maxPrice | times: 100 | divided_by: range_max | round: 2
                       -%}
                       <price-range-drag
                         class="d-block relative price-range no-js-hidden"
-                        data-range-max="{{ range_max }}"
+                        data-range-max="{{ range_from }}"
                         style="--range-from: {{ from }}%; --range-to: {{ to }}%"
                       >
                         <input
@@ -311,7 +312,7 @@
                         <input
                           id="Filter-range-{{ filter.label | escape }}-LTE"
                           type="range"
-                          value="{{ maxPrice }}"
+                          value="{{ range_from }}"
                           type="number"
                           min="0"
                           class="range-slider range-slider-max"
@@ -635,12 +636,13 @@
                             assign minPrice = minPrice | times: 1
                             assign maxPrice = maxPrice | times: 1
                             assign range_max = filter.range_max | money_without_currency | replace: ',', ''
-                            assign from = minPrice | times: 100 | divided_by: range_max | round: 2
+                            assign range_from = filter.range_max | divided_by: 100
+                            assign from = minPrice | times: 100 | divided_by: range_from | round: 2
                             assign to = maxPrice | times: 100 | divided_by: range_max | round: 2
                           -%}
                           <price-range-drag
                             class="d-block relative price-range no-js-hidden"
-                            data-range-max="{{ range_max }}"
+                            data-range-max="{{ range_from }}"
                             style="--range-from: {{ from }}%; --range-to: {{ to }}%"
                           >
                             <input
@@ -663,7 +665,7 @@
                               </label>
                             <input
                               type="range"
-                              value="{{ maxPrice }}"
+                              value="{{ range_from }}"
                               type="number"
                               min="0"
                               class="range-slider range-slider-max"

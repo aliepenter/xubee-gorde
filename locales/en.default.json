@@ -85,7 +85,8 @@
         "heading": "Restock alert",
         "placeholder": "Enter your email address...",
         "button": "Get notify",
-        "message": "Notify me when this product restocks"
+        "message": "Notify me when this product restocks",
+        "message_form": "Form submitted successfully! Thank you for subscribing to the stock notification."
       },
       "share": "Share this product",
       "value_unavailable": "{{ option_value }} - Unavailable",

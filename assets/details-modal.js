@@ -3,7 +3,6 @@ class DetailsModal extends HTMLElement {
     super();
     this.detailsContainer = this.querySelector('details');
     this.summaryToggle = this.querySelector('summary');
-    console.log(this.detailsContainer);
     this.detailsContainer.addEventListener(
       'keyup',
       (event) => event.code?.toUpperCase() === 'ESCAPE' && this.close()

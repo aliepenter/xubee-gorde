@@ -4,32 +4,9 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
-      "blocks": {
-        "d9b19f60-ac46-4a88-8659-6fdefbe85680": {
-          "type": "announcement",
-          "settings": {
-            "text": "Viện thẩm mỹ Xubee",
-            "link": ""
-          }
-        },
-        "f8980816-c8b8-4f93-85f0-88e15b9e0a60": {
-          "type": "announcement",
-          "settings": {
-            "text": "Nâng tầm vẻ đẹp tự nhiên",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "d9b19f60-ac46-4a88-8659-6fdefbe85680",
-        "f8980816-c8b8-4f93-85f0-88e15b9e0a60"
-      ],
-      "custom_css": [
-
-      ],
       "settings": {
         "section_width": "stretch_width",
-        "color_scheme": "scheme-0ba1b009-7eed-45cd-b0f5-57fda3e81ca0",
+        "color_scheme": "",
         "show_close": false,
         "homepage_only": true,
         "show_mobile": false,
@@ -44,12 +21,13 @@
         "ff259d6e-a30e-4803-9ec6-51d29557887f": {
           "type": "menu_promotion",
           "settings": {
-            "text": "Phun xăm",
+            "text": "Shop",
             "promotion_position": "right",
             "promotion_menu_column": 3,
             "promotion_image_width": 40,
-            "promotion_image_1": "shopify:\/\/shop_images\/z4368718517052_5deeaa02c0bba69d48638f9ba9c04e9d.jpg",
+            "promotion_image_1": "shopify:\/\/shop_images\/01.jpg",
             "promotion_link_1": "shopify:\/\/collections\/maxi",
+            "promotion_image_2": "shopify:\/\/shop_images\/02-1.jpg",
             "promotion_link_2": "shopify:\/\/collections\/summer"
           }
         }
@@ -58,24 +36,21 @@
         "ff259d6e-a30e-4803-9ec6-51d29557887f"
       ],
       "custom_css": [
-        ".header__logo .site-logo {position: relative; top: -3px;}",
-        "img.header__heading-logo,img.password-logo {border-radius: 50%;}",
-        ".custom-header-phone {display: flex; align-items: flex-end; justify-content: center; text-decoration: none; font-weight: 700;}"
+        ".header__logo .site-logo {position: relative; top: -3px;}"
       ],
       "settings": {
         "section_width": "stretch_width",
-        "color_scheme": "default-color-scheme",
+        "color_scheme": "",
         "logo_position": "left",
-        "logo": "shopify:\/\/shop_images\/332184433_584819916885479_9055422392377250673_n.jpg",
-        "logo_width": 70,
-        "logo_width_mobile": 60,
+        "logo_width": 140,
+        "logo_width_mobile": 100,
         "sticky_header_type": "on-scroll-up",
         "menu": "main-menu",
         "uppercase_first_level": true,
         "show_search": true,
-        "show_account": false,
-        "show_cart": false,
-        "show_currency": false,
+        "show_account": true,
+        "show_cart": true,
+        "show_currency": true,
         "show_language": false,
         "banner_type": "collection",
         "banner_title": "Popular categories",

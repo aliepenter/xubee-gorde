@@ -1,5 +1,5 @@
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js" defer></script>
-<link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
+<script src="{{ 'mapbox-gl.js' | asset_url }}" defer="defer"></script>
+{{ 'mapbox-gl.css' | asset_url | stylesheet_tag }}
 {% liquid
   assign sec_settings = section.settings
   assign section_width = ''
