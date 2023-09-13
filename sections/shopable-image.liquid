@@ -238,11 +238,11 @@
                         >
                           {% if section.blocks.size != 0 %}
                             {%- for block in section.blocks -%}
-                              <button type="button" aria-label="" class="button dot-blog btn-reset"></button>
+                              <button type="button" aria-label="Custom paginate Page {{ forloop.index }} Section {{ section.id }}" class="button dot-blog btn-reset"></button>
                             {%- endfor -%}
                           {% else %}
                             {% for i in (0..2) %}
-                              <button type="button" aria-label="" class="button dot-blog btn-reset"></button>
+                              <button type="button" aria-label="Custom paginate Page {{ forloop.index }} Section {{ section.id }}" class="button dot-blog btn-reset"></button>
                             {% endfor %}
                           {% endif %}
                         </div>

@@ -6,6 +6,19 @@
 .slide-container:not(.tns-initialized) {
   display: flex;
   overflow: hidden;
+
+}
+
+.slide-carousel[aria-hidden="true"] a.section-btn {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.blog-posts-items[aria-hidden="true"],
+.article-card-wrapper[aria-hidden="true"],
+.product-wrapper[aria-hidden="true"],
+.collection-items[aria-hidden="true"] {
+  visibility: hidden;
 }
 
 [data-items="1"][data-axis="horizontal"] .slide-container:not(.tns-initialized) {
@@ -341,6 +354,17 @@ table tr th {
 
 .visually-hidden {
   position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  word-wrap: normal !important;
+}
+
+.visually-hidden-price {
   overflow: hidden;
   width: 1px;
   height: 1px;

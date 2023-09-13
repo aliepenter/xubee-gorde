@@ -89,7 +89,6 @@
                     blo_settings.image
                     | image_url: width: 3840
                     | image_tag:
-                      loading: 'lazy',
                       height: height,
                       sizes: '100vw',
                       widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
@@ -118,7 +117,6 @@
                     blo_settings.mobile_image
                     | image_url: width: 1500
                     | image_tag:
-                      loading: 'lazy',
                       sizes: '100vw',
                       widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
                       height: height,
@@ -146,7 +144,7 @@
                     {% else %}
                       href="{{ blo_settings.link | default: "#" }}"
                     {% endif %}
-                    arial-label="{{ blo_settings.button_label }}"
+                    aria-label="{{ blo_settings.button_label }}"
                     class="section-btn btn remove-underline btn-{{ block.settings.button_style }}"
                   >
                     {{ blo_settings.button_label }}

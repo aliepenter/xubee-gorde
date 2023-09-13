@@ -69,7 +69,9 @@ class GalleryGrid extends SlideSection {
       this.init();
   }
   init() {
+    setTimeout(() => {
       this.onResize();
+    }, 300);
   }
   onResize() {
     const _this = this;
@@ -101,9 +103,7 @@ class GalleryGrid extends SlideSection {
         this.initSlide();
         this.destroy();
         this.slider = null;
-        this.initProgressBar();
       } else {
-        this.removeProgressBar();
         container.classList.add("tablet-2", "mb-1", "grid-cols", "gap-small", "row-as-column-gap");
         sl.innerHTML = content;
         container.innerHTML = sl.innerHTML;

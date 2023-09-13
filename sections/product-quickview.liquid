@@ -228,7 +228,7 @@
                                   playsinline="true"
                                   preload="none"
                                   src="{{ source_url }}"
-                                  poster="{{ image.preview_image | image_url: width: 1100 }}"
+                                  poster="{{ image.preview_image | image_url: width: 493 }}"
                                 ></video>
                               </div>
                             </div>
@@ -244,7 +244,7 @@
                               >
                                 {{
                                   image.preview_image
-                                  | image_url: width: 1946
+                                  | image_url: width: 493
                                   | image_tag:
                                     loading: 'lazy',
                                     sizes: '100vw',
@@ -293,11 +293,11 @@
                                     {{ image.preview_image | image_url }} {{ image.preview_image.width }}w
                                   "
                                   sizes="100vw"
-                                  src="{{ image.preview_image | image_url: width: 1100 }}"
+                                  src="{{ image.preview_image | image_url: width: 550 }}"
                                   alt="{{ image.alt | escape }}"
                                   loading="lazy"
-                                  width="1100"
-                                  height="{{ 1100 | divided_by: ratio | ceil }}"
+                                  width="550"
+                                  height="{{ 550 | divided_by: ratio | ceil }}"
                                 >
                               </div>
                             </div>

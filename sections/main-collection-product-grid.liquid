@@ -592,24 +592,31 @@
                                 class="banner__media overlay-bg"
                                 style="--aspect-ratio: {{ r }};"
                               >
+                                {%- liquid
+                                  assign banner_alt = ""
+                                  if block.settings.heading
+                                    assign banner_alt = block.settings.heading
+                                  endif
+                                  if block.settings.image.alt
+                                    assign banner_alt = block.settings.image.alt
+                                  endif
+                                -%}
                                 <a
                                   {% if block.settings.promotion_link == blank %}
                                     role="link" aria-disabled="true"
                                   {% else %}
                                     href="{{ block.settings.promotion_link }}"
+                                    aria-label="{{ banner_alt }}"
                                   {% endif %}
                                 >
                                   {%- if block.settings.image != blank -%}
-                                    {%- assign banner_alt = block.settings.heading
-                                      | default: block.settings.image.alt
-                                    -%}
                                     {{
                                       block.settings.image
-                                      | image_url: width: 3840
+                                      | image_url: width: 1500
                                       | image_tag:
                                         loading: 'lazy',
                                         sizes: '100vw',
-                                        widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+                                        widths: '165, 360, 535, 750, 1070, 1500',
                                         alt: banner_alt
                                     }}
                                   {%- else -%}

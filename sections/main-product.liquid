@@ -416,7 +416,7 @@
                     <button
                       class="no-js-hidden mr-10 transition pointer w-40 h-40 d-inline-flex middle-center link list-social__link px-10 tooltip rounded-corner-item"
                       tabindex="0"
-                      arial-label="{{ 'general.social.alt_text.share_on_facebook' | t }}"
+                      aria-label="{{ 'general.social.alt_text.share_on_facebook' | t }}"
                       onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 'facebook-share-dialog', 'width=436,height=436'); return false;"
                     >
                       {%- render 'icon-facebook', custom_width: 18 -%}
@@ -425,7 +425,7 @@
                   {% if block.settings.twitter %}
                     <button
                       tabindex="0"
-                      arial-label="{{ 'general.social.alt_text.share_on_twitter' | t }}"
+                      aria-label="{{ 'general.social.alt_text.share_on_twitter' | t }}"
                       class="no-js-hidden mr-10 transition pointer w-40 h-40 d-inline-flex middle-center link list-social__link px-10 tooltip rounded-corner-item"
                       onclick="window.open('http://twitter.com/home/?status='+encodeURIComponent(location.href), 'twitter-share-dialog', 'width=436,height=436'); return false;"
                     >
@@ -435,7 +435,7 @@
                   {% if block.settings.pinterest %}
                     <button
                       tabindex="0"
-                      arial-label="{{ 'general.social.alt_text.share_on_pinterest' | t }}"
+                      aria-label="{{ 'general.social.alt_text.share_on_pinterest' | t }}"
                       class="no-js-hidden mr-10 transition pointer w-40 h-40 d-inline-flex middle-center link list-social__link px-10 tooltip rounded-corner-item"
                       onclick="window.open('http://pinterest.com/pin/create/button/?url='+encodeURIComponent(location.href), 'pinterest-share-dialog', 'width=436,height=436'); return false;"
                     >

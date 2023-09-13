@@ -1217,6 +1217,10 @@ cart-drawer .quantity__input {
   padding-top: 1.5rem;
 }
 
+.search-keyword.d-none+.predictive-search #predictive-search-results>div:last-child {
+  padding-bottom: 3rem;
+}
+
 /* Footer */
 footer.footer {
   margin-top: calc(var(--section-padding-top) * 0.5 * 0.75);

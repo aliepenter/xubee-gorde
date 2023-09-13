@@ -212,6 +212,12 @@
                     data-position="{{ image.position }}"
                     data-media-id="{{ section.id }}-{{ image.id }}"
                   >
+                    {%- liquid
+                      assign is_stack = true
+                      if sec_settings.gallery_layout == "columns"
+                        assign is_stack = false
+                      endif
+                    -%}
                     <div style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}{{ image.aspect_ratio }}{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}">
                       <img
                         {% if sec_settings.image_zoom == 'lightbox' %}
@@ -230,11 +236,18 @@
                           {{ image.preview_image | image_url }} {{ image.preview_image.width }}w
                         "
                         sizes="100vw"
-                        src="{{ image.preview_image | image_url: width: 4096 }}"
+                        src="{{ image.preview_image | image_url: width: 2048 }}"
                         data-zoom="{{ image.preview_image | image_url }}"
                         alt="{{ image.alt | escape }}"
-                        loading="lazy"
-                        width="{{ image.preview_image.width }}"
+                        {% if is_stack == false %}
+                          {%- if forloop.index > 2 -%}
+                            loading="lazy"
+                          {%- endif -%}
+                        {%- else -%}
+                          {%- if forloop.index > 1 -%}
+                            loading="lazy"
+                          {%- endif -%}
+                        {% endif %}
                         height="{{ image.preview_image.width | divided_by: ratio | ceil }}"
                       >
                     </div>
@@ -243,7 +256,190 @@
               {% endfor %}
             </div>
           </template>
-          <div class="gallery-grid-js no-js-hidden{% if sec_settings.image_zoom == 'lightbox' %} gallery-zoom{% elsif sec_settings.image_zoom == 'external_zoom' or sec_settings.image_zoom == 'inner_zoom' %} hover-zoom{% endif %}" {% if sec_settings.image_zoom == 'external_zoom' or sec_settings.image_zoom == 'inner_zoom' %}data-zoom-option="{{ zoom_option }}"{% endif %}></div>
+          <div class="gallery-grid-js no-js-hidden{% if sec_settings.image_zoom == 'lightbox' %} gallery-zoom{% elsif sec_settings.image_zoom == 'external_zoom' or sec_settings.image_zoom == 'inner_zoom' %} hover-zoom{% endif %}" {% if sec_settings.image_zoom == 'external_zoom' or sec_settings.image_zoom == 'inner_zoom' %}data-zoom-option="{{ zoom_option }}"{% endif %}>
+            <div class="slide-container tns-initialized d-block d-1025-none">
+              {% for image in images limit: 2 %}
+                {%- case image.media_type -%}
+                  {%- when 'external_video' -%}
+                    {% liquid
+                      assign video_id = image.external_id
+                    %}
+                    {%- capture video_attribute -%}
+                      {%- if sec_settings.video_looping -%}
+                          loop=1
+                      {% endif %}
+                    {%- endcapture -%}
+                    <div
+                      class="slider-external-video rounded-corner-item"
+                      data-position="{{ image.position }}"
+                      data-media-id="{{ section.id }}-{{ image.id }}"
+                    >
+                      <div
+                        style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}{{ image.aspect_ratio }}{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}"
+                      >
+                        {%- if image.host == 'youtube' -%}
+                          <iframe
+                            src="https://www.youtube.com/embed/{{ video_id }}?enablejsapi=1&autoplay={% if sec_settings.image_video_autoplay -%}1{% else %}0{%- endif -%}&mute={% if sec_settings.image_video_autoplay -%}1{% else %}0{%- endif -%}&loop={%- if sec_settings.video_looping -%}1{%else%}0{% endif %}"
+                            class="js-youtube"
+                          ></iframe>
+                        {%- else -%}
+                          <iframe
+                            class="js-vimeo"
+                            src="https://player.vimeo.com/video/{{ video_id }}?autoplay={% if sec_settings.image_video_autoplay -%}1{% else %}0{%- endif -%}&muted={% if sec_settings.image_video_autoplay -%}1{% else %}0{%- endif -%}&loop={%- if sec_settings.video_looping -%}1{%else%}0{% endif %}"
+                            frameborder="0"
+                            allowfullscreen
+                          ></iframe>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  {%- when 'video' -%}
+                    {%- capture video_attribute -%}
+                      {%- if sec_settings.video_looping -%}
+                          loop 
+                      {% endif %}
+                      {% if sec_settings.image_video_autoplay -%}
+                          muted autoplay
+                      {%- endif -%}
+                    {%- endcapture -%}
+                    <div
+                      class="slider-video rounded-corner-item"
+                      data-position="{{ image.position }}"
+                      data-media-id="{{ section.id }}-{{ image.id }}"
+                    >
+                      {%- liquid
+                        assign source = image.sources
+                        assign source_url = ""
+                        for s in source
+                          if s.format == "mp4"
+                            assign source_url = s.url
+                            break
+                          endif
+                        endfor
+                      -%}
+                      <div
+                        style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}{{ image.aspect_ratio }}{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}"
+                      >
+                        <video
+                          controls="true"
+                          playsinline="true"
+                          preload="none"
+                          src="{{ source_url }}"
+                          poster="{{ image.preview_image | image_url: width: 1100 }}"
+                          {{ video_attribute }}
+                        ></video>
+                      </div>
+                    </div>
+                  {%- when 'model' -%}
+                    <div
+                      class="slider-model"
+                      data-position="{{ image.position }}"
+                      data-media-id="{{ section.id }}-{{ image.id }}"
+                    >
+                      <div
+                        style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}1/1{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}"
+                      >
+                        <product-model
+                          class="deferred-media media media--transparent no-js-hidden"
+                          data-media-id="{{ image.id }}"
+                        >
+                          <button id="Deferred-Poster-Modal-{{ image.id }}" class="deferred-media__poster" type="button">
+                            <span class="deferred-media__poster-button motion-reduce">
+                              {%- render 'icon-3d-model' -%}
+                            </span>
+                            {{
+                              image.preview_image
+                              | image_url: width: 1946
+                              | image_tag:
+                                loading: lazy,
+                                sizes: sizes,
+                                widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
+                            }}
+                          </button>
+                          <template>
+                            {%- liquid
+                              echo image | media_tag: image_size: '2048x', toggleable: true
+                            -%}
+                          </template>
+                        </product-model>
+                        <button
+                          class="button button--full-width product__xr-button"
+                          type="button"
+                          aria-label="{{ 'products.product.xr_button_label' | t }}"
+                          data-shopify-xr
+                          data-shopify-model3d-id="{{ image.id }}"
+                          data-shopify-title="{{ product.title | escape }}"
+                          data-shopify-xr-hidden
+                        >
+                          {% render 'icon-3d-model' %}
+                          {{ 'products.product.xr_button' | t }}
+                        </button>
+                      </div>
+                    </div>
+                  {%- else -%}
+                    {%- liquid
+                      if settings.product_image_ratio == 'adapt_to_image'
+                        assign ratio = image.aspect_ratio
+                      elsif settings.product_image_ratio == 'square'
+                        assign ratio = 1
+                      elsif settings.product_image_ratio == 'tall'
+                        assign ratio = 3 | times: 4
+                      endif
+                    -%}
+                    <div
+                      class="slider-image"
+                      {%- if sec_settings.image_zoom == 'lightbox' -%}
+                        data-href="{{ image.preview_image | image_url: width: 4096 }}" data-size="1100x{{ 1100 | divided_by: ratio | ceil }}" data-med="{{ image.preview_image | image_url: width: 1024 }}" data-med-size="1024x{{ 1024 | divided_by: ratio | ceil }}" 
+                      {% endif %}
+                      {%- if sec_settings.image_zoom == 'external_zoom' or sec_settings.image_zoom == 'inner_zoom' -%}
+                        data-pane-container
+                      {%- endif %}
+                      data-position="{{ image.position }}"
+                      data-media-id="{{ section.id }}-{{ image.id }}"
+                    >
+                      {%- liquid
+                        assign is_stack = true
+                        if sec_settings.gallery_layout == "columns"
+                          assign is_stack = false
+                        endif
+                      -%}
+                      <div style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}{{ image.aspect_ratio }}{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}">
+                        <img
+                          {% if sec_settings.image_zoom == 'lightbox' %}
+                            tabindex="0"
+                          {% endif %}
+                          class="rounded-corner-item"
+                          srcset="
+                            {%- if image.preview_image.width >= 550 -%}{{ image.preview_image | image_url: width: 550 }} 550w,{%- endif -%}
+                            {%- if image.preview_image.width >= 1100 -%}{{ image.preview_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                            {%- if image.preview_image.width >= 1445 -%}{{ image.preview_image | image_url: width: 1445 }} 1445w,{%- endif -%}
+                            {%- if image.preview_image.width >= 1680 -%}{{ image.preview_image | image_url: width: 1680 }} 1680w,{%- endif -%}
+                            {%- if image.preview_image.width >= 2048 -%}{{ image.preview_image | image_url: width: 2048 }} 2048w,{%- endif -%}
+                            {%- if image.preview_image.width >= 2200 -%}{{ image.preview_image | image_url: width: 2200 }} 2200w,{%- endif -%}
+                            {%- if image.preview_image.width >= 2890 -%}{{ image.preview_image | image_url: width: 2890 }} 2890w,{%- endif -%}
+                            {%- if image.preview_image.width >= 4096 -%}{{ image.preview_image | image_url: width: 4096 }} 4096w,{%- endif -%}
+                            {{ image.preview_image | image_url }} {{ image.preview_image.width }}w
+                          "
+                          sizes="100vw"
+                          src="{{ image.preview_image | image_url: width: 2048 }}"
+                          data-zoom="{{ image.preview_image | image_url }}"
+                          alt="{{ image.alt | escape }}"
+                          {% if is_stack == false %}
+                            {%- if forloop.index > 2 -%}
+                              loading="lazy"
+                            {%- endif -%}
+                          {%- else -%}
+                            {%- if forloop.index > 1 -%}
+                              loading="lazy"
+                            {%- endif -%}
+                          {% endif %}
+                          height="{{ image.preview_image.width | divided_by: ratio | ceil }}"
+                        >
+                      </div>
+                    </div>
+                {%- endcase -%}
+              {% endfor %}
+            </div>
+          </div>
           <noscript class="tablet-2 mb-1 grid-cols gap-small row-as-column-gap">
             {% for image in images %}
               {%- case image.media_type -%}
