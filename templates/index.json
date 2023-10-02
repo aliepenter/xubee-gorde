@@ -211,7 +211,7 @@
         "information_position": "overlay",
         "show_product_count": false,
         "text_information_alignment": "left",
-        "columns_desktop": 5,
+        "columns_desktop": 6,
         "column_gap": "small",
         "enable_carousel": true,
         "show_navigation": true,
