@@ -90,7 +90,7 @@
         "show_account": false,
         "show_cart": false,
         "show_currency": false,
-        "show_language": false,
+        "show_language": true,
         "banner_type": "collection",
         "banner_title": "Popular categories",
         "banner_collection": [
