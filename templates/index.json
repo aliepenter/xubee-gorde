@@ -204,9 +204,9 @@
         "show_product_count": false,
         "text_information_alignment": "center",
         "columns_desktop": 6,
-        "column_gap": "small",
-        "enable_carousel": false,
-        "show_navigation": false,
+        "column_gap": "medium",
+        "enable_carousel": true,
+        "show_navigation": true,
         "show_pagination": false,
         "padding_top": 40,
         "padding_bottom": 40
