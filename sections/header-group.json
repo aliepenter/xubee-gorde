@@ -86,17 +86,14 @@
         "menu": "main-menu",
         "uppercase_first_level": true,
         "show_search": true,
-        "show_account": true,
-        "show_cart": true,
-        "show_currency": true,
+        "show_account": false,
+        "show_cart": false,
+        "show_currency": false,
         "show_language": false,
         "banner_type": "collection",
         "banner_title": "Popular categories",
         "banner_collection": [
-          "minis",
-          "maxi",
-          "knee-lneght",
-          "cooktail"
+
         ],
         "banner_link": "",
         "show_border_bottom": false,
