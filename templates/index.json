@@ -120,7 +120,7 @@
         "template--18765520470307__85c86895-d3e6-4879-8c04-186884a188bb-168258868565790a02-0"
       ],
       "settings": {
-        "section_width": "expand_full_width",
+        "section_width": "stretch_width",
         "color_scheme": "default-color-scheme",
         "direction": "left",
         "marquee_speed": 20,
@@ -135,7 +135,7 @@
     "65b3d10b-5b9c-4717-bcfc-846907672f04": {
       "type": "divider",
       "settings": {
-        "section_width": "expand_full_width",
+        "section_width": "stretch_width",
         "divider_height": 1,
         "divider_color": "#cccccc",
         "border_style": "solid",
