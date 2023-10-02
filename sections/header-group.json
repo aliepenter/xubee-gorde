@@ -2,54 +2,6 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "header": {
-      "type": "header",
-      "blocks": {
-        "f313e8fd-8dd1-4043-a4c4-bdb3e61ad2b4": {
-          "type": "menu_product",
-          "settings": {
-            "text": "Sunglasses",
-            "product_menu_column": 3,
-            "product_width": 40,
-            "product_1": "copy-of-brow-line-frame",
-            "product_2": "copy-of-transparent-frame"
-          }
-        }
-      },
-      "block_order": [
-        "f313e8fd-8dd1-4043-a4c4-bdb3e61ad2b4"
-      ],
-      "custom_css": [
-        ".header__logo .site-logo {position: relative; top: -3px;}"
-      ],
-      "settings": {
-        "section_width": "stretch_width",
-        "color_scheme": "",
-        "logo_position": "center",
-        "logo_width": 136,
-        "logo_width_mobile": 136,
-        "sticky_header_type": "on-scroll-up",
-        "menu": "main-menu",
-        "uppercase_first_level": true,
-        "show_search": true,
-        "show_account": true,
-        "show_cart": true,
-        "show_currency": true,
-        "show_language": false,
-        "banner_type": "collection",
-        "banner_title": "Popular categories",
-        "banner_collection": [
-          "minis",
-          "maxi",
-          "knee-lneght",
-          "cooktail"
-        ],
-        "banner_link": "",
-        "show_border_bottom": false,
-        "transparent_on_home": false,
-        "header_text_icon_transparent": "#ffffff"
-      }
-    },
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
@@ -88,6 +40,7 @@
         "3d370952-9767-4c71-8b15-524e3984e3a5",
         "8495037d-3ade-491a-a4ab-9fc51f9455d5"
       ],
+      "disabled": true,
       "settings": {
         "section_width": "expand_full_width",
         "color_scheme": "scheme-957ad1f6-ead2-4f72-bdba-ddfe8f341c9e",
@@ -98,13 +51,62 @@
         "marquee_speed": 18,
         "style_between_item": true,
         "space_between_text": "small",
-        "uppercase": true,
+        "uppercase": false,
         "scrolling_size": "small"
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "f313e8fd-8dd1-4043-a4c4-bdb3e61ad2b4": {
+          "type": "menu_product",
+          "settings": {
+            "text": "Sunglasses",
+            "product_menu_column": 3,
+            "product_width": 40,
+            "product_1": "copy-of-brow-line-frame",
+            "product_2": "copy-of-transparent-frame"
+          }
+        }
+      },
+      "block_order": [
+        "f313e8fd-8dd1-4043-a4c4-bdb3e61ad2b4"
+      ],
+      "custom_css": [
+        ".header__logo .site-logo {position: relative; top: -3px;}"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "",
+        "logo_position": "center",
+        "logo": "shopify:\/\/shop_images\/332184433_584819916885479_9055422392377250673_n.jpg",
+        "logo_width": 90,
+        "logo_width_mobile": 70,
+        "sticky_header_type": "always",
+        "menu": "main-menu",
+        "uppercase_first_level": true,
+        "show_search": true,
+        "show_account": true,
+        "show_cart": true,
+        "show_currency": true,
+        "show_language": false,
+        "banner_type": "collection",
+        "banner_title": "Popular categories",
+        "banner_collection": [
+          "minis",
+          "maxi",
+          "knee-lneght",
+          "cooktail"
+        ],
+        "banner_link": "",
+        "show_border_bottom": false,
+        "transparent_on_home": false,
+        "header_text_icon_transparent": "#ffffff"
       }
     }
   },
   "order": [
-    "header",
-    "announcement-bar"
+    "announcement-bar",
+    "header"
   ]
 }
