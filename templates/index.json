@@ -583,21 +583,6 @@
     },
     "33189fb0-1ca6-4e30-be60-2179e14182cc": {
       "type": "shopable-image",
-      "blocks": {
-        "template--18765520470307__33189fb0-1ca6-4e30-be60-2179e14182cc-16841417042578ed10-0": {
-          "type": "product",
-          "settings": {
-            "position_top": 53,
-            "position_left": 61,
-            "position_top_mb": 50,
-            "position_left_mb": 50,
-            "product": "floral-pink-dress"
-          }
-        }
-      },
-      "block_order": [
-        "template--18765520470307__33189fb0-1ca6-4e30-be60-2179e14182cc-16841417042578ed10-0"
-      ],
       "custom_css": [
         ".banner__media {border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;}"
       ],
@@ -607,6 +592,7 @@
         "title": "",
         "description": "",
         "text_alignment": "left",
+        "desktop_image": "shopify:\/\/shop_images\/z4699748550094_93500a431f98b4b8e5b25e685fae725e.jpg",
         "image_overlay_opacity": 0,
         "lookbook_type": "default",
         "column_gap": "medium",
@@ -627,11 +613,11 @@
         "color_scheme": "scheme-957ad1f6-ead2-4f72-bdba-ddfe8f341c9e",
         "countdown_layout": "horizontal",
         "subheading": "",
-        "heading": "NEXT DROP SALE!",
-        "description": "<p>Gear up and brace yourself for the exhilarating Next Drop Sale! You won't want to overlook the incredible discounts and exclusive offers available.<\/p>",
-        "end_times": "10-30-2023",
-        "button_label": "Shop now",
-        "link": "shopify:\/\/collections\/all",
+        "heading": "Thu Đón Trang Vàng - Rộn ràng khuyến mãi",
+        "description": "<p>Khuyến mãi đặc biệt nhân dịp trung thu. Chương trình kéo dài từ ngày 20\/09 đến hết ngày 09\/10<\/p>",
+        "end_times": "10-09-2023",
+        "button_label": "Đặt lịch ngay",
+        "link": "",
         "button_style": "fill",
         "content_size": "small",
         "desktop_content_position": "middle-left",
