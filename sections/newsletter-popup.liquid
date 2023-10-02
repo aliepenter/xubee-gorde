@@ -23,7 +23,7 @@
         <div class="bls-newsletter-popup__content flex-1 p-20 text-center">
           <div class="bls-newsletter-popup__header text-center mb-55 px-md-20 pt-15 pt-md-40">
             {%- if heading != blank -%}
-              <h2 class="bls-newsletter-popup__heading mt-0 h1 lh-1">{{ heading }}</h2>
+              <h2 class="heading-letter-spacing bls-newsletter-popup__heading mt-0 h1 lh-1">{{ heading }}</h2>
             {%- endif -%}
             {%- if short_desc != blank -%}
               <div class="bls-newsletter-popup__-des mb-20 word-break">
@@ -89,7 +89,10 @@
               {% render 'social-icons' %}
             </div>
           {% endif %}
-          <div class="bls-newsletter-popup__dont-show dont-show btn-text-transform  mt-45 fs-small pointer" tabindex="0">
+          <div
+            class="bls-newsletter-popup__dont-show dont-show btn-text-transform  mt-45 fs-small pointer"
+            tabindex="0"
+          >
             <span class="heading-color border-bottom">{{ 'newsletter_popup.do_not_show_again' | t }}</span>
           </div>
         </div>
@@ -114,9 +117,7 @@
   "class": "overlay-section overlay-newsletter",
   "limit": 1,
   "enabled_on": {
-    "groups": [
-      "custom.overlay"
-    ]
+    "groups": ["custom.overlay"]
   },
   "settings": [
     {

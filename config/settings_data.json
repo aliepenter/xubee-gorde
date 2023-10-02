@@ -1,5 +1,6 @@
 {
   "current": {
+    "favicon": "shopify:\/\/shop_images\/favicon-32x32.png",
     "page_width": 1290,
     "body_font": "inter_n4",
     "heading_font": "playfair_display_n4",
@@ -26,6 +27,7 @@
       "floral-jumpsuit",
       "floral-lace-dress"
     ],
+    "currency_code_enabled": true,
     "enable_cookies": true,
     "show_in_editor": false,
     "sections": {
@@ -109,26 +111,8 @@
         "type": "header-search",
         "settings": {
           "search_popular_keywords": "t-shirt, dress, Hot",
-          "search_collection_recommended": "cooktail",
+          "search_collection_recommended": "",
           "predictive_search_enabled": true
-        }
-      },
-      "main-password-header": {
-        "type": "main-password-header",
-        "custom_css": [
-          "img.password-logo{border-radius: 50%;}"
-        ],
-        "settings": {
-          "logo": "shopify:\/\/shop_images\/332184433_584819916885479_9055422392377250673_n.jpg",
-          "logo_width": 70,
-          "logo_width_mobile": 60,
-          "color_scheme": ""
-        }
-      },
-      "main-password-footer": {
-        "type": "main-password-footer",
-        "settings": {
-          "color_scheme": ""
         }
       }
     },
@@ -189,10 +173,10 @@
       },
       "scheme-0ba1b009-7eed-45cd-b0f5-57fda3e81ca0": {
         "settings": {
-          "background": "#a0522d",
+          "background": "#ffffff",
           "background_gradient": "",
           "color_general_accent": "#e40202",
-          "color_general_text": "#f9f514",
+          "color_general_text": "#000000",
           "color_general_heading": "#000000",
           "color_general_border": "#000000",
           "color_button_background": "#000000",
@@ -209,7 +193,7 @@
           "background": "#ebe0d4",
           "background_gradient": "",
           "color_general_accent": "#e40202",
-          "color_general_text": "#666666",
+          "color_general_text": "#000000",
           "color_general_heading": "#000000",
           "color_general_border": "#ccc1b6",
           "color_button_background": "#ffffff",
@@ -239,5 +223,802 @@
         }
       }
     }
+  },
+  "presets": {
+    "Gorde": {
+      "favicon": "shopify:\/\/shop_images\/favicon-32x32.png",
+      "page_width": 1290,
+      "body_font": "inter_n4",
+      "heading_font": "playfair_display_n4",
+      "heading_text_transform": "unset",
+      "button_text_transform": "uppercase",
+      "product_enable_quickview": true,
+      "product_show_image_hover": true,
+      "product_show_color_swatch": true,
+      "product_show_vendor": true,
+      "product_show_rate": false,
+      "product_show_badges": true,
+      "color_product_rate": "#ff9a00",
+      "product_notify_re_stock": true,
+      "color_swatch_custom": "Light Blue: rgb(201 215 231), Pine: #313730, Forest: #15524b, Orange: #e56f51, Mutil Coral: #b3cfcc, Floral: #be4797, Caro: #869e87, Leopard: #9f6a4d,Brown: #9e5d38, Navy: #06376a, Coral: #f68e54, Khaki: #cc9f73, Hot Pink: #f66d95,  Pink: #fec2b9, Blue: #6b9ecd",
+      "animations_reveal_on_scroll": true,
+      "enable_zoom_effect": true,
+      "cart_type": "drawer",
+      "show_in_minicart": true,
+      "show_in_cart_page": true,
+      "minimum_amount": 500,
+      "recommendation_product_type": "selected",
+      "select_product_recommendation": [
+        "brown-bucket-hat",
+        "floral-jumpsuit",
+        "floral-lace-dress"
+      ],
+      "currency_code_enabled": true,
+      "enable_cookies": true,
+      "show_in_editor": false,
+      "sections": {
+        "product-quickview": {
+          "type": "product-quickview",
+          "blocks": {
+            "d14f4a75-278d-4fd9-95dc-f5bb4fedb4bb": {
+              "type": "title",
+              "settings": {
+              }
+            },
+            "eb3268ad-0bdc-45e5-904c-9fa021679d3f": {
+              "type": "price",
+              "settings": {
+              }
+            },
+            "70bd1a33-272f-40ca-b9b4-0ec65d84a443": {
+              "type": "product_image",
+              "settings": {
+              }
+            },
+            "49de0899-623e-44ae-b20c-d9870385243b": {
+              "type": "variant_picker",
+              "settings": {
+              }
+            },
+            "f6c15bfb-fb71-4ac7-b21f-62ecbff15de2": {
+              "type": "inventory_status",
+              "settings": {
+                "inventory_threshold": 20,
+                "inventory_base": 50,
+                "show_bar": true,
+                "show_transfer_notice": true
+              }
+            },
+            "87e3cde5-55cb-4452-a7d6-a340fdf98098": {
+              "type": "description",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "d14f4a75-278d-4fd9-95dc-f5bb4fedb4bb",
+            "eb3268ad-0bdc-45e5-904c-9fa021679d3f",
+            "70bd1a33-272f-40ca-b9b4-0ec65d84a443",
+            "49de0899-623e-44ae-b20c-d9870385243b",
+            "f6c15bfb-fb71-4ac7-b21f-62ecbff15de2",
+            "87e3cde5-55cb-4452-a7d6-a340fdf98098"
+          ],
+          "settings": {
+          }
+        },
+        "mobile-navigation-bar": {
+          "type": "mobile-navigation-bar",
+          "settings": {
+            "eb_mobile_navbar": true,
+            "show_homepage": true,
+            "show_shop": true,
+            "show_account": true,
+            "show_cart": true
+          }
+        },
+        "sticky-add-cart": {
+          "type": "sticky-add-cart",
+          "settings": {
+            "enable_sticky_add_cart": true,
+            "enable_sticky_add_cart_mobile": true,
+            "variant_type": "swatches"
+          }
+        },
+        "cart-drawer": {
+          "type": "cart-drawer",
+          "settings": {
+            "enable_promotion": true,
+            "promotion_code": "NEW10",
+            "message": "10% OFF for first customer. Use code [promotion_code]",
+            "show_cart_note": true
+          }
+        },
+        "header-search": {
+          "type": "header-search",
+          "settings": {
+            "search_popular_keywords": "t-shirt, dress, Hot",
+            "search_collection_recommended": "cooktail",
+            "predictive_search_enabled": true
+          }
+        }
+      },
+      "content_for_index": [
+
+      ],
+      "color_schemes": {
+        "default-color-scheme": {
+          "settings": {
+            "background": "#ffffff",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#666666",
+            "color_general_heading": "#000000",
+            "color_general_border": "#cccccc",
+            "color_button_background": "#000000",
+            "color_button_text": "#ffffff",
+            "color_button_background_hover": "#ffffff",
+            "color_button_text_hover": "#000000",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#000000",
+            "color_button_outline_border": "#999999"
+          }
+        },
+        "color-scheme-1": {
+          "settings": {
+            "background": "#ffffff",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#ffffff",
+            "color_general_heading": "#ffffff",
+            "color_general_border": "#cccccc",
+            "color_button_background": "#ffffff",
+            "color_button_text": "#000000",
+            "color_button_background_hover": "#000000",
+            "color_button_text_hover": "#ffffff",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#ffffff",
+            "color_button_outline_border": "#ffffff"
+          }
+        },
+        "color-scheme-2": {
+          "settings": {
+            "background": "#e6e7ec",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#333333",
+            "color_general_heading": "#000000",
+            "color_general_border": "#cccccc",
+            "color_button_background": "#ffffff",
+            "color_button_text": "#000000",
+            "color_button_background_hover": "#000000",
+            "color_button_text_hover": "#ffffff",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#ffffff",
+            "color_button_outline_border": "#999999"
+          }
+        },
+        "scheme-0ba1b009-7eed-45cd-b0f5-57fda3e81ca0": {
+          "settings": {
+            "background": "#ffffff",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#000000",
+            "color_general_heading": "#000000",
+            "color_general_border": "#000000",
+            "color_button_background": "#000000",
+            "color_button_text": "#ffffff",
+            "color_button_background_hover": "#ffffff",
+            "color_button_text_hover": "#000000",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#000000",
+            "color_button_outline_border": "#999999"
+          }
+        },
+        "scheme-957ad1f6-ead2-4f72-bdba-ddfe8f341c9e": {
+          "settings": {
+            "background": "#ebe0d4",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#000000",
+            "color_general_heading": "#000000",
+            "color_general_border": "#ccc1b6",
+            "color_button_background": "#ffffff",
+            "color_button_text": "#050505",
+            "color_button_background_hover": "#000000",
+            "color_button_text_hover": "#ffffff",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#000000",
+            "color_button_outline_border": "#999999"
+          }
+        },
+        "scheme-9992034c-51d7-4a47-92a6-2d680b0b20b4": {
+          "settings": {
+            "background": "#ffffff",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#666666",
+            "color_general_heading": "#000000",
+            "color_general_border": "#cccccc",
+            "color_button_background": "#000000",
+            "color_button_text": "#ffffff",
+            "color_button_background_hover": "#ffffff",
+            "color_button_text_hover": "#000000",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#000000",
+            "color_button_outline_border": "#999999"
+          }
+        },
+        "scheme-66b78682-0047-4be4-bea3-4d57f05c100d": {
+          "settings": {
+            "background": "#e9f2ef",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#000000",
+            "color_general_heading": "#000000",
+            "color_general_border": "#cccccc",
+            "color_button_background": "#ffffff",
+            "color_button_text": "#000000",
+            "color_button_background_hover": "#000000",
+            "color_button_text_hover": "#ffffff",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#000000",
+            "color_button_outline_border": "#999999"
+          }
+        },
+        "scheme-db2026e7-600d-4960-8fb6-3d0f2a976c94": {
+          "settings": {
+            "background": "#edeff3",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#666666",
+            "color_general_heading": "#000000",
+            "color_general_border": "#cccccc",
+            "color_button_background": "#000000",
+            "color_button_text": "#ffffff",
+            "color_button_background_hover": "#ffffff",
+            "color_button_text_hover": "#000000",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#000000",
+            "color_button_outline_border": "#999999"
+          }
+        }
+      }
+    },
+    "Obik": {
+      "favicon": "shopify:\/\/shop_images\/favicon-32x32.png",
+      "page_width": 1290,
+      "rounded_corner": false,
+      "body_font": "inter_n4",
+      "heading_font": "mariposa_sans_n4",
+      "heading_text_transform": "unset",
+      "heading_letter_spacing": "1px",
+      "menu_font": "heading_font",
+      "button_text_transform": "uppercase",
+      "product_enable_quickview": true,
+      "product_show_image_hover": true,
+      "product_show_color_swatch": true,
+      "product_show_vendor": true,
+      "product_show_rate": false,
+      "product_show_badges": true,
+      "color_product_rate": "#ff9a00",
+      "product_notify_re_stock": true,
+      "color_swatch_custom": "Light Blue: #ced5e0, Pine: #313730, Forest: #15524b, Beige: #e3d0c6, Forest: #595902, Dark Green: #665d4a,Red: #c01d21, Dark Ground: #60332e, Rose White: #ebdddd, Flamigo: #e5baa2,Light Blue: #e7e8ed, Pale Brown: #d3966b, Patterned: #825836, Pine Green: #2e6575",
+      "social_media_facebook": "https:\/\/facebook.com\/shopify",
+      "social_media_instagram": "http:\/\/instagram.com\/shopify",
+      "social_media_twitter": "https:\/\/twitter.com\/shopify",
+      "social_media_tiktok": "https:\/\/tiktok.com\/shopify",
+      "social_media_pinterest": "https:\/\/pinterest.com\/shopify",
+      "social_media_youtube": "https:\/\/www.youtube.com\/shopify",
+      "animations_reveal_on_scroll": true,
+      "enable_zoom_effect": true,
+      "show_in_minicart": true,
+      "show_in_cart_page": true,
+      "minimum_amount": 500,
+      "enable_cookies": true,
+      "show_in_editor": false,
+      "sections": {
+        "product-quickview": {
+          "type": "product-quickview",
+          "blocks": {
+            "d14f4a75-278d-4fd9-95dc-f5bb4fedb4bb": {
+              "type": "title",
+              "settings": {
+              }
+            },
+            "eb3268ad-0bdc-45e5-904c-9fa021679d3f": {
+              "type": "price",
+              "settings": {
+              }
+            },
+            "70bd1a33-272f-40ca-b9b4-0ec65d84a443": {
+              "type": "product_image",
+              "settings": {
+              }
+            },
+            "49de0899-623e-44ae-b20c-d9870385243b": {
+              "type": "variant_picker",
+              "settings": {
+              }
+            },
+            "f6c15bfb-fb71-4ac7-b21f-62ecbff15de2": {
+              "type": "inventory_status",
+              "settings": {
+                "inventory_threshold": 20,
+                "inventory_base": 50,
+                "show_bar": true,
+                "show_transfer_notice": true
+              }
+            },
+            "87e3cde5-55cb-4452-a7d6-a340fdf98098": {
+              "type": "description",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "d14f4a75-278d-4fd9-95dc-f5bb4fedb4bb",
+            "eb3268ad-0bdc-45e5-904c-9fa021679d3f",
+            "70bd1a33-272f-40ca-b9b4-0ec65d84a443",
+            "49de0899-623e-44ae-b20c-d9870385243b",
+            "f6c15bfb-fb71-4ac7-b21f-62ecbff15de2",
+            "87e3cde5-55cb-4452-a7d6-a340fdf98098"
+          ],
+          "settings": {
+          }
+        },
+        "mobile-navigation-bar": {
+          "type": "mobile-navigation-bar",
+          "settings": {
+            "eb_mobile_navbar": true,
+            "show_homepage": true,
+            "show_shop": true,
+            "show_account": true,
+            "show_cart": true
+          }
+        },
+        "sticky-add-cart": {
+          "type": "sticky-add-cart",
+          "settings": {
+            "enable_sticky_add_cart": true,
+            "enable_sticky_add_cart_mobile": true,
+            "variant_type": "swatches"
+          }
+        },
+        "cart-drawer": {
+          "type": "cart-drawer",
+          "settings": {
+            "enable_promotion": true,
+            "promotion_code": "NEW10",
+            "message": "10% OFF for first customer. Use code [promotion_code]",
+            "show_cart_note": true
+          }
+        },
+        "header-search": {
+          "type": "header-search",
+          "settings": {
+            "search_popular_keywords": "Bikini, Floral, Piece",
+            "search_collection_recommended": "bottoms",
+            "predictive_search_enabled": true
+          }
+        }
+      },
+      "content_for_index": [
+
+      ],
+      "color_schemes": {
+        "default-color-scheme": {
+          "settings": {
+            "background": "#ffffff",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#666666",
+            "color_general_heading": "#000000",
+            "color_general_border": "#cccccc",
+            "color_button_background": "#000000",
+            "color_button_text": "#ffffff",
+            "color_button_background_hover": "#ffffff",
+            "color_button_text_hover": "#000000",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#000000",
+            "color_button_outline_border": "#999999"
+          }
+        },
+        "color-scheme-1": {
+          "settings": {
+            "background": "#ffffff",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#ffffff",
+            "color_general_heading": "#ffffff",
+            "color_general_border": "#cccccc",
+            "color_button_background": "#ffffff",
+            "color_button_text": "#000000",
+            "color_button_background_hover": "#000000",
+            "color_button_text_hover": "#ffffff",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#ffffff",
+            "color_button_outline_border": "#ffffff"
+          }
+        },
+        "color-scheme-2": {
+          "settings": {
+            "background": "#e6e7ec",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#333333",
+            "color_general_heading": "#000000",
+            "color_general_border": "#cccccc",
+            "color_button_background": "#ffffff",
+            "color_button_text": "#000000",
+            "color_button_background_hover": "#000000",
+            "color_button_text_hover": "#ffffff",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#ffffff",
+            "color_button_outline_border": "#999999"
+          }
+        },
+        "scheme-0ba1b009-7eed-45cd-b0f5-57fda3e81ca0": {
+          "settings": {
+            "background": "#ffffff",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#000000",
+            "color_general_heading": "#000000",
+            "color_general_border": "#000000",
+            "color_button_background": "#000000",
+            "color_button_text": "#ffffff",
+            "color_button_background_hover": "#ffffff",
+            "color_button_text_hover": "#000000",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#000000",
+            "color_button_outline_border": "#999999"
+          }
+        },
+        "scheme-957ad1f6-ead2-4f72-bdba-ddfe8f341c9e": {
+          "settings": {
+            "background": "#f2eae1",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#000000",
+            "color_general_heading": "#000000",
+            "color_general_border": "#ccc1b6",
+            "color_button_background": "#000000",
+            "color_button_text": "#ffffff",
+            "color_button_background_hover": "#ffffff",
+            "color_button_text_hover": "#000000",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#000000",
+            "color_button_outline_border": "#999999"
+          }
+        },
+        "scheme-9992034c-51d7-4a47-92a6-2d680b0b20b4": {
+          "settings": {
+            "background": "#ffffff",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#666666",
+            "color_general_heading": "#000000",
+            "color_general_border": "#cccccc",
+            "color_button_background": "#000000",
+            "color_button_text": "#ffffff",
+            "color_button_background_hover": "#ffffff",
+            "color_button_text_hover": "#000000",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#000000",
+            "color_button_outline_border": "#999999"
+          }
+        },
+        "scheme-66b78682-0047-4be4-bea3-4d57f05c100d": {
+          "settings": {
+            "background": "#e9f2ef",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#000000",
+            "color_general_heading": "#000000",
+            "color_general_border": "#cccccc",
+            "color_button_background": "#ffffff",
+            "color_button_text": "#000000",
+            "color_button_background_hover": "#000000",
+            "color_button_text_hover": "#ffffff",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#000000",
+            "color_button_outline_border": "#999999"
+          }
+        },
+        "scheme-db2026e7-600d-4960-8fb6-3d0f2a976c94": {
+          "settings": {
+            "background": "#edeff3",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#666666",
+            "color_general_heading": "#000000",
+            "color_general_border": "#cccccc",
+            "color_button_background": "#000000",
+            "color_button_text": "#ffffff",
+            "color_button_background_hover": "#ffffff",
+            "color_button_text_hover": "#000000",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#000000",
+            "color_button_outline_border": "#999999"
+          }
+        }
+      }
+    },
+    "Glamor": {
+      "page_width": 1290,
+      "rounded_corner": false,
+      "body_font": "inter_n4",
+      "heading_font": "inter_n6",
+      "heading_text_transform": "uppercase",
+      "heading_letter_spacing": "0.25em",
+      "button_text_transform": "uppercase",
+      "product_enable_quickview": true,
+      "product_show_image_hover": true,
+      "product_show_color_swatch": true,
+      "product_show_vendor": true,
+      "product_show_rate": false,
+      "product_show_badges": true,
+      "color_product_rate": "#ff9a00",
+      "product_notify_re_stock": true,
+      "color_swatch_custom": "Light Gray: #edebe7,\nForest Green: #487543,\nLight Peach: #dfa989,\nDeep Sea Blue: #375b7b,\nDark Brown: #65453c,\nPlum: #6e6472,\nLight Lavender:#bbaeb2,\nSage Green: #919a95,\nDeep Orange: #eeb375,\nPale Pink: #ded4d7,\nRose Gold: #F9E8D7,\nNavy Blue: #2b3d61,\nLight Blue: #88a0ac,",
+      "animations_reveal_on_scroll": true,
+      "enable_zoom_effect": true,
+      "cart_type": "drawer",
+      "show_in_minicart": true,
+      "show_in_cart_page": true,
+      "minimum_amount": 500,
+      "recommendation_product_type": "selected",
+      "select_product_recommendation": [
+        "brown-bucket-hat",
+        "floral-jumpsuit",
+        "floral-lace-dress"
+      ],
+      "enable_cookies": true,
+      "show_in_editor": false,
+      "sections": {
+        "product-quickview": {
+          "type": "product-quickview",
+          "blocks": {
+            "d14f4a75-278d-4fd9-95dc-f5bb4fedb4bb": {
+              "type": "title",
+              "settings": {
+              }
+            },
+            "eb3268ad-0bdc-45e5-904c-9fa021679d3f": {
+              "type": "price",
+              "settings": {
+              }
+            },
+            "70bd1a33-272f-40ca-b9b4-0ec65d84a443": {
+              "type": "product_image",
+              "settings": {
+              }
+            },
+            "49de0899-623e-44ae-b20c-d9870385243b": {
+              "type": "variant_picker",
+              "settings": {
+              }
+            },
+            "f6c15bfb-fb71-4ac7-b21f-62ecbff15de2": {
+              "type": "inventory_status",
+              "settings": {
+                "inventory_threshold": 20,
+                "inventory_base": 50,
+                "show_bar": true,
+                "show_transfer_notice": true
+              }
+            },
+            "87e3cde5-55cb-4452-a7d6-a340fdf98098": {
+              "type": "description",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "d14f4a75-278d-4fd9-95dc-f5bb4fedb4bb",
+            "eb3268ad-0bdc-45e5-904c-9fa021679d3f",
+            "70bd1a33-272f-40ca-b9b4-0ec65d84a443",
+            "49de0899-623e-44ae-b20c-d9870385243b",
+            "f6c15bfb-fb71-4ac7-b21f-62ecbff15de2",
+            "87e3cde5-55cb-4452-a7d6-a340fdf98098"
+          ],
+          "settings": {
+          }
+        },
+        "mobile-navigation-bar": {
+          "type": "mobile-navigation-bar",
+          "settings": {
+            "eb_mobile_navbar": true,
+            "show_homepage": true,
+            "show_shop": true,
+            "show_account": true,
+            "show_cart": true
+          }
+        },
+        "sticky-add-cart": {
+          "type": "sticky-add-cart",
+          "settings": {
+            "enable_sticky_add_cart": true,
+            "enable_sticky_add_cart_mobile": true,
+            "variant_type": "swatches"
+          }
+        },
+        "cart-drawer": {
+          "type": "cart-drawer",
+          "settings": {
+            "enable_promotion": true,
+            "promotion_code": "NEW10",
+            "message": "10% OFF for first customer. Use code [promotion_code]",
+            "show_cart_note": true
+          }
+        },
+        "header-search": {
+          "type": "header-search",
+          "settings": {
+            "search_popular_keywords": "Glasses, Hot, Rounded",
+            "search_collection_recommended": "eyeglasses",
+            "predictive_search_enabled": true
+          }
+        }
+      },
+      "content_for_index": [
+
+      ],
+      "blocks": {
+        "14060646107696862457": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": false,
+          "settings": {
+          }
+        }
+      },
+      "color_schemes": {
+        "default-color-scheme": {
+          "settings": {
+            "background": "#ffffff",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#666666",
+            "color_general_heading": "#000000",
+            "color_general_border": "#cccccc",
+            "color_button_background": "#000000",
+            "color_button_text": "#ffffff",
+            "color_button_background_hover": "#ffffff",
+            "color_button_text_hover": "#000000",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#000000",
+            "color_button_outline_border": "#999999"
+          }
+        },
+        "color-scheme-1": {
+          "settings": {
+            "background": "#ffffff",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#ffffff",
+            "color_general_heading": "#ffffff",
+            "color_general_border": "#cccccc",
+            "color_button_background": "#ffffff",
+            "color_button_text": "#000000",
+            "color_button_background_hover": "#000000",
+            "color_button_text_hover": "#ffffff",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#ffffff",
+            "color_button_outline_border": "#ffffff"
+          }
+        },
+        "color-scheme-2": {
+          "settings": {
+            "background": "#f1f2f8",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#333333",
+            "color_general_heading": "#000000",
+            "color_general_border": "#cccccc",
+            "color_button_background": "#ffffff",
+            "color_button_text": "#000000",
+            "color_button_background_hover": "#000000",
+            "color_button_text_hover": "#ffffff",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#ffffff",
+            "color_button_outline_border": "#999999"
+          }
+        },
+        "scheme-0ba1b009-7eed-45cd-b0f5-57fda3e81ca0": {
+          "settings": {
+            "background": "#ffffff",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#000000",
+            "color_general_heading": "#000000",
+            "color_general_border": "#000000",
+            "color_button_background": "#000000",
+            "color_button_text": "#ffffff",
+            "color_button_background_hover": "#ffffff",
+            "color_button_text_hover": "#000000",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#000000",
+            "color_button_outline_border": "#999999"
+          }
+        },
+        "scheme-957ad1f6-ead2-4f72-bdba-ddfe8f341c9e": {
+          "settings": {
+            "background": "#ebdbcb",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#000000",
+            "color_general_heading": "#000000",
+            "color_general_border": "#000000",
+            "color_button_background": "#000000",
+            "color_button_text": "#ffffff",
+            "color_button_background_hover": "#ffffff",
+            "color_button_text_hover": "#000000",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#000000",
+            "color_button_outline_border": "#999999"
+          }
+        },
+        "scheme-9992034c-51d7-4a47-92a6-2d680b0b20b4": {
+          "settings": {
+            "background": "#e9f2ef",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#476359",
+            "color_general_heading": "#58695e",
+            "color_general_border": "#cccccc",
+            "color_button_background": "#ffffff",
+            "color_button_text": "#000000",
+            "color_button_background_hover": "#000000",
+            "color_button_text_hover": "#ffffff",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#000000",
+            "color_button_outline_border": "#999999"
+          }
+        },
+        "scheme-66b78682-0047-4be4-bea3-4d57f05c100d": {
+          "settings": {
+            "background": "#e9f2ef",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#000000",
+            "color_general_heading": "#000000",
+            "color_general_border": "#cccccc",
+            "color_button_background": "#ffffff",
+            "color_button_text": "#000000",
+            "color_button_background_hover": "#000000",
+            "color_button_text_hover": "#ffffff",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#000000",
+            "color_button_outline_border": "#999999"
+          }
+        },
+        "scheme-db2026e7-600d-4960-8fb6-3d0f2a976c94": {
+          "settings": {
+            "background": "#edeff3",
+            "background_gradient": "",
+            "color_general_accent": "#e40202",
+            "color_general_text": "#666666",
+            "color_general_heading": "#000000",
+            "color_general_border": "#cccccc",
+            "color_button_background": "#000000",
+            "color_button_text": "#ffffff",
+            "color_button_background_hover": "#ffffff",
+            "color_button_text_hover": "#000000",
+            "fill_button_border_hover": "#000000",
+            "color_button_outline": "#000000",
+            "color_button_outline_border": "#999999"
+          }
+        }
+      }
+    }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".bls__section-header {--h2-size: 3rem;}",
+      "@media (min-width: 1600px) {:root {--h0-size: 10rem; } .bls__section-header {--h2-size: 4rem; }}",
+      ".testimonials-section {--rate-color: rgb(46 156 2);}",
+      ".template-index footer.border-top {border-color: transparent; margin-top: 0;}",
+      ".bls__section-header:has(.short-des) h2 {margin-bottom: 0;}"
+    ]
   }
 }

@@ -124,7 +124,7 @@
                     tabindex="-1"
                     autofocus
                   >
-                    {% render 'icon-success' -%}
+                    {% render 'icon-checkmark', custom_width: 13 -%}
                     {{- 'newsletter.success' | t }}
                   </h3>
                 {%- endif -%}
@@ -369,8 +369,6 @@
       ]
     }
   ],
-  "templates": [
-    "password"
-  ]
+  "templates": ["password"]
 }
 {% endschema %}

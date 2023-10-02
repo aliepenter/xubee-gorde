@@ -108,13 +108,32 @@ class GalleryGrid extends SlideSection {
         sl.innerHTML = content;
         container.innerHTML = sl.innerHTML;
       }
+      this.lazyloadImage(isMobile);
     }
   }
+
   loadContent() {
     const content = document.createElement('div');
     content.appendChild(this.querySelector('template').content.firstElementChild.cloneNode(true));
     if (content.querySelector(".content-items")) {
       return content.querySelector(".content-items").innerHTML;
+    }
+  }
+  
+  lazyloadImage(isMobile) {
+    if (this.querySelectorAll(".loading-animation").length != 0) {
+      this.querySelectorAll(".loading-animation").forEach((e, index) => {
+        var img = new Image();
+        img.src = e.getAttribute("src");
+        img.addEventListener('load', function() {
+          if (isMobile) {
+            e.classList.remove("loading-animation");
+          }else{
+            e.classList.add("loaded-animation");
+            e.classList.remove("loading-animation");
+          }
+        });
+      });
     }
   }
 }

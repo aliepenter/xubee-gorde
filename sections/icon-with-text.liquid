@@ -101,10 +101,7 @@
 
         <div
           class="bls__icon-with-text-inner relative d-flex justify-content-center {{ icon_position }}{{ icon_alignment }}{% if section.settings.text_alignment == 'center' %} justify-content-center{% endif %}{% if section.settings.text_alignment == 'right' %} align-end{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          {%- if settings.animations_reveal_on_scroll -%}
-            style="--animation-order: {{ forloop.index }};"
-          {%- endif -%}
-          style="--item-width: {{ section.settings.icon_width }}px; --item-gap: 1.5rem;"
+          style="--item-width: {{ section.settings.icon_width }}px; --item-gap: 1.5rem;{% if settings.animations_reveal_on_scroll %} --animation-order: {{ forloop.index }}; {% endif %}"
         >
           {% if block.settings.icon_svg != blank %}
             <div
@@ -155,7 +152,7 @@
           {%- if block.settings.heading != blank or block.settings.description -%}
             <div class="icon-with-text-infor max-100 text-{{ section.settings.text_alignment }}{% if block.settings.uppercase %} uppercase{% endif %}">
               {%- if block.settings.heading != blank -%}
-                <h2 class="image-with-text__heading mt-0 mb-10 {{ icon_heading_size }}">
+                <h2 class="image-with-text__heading heading-letter-spacing mt-0 mb-10 {{ icon_heading_size }}">
                   {{ block.settings.heading }}
                 </h2>
               {%- endif -%}
@@ -177,11 +174,7 @@
   "name": "t:sections.icon-with-text.name",
   "class": "section",
   "disabled_on": {
-    "groups": [
-      "header",
-      "footer",
-      "custom.overlay"
-    ]
+    "groups": ["header", "footer", "custom.overlay"]
   },
   "settings": [
     {

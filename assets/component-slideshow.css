@@ -5,6 +5,14 @@
   --grey-color: var(--heading-color);
 }
 
+.slideshow .size-small {
+  --heading-size: clamp(3rem, 3vw, 6rem);
+  --heading-mb: 0.8rem;
+  --description-size: 1.8rem;
+  --description-mb: 2.4rem;
+  --button-spacing-top: clamp(2.4rem, 3vw, 4rem);
+}
+
 .slideshow .size-large {
   --sub-heading-mb: clamp(1.2rem, 2vw, 2rem);
   --button-spacing-top: clamp(2.2rem, 2.8vw, 3.3rem);

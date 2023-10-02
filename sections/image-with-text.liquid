@@ -34,7 +34,10 @@
   style="{{ style | strip | strip_newlines }}"
 >
   <div class="section_inner{{ section_width }}">
-    <div class="d-flex flex-cols flex-column item-inner-width align-md-{{ section.settings.desktop_content_position }} gap-{{ section.settings.column_gap }}{% if section.settings.image_desktop_position == "right" %} flex-md-row-reverse{% else %} flex-md-row{% endif %}">
+    <div
+      class="d-flex flex-cols flex-column item-inner-width align-md-{{ section.settings.desktop_content_position }} gap-{{ section.settings.column_gap }}{% if section.settings.image_desktop_position == "right" %} flex-md-row-reverse{% else %} flex-md-row{% endif %}"
+      style="--row-gap: 0"
+    >
       <div class="image-with-text__media-item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <div
           class="image-with-text__media banner__media image-with-text__media--{{ section.settings.height }} color-{{ section.settings.color_scheme }} gradient {% if section.settings.image != blank %}media{% else %}image-with-text__media--placeholder placeholder{% endif %}"
@@ -45,77 +48,88 @@
           {% endif %}
         >
           {%- if section.settings.image != blank -%}
-            {%- capture sizes -%}
-            (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
-            (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
-          {%- endcapture -%}
             {{
               section.settings.image
               | image_url: width: 1500
-              | image_tag: loading: 'lazy', sizes: sizes, widths: '165, 360, 535, 750, 1070, 1500'
+              | image_tag: loading: 'lazy', sizes: '100vw', widths: '165, 360, 535, 750, 1070, 1500'
             }}
           {%- else -%}
             {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
           {%- endif -%}
         </div>
       </div>
-      <div class="item-content-md image-with-text__text-item flex-1 text-{{ section.settings.text_alignment }} size-{{ section.settings.content_size }}{% if section.settings.section_width == 'expand_full_width' %} max-100 mx-767-15{% endif %}">
-        {%- for block in section.blocks -%}
-          {% case block.type %}
-            {%- when 'heading' -%}
-              <h2
-                class="image-with-text__heading section-heading mt-0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                {%- if settings.animations_reveal_on_scroll -%}
-                  style="--animation-order: {{ forloop.index }};"
-                {%- endif -%}
-                {{ block.shopify_attributes }}
-              >
-                {{ block.settings.heading }}
-              </h2>
-            {%- when 'subheading' -%}
-              <p
-                class="sub-heading image-with-text__text mt-0 heading-color heading-font{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                {%- if settings.animations_reveal_on_scroll -%}
-                  style="--animation-order: {{ forloop.index }};"
-                {%- endif -%}
-                {{ block.shopify_attributes }}
-              >
-                {{ block.settings.subheading | escape }}
-              </p>
-            {%- when 'description' -%}
-              <div
-                class="sec-des banner__text{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                {%- if settings.animations_reveal_on_scroll -%}
-                  style="--animation-order: {{ forloop.index }};"
-                {%- endif -%}
-              >
-                {{ block.settings.text }}
-              </div>
-            {%- when 'button' -%}
-              {%- if block.settings.button_label != blank -%}
-                {% if settings.animations_reveal_on_scroll %}
-                  <div class="scroll-trigger animate--slide-in" style="--animation-order: {{ forloop.index }};">
-                {% endif %}
-                <a
-                  {% if block.settings.button_link == blank %}
-                    role="link" aria-disabled="true"
-                  {% else %}
-                    href="{{ block.settings.button_link }}"
-                  {% endif %}
-                  class="section-btn btn btn-{{ block.settings.button_style }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+      <div class="py-50 item-content-md image-with-text__text-item flex-1 text-{{ section.settings.text_alignment }} size-{{ section.settings.content_size }}{% if section.settings.section_width == 'expand_full_width' %} max-100 mx-767-15{% endif %}">
+        <div class="image-with-text__text-item-inner{% if section.settings.section_width == 'expand_full_width' and section.settings.column_gap == 'no_gap'  %} pl-20{% else %} pl-gap{% endif %}">
+          {%- for block in section.blocks -%}
+            {% case block.type %}
+              {%- when 'heading' -%}
+                <h2
+                  class="image-with-text__heading section-heading heading-letter-spacing mt-0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                   {%- if settings.animations_reveal_on_scroll -%}
                     style="--animation-order: {{ forloop.index }};"
                   {%- endif -%}
                   {{ block.shopify_attributes }}
                 >
-                  {{ block.settings.button_label | escape }}
-                </a>
-                {% if settings.animations_reveal_on_scroll %}
+                  {{ block.settings.heading }}
+                </h2>
+              {%- when 'subheading' -%}
+                <p
+                  class="sub-heading image-with-text__text mt-0 heading-color heading-font{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  {%- if settings.animations_reveal_on_scroll -%}
+                    style="--animation-order: {{ forloop.index }};"
+                  {%- endif -%}
+                  {{ block.shopify_attributes }}
+                >
+                  {{ block.settings.subheading | escape }}
+                </p>
+              {%- when 'description' -%}
+                <div
+                  class="sec-des banner__text{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  {%- if settings.animations_reveal_on_scroll %}
+                    style="--animation-order: {{ forloop.index }};"
+                  {% endif %}
+                >
+                  {{ block.settings.text }}
+                </div>
+              {%- when 'spacing' -%}
+                <div
+                  class="bls__spacing"
+                  style=" --desktop-height: {{ block.settings.desktop_spacing }}px; --mobile_height: {{ block.settings.mobile_spacing }}px;"
+                ></div>
+              {%- when 'button' -%}
+                {% if block.settings.first_button_label != blank or block.settings.second_button_label != blank %}
+                  <div class="section-btn d-flex flex-wrap gap-10 justify-content-{{ section.settings.text_alignment }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                    {% if block.settings.first_button_label != blank %}
+                      <a
+                        {% if block.settings.first_button_link == blank %}
+                          role="link" aria-disabled="true"
+                        {% else %}
+                          href="{{ block.settings.first_button_link | default: "#" }}"
+                        {% endif %}
+                        aria-label="{{ block.settings.first_button_label }}"
+                        class="btn remove-underline{% if block.settings.first_button_style %} btn-outline{% else %} btn-primary{% endif %}"
+                      >
+                        {{ block.settings.first_button_label }}
+                      </a>
+                    {% endif %}
+                    {% if block.settings.second_button_label != blank %}
+                      <a
+                        {% if block.settings.second_button_link == blank %}
+                          role="link" aria-disabled="true"
+                        {% else %}
+                          href="{{ block.settings.second_button_link | default: "#" }}"
+                        {% endif %}
+                        aria-label="{{ block.settings.second_button_label }}"
+                        class="btn remove-underline {% if block.settings.second_button_style %} btn-outline{% else %} btn-primary{% endif %}"
+                      >
+                        {{ block.settings.second_button_label }}
+                      </a>
+                    {% endif %}
                   </div>
                 {% endif %}
-              {%- endif -%}
-          {%- endcase -%}
-        {%- endfor -%}
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
       </div>
     </div>
   </div>
@@ -126,11 +140,7 @@
   "name": "t:sections.image-with-text.name",
   "class": "section",
   "disabled_on": {
-    "groups": [
-      "header",
-      "footer",
-      "custom.overlay"
-    ]
+    "groups": ["header", "footer", "custom.overlay"]
   },
   "settings": [
     {
@@ -313,7 +323,7 @@
     {
       "type": "heading",
       "name": "t:sections.all.content_setting.heading.label",
-      "limit": 1,
+      "limit": 2,
       "settings": [
         {
           "type": "text",
@@ -326,7 +336,7 @@
     {
       "type": "subheading",
       "name": "t:sections.all.content_setting.subheading.label",
-      "limit": 1,
+      "limit": 2,
       "settings": [
         {
           "type": "text",
@@ -339,7 +349,7 @@
     {
       "type": "description",
       "name": "t:sections.all.content_setting.description.label",
-      "limit": 1,
+      "limit": 2,
       "settings": [
         {
           "type": "richtext",
@@ -352,35 +362,69 @@
     {
       "type": "button",
       "name": "t:sections.all.content_setting.button_label.name",
-      "limit": 1,
+      "limit": 2,
       "settings": [
         {
           "type": "text",
-          "id": "button_label",
+          "id": "first_button_label",
           "default": "Shop now",
-          "label": "t:sections.all.content_setting.button_label.label",
+          "label": "t:sections.all.content_setting.first_button_label.label",
           "info": "t:sections.all.content_setting.button_label.info"
         },
         {
           "type": "url",
-          "id": "button_link",
-          "label": "t:sections.all.content_setting.link.label"
+          "id": "first_button_link",
+          "label": "t:sections.all.content_setting.first_button_label.link"
         },
         {
-          "type": "select",
-          "id": "button_style",
-          "options": [
-            {
-              "value": "fill",
-              "label": "t:sections.all.button_style.fill"
-            },
-            {
-              "value": "outline",
-              "label": "t:sections.all.button_style.outline"
-            }
-          ],
-          "default": "fill",
-          "label": "t:sections.all.button_style.label"
+          "type": "checkbox",
+          "id": "first_button_style",
+          "label": "t:sections.all.button_style.use_outline_button_style"
+        },
+        {
+          "type": "text",
+          "id": "second_button_label",
+          "label": "t:sections.all.content_setting.second_button_label.label",
+          "info": "t:sections.all.content_setting.button_label.info"
+        },
+        {
+          "type": "url",
+          "id": "second_button_link",
+          "label": "t:sections.all.content_setting.second_button_label.link"
+        },
+        {
+          "type": "checkbox",
+          "id": "second_button_style",
+          "label": "t:sections.all.button_style.use_outline_button_style"
+        }
+      ]
+    },
+    {
+      "type": "spacing",
+      "name": "t:sections.all.spacing",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "range",
+          "id": "desktop_spacing",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "t:sections.spacing.settings.desktop",
+          "info": "t:sections.spacing.settings.desktop_info",
+          "default": 15
+        },
+        {
+          "type": "range",
+          "id": "mobile_spacing",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "default": 10,
+          "label": "t:sections.spacing.settings.mobile",
+          "info": "t:sections.spacing.settings.mobile_info"
         }
       ]
     }

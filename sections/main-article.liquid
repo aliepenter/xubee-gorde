@@ -25,7 +25,9 @@
                 {%- render 'breadcrumbs' -%}
               </div>
             {% endif %}
-            <h1 class="article-template__title mb-30 h0 mt-15" itemprop="headline">{{ article.title | escape }}</h1>
+            <h1 class="heading-letter-spacing article-template__title mb-30 h0 mt-15" itemprop="headline">
+              {{ article.title | escape }}
+            </h1>
             <div class="article-template__back btn-text-transform lh-normal d-flex flex-wrap gap-10 justify-content-center mt-30">
               {% if bs.show_cate %}
                 <span class="article-template__link remove-underline{% if settings.rounded_corner %} outline-style reset-hover{% else %} heading-color{% endif %} fs-small">
@@ -204,7 +206,7 @@
                     <div class="btn-text-transform ">
                       {{ 'blogs.article.previous_post' | t }}
                     </div>
-                    <div class="text-title heading-style h4 mt-5 d-none d-sm-block">
+                    <div class="text-title heading-style h4 mt-5 d-none d-sm-block text-transform-unset">
                       {{ blog.previous_article.title }}
                     </div>
                   </div>
@@ -216,7 +218,9 @@
                     <div class="btn-text-transform ">
                       {{ 'blogs.article.next_post' | t -}}
                     </div>
-                    <div class="text-title heading-style h4 mt-5 d-none d-sm-block">{{ blog.next_article.title }}</div>
+                    <div class="text-title heading-style h4 mt-5 d-none d-sm-block text-transform-unset">
+                      {{ blog.next_article.title }}
+                    </div>
                   </div>
                 </a>
               {% endif %}
@@ -240,7 +244,9 @@
             <div class="mt-65 pt-65 border-top">
               <div class="bls__section-header mb-40 mb-sm-35 text-left">
                 {%- if bs.related_title != blank -%}
-                  <div class="bls_section-heading mt-0 mb-7 mb-md-15 mt-5 h3 capitalize">{{ bs.related_title }}</div>
+                  <div class="bls_section-heading heading-letter-spacing mt-0 mb-7 mb-md-15 mt-5 h3">
+                    {{ bs.related_title }}
+                  </div>
                 {%- endif -%}
               </div>
               <div class="bls__blog-posts-main">
@@ -306,7 +312,7 @@
                 <div class="bls__section-header mb-40 mb-sm-35 text-left">
                   <h2
                     id="Comments-{{ article.id }}"
-                    class="bls_section-heading mt-0 mb-7 mb-md-15 mt-5 capitalize"
+                    class="bls_section-heading heading-letter-spacing mt-0 mb-7 mb-md-15 mt-5"
                     tabindex="-1"
                   >
                     {{ 'blogs.article.comments' | t: count: article.comments_count }}
@@ -354,7 +360,7 @@
                   endif
                 -%}
                 <div class="bls__section-header mb-40 mb-sm-35 text-left">
-                  <h2 class="bls_section-heading mt-0 mb-7 mb-md-15 mt-5 capitalize">
+                  <h2 class="bls_section-heading heading-letter-spacing mt-0 mb-7 mb-md-15 mt-5">
                     {{ 'blogs.article.comment_form_title' | t }}
                   </h2>
                 </div>
@@ -384,7 +390,7 @@
                 {%- elsif form.posted_successfully? -%}
                   <div class="form-status-list form__message success mb-25-impo" role="status">
                     <div class="form-status" tabindex="-1" autofocus>
-                      {% render 'icon-success' %}
+                      {% render 'icon-checkmark', custom_width: 13 -%}
                       {{ post_message | t }}
                     </div>
                   </div>

@@ -50,7 +50,7 @@
   {%- if section.settings.title != blank or section.settings.description != blank -%}
     <div class="bls__section-header mb-40 mb-sm-35 text-{{ section.settings.text_alignment }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       {%- if section.settings.title != blank -%}
-        <h2 class="bls_section-heading mt-0 mb-7 mb-md-15">{{ section.settings.title }}</h2>
+        <h2 class="bls_section-heading heading-letter-spacing mt-0 mb-7 mb-md-15">{{ section.settings.title }}</h2>
       {%- endif -%}
       {%- if section.settings.description != blank -%}
         <div class="short-des">
@@ -75,6 +75,7 @@
       data-autoplay-button-output="false"
       data-axis="horizontal"
       data-mode="carousel"
+      data-nav-center-postion="product__inner"
       data-fix-height="false"
       data-product-type="true"
       data-slide-product="true"
@@ -83,11 +84,7 @@
     >
       <div class="slide-container{% if settings.animations_reveal_on_scroll %} slide-animation opacity-0 opacity-1-768{% endif %}">
         {% for recommendation in recommendations.products %}
-          {% render 'card-product',
-            card_product: recommendation,
-            section_id: section.id,
-            indexFor: forloop.index
-          %}
+          {% render 'card-product', card_product: recommendation, section_id: section.id, indexFor: forloop.index %}
         {% endfor %}
       </div>
     </product-recommendations>
@@ -271,9 +268,7 @@
       "default": 0
     }
   ],
-  "templates": [
-    "product"
-  ],
+  "templates": ["product"],
   "presets": [
     {
       "name": "t:sections.related-products.name"

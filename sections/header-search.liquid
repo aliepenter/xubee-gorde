@@ -1,6 +1,7 @@
 <action-search
   class="bls__canvas bls__canvas-right header-search has-close-btn close-slide-up header_search"
   data-focus-item="search-icon-bubble"
+  role="dialog"
 >
   <div
     id="search-form"
@@ -42,7 +43,7 @@
           placeholder="{{ 'general.search.search' | t }}"
           maxlength="128"
           id="Search-In-Modal"
-          {%- if section.settings.predictive_search_enabled -%}
+          {% if section.settings.predictive_search_enabled %}
             role="combobox"
             aria-expanded="false"
             aria-haspopup="listbox"
@@ -51,7 +52,7 @@
             autocomplete="off"
             autocapitalize="off"
             spellcheck="false"
-          {%- endif -%}
+          {% endif %}
         >
         <label class="visually-hidden" for="Search-In-Modal"> {{ 'general.search.search' | t }}</label>
         <input type="hidden" name="options[unavailable_products]" value="show">
@@ -71,8 +72,9 @@
     </form>
     {%- if search_keyword != blank or search_suggest != blank or section.settings.predictive_search_enabled != false -%}
       <predictive-search
-        class="overflow-auto search-content d-flex flex-column transition"
+        class="overflow-auto search-content d-flex flex-column transition flex-1"
         style="--col-gap: 30px"
+        role="listbox"
       >
         {%- if search_keyword != blank -%}
           {%- capture link_search_keyword -%}
@@ -92,7 +94,7 @@
                       class="recommend-search__item quick-url remove-underline btn-text-transform  fs-small outline-style heading-color d-inline-block mb-10"
                       href="{{ link_search_keyword }}{{ search_keywords }}"
                       aria-label="{{ search_keywords }}"
-                      role="option" 
+                      role="option"
                       aria-selected="false"
                     >
                       {{ search_keywords }}

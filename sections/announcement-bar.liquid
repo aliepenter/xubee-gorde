@@ -11,10 +11,29 @@
   else
     assign section_width = ' full-width-gap'
   endif
+
+  if section.settings.style_between_item == blank
+      assign space_between_text = ''
+    if section.settings.space_between_text == 'small'
+      assign space_between_text = '20px'
+    elsif section.settings.space_between_text == 'medium'
+      assign space_between_text = '30px'
+    elsif section.settings.space_between_text == 'large'
+      assign space_between_text = '44px'
+    endif
+    else
+    if section.settings.space_between_text == 'small'
+      assign space_between_text = '30px'
+    elsif section.settings.space_between_text == 'medium'
+      assign space_between_text = '44px'
+    elsif section.settings.space_between_text == 'large'
+      assign space_between_text = '54px'
+    endif
+  endif
+
 -%}
 {%- capture style -%}
-
-    --marquee-speed: {{ sec_settings.marquee_speed }}s; --announcement-space: {{ sec_settings.space_between_text }}px;
+    --marquee-speed: {{ sec_settings.marquee_speed }}s; --announcement-space: {{ space_between_text }};
 {%- endcapture -%}
 {%- liquid
   if sec_settings.homepage_only
@@ -27,7 +46,7 @@
 -%}
 {%- if sec_blocks.size > 0 and is_shown -%}
   <announcement-bar 
-    class="color-{{ section.settings.color_scheme }} gradient announcement-bar d-block text-center has-close-btn {% if sec_settings.show_mobile == blank -%}d-none md:block{%- endif %}"
+    class="color-{{ section.settings.color_scheme }} gradient announcement-bar d-block text-center has-close-btn {% if sec_settings.show_mobile == blank -%}d-none md:block{%- endif %}{% if section.settings.style_between_item and sec_settings.announcement_actions == "marquee" %} show-dot{% endif %}"
     aria-label="{{ 'sections.header.announcement.label' | t }}" {{ block.shopify_attributes }} 
     style="{{ style | strip | strip_newlines }}"
   >
@@ -61,7 +80,7 @@
                   assign blo_settings = block.settings
                 -%}
                   {%- if blo_settings.text != blank -%}
-                    <div class="announcement__bar-message d-flex justify-content-center fs-small">
+                    <div class="announcement__bar-message d-flex justify-content-center fs-{{ section.settings.scrolling_size }}{% if section.settings.uppercase %} uppercase{% endif %}{% if section.settings.style_between_item and sec_settings.announcement_actions == "marquee" %} show-dot relative z--1{% endif %}">
                         {%- if blo_settings.link != blank -%}
                           <a href="{{ blo_settings.link }}" class="announcement__bar-link link link--text d-block">
                         {%- endif -%}
@@ -80,7 +99,7 @@
               assign blo_settings = block.settings
             -%}
               {%- if blo_settings.text != blank -%}
-                  <div class="announcement__bar-message d-flex justify-content-center fs-small flex-wrap">
+                  <div class="announcement__bar-message d-flex justify-content-center fs-{{ section.settings.scrolling_size }}{% if section.settings.uppercase %} uppercase{% endif %}{% if section.settings.style_between_item and sec_settings.announcement_actions == "marquee" %} show-dot relative z--1{% endif %} flex-wrap">
                     {%- if blo_settings.link != blank -%}
                         <a href="{{ blo_settings.link }}" class="announcement__bar-link link link--text d-block" aria-label="{{ blo_settings.text | replace: "[deadline]", "" | truncate: 50 }}">
                       {%- endif -%}
@@ -98,7 +117,7 @@
             assign blo_settings = block.settings
           -%}
             {%- if blo_settings.text != blank -%}
-                <div class="announcement__bar-message d-flex justify-content-center fs-small">
+                <div class="announcement__bar-message d-flex justify-content-center fs-{{ section.settings.scrolling_size }}{% if section.settings.uppercase %} uppercase{% endif %}{% if section.settings.style_between_item and sec_settings.announcement_actions == "marquee" %} show-dot relative z--1{% endif %}">
                     {%- if blo_settings.link != blank -%}
                       <a href="{{ blo_settings.link }}" class="announcement__bar-link link link--text d-block" aria-label="{{ blo_settings.text | replace: "[deadline]", "" | truncate: 50 }}">
                     {%- endif -%}
@@ -124,7 +143,7 @@
                     assign blo_settings = block.settings
                   -%}
                     {%- if blo_settings.text != blank -%}
-                      <div class="announcement__bar-message d-flex justify-content-center fs-small">
+                      <div class="announcement__bar-message d-flex justify-content-center fs-{{ section.settings.scrolling_size }}{% if section.settings.uppercase %} uppercase{% endif %}{% if section.settings.style_between_item and sec_settings.announcement_actions == "marquee" %} show-dot relative z--1{% endif %}">
                           {%- if blo_settings.link != blank -%}
                             <a href="{{ blo_settings.link }}" class="announcement__bar-link link link--text d-block">
                           {%- endif -%}
@@ -152,6 +171,7 @@
 {% schema %}
 {
   "name": "t:sections.announcement-bar.name",
+  "class": "section-announcement-bar",
   "settings": [
     {
       "type": "select",
@@ -229,24 +249,60 @@
       "unit": "s"
     },
     {
+      "type": "checkbox",
+      "id": "style_between_item",
+      "default": true,
+      "label": "t:sections.icon-with-text.settings.icon.style_between_item"
+    },
+    {
       "type": "select",
       "id": "space_between_text",
       "options": [
         {
-          "value": "20",
+          "value": "small",
           "label": "t:sections.announcement-bar.settings.space_between.small"
         },
         {
-          "value": "30",
+          "value": "medium",
           "label": "t:sections.announcement-bar.settings.space_between.medium"
         },
         {
-          "value": "40",
+          "value": "large",
           "label": "t:sections.announcement-bar.settings.space_between.large"
         }
       ],
-      "default": "30",
+      "default": "medium",
       "label": "t:sections.announcement-bar.settings.space_between.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.content_setting.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "uppercase",
+      "default": false,
+      "label": "t:settings_schema.typography.settings.heading.text_transform.uppercase"
+    },
+    {
+      "type": "select",
+      "id": "scrolling_size",
+      "options": [
+        {
+          "value": "small",
+          "label": "t:sections.all.size.small.label"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.all.size.medium.label"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.all.size.large.label"
+        }
+      ],
+      "default": "small",
+      "label": "t:sections.all.content_setting.text.text-size"
     }
   ],
   "max_blocks": 4,

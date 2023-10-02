@@ -105,19 +105,6 @@ function focusVisiblePolyfill() {
   }, true);
 }
 
-function pauseAllMedia() {
-  document.querySelectorAll('.js-youtube').forEach((video) => {
-    video.contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
-  });
-  document.querySelectorAll('.js-vimeo').forEach((video) => {
-    video.contentWindow.postMessage('{"method":"pause"}', '*');
-  });
-  document.querySelectorAll('video').forEach((video) => video.pause());
-  document.querySelectorAll('product-model').forEach((model) => {
-    if (model.modelViewerUI) model.modelViewerUI.pause();
-  });
-}
-
 function removeTrapFocus(elementToFocus = null) {
   document.removeEventListener('focusin', trapFocusHandlers.focusin);
   document.removeEventListener('focusout', trapFocusHandlers.focusout);

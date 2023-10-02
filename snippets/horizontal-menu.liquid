@@ -17,7 +17,9 @@
     {% if column != blank %}
       style="--col-number: {{ column }}"
     {% endif %}
-    id="HeaderMenu-MenuList-{{ level1_index }}"
+    {% if level1_index != blank %}
+      id="HeaderMenu-MenuList-{{ level1_index }}"
+    {% endif %}
   >
     {% for child_link in link.links %}
       <li class="menu-link level-1{% if child_link.links.size > 0 %} have-child{% endif %}">

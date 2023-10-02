@@ -21,7 +21,7 @@
     {%- if section.settings.title != blank or section.settings.description != blank -%}
       <div class="bls__section-header mb-40 mb-sm-35 text-{{ section.settings.text_alignment }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         {%- if section.settings.title != blank -%}
-          <h2 class="bls_section-heading mt-0 mb-7 mb-md-15">{{ section.settings.title }}</h2>
+          <h2 class="bls_section-heading heading-letter-spacing mt-0 mb-7 mb-md-15">{{ section.settings.title }}</h2>
         {%- endif -%}
         {%- if section.settings.description != blank -%}
           <div class="short-des">
@@ -93,11 +93,7 @@
   "tag": "section",
   "class": "section",
   "disabled_on": {
-    "groups": [
-      "header",
-      "footer",
-      "custom.overlay"
-    ]
+    "groups": ["header", "footer", "custom.overlay"]
   },
   "settings": [
     {

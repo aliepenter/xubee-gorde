@@ -96,7 +96,7 @@
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when 'title' -%}
-                <h2 class="product-title h2 mt-0 mb-0" {{ block.shopify_attributes }}>
+                <h2 class="product-title h2 mt-0 mb-0 heading-letter-spacing" {{ block.shopify_attributes }}>
                   {%- if product.title != blank -%}
                     {{ product.title | escape }}
                   {%- else -%}
@@ -291,8 +291,8 @@
                           <span class="icon_error relative top--2">
                             {% render 'icon-error' %}
                           </span>
-                          <span class="icon_checkmark relative top--2">
-                            {% render 'icon-success', custom_width: 18 -%}
+                          <span class="icon_checkmark relative">
+                            {% render 'icon-checkmark', custom_width: 15 -%}
                           </span>
                           <span class="icon_outstock relative top--2">
                             {% render 'icon-meh', custom_width: 22 -%}
@@ -460,11 +460,7 @@
   "tag": "section",
   "class": "section section-featured-product",
   "disabled_on": {
-    "groups": [
-      "header",
-      "footer",
-      "custom.overlay"
-    ]
+    "groups": ["header", "footer", "custom.overlay"]
   },
   "settings": [
     {

@@ -8,7 +8,7 @@
         "dd057969-14a9-4a9b-8fea-11b9191df6df": {
           "type": "store_info",
           "settings": {
-            "store_heading": "Company",
+            "store_heading": "COMPANY",
             "image_width": 178,
             "store_description": "",
             "store_address_heading": "Address",
@@ -24,7 +24,7 @@
         "b3628586-461c-4237-8b07-795e94ae225e": {
           "type": "link_list",
           "settings": {
-            "heading": "Social",
+            "heading": "SOCIAL",
             "menu": "social",
             "content_width": "16.666%"
           }
@@ -32,7 +32,7 @@
         "e2be6945-a2fc-4a1d-a6b6-9aedad3273e1": {
           "type": "link_list",
           "settings": {
-            "heading": "Shop",
+            "heading": "SHOP BY",
             "menu": "shop",
             "content_width": "16.666%"
           }
@@ -40,7 +40,7 @@
         "b8d3a559-55fb-44fc-be5d-38d17c93d6e6": {
           "type": "link_list",
           "settings": {
-            "heading": "Sitemap",
+            "heading": "SITEMAP",
             "menu": "sitemap",
             "content_width": "16.666%"
           }
@@ -48,7 +48,7 @@
         "1c6e4809-1590-403e-883c-6574cc53a24b": {
           "type": "link_list",
           "settings": {
-            "heading": "Help",
+            "heading": "HELP",
             "menu": "help",
             "content_width": "16.666%"
           }
@@ -56,7 +56,7 @@
         "11b7a8da-0f2e-46f5-bc75-6ec10f589c94": {
           "type": "newsletter",
           "settings": {
-            "heading": "Subscribe and Get 10% Discount",
+            "heading": "OUR NEWSLETTER",
             "description": "",
             "email_placeholder": "Enter your email address",
             "content_width": "100%"
@@ -75,12 +75,13 @@
         "section_width": "stretch_width",
         "color_scheme": "",
         "enable_back_top": true,
+        "show_border_bottom": true,
         "enable_country_selector": true,
         "enable_language_selector": true,
         "enable_follow_on_shop": true,
         "show_social": true,
         "payment_enable": true,
-        "padding_top": 72,
+        "padding_top": 70,
         "padding_bottom": 0
       }
     }

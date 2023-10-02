@@ -90,10 +90,10 @@
           {%- if show_author -%}
             <span class="post-author {% if settings.rounded_corner %}outline-style reset-hover{% endif %} d-inline-flex align-center mb-7">
               {% render 'icon-account', custom_width: 16 %}
-              <span itemprop="name" class="ml-5">
+              <span class="ml-5">
                 {{ 'blogs.article.by' | t: author: article.author -}}
-              </span></span
-            >
+              </span>
+            </span>
           {%- endif -%}
         </div>
         <div class="card__heading h5 mt-0">

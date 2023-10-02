@@ -77,21 +77,23 @@
                       <div class="article-card__info btn-text-transform  heading-color d-flex flex-wrap fs-small mb-15 pt-md-10 row-gap-10">
                         {%- if sec_settings.show_blog -%}
                           {% if sec_settings.blog_cate != blank %}
-                            <span class="post-blog outline-style remove-underline reset-hover">
+                            <span class="post-blog{% if settings.rounded_corner %} outline-style reset-hover{% endif %} remove-underline">
                               {{- sec_settings.blog_cate.title | capitalize -}}
                             </span>
                           {% endif %}
                         {%- endif -%}
                         {%- if sec_settings.show_author -%}
-                          <span class="post-author outline-style reset-hover">{{ article.author }}</span>
+                          <span class="post-author {% if settings.rounded_corner %}outline-style reset-hover{% endif %}">
+                            {{- article.author -}}
+                          </span>
                         {%- endif -%}
                         {%- if sec_settings.show_date -%}
-                          <span class="post-date outline-style reset-hover">
+                          <span class="post-date {% if settings.rounded_corner %}outline-style reset-hover{% endif %}">
                             {{- article.published_at | date: '%b %d %Y' -}}
                           </span>
                         {%- endif -%}
                       </div>
-                      <div class="card__heading h1 mb-15">
+                      <div class="card__heading h1 heading-letter-spacing mb-15">
                         <a href="{{ article.url }}" class="remove-underline border-animation">
                           {{ article.title | escape }}
                         </a>
@@ -151,11 +153,19 @@
                 >
                   {% if sec_settings.blog_cate.articles_count > 0 and sec_settings.blog_cate != blank %}
                     {%- for article in sec_settings.blog_cate.articles limit: sec_settings.post_limit -%}
-                      <button type="button" aria-label="Custom paginate Page {{ forloop.index }} Section {{ section.id }}" class="button dot-blog btn-reset"></button>
+                      <button
+                        type="button"
+                        aria-label="Custom paginate Page {{ forloop.index }} Section {{ section.id }}"
+                        class="button dot-blog btn-reset"
+                      ></button>
                     {%- endfor -%}
                   {% else %}
                     {% for i in (0..2) %}
-                      <button type="button" aria-label="Custom paginate Page {{ forloop.index }} Section {{ section.id }}" class="button dot-blog btn-reset"></button>
+                      <button
+                        type="button"
+                        aria-label="Custom paginate Page {{ forloop.index }} Section {{ section.id }}"
+                        class="button dot-blog btn-reset"
+                      ></button>
                     {% endfor %}
                   {% endif %}
                 </div>

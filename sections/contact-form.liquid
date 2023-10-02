@@ -27,7 +27,7 @@
         {%- endif -%}
       >
         {%- if section.settings.title != blank -%}
-          <h2 class="bls_section-heading mt-0 mb-7 mb-md-15">{{ section.settings.title }}</h2>
+          <h2 class="bls_section-heading heading-letter-spacing mt-0 mb-7 mb-md-15">{{ section.settings.title }}</h2>
         {%- endif -%}
         {%- if section.settings.description != blank -%}
           <div class="short-des">
@@ -166,11 +166,7 @@
   "tag": "section",
   "class": "section",
   "disabled_on": {
-    "groups": [
-      "header",
-      "footer",
-      "custom.overlay"
-    ]
+    "groups": ["header", "footer", "custom.overlay"]
   },
   "settings": [
     {

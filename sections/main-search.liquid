@@ -48,14 +48,16 @@
     </div>
     {%- if terms -%}
       {% if search.performed and search.results_count > 0 %}
-        <h1 class="title title--primary h0 text-center">{{ 'templates.search.title' | t }}</h1>
+        <h1 class="heading-letter-spacing title title--primary h0 text-center">{{ 'templates.search.title' | t }}</h1>
       {%- else -%}
-        <h1 class="title title--primary h0 text-center">
+        <h1 class="heading-letter-spacing title title--primary h0 text-center">
           {{ 'templates.search.results_with_count_and_term.none' | t: terms: terms }}
         </h1>
       {% endif %}
     {%- else -%}
-      <h1 class="title title--primary h0 text-center">{{ 'templates.search.title_no_search' | t }}</h1>
+      <h1 class="heading-letter-spacing title title--primary h0 text-center">
+        {{ 'templates.search.title_no_search' | t }}
+      </h1>
     {%- endif -%}
     <div class="search-form inset-x-0 z-4 bg-default h-full d-flex flex-column">
       <action-search
@@ -122,7 +124,7 @@
           <div class="d-flex flex-wrap gap-15 mb-40{% if section.settings.filter_type == 'vertical' %} vertical-filter flex-end space-between-1025{% else %} space-between{% endif %}{% if section.settings.show_count %} show-filter-count{% endif %}">
             {%- if section.settings.show_count -%}
               <div class="collection-count d-none d-1025-block" role="status">
-                <h2 class="reset-hover outline-style rounded-5 product-count__text text-body btn-text-transform mt-0 fs-small mb-0 lh-normal nowrap d-inline-flex align-center{% if section.settings.filter_type != 'horizontal' %} h-full{% endif %}">
+                <h2 class="reset-hover outline-style rounded-5 product-count__text text-body btn-text-transform mt-0 fs-small mb-0 lh-normal nowrap d-inline-flex align-center normal-weight{% if section.settings.filter_type != 'horizontal' %} h-full{% endif %}">
                   <span id="ProductCountDesktop">
                     {%- if search.results_count -%}
                       {{ 'templates.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
@@ -208,6 +210,7 @@
                             name="sort_by"
                             class="facet-filters__sort caption-large btn-text-transform fs-small lh-normal heading-color rounded-5 relative border-grey"
                             aria-describedby="a11y-refresh-page-message"
+                            aria-label="sort"
                           >
                             {%- for option in search.sort_options -%}
                               <option
@@ -276,7 +279,7 @@
               </details>
               {%- if section.settings.show_count -%}
                 <div class="collection-count d-none d-1025-block" role="status">
-                  <h2 class="reset-hover outline-style rounded-5 product-count__text text-body btn-text-transform mt-0 fs-small mb-0 lh-normal nowrap d-inline-flex align-center{% if section.settings.filter_type != 'horizontal' %} h-full{% endif %} d-inline-block d-inline-block">
+                  <h2 class="reset-hover outline-style rounded-5 product-count__text text-body btn-text-transform mt-0 fs-small mb-0 lh-normal nowrap d-inline-flex align-center normal-weight{% if section.settings.filter_type != 'horizontal' %} h-full{% endif %} d-inline-block d-inline-block">
                     <span id="ProductCountDesktop">
                       {%- if search.results_count -%}
                         {{
@@ -308,7 +311,7 @@
                           <select
                             name="sort_by"
                             class="facet-filters__sort caption-large btn-text-transform fs-small heading-color border-grey rounded-5 lh-normal"
-
+                            aria-label="sort"
                             aria-describedby="a11y-refresh-page-message"
                           >
                             {%- for option in search.sort_options -%}
@@ -482,7 +485,7 @@
                           <select
                             name="sort_by"
                             class="facet-filters__sort caption-large btn-text-transform fs-small lh-normal heading-color rounded-5 relative"
-
+                            aria-label="sort"
                             aria-describedby="a11y-refresh-page-message"
                           >
                             {%- for option in search.sort_options -%}
@@ -512,7 +515,7 @@
               {% endif %}
               {%- if section.settings.show_count -%}
                 <div class="collection-count d-none d-1025-block" role="status">
-                  <h2 class="reset-hover outline-style rounded-5 product-count__text text-body btn-text-transform mt-0 fs-small mb-0 lh-normal nowrap d-inline-flex align-center{% if section.settings.filter_type != 'horizontal' %} h-full{% endif %}">
+                  <h2 class="reset-hover outline-style rounded-5 product-count__text text-body btn-text-transform mt-0 fs-small mb-0 lh-normal nowrap d-inline-flex align-center normal-weight{% if section.settings.filter_type != 'horizontal' %} h-full{% endif %}">
                     <span id="ProductCountDesktop">
                       {%- if search.results_count -%}
                         {{

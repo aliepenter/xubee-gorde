@@ -65,7 +65,7 @@
       {%- paginate blog.articles by section.settings.post_limit -%}
         <div class="bls__section-header mb-30 text-{{ section.settings.text_alignment }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           {%- if section.settings.title != blank -%}
-            <h2 class="cart__title mt-0 mb-22">{{ section.settings.title }}</h2>
+            <h2 class="heading-letter-spacing cart__title mt-0 mb-22">{{ section.settings.title }}</h2>
           {%- endif -%}
           {%- if section.settings.show_all_tags -%}
             <ul class="blog-tags-list p-0 list-style-none my-0 d-flex flex-wrap flex-1 justify-content-{{ justify }} article-card__info">
@@ -123,7 +123,7 @@
                     {% if block.settings.form_title != blank or block.settings.form_description != blank %}
                       <div class="bls__section-header mb-40 mb-sm-35">
                         {% if block.settings.form_title != blank %}
-                          <h2 class="subscribe-title mt-0">
+                          <h2 class="heading-letter-spacing subscribe-title mt-0">
                             {{ block.settings.form_title }}
                           </h2>
                         {% endif %}
@@ -215,7 +215,7 @@
                             tabindex="-1"
                             autofocus
                           >
-                            {% render 'icon-success', custom_width: 16 -%}
+                            {% render 'icon-checkmark', custom_width: 13 -%}
                             {{- 'subscribe.success' | t }}
                           </p>
                         {%- elsif form.errors -%}

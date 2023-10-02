@@ -91,9 +91,9 @@
           data-color="{{ value | downcase }}"
           data-hex="{{ colorCode }}"
         {% endif %}
-        {%- if img != blank -%}
+        {% if img != blank %}
           data-image="{{ img | image_url }}"
-        {%- endif -%}
+        {% endif %}
       >
         {{ value }}
         <span class="tooltip-content fs-small tooltip-top">{{ value }}</span>

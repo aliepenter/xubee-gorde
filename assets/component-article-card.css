@@ -16,6 +16,10 @@ body:not(.rounded-corner) .article-template__back>*:not(:last-child) {
   padding-right: 1rem;
 }
 
+body:not(.rounded-corner) .blog-posts-carousel_inner .article-card__info {
+  line-height: normal;
+}
+
 .card__heading a:hover {
   color: currentColor;
 }

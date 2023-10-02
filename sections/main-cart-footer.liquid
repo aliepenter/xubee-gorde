@@ -23,7 +23,7 @@
           {%- when 'subtotal' -%}
             <div class="js-contents" {{ block.shopify_attributes }}>
               <div class="totals d-flex flex-wrap gap-5 align-center space-between mb-25">
-                <h2 class="totals__subtotal h4 my-0">{{ 'sections.cart.subtotal' | t }}</h2>
+                <h2 class="heading-letter-spacing totals__subtotal h4 my-0">{{ 'sections.cart.subtotal' | t }}</h2>
                 <p class="totals__subtotal-value mb-0 fs-bigger-4 heading-color">
                   {{ cart.total_price | money_with_currency }}
                 </p>

@@ -30,7 +30,7 @@
         {% for block in sec_blocks %}
           {% case block.type %}
             {% when 'title' %}
-              <h1 class="h0 mb-0 mt-0">
+              <h1 class="h0 mb-0 mt-0 heading-letter-spacing">
                 {% if block.settings.page_title != blank %}
                   {{ block.settings.page_title }}
                 {% else %}

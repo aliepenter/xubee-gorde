@@ -25,6 +25,7 @@ class CartDrawer extends HTMLElement {
     }
   }
 
+
   open(triggeredBy) {
     closePopup.hide();
     if (triggeredBy) this.setActiveElement(triggeredBy);

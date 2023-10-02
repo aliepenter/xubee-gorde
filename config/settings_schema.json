@@ -238,16 +238,24 @@
         "label": "t:settings_schema.typography.settings.heading.heading_letter_spacing.label",
         "options": [
           {
+            "value": "-1px",
+            "label": "t:settings_schema.typography.settings.heading.heading_letter_spacing.negative"
+          },
+          {
             "value": "unset",
             "label": "t:settings_schema.typography.settings.heading.heading_letter_spacing.unset"
           },
           {
-            "value": "-0.5px",
-            "label": "-0.5px"
+            "value": "1px",
+            "label": "t:settings_schema.typography.settings.heading.heading_letter_spacing.small"
           },
           {
-            "value": "1px",
-            "label": "1px"
+            "value": "0.1em",
+            "label": "t:settings_schema.typography.settings.heading.heading_letter_spacing.medium"
+          },
+          {
+            "value": "0.25em",
+            "label": "t:settings_schema.typography.settings.heading.heading_letter_spacing.large"
           }
         ],
         "default": "unset"

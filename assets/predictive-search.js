@@ -54,6 +54,7 @@ class PredictiveSearch extends HTMLElement {
           });
         }
         this.open();
+        this.lazyloadImage();
       })
       .catch((error) => {
         this.form.classList.remove('loading');
@@ -76,6 +77,22 @@ class PredictiveSearch extends HTMLElement {
     this.recommendSearch?.classList.add("d-none");
     this.searchKeyword?.classList.add("d-none");
   }
+
+  lazyloadImage() {
+    if (this.querySelectorAll(".loading-animation").length != 0) {
+      this.querySelectorAll(".loading-animation").forEach((e, index) => {
+        var img = new Image();
+        img.src = e.getAttribute("src");
+        img.addEventListener('load', function() {
+          setTimeout(() => {
+            e.classList.add("loaded-animation");
+            e.classList.remove("loading-animation");
+          }, index*100);
+        });
+      });
+    }
+  }
+  
 
   debounce(fn, wait) {
     let t;

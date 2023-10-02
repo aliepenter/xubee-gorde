@@ -21,7 +21,7 @@
     {%- if section.settings.title != blank or section.settings.description != blank -%}
       <div class="bls__section-header mb-40 mb-sm-35 text-{{ section.settings.text_alignment }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         {%- if section.settings.title != blank -%}
-          <h2 class="bls_section-heading mt-0 mb-7 mb-md-15">{{ section.settings.title }}</h2>
+          <h2 class="bls_section-heading heading-letter-spacing mt-0 mb-7 mb-md-15">{{ section.settings.title }}</h2>
         {%- endif -%}
         {%- if section.settings.description != blank -%}
           <div class="short-des">
@@ -74,7 +74,7 @@
                 {%- endfor -%}
               </div>
             {% endif %}
-            <blockquote class="testimonials-quote h2 m-0{% if sec_settings.design == 'design_2' %} lh-1-2 pb-15{% endif %}">
+            <blockquote class="testimonials-quote h2 text-transform-unset m-0{% if sec_settings.design == 'design_2' %} lh-1-2 pb-15{% endif %}">
               {{ block.settings.author_text }}
             </blockquote>
             {% if sec_settings.show_author_name or sec_settings.show_date_published %}
@@ -116,7 +116,7 @@
                         {{ block.settings.author_image | image_url }} {{ block.settings.author_image.width }}w
                       "
                       sizes="100vw"
-                      src="{{ block.settings.author_image | image_url }}"
+                      src="{{ block.settings.author_image | image_url: width: 1100 }}"
                       alt="{{ alt }}"
                       loading="lazy"
                       width="{{ block.settings.author_image.width }}"
@@ -155,11 +155,19 @@
               >
                 {% if section.blocks.size != 0 %}
                   {%- for block in section.blocks -%}
-                    <button type="button" aria-label="Custom paginate Page {{ forloop.index }} Section {{ section.id }}" class="button dot-blog btn-reset"></button>
+                    <button
+                      type="button"
+                      aria-label="Custom paginate Page {{ forloop.index }} Section {{ section.id }}"
+                      class="button dot-blog btn-reset"
+                    ></button>
                   {%- endfor -%}
                 {% else %}
                   {% for i in (0..2) %}
-                    <button type="button" aria-label="Custom paginate Page {{ forloop.index }} Section {{ section.id }}" class="button dot-blog btn-reset"></button>
+                    <button
+                      type="button"
+                      aria-label="Custom paginate Page {{ forloop.index }} Section {{ section.id }}"
+                      class="button dot-blog btn-reset"
+                    ></button>
                   {% endfor %}
                 {% endif %}
               </div>
@@ -177,9 +185,9 @@
       <div
         id="testimonials-thumnail-{{ section.id }}"
         class="testimonials-thumnail-{{ section.id }} slide-container mt-70 no-js-hidden{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-        {%- if settings.animations_reveal_on_scroll -%}
+        {% if settings.animations_reveal_on_scroll %}
           style="--animation-order: 2;"
-        {%- endif -%}
+        {% endif %}
       >
         {%- for block in section.blocks -%}
           <div class="slider-thumbnail">
@@ -202,10 +210,10 @@
                     {%- if block.settings.author_image.width >= 2200 -%}{{ block.settings.author_image | image_url: width: 2200 }} 2200w,{%- endif -%}
                     {%- if block.settings.author_image.width >= 2890 -%}{{ block.settings.author_image | image_url: width: 2890 }} 2890w,{%- endif -%}
                     {%- if block.settings.author_image.width >= 4096 -%}{{ block.settings.author_image | image_url: width: 4096 }} 4096w,{%- endif -%}
-                    {{ block.settings.author_image | image_url }} {{ block.settings.logo.width }}w
+                    {{ block.settings.author_image | image_url }} {{ block.settings.author_image.width }}w
                   "
                   sizes="100vw"
-                  src="{{ block.settings.author_image | image_url }}"
+                  src="{{ block.settings.author_image | image_url: width: 1100 }}"
                   alt="{{ alt }}"
                   loading="lazy"
                   width="{{ block.settings.author_image.width }}"
@@ -228,11 +236,7 @@
   "tag": "section",
   "class": "section",
   "disabled_on": {
-    "groups": [
-      "header",
-      "footer",
-      "custom.overlay"
-    ]
+    "groups": ["header", "footer", "custom.overlay"]
   },
   "settings": [
     {

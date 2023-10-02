@@ -188,7 +188,11 @@
           },
           "heading_letter_spacing": {
             "label": "Letter spacing",
-            "unset": "Unset"
+            "unset": "Unset",
+            "negative": "Negative",
+            "small": "Small",
+            "medium": "Medium",
+            "large": "Large"
           },
           "use_heading_font": "Use heading font"
         },
@@ -557,6 +561,7 @@
       },
       "spacing": "Spacing",
       "remove_space": "Remove default space",
+      "remove_letter_spacing": "Remove default letter spacing",
       "remove_space_between": "Remove default space between sections",
       "heigth": {
         "slider_header": "Slide height",
@@ -621,6 +626,18 @@
           "label": "Button label",
           "info": "Leave the label blank to hide the button."
         },
+        "first_button_label": {
+          "name": "First button label",
+          "label": "First button label",
+          "link": "First button link",
+          "info": "Leave the label blank to hide the button."
+        },
+        "second_button_label": {
+          "name": "Second button label",
+          "label": "Second button label",
+          "link": "Second button link",
+          "info": "Leave the label blank to hide the button."
+        },
         "button_age_verifier_label": {
           "decline_button": {
             "label": "Decline button text"
@@ -678,7 +695,8 @@
         "fill": "Fill",
         "outline": "Outline",
         "link": "Link",
-        "white": "White"
+        "white": "White",
+        "use_outline_button_style": "Use outline button style"
       },
       "pagination": {
         "name": "Pagination",
@@ -3238,6 +3256,10 @@
           "options__2": {
             "label": "Hide thumbnails"
           }
+        },
+        "variant_image_group": {
+          "label": "Enable variant image group",
+          "info": "This option only works with color variants."
         },
         "enable_image_zoom": {
           "label": "Image zoom",

@@ -148,11 +148,11 @@
                                   <label
                                     class="product__color-swatch pointer swatch-items-js"
                                     for="Filter-{{ filter.param_name | escape }}-{{ forloop.index }}"
-                                    {%- if colorCode != '' -%}
+                                    {% if colorCode != '' %}
                                       style="background-color: {{ colorCode }}"
-                                    {%- else -%}
+                                    {% else %}
                                       style="background-color: {{ value.label }}"
-                                    {%- endif -%}
+                                    {% endif %}
                                   >
                                     <span class="visually-hidden">{{ value.label }}</span>
                                   </label>
@@ -232,18 +232,18 @@
                             placeholder="{{ minPrice }}"
                             type="number"
                             min="0"
-                            {%- if uses_comma_decimals -%}
+                            {% if uses_comma_decimals %}
                               {%- assign inputMaxOfMin = filter.range_max
                                 | money_without_currency
                                 | replace: '.', ''
                                 | replace: ',', '.'
                               -%}
                               max="{{ inputMaxOfMin }}"
-                            {%- else -%}
-                              {%- assign inputMaxOfMin = filter.range_max
+                            {% else %}
+                              {% assign inputMaxOfMin = filter.range_max
                                 | money_without_currency
                                 | replace: ',', ''
-                              -%}
+                              %}
                               max="{{ inputMaxOfMin }}"
                             {% endif %}
                           >
@@ -265,9 +265,9 @@
                             placeholder="{{ maxPrice }}"
                             type="number"
                             min="0"
-                            {%- if uses_comma_decimals -%}
+                            {% if uses_comma_decimals %}
                               max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
-                            {%- else -%}
+                            {% else %}
                               max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
                             {% endif %}
                           >
@@ -294,14 +294,13 @@
                           id="Filter-range-{{ filter.label | escape }}-GTE"
                           type="range"
                           value="{{ minPrice }}"
-                          type="number"
                           class="range-slider"
                           tabindex="-1"
                           aria-label="from"
                           min="0"
-                          {%- if uses_comma_decimals -%}
+                          {% if uses_comma_decimals %}
                             max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
-                          {%- else -%}
+                          {% else %}
                             max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
                           {% endif %}
                         >
@@ -313,14 +312,13 @@
                           id="Filter-range-{{ filter.label | escape }}-LTE"
                           type="range"
                           value="{{ range_from }}"
-                          type="number"
                           min="0"
                           class="range-slider range-slider-max"
                           tabindex="-1"
                           aria-label="to"
-                          {%- if uses_comma_decimals -%}
+                          {% if uses_comma_decimals %}
                             max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
-                          {%- else -%}
+                          {% else %}
                             max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
                           {% endif %}
                         >
@@ -508,11 +506,11 @@
                                       <label
                                         class="product__color-swatch pointer swatch-items-js"
                                         for="Facet-Mobile-{{ filter.param_name | escape }}-{{ forloop.index }}"
-                                        {%- if colorCode != '' -%}
+                                        {% if colorCode != '' %}
                                           style="background-color: {{ colorCode }}"
-                                        {%- else -%}
+                                        {% else %}
                                           style="background-color: {{ value.label }}"
-                                        {%- endif -%}
+                                        {% endif %}
                                       >
                                         <span class="tooltip-content fs-small tooltip-top">{{ value.label }}</span>
                                       </label>
@@ -588,14 +586,14 @@
                                 placeholder="{{ minPrice }}"
                                 type="number"
                                 min="0"
-                                {%- if uses_comma_decimals -%}
+                                {% if uses_comma_decimals %}
                                   {%- assign inputMaxOfMin = filter.range_max
                                     | money_without_currency
                                     | replace: '.', ''
                                     | replace: ',', '.'
                                   -%}
                                   max="{{ inputMaxOfMin }}"
-                                {%- else -%}
+                                {% else %}
                                   {%- assign inputMaxOfMin = filter.range_max
                                     | money_without_currency
                                     | replace: ',', ''
@@ -621,9 +619,9 @@
                                 placeholder="{{ maxPrice }}"
                                 type="number"
                                 min="0"
-                                {%- if uses_comma_decimals -%}
+                                {% if uses_comma_decimals %}
                                   max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
-                                {%- else -%}
+                                {% else %}
                                   max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
                                 {% endif %}
                               >
@@ -648,15 +646,14 @@
                             <input
                               type="range"
                               value="{{ minPrice }}"
-                              type="number"
                               class="range-slider"
                               tabindex="-1"
                               aria-label="from"
                               min="0"
                               id="Facet-range-Mobile-{{ filter.label | escape }}-GTE"
-                              {%- if uses_comma_decimals -%}
+                              {% if uses_comma_decimals %}
                                 max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
-                              {%- else -%}
+                              {% else %}
                                 max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
                               {% endif %}
                             >
@@ -666,15 +663,14 @@
                             <input
                               type="range"
                               value="{{ range_from }}"
-                              type="number"
                               min="0"
                               class="range-slider range-slider-max"
                               tabindex="-1"
                               aria-label="to"
                               id="Facet-range-Mobile-{{ filter.label | escape }}-LTE"
-                              {%- if uses_comma_decimals -%}
+                              {% if uses_comma_decimals %}
                                 max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
-                              {%- else -%}
+                              {% else %}
                                 max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
                               {% endif %}
                             >

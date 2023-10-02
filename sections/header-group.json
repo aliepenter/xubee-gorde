@@ -2,38 +2,22 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
-      "settings": {
-        "section_width": "stretch_width",
-        "color_scheme": "",
-        "show_close": false,
-        "homepage_only": true,
-        "show_mobile": false,
-        "announcement_actions": "slide",
-        "marquee_speed": 7,
-        "space_between_text": "30"
-      }
-    },
     "header": {
       "type": "header",
       "blocks": {
-        "ff259d6e-a30e-4803-9ec6-51d29557887f": {
-          "type": "menu_promotion",
+        "f313e8fd-8dd1-4043-a4c4-bdb3e61ad2b4": {
+          "type": "menu_product",
           "settings": {
-            "text": "Shop",
-            "promotion_position": "right",
-            "promotion_menu_column": 3,
-            "promotion_image_width": 40,
-            "promotion_image_1": "shopify:\/\/shop_images\/01.jpg",
-            "promotion_link_1": "shopify:\/\/collections\/maxi",
-            "promotion_image_2": "shopify:\/\/shop_images\/02-1.jpg",
-            "promotion_link_2": "shopify:\/\/collections\/summer"
+            "text": "Sunglasses",
+            "product_menu_column": 3,
+            "product_width": 40,
+            "product_1": "copy-of-brow-line-frame",
+            "product_2": "copy-of-transparent-frame"
           }
         }
       },
       "block_order": [
-        "ff259d6e-a30e-4803-9ec6-51d29557887f"
+        "f313e8fd-8dd1-4043-a4c4-bdb3e61ad2b4"
       ],
       "custom_css": [
         ".header__logo .site-logo {position: relative; top: -3px;}"
@@ -41,9 +25,9 @@
       "settings": {
         "section_width": "stretch_width",
         "color_scheme": "",
-        "logo_position": "left",
-        "logo_width": 140,
-        "logo_width_mobile": 100,
+        "logo_position": "center",
+        "logo_width": 136,
+        "logo_width_mobile": 136,
         "sticky_header_type": "on-scroll-up",
         "menu": "main-menu",
         "uppercase_first_level": true,
@@ -61,14 +45,66 @@
           "cooktail"
         ],
         "banner_link": "",
-        "show_border_bottom": true,
+        "show_border_bottom": false,
         "transparent_on_home": false,
         "header_text_icon_transparent": "#ffffff"
+      }
+    },
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "90b1bde4-807c-456a-a101-a587ea7f405a": {
+          "type": "announcement",
+          "settings": {
+            "text": "Free Shipping for all order over $99",
+            "link": ""
+          }
+        },
+        "1534ac03-339b-4e0b-bb82-824ab377c45d": {
+          "type": "announcement",
+          "settings": {
+            "text": "30 days return guarantee",
+            "link": ""
+          }
+        },
+        "3d370952-9767-4c71-8b15-524e3984e3a5": {
+          "type": "announcement",
+          "settings": {
+            "text": "buy now, pay later with klarna",
+            "link": ""
+          }
+        },
+        "8495037d-3ade-491a-a4ab-9fc51f9455d5": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store 100% secure online payment",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "90b1bde4-807c-456a-a101-a587ea7f405a",
+        "1534ac03-339b-4e0b-bb82-824ab377c45d",
+        "3d370952-9767-4c71-8b15-524e3984e3a5",
+        "8495037d-3ade-491a-a4ab-9fc51f9455d5"
+      ],
+      "settings": {
+        "section_width": "expand_full_width",
+        "color_scheme": "scheme-957ad1f6-ead2-4f72-bdba-ddfe8f341c9e",
+        "show_close": false,
+        "homepage_only": false,
+        "show_mobile": false,
+        "announcement_actions": "marquee",
+        "marquee_speed": 18,
+        "style_between_item": true,
+        "space_between_text": "small",
+        "uppercase": true,
+        "scrolling_size": "small"
       }
     }
   },
   "order": [
-    "announcement-bar",
-    "header"
+    "header",
+    "announcement-bar"
   ]
 }

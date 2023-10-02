@@ -2,6 +2,7 @@
 <quickbuy-canvas
   class="bls__canvas quick_shop-popup bls__canvas-right bls__canvas-footer has-close-btn close-slide-up"
   tabindex="0"
+  role="dialog"
 >
   <div class="quickview-content">
     <close-button
@@ -24,7 +25,7 @@
               </p>
             {%- when 'title' -%}
               <div class="product-style">
-                <h2 class="product__name mt-0 mb-12" {{ block.shopify_attributes }}>
+                <h2 class="heading-letter-spacing product__name mt-0 mb-12" {{ block.shopify_attributes }}>
                   {%- if product.title != blank -%}
                     {{ product.title | escape }}
                   {%- else -%}
@@ -89,8 +90,8 @@
                         <span class="icon_error relative top--2">
                           {% render 'icon-error' %}
                         </span>
-                        <span class="icon_checkmark relative top--2">
-                          {% render 'icon-success', custom_width: 18 -%}
+                        <span class="icon_checkmark relative">
+                          {% render 'icon-checkmark', custom_width: 15 -%}
                         </span>
                         <span class="icon_outstock relative top--2">
                           {% render 'icon-meh', custom_width: 22 -%}

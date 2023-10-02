@@ -641,7 +641,7 @@ var tns = (function () {
                         (E.insertBefore(T, V),
                         j.appendChild(V),
                         Ii(G, function (t, e) {
-                            zi(t, "tns-item"), t.id || (t.id = Yt + "-item" + e), !I && W && zi(t, W), ji(t, { "aria-hidden": "true", tabindex: "-1" });
+                            zi(t, "tns-item"), t.id || (t.id = Yt + "-item" + e), !I && W && zi(t, W), ji(t, { "aria-hidden": "true", tabindex: "-1" }), customAddTabindex(t);
                         }),
                         Nt)
                     ) {
@@ -1361,7 +1361,7 @@ var tns = (function () {
                 n = t[0],
                 i = t[1];
             Ii(G, function (t, e) {
-                n <= e && e <= i ? qi(t, "aria-hidden") && (Vi(t, ["aria-hidden", "tabindex"]), zi(t, de), checkSlideAnimation(t)) : qi(t, "aria-hidden") || (ji(t, { "aria-hidden": "true", tabindex: "-1" }), Wi(t, de));
+                n <= e && e <= i ? qi(t, "aria-hidden") && (Vi(t, ["aria-hidden", "tabindex"]), zi(t, de), checkSlideAnimation(t), customRemoveTabindex(t)) : qi(t, "aria-hidden") || (ji(t, { "aria-hidden": "true", tabindex: "-1" }), Wi(t, de), customAddTabindex(t));
             });
         }
 
@@ -1370,6 +1370,23 @@ var tns = (function () {
                 zi(item, "scroll-trigger");
                 zi(item, "animate--slide-in");
                 Wi(V, "opacity-0")
+            }
+            // Note bug quick buy when close
+        }
+
+        function customAddTabindex(item) {
+            if (V.closest("slide-section.slide-section-slideshow")) {
+                if (item.querySelector(".btn-slideshow")) {
+                    ji(item.querySelector(".btn-slideshow"), { tabindex: "-1" })
+                }
+            }
+        }
+
+        function customRemoveTabindex(item) {
+            if (V.closest("slide-section.slide-section-slideshow")) {
+                if (item.querySelector(".btn-slideshow")) {
+                    Vi(item.querySelector(".btn-slideshow"), ["tabindex"])
+                }
             }
         }
         

@@ -17,7 +17,7 @@
     </svg>
     <div class="address__header d-flex gap-30 flex-wrap align-center space-between flex-column text-center">
       <div class="address__header-inner">
-        <h1 class="h0 text-center mb-0 mt-0">{{ 'customer.addresses.title' | t }}</h1>
+        <h1 class="heading-letter-spacing h0 text-center mb-0 mt-0">{{ 'customer.addresses.title' | t }}</h1>
         <a href="{{ routes.account_url }}">
           {{ 'customer.account.return' | t }}
         </a>
@@ -32,7 +32,7 @@
           {{ 'customer.addresses.add_new' | t }}
         </button>
         <div id="AddAddress">
-          <h2 id="AddressNewHeading" class="mb-30">{{ 'customer.addresses.add_new' | t }}</h2>
+          <h2 id="AddressNewHeading" class="heading-letter-spacing mb-30">{{ 'customer.addresses.add_new' | t }}</h2>
           {%- form 'customer_address', customer.new_address, aria-labelledBy: 'AddressNewHeading' -%}
             <div class="field gap-0">
               <input
@@ -172,7 +172,7 @@
       {%- for address in customer.addresses -%}
         <li data-address>
           {%- if address == customer.default_address -%}
-            <h2 class="mb-20">{{ 'customer.addresses.default' | t }}</h2>
+            <h2 class="heading-letter-spacing mb-20">{{ 'customer.addresses.default' | t }}</h2>
           {%- endif -%}
           {{ address | format_address }}
           <div class="mt-40">
@@ -197,7 +197,7 @@
               {{ 'customer.addresses.delete' | t }}
             </button>
             <div id="EditAddress_{{ address.id }}" class="mt-60">
-              <h2 class="mt-0 mb-30">{{ 'customer.addresses.edit_address' | t }}</h2>
+              <h2 class="heading-letter-spacing mt-0 mb-30">{{ 'customer.addresses.edit_address' | t }}</h2>
               {%- form 'customer_address', address -%}
                 <div class="field gap-0">
                   <input

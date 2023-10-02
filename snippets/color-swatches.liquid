@@ -60,9 +60,9 @@
                 data-hex="{{ colorCode }}"
               {% endif %}
               data-position="{{ option.position }}"
-              {%- if img != blank -%}
+              {% if img != blank %}
                 data-image="{{ img | image_url }}"
-              {%- endif -%}
+              {% endif %}
             >
               <span class="tooltip-content fs-small tooltip-top">{{ value }}</span>
             </div>
@@ -178,7 +178,6 @@
           id="variant-radios-{{ section.id }}"
           data-section="{{ section.id }}"
           class="no-js-hidden"
-          data-section="{{ section.id }}"
           data-url="{{ product.url }}"
           {% if update_url == false %}
             data-update-url="false"
@@ -189,7 +188,6 @@
           id="variant-radios-{{ section.id }}"
           data-section="{{ section.id }}"
           class="no-js-hidden"
-          data-section="{{ section.id }}"
           data-url="{{ product.url }}"
           {% if update_url == false %}
             data-update-url="false"
@@ -240,7 +238,7 @@
                         {% render 'icon-size-guide', custom_width: 17 %}
                         <span class="ml-5">{{ block.settings.size_guide_label }}</span>
                       </button>
-                      <div class="content d-none">
+                      <span class="content d-none">
                         {% if product.metafields.custom.size_chart != blank %}
                           {% assign size_chart_html = product.metafields.custom.size_chart | replace: '&lt;', '<' | replace: '&gt;', '>' %}
                           {{ size_chart_html }}
@@ -250,7 +248,7 @@
                         {%- else -%}
                           {{ pages[block.settings.size_guide_page].content }}
                         {% endif %}
-                      </div>
+                      </span>
                     </modal-popup>
                   {% endif %}
                 {%- endif -%}
@@ -268,6 +266,60 @@
       {%- else -%}
         </variant-radios-detail>
       {%- endif -%}
+      <noscript class="product-form__noscript-wrapper-{{ section.id }} mt-15 d-block">
+        <div class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
+          <label class="form__label" for="Variants-{{ section.id }}">
+            {{- 'products.product.product_variants' | t -}}
+          </label>
+          <div class="select border relative">
+            <select
+              name="id"
+              id="Variants-{{ section.id }}"
+              class="select__select border-0"
+              form="{{ product_form_id }}"
+            >
+              {%- for variant in product.variants -%}
+                <option
+                  {% if variant == product.selected_or_first_available_variant %}
+                    selected="selected"
+                  {% endif %}
+                  {% if variant.available == false %}
+                    disabled
+                  {% endif %}
+                  value="{{ variant.id }}"
+                >
+                  {%- liquid
+                    echo variant.title
+                    echo variant.price | money | strip_html | prepend: ' - '
+                    if variant.available == false
+                      echo 'products.product.sold_out' | t | prepend: ' - '
+                    endif
+                    if variant.quantity_rule.increment > 1
+                      echo 'products.product.quantity.multiples_of' | t: quantity: variant.quantity_rule.increment | prepend: ' - '
+                    endif
+                    if variant.quantity_rule.min > 1
+                      echo 'products.product.quantity.minimum_of' | t: quantity: variant.quantity_rule.min | prepend: ' - '
+                    endif
+                    if variant.quantity_rule.max != null
+                      echo 'products.product.quantity.maximum_of' | t: quantity: variant.quantity_rule.max | prepend: ' - '
+                    endif
+                    # TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter
+                    # theme-check-disable
+                    assign cart_quantity = cart | item_count_for_variant: variant.id
+                    # theme-check-enable
+                    if cart_quantity > 0
+                      echo 'products.product.quantity.in_cart_html' | t: quantity: cart_quantity | prepend: ' - '
+                    endif
+                  -%}
+                </option>
+              {%- endfor -%}
+            </select>
+            <div class="icon-down absolute right-15 inset-y-0 d-inline-flex align-center pointer-none">
+              {% render 'icon-caret', custom_width: 12 %}
+            </div>
+          </div>
+        </div>
+      </noscript>
     {%- endif -%}
   {%- endunless -%}
 {%- elsif type and type == 'sticky' -%}
@@ -315,7 +367,6 @@
         id="variant-radios-{{ section.id }}"
         data-section="{{ section.id }}"
         class="no-js-hidden"
-        data-section="{{ section.id }}"
         data-url="{{ product.url }}"
         {% if update_url == false %}
           data-update-url="false"
@@ -351,58 +402,3 @@
     {%- endif -%}
   {%- endunless -%}
 {%- endif -%}
-
-<noscript class="product-form__noscript-wrapper-{{ section.id }} mt-15 d-block">
-  <div class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
-    <label class="form__label" for="Variants-{{ section.id }}">
-      {{- 'products.product.product_variants' | t -}}
-    </label>
-    <div class="select border relative">
-      <select
-        name="id"
-        id="Variants-{{ section.id }}"
-        class="select__select border-0"
-        form="{{ product_form_id }}"
-      >
-        {%- for variant in product.variants -%}
-          <option
-            {% if variant == product.selected_or_first_available_variant %}
-              selected="selected"
-            {% endif %}
-            {% if variant.available == false %}
-              disabled
-            {% endif %}
-            value="{{ variant.id }}"
-          >
-            {%- liquid
-              echo variant.title
-              echo variant.price | money | strip_html | prepend: ' - '
-              if variant.available == false
-                echo 'products.product.sold_out' | t | prepend: ' - '
-              endif
-              if variant.quantity_rule.increment > 1
-                echo 'products.product.quantity.multiples_of' | t: quantity: variant.quantity_rule.increment | prepend: ' - '
-              endif
-              if variant.quantity_rule.min > 1
-                echo 'products.product.quantity.minimum_of' | t: quantity: variant.quantity_rule.min | prepend: ' - '
-              endif
-              if variant.quantity_rule.max != null
-                echo 'products.product.quantity.maximum_of' | t: quantity: variant.quantity_rule.max | prepend: ' - '
-              endif
-              # TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter
-              # theme-check-disable
-              assign cart_quantity = cart | item_count_for_variant: variant.id
-              # theme-check-enable
-              if cart_quantity > 0
-                echo 'products.product.quantity.in_cart_html' | t: quantity: cart_quantity | prepend: ' - '
-              endif
-            -%}
-          </option>
-        {%- endfor -%}
-      </select>
-      <div class="icon-down absolute right-15 inset-y-0 d-inline-flex align-center pointer-none">
-        {% render 'icon-caret', custom_width: 12 %}
-      </div>
-    </div>
-  </div>
-</noscript>

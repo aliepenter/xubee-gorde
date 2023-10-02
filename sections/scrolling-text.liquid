@@ -61,7 +61,7 @@
                   href="{{ block.settings.link }}"
                   target="_blank"
                 {% endif %}
-                class="scrolling__bar-link lh-1 remove-underline d-flex justify-content-center link link--text align-center nowrap size-{{ section.settings.scrolling_size }}{% if section.settings.use_heading_font == blank %} body-size{% endif %}{% if section.settings.uppercase %} uppercase{% endif %}{% if section.settings.style_between_item %} show-dot relative z--1{% endif %}{% if block.settings.accent_color %} accent-color{% endif %}{% if section.settings.use_heading_font != blank and block.settings.accent_color == blank %} heading-color{% endif %}"
+                class="scrolling__bar-link lh-normal remove-underline d-flex justify-content-center link link--text align-center nowrap size-{{ section.settings.scrolling_size }}{% if section.settings.use_heading_font == blank %} body-size{% endif %}{% if section.settings.uppercase %} uppercase{% endif %}{% if section.settings.style_between_item %} show-dot relative z--1{% endif %}{% if block.settings.accent_color %} accent-color{% endif %}{% if section.settings.use_heading_font != blank and block.settings.accent_color == blank %} heading-color{% endif %}"
               >
                 {%- if block.settings.image != blank -%}
                   <div
@@ -94,11 +94,7 @@
   "tag": "section",
   "class": "section",
   "disabled_on": {
-    "groups": [
-      "header",
-      "footer",
-      "custom.overlay"
-    ]
+    "groups": ["header", "footer", "custom.overlay"]
   },
   "settings": [
     {

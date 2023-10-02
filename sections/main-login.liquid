@@ -4,7 +4,7 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 <div class="customer login section-padding" style="{{ style | strip | strip_newlines }}">
   <div class="container">
-    <h1 id="recover" tabindex="-1" class="h0 text-center my-0">
+    <h1 id="recover" tabindex="-1" class="heading-letter-spacing h0 text-center my-0">
       {{ 'customer.recover_password.title' | t }}
     </h1>
 
@@ -61,7 +61,7 @@
       </div>
     </div>
 
-    <h1 id="login" tabindex="-1" class="h0 text-center my-0">
+    <h1 id="login" tabindex="-1" class="heading-letter-spacing h0 text-center my-0">
       {{ 'customer.login_page.title' | t }}
     </h1>
     <div class="login-inner btn-large mt-70 field flex-column">
@@ -152,7 +152,7 @@
     {%- if shop.checkout.guest_login -%}
       <div>
         <hr>
-        <h2>{{ 'customer.login_page.guest_title' | t }}</h2>
+        <h2 class="heading-letter-spacing">{{ 'customer.login_page.guest_title' | t }}</h2>
 
         {%- form 'guest_login' -%}
           <button class="button">

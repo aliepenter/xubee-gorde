@@ -122,10 +122,10 @@
                 </p>
               {%- when 'heading' -%}
                 <h2
-                  class="section-heading banner__heading mt-0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}{% if section.settings.content_size == 'large' %} letter-spacing--15 lh-1{% endif %}"
-                  {%- if settings.animations_reveal_on_scroll -%}
+                  class="section-heading heading-letter-spacing banner__heading mt-0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}{% if section.settings.content_size == 'large' %} letter-spacing--15 lh-1{% endif %}"
+                  {% if settings.animations_reveal_on_scroll %}
                     style="--animation-order: {{ forloop.index }};"
-                  {%- endif -%}
+                  {% endif -%}
                   {{ block.shopify_attributes }}
                 >
                   <span>{{ block.settings.heading }}</span>
@@ -133,7 +133,7 @@
               {%- when 'description' -%}
                 <div
                   class="sec-des banner__text{{ block.settings.text_style }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                  {%- if settings.animations_reveal_on_scroll -%}
+                  {%- if settings.animations_reveal_on_scroll %}
                     style="--animation-order: {{ forloop.index }};"
                   {%- endif -%}
                   {{ block.shopify_attributes }}
@@ -177,11 +177,7 @@
   "tag": "section",
   "class": "section section-video-with-text-overlay",
   "disabled_on": {
-    "groups": [
-      "header",
-      "footer",
-      "custom.overlay"
-    ]
+    "groups": ["header", "footer", "custom.overlay"]
   },
   "settings": [
     {
@@ -217,10 +213,7 @@
     {
       "type": "video_url",
       "id": "video_url",
-      "accept": [
-        "youtube",
-        "vimeo"
-      ],
+      "accept": ["youtube", "vimeo"],
       "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
       "label": "t:sections.video-with-text-overlay.settings.video_link.label",
       "info": "t:sections.video-with-text-overlay.settings.video_link.info"

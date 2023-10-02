@@ -56,6 +56,7 @@
                           loading: 'lazy',
                           width: block.settings.image.width,
                           data-sizes: 'auto',
+                          sizes: '100vw',
                           widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
                           alt: alt
                       }}
@@ -84,6 +85,7 @@
                         | image_tag:
                           loading: 'lazy',
                           data-sizes: 'auto',
+                          sizes: '100vw',
                           widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
                           alt: alt_mobile
                       }}
@@ -102,7 +104,7 @@
                       {%- endif -%}
                       {%- if block.settings.heading != blank -%}
                         <h2
-                          class="section-heading banner__heading mt-0"
+                          class="section-heading heading-letter-spacing banner__heading mt-0"
                         >
                           <span>{{ block.settings.heading | escape }}</span>
                         </h2>
@@ -114,18 +116,36 @@
                           {{ block.settings.description }}
                         </div>
                       {%- endif -%}
-                      {%- if block.settings.button_label != blank -%}
-                        <a
-                          {% if block.settings.button_link == blank %}
-                            role="link" aria-disabled="true"
-                          {% else %}
-                            href="{{ block.settings.button_link }}"
+                      {% if block.settings.first_button_label != blank or block.settings.second_button_label != blank %}
+                        <div class="section-btn d-flex flex-wrap gap-10 justify-content-{{ block.settings.text_alignment }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                          {% if block.settings.first_button_label != blank %}
+                            <a
+                              {% if block.settings.first_button_link == blank %}
+                                role="link" aria-disabled="true"
+                              {% else %}
+                                href="{{ block.settings.first_button_link | default: "#" }}"
+                              {% endif %}
+                              aria-label="{{ block.settings.first_button_label }}"
+                              class="btn remove-underline{% if block.settings.first_button_style %} btn-outline{% else %} btn-primary{% endif %}"
+                            >
+                              {{ block.settings.first_button_label }}
+                            </a>
                           {% endif %}
-                          class="section-btn btn btn-{{ block.settings.button_style }}"
-                        >
-                          {{- block.settings.button_label | escape -}}
-                        </a>
-                      {%- endif -%}
+                          {% if block.settings.second_button_label != blank %}
+                            <a
+                              {% if block.settings.second_button_link == blank %}
+                                role="link" aria-disabled="true"
+                              {% else %}
+                                href="{{ block.settings.second_button_link | default: "#" }}"
+                              {% endif %}
+                              aria-label="{{ block.settings.second_button_label }}"
+                              class="btn remove-underline {% if block.settings.second_button_style %} btn-outline{% else %} btn-primary{% endif %}"
+                            >
+                              {{ block.settings.second_button_label }}
+                            </a>
+                          {% endif %}
+                        </div>
+                      {% endif %}
                     </div>
                   </div>
                 </div>
@@ -153,6 +173,7 @@
                           loading: 'lazy',
                           width: block.settings.image.width,
                           data-sizes: 'auto',
+                          sizes: '100vw',
                           widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
                           alt: block.settings.image.alt
                       }}
@@ -163,7 +184,7 @@
                 </div>
               {%- when 'text' -%}
                 <div
-                  class="color-{{ block.settings.color_scheme }} gradient d-flex w-full align-self-{{ block.settings.vertical }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  class="color-{{ block.settings.color_scheme }} gradient d-flex w-full align-self-{{ block.settings.vertical }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}{% if section.settings.section_width == 'expand_full_width' %} px-20{% endif %}"
                   {%- if settings.animations_reveal_on_scroll -%}
                     style="--animation-order: {{ forloop.index }};"
                   {%- endif -%}
@@ -172,7 +193,7 @@
                     class="w-full size-{{ block.settings.content_size }} text-{{ block.settings.text_alignment }} image-with-text__text-item py-30{% if sec_settings.section_width == 'fix_width' %} px-30{% endif %}"
                   >
                     <h2
-                      class="section-heading banner__heading mt-0"
+                      class="section-heading heading-letter-spacing banner__heading mt-0"
                     >
                       <span>{{ block.settings.heading | escape }}</span>
                     </h2>
@@ -188,6 +209,7 @@
                         {% else %}
                           href="{{ block.settings.button_link }}"
                         {% endif %}
+                        aria-label="{{- block.settings.button_label | escape -}}"
                         class="section-btn btn btn-{{ block.settings.button_style }}"
                       >
                         {{- block.settings.button_label | escape -}}
@@ -239,6 +261,7 @@
                           | image_tag:
                             loading: 'lazy',
                             data-sizes: 'auto',
+                            sizes: '100vw',
                             widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840'
                         }}
                       {%- else -%}
@@ -284,7 +307,7 @@
                 </video-section>
               {%- when 'image_with_text_bellow' -%}
                 <div
-                  class="color-{{ block.settings.color_scheme }} gradient section-inner{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  class="image-with-text-bellow color-{{ block.settings.color_scheme }} gradient section-inner{% if block.settings.content_width == "20%" or block.settings.content_width == "25%" or block.settings.content_width == "33.3333%" %} col-has-small-size{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                   style="{%- if settings.animations_reveal_on_scroll -%}  --animation-order: {{ forloop.index }};{%- endif -%}"
                 >
                   {%- if block.settings.image != blank -%}
@@ -304,6 +327,7 @@
                           loading: 'lazy',
                           width: block.settings.image.width,
                           data-sizes: 'auto',
+                          sizes: '100vw',
                           widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
                           alt: alt
                       }}
@@ -332,6 +356,7 @@
                         | image_tag:
                           loading: 'lazy',
                           data-sizes: 'auto',
+                          sizes: '100vw',
                           widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
                           alt: alt_mobile
                       }}
@@ -339,7 +364,7 @@
                   {%- endif -%}
                   <div class="bls__content w-full d-flex text-{{ block.settings.text_alignment }}">
                     <div
-                      class="banner__box w-full mb-md-10 mt-40 size-{{ block.settings.content_size }}"
+                      class="banner__box w-full mb-md-10 mt-35 size-{{ block.settings.content_size }}"
                     >
                       {%- if block.settings.subheading != blank -%}
                         <p
@@ -350,7 +375,7 @@
                       {%- endif -%}
                       {%- if block.settings.heading != blank -%}
                         <h2
-                          class="section-heading banner__heading mt-0"
+                          class="section-heading heading-letter-spacing banner__heading mt-0"
                         >
                           <span>{{ block.settings.heading | escape }}</span>
                         </h2>
@@ -369,6 +394,7 @@
                           {% else %}
                             href="{{ block.settings.button_link }}"
                           {% endif %}
+                          aria-label="{{- block.settings.button_label | escape -}}"
                           class="section-btn btn btn-{{ block.settings.button_style }}"
                         >
                           {{- block.settings.button_label | escape -}}
@@ -390,11 +416,7 @@
   "tag": "section",
   "class": "section",
   "disabled_on": {
-    "groups": [
-      "header",
-      "footer",
-      "custom.overlay"
-    ]
+    "groups": ["header", "footer", "custom.overlay"]
   },
   "settings": [
     {
@@ -535,31 +557,36 @@
         },
         {
           "type": "text",
-          "id": "button_label",
-          "label": "t:sections.promotion-grid.blocks.all.settings.button_label",
-          "info": "t:sections.promotion-grid.blocks.all.settings.button_info",
-          "default": "Shop now"
-        },
-        {
-          "type": "select",
-          "id": "button_style",
-          "options": [
-            {
-              "value": "fill",
-              "label": "t:sections.all.button_style.fill"
-            },
-            {
-              "value": "outline",
-              "label": "t:sections.all.button_style.outline"
-            }
-          ],
-          "default": "fill",
-          "label": "t:sections.all.button_style.label"
+          "id": "first_button_label",
+          "default": "Shop now",
+          "label": "t:sections.all.content_setting.first_button_label.label",
+          "info": "t:sections.all.content_setting.button_label.info"
         },
         {
           "type": "url",
-          "id": "button_link",
-          "label": "t:sections.promotion-grid.blocks.all.settings.button_link"
+          "id": "first_button_link",
+          "label": "t:sections.all.content_setting.first_button_label.link"
+        },
+        {
+          "type": "checkbox",
+          "id": "first_button_style",
+          "label": "t:sections.all.button_style.use_outline_button_style"
+        },
+        {
+          "type": "text",
+          "id": "second_button_label",
+          "label": "t:sections.all.content_setting.second_button_label.label",
+          "info": "t:sections.all.content_setting.button_label.info"
+        },
+        {
+          "type": "url",
+          "id": "second_button_link",
+          "label": "t:sections.all.content_setting.second_button_label.link"
+        },
+        {
+          "type": "checkbox",
+          "id": "second_button_style",
+          "label": "t:sections.all.button_style.use_outline_button_style"
         },
         {
           "type": "header",
@@ -1135,10 +1162,7 @@
         {
           "type": "video_url",
           "id": "video_url",
-          "accept": [
-            "youtube",
-            "vimeo"
-          ],
+          "accept": ["youtube", "vimeo"],
           "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
           "label": "t:sections.video.settings.video_link.label",
           "info": "t:sections.video.settings.video_link.info"
@@ -1256,14 +1280,14 @@
           "settings": {
             "heading": "Best Seller",
             "description": "<p>TOP ITEMS ON GORDE</p>",
-            "button_label": "Shop now"
+            "first_button_label": "Shop now"
           }
         },
         {
           "type": "image_with_text_overlay",
           "settings": {
             "description": "<p>25% off all orders with code #Save25</p>",
-            "button_label": "Shop now"
+            "first_button_label": "Shop now"
           }
         }
       ]

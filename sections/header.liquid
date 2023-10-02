@@ -36,9 +36,9 @@
       <header-inner class="d-grid align-center logo-{{ section.settings.logo_position }}{% if section.settings.show_border_bottom and section.settings.transparent_on_home == blank %} border-bottom{% endif %}">
         <div class="header__logo text-center{% if section.settings.logo_position != 'center' %} text-1025-unset{% endif %}">
           {% if request.page_type == 'index' %}
-            <h1 class="my-0 fs-36 lh-normal">
+            <h1 class="my-0{% if settings.heading_letter_spacing == '0.25em' %} fs-24{% else %} fs-36{% endif %} lh-normal heading-letter-spacing">
               {% else %}
-              <div class="h1 my-0 fs-36 lh-normal">
+              <div class="h1 my-0{% if settings.heading_letter_spacing == '0.25em' %} fs-24{% else %} fs-36{% endif %} lh-normal heading-letter-spacing">
           {%- endif -%}
             <a href="{{ routes.root_url }}" class="header__heading-link link text-center link--text remove-underline header-color heading-style" aria-label="{{ shop.name }}">
               {%- liquid
@@ -49,18 +49,28 @@
               -%}
               {% if section.settings.transparent_on_home and section.settings.logo_transparent != blank %}
                 {%- assign img_transparent_alt = logo_transparent_img.alt | default: shop.name | escape -%}
-                {{ logo_transparent_img | image_url: width: 500 | image_tag:
+                {%- assign logo_height = logo_transparent_img.width | divided_by: logo_transparent_img.aspect_ratio -%}
+                {{ logo_transparent_img | image_url: width: 600 | image_tag:
                   class: 'header__heading-logo transparent-logo',
-                  widths: '50, 100, 150, 200, 250, 300, 400, 500',
-                  alt: img_transparent_alt
+                  widths: '50, 100, 150, 200, 250, 300, 400, 500, 600',
+                  height: logo_height,
+                  width: logo_transparent_img.width,
+                  alt: img_transparent_alt,
+                  sizes: "100vw",
+                  preload: true
                 }}
               {% endif %}
               {%- if logo_img != blank -%}
                 {%- assign img_alt = logo_img.alt | default: shop.name | escape -%}
-                {{ logo_img | image_url: width: 500 | image_tag:
+                {%- assign logo_height = logo_img.width | divided_by: logo_img.aspect_ratio -%}
+                {{ logo_img | image_url: width: 600 | image_tag:
                   class: 'header__heading-logo',
-                  widths: '50, 100, 150, 200, 250, 300, 400, 500',
-                  alt: img_alt
+                  widths: '50, 100, 150, 200, 250, 300, 400, 500, 600',
+                  height: logo_height,
+                  width: logo_img.width,
+                  alt: img_alt,
+                  sizes: "100vw",
+                  preload: true
                 }}
               {%- else -%}
                 <span class="site-logo">{{ shop.name }}</span>
@@ -84,8 +94,7 @@
                 </span>
               </button>
             </toggle-menu>
-              <input id="Close-Menu" class="d-block d-1025-none side-menu hidden-js touch-target opacity-0 absolute inset-y-0" type="checkbox" id="side-menu"/>
-              <label class="visually-hidden" for="Close-Menu">{{ 'sections.header.expand_menu' | t }}</label>
+              <input class="d-block d-1025-none side-menu hidden-js touch-target opacity-0 absolute inset-y-0" type="checkbox" id="side-menu"/>
               <label class="d-block d-1025-none hamb hidden-js btn-close-menu relative" for="side-menu">                
                 <span class="icon-menu first d-block my-3"></span>
                 <span class="icon-menu second d-block my-3"></span>
@@ -93,6 +102,7 @@
                 <span class="icon-close absolute opacity-0 inset-0 z-1 d-inline-flex align-center justify-content-center">
                   {% render 'icon-close', custom_width: 22 %}
                 </span>
+                <span class="visually-hidden">{{ 'sections.header.expand_menu' | t }}</span>
               </label>
             <main-menu class="mobile-menu-drawer d-flex{% if section.settings.logo_position == 'left' %} justify-content-center{% endif %}">
               <div class="mobile-menu-drawer--inner relative position-1025-unset d-flex flex-column w-full h-full">
@@ -143,7 +153,7 @@
                           <li class="menu-link{% if link.links.size > 0 or has_content %} have-child mega-menu{%- endif -%}{% if link.links.size == 0 and has_content %} no-sub{%- endif -%}" role="listitem">
                             <noscript>
                               <details>
-                                <summary class="menu__item-link header-color-lg first-level{% if settings.menu_font == 'heading_font' %} heading-font font-smoothing-initial{% endif %} py-15 py-1025-2 relative first-child-js remove-underline medium-weight{% if link.links.size > 0 %} pr-1024-44{% endif %}{% if section.settings.uppercase_first_level %} uppercase{% endif %}">
+                                <summary class="menu__item-link header-color-lg first-level{% if settings.menu_font == 'heading_font' %} heading-font font-smoothing-initial{% endif %} py-15 py-1025-2 relative first-child-js remove-underline{% if link.links.size > 0 %} pr-1024-44{% endif %}{% if section.settings.uppercase_first_level %} uppercase{% endif %}">
                                   <span class="link_text">{{ link.title }}</span>
                                   {%- if link.links.size > 0 or has_content -%}
                                     <span class="open-children-toggle touch-target absolute right-0 w-full inset-0 currentColor-svg">
@@ -329,7 +339,7 @@
                             </noscript>
                             <header-menu class="no-js-hidden">
                               <details id="Details-HeaderMenu-{{ forloop.index }}">
-                                <summary class="no-js-hidden menu__item-link first-level{% if settings.menu_font == 'heading_font' %} heading-font font-smoothing-initial{% endif %} py-15 py-1025-2 relative header-color first-child-js remove-underline medium-weight{% if link.links.size > 0 %} pr-1024-44{% endif %}{% if section.settings.uppercase_first_level %} uppercase{% endif %}" aria-label="{{ link.title }}">
+                                <summary class="no-js-hidden menu__item-link first-level{% if settings.menu_font == 'heading_font' %} heading-font font-smoothing-initial{% endif %} py-15 py-1025-2 relative header-color first-child-js remove-underline{% if link.links.size > 0 %} pr-1024-44{% endif %}{% if section.settings.uppercase_first_level %} uppercase{% endif %}" aria-label="{{ link.title }}">
                                   <span class="link_text">{{ link.title }}</span>
                                   {%- if link.links.size > 0 or has_content -%}
                                     <span class="open-children-toggle touch-target absolute right-0 w-full inset-0 currentColor-svg">
@@ -521,7 +531,7 @@
                             <noscript>
                               <details>
                                 <summary
-                                  class="menu__item-link header-color-lg first-level{% if settings.menu_font == 'heading_font' %} heading-font font-smoothing-initial{% endif %} py-15 py-1025-2 relative first-child-js remove-underline medium-weight{% if link.links.size > 0 %} pr-1024-44{% endif %}{% if section.settings.uppercase_first_level %} uppercase{% endif %}">
+                                  class="menu__item-link header-color-lg first-level{% if settings.menu_font == 'heading_font' %} heading-font font-smoothing-initial{% endif %} py-15 py-1025-2 relative first-child-js remove-underline{% if link.links.size > 0 %} pr-1024-44{% endif %}{% if section.settings.uppercase_first_level %} uppercase{% endif %}">
                                   <span class="link_text">{{ link.title }}</span>
                                     {% if link.links.size > 0 %}
                                     <span class="open-children-toggle touch-target absolute right-0 w-full inset-0 currentColor-svg">
@@ -537,10 +547,10 @@
                                 <details id="Details-HeaderMenu-{{ forloop.index }}">
                                   <summary
                                     id="HeaderMenu-{{ link.handle }}"
-                                    class="no-js-hidden menu__item-link first-level{% if settings.menu_font == 'heading_font' %} heading-font font-smoothing-initial{% endif %} py-15 py-1025-2 relative header-color first-child-js remove-underline medium-weight{% if link.links.size > 0 %} pr-1024-44{% endif %}{% if section.settings.uppercase_first_level %} uppercase{% endif %}" aria-label="{{ link.title }}"
+                                    class="no-js-hidden menu__item-link first-level{% if settings.menu_font == 'heading_font' %} heading-font font-smoothing-initial{% endif %} py-15 py-1025-2 relative header-color first-child-js remove-underline{% if link.links.size > 0 %} pr-1024-44{% endif %}{% if section.settings.uppercase_first_level %} uppercase{% endif %}" aria-label="{{ link.title }}"
                                   >
                             {%- else -%}
-                              <a class="no-js-hidden menu__item-link first-level{% if settings.menu_font == 'heading_font' %} heading-font font-smoothing-initial{% endif %} py-15 py-1025-2 relative header-color first-child-js remove-underline medium-weight{% if link.links.size > 0 %} pr-1024-44{% endif %}{% if section.settings.uppercase_first_level %} uppercase{% endif %}" href="{{ link.url }}" aria-label="{{ link.title }}">
+                              <a class="no-js-hidden menu__item-link first-level{% if settings.menu_font == 'heading_font' %} heading-font font-smoothing-initial{% endif %} py-15 py-1025-2 relative header-color first-child-js remove-underline{% if link.links.size > 0 %} pr-1024-44{% endif %}{% if section.settings.uppercase_first_level %} uppercase{% endif %}" href="{{ link.url }}" aria-label="{{ link.title }}">
                             {%- endif -%}
                             <span class="link_text">{{ link.title }}</span>
                             {% if link.links.size > 0 %}
@@ -565,7 +575,7 @@
                           <noscript>
                             <details>
                               <summary
-                                class="menu__item-link header-color-lg first-level{% if settings.menu_font == 'heading_font' %} heading-font font-smoothing-initial{% endif %} py-15 py-1025-2 relative first-child-js remove-underline medium-weight{% if link.links.size > 0 %} pr-1024-44{% endif %}{% if section.settings.uppercase_first_level %} uppercase{% endif %}">
+                                class="menu__item-link header-color-lg first-level{% if settings.menu_font == 'heading_font' %} heading-font font-smoothing-initial{% endif %} py-15 py-1025-2 relative first-child-js remove-underline{% if link.links.size > 0 %} pr-1024-44{% endif %}{% if section.settings.uppercase_first_level %} uppercase{% endif %}">
                                 <span class="link_text">{{ link.title }}</span>
                                   {% if link.links.size > 0 %}
                                   <span class="open-children-toggle touch-target absolute right-0 w-full inset-0 currentColor-svg">
@@ -576,22 +586,31 @@
                             {%- render 'horizontal-menu' | link: link | sub: "sub-menu" | type: "classic" -%}
                             </details>
                           </noscript>
-                          <header-menu>
-                            <details id="Details-HeaderMenu-{{ forloop.index }}">
-                              <summary
-                                id="HeaderMenu-{{ link.handle }}"
-                                class="no-js-hidden menu__item-link first-level{% if settings.menu_font == 'heading_font' %} heading-font font-smoothing-initial{% endif %} py-15 py-1025-2 relative header-color first-child-js remove-underline medium-weight{% if link.links.size > 0 %} pr-1024-44{% endif %}{% if section.settings.uppercase_first_level %} uppercase{% endif %}" aria-label="{{ link.title }}"
-                              >
-                                <span class="link_text">{{ link.title }}</span>
-                                {% if link.links.size > 0 %}
-                                  <span class="open-children-toggle touch-target absolute right-0 w-full inset-0 currentColor-svg">
-                                    {% render 'icon-arrow-down', custom_width: 12 %}
-                                  </span>
-                                {% endif %}
-                              </summary>
-                              {%- render 'horizontal-menu' | link: link | sub: "sub-menu" | type: "classic" | level1_index: forloop.index -%}
+                          {%- if link.links.size > 0 -%}
+                            <header-menu>
+                              <details id="Details-HeaderMenu-{{ forloop.index }}">
+                                <summary
+                                  id="HeaderMenu-{{ link.handle }}"
+                                  class="no-js-hidden menu__item-link first-level{% if settings.menu_font == 'heading_font' %} heading-font font-smoothing-initial{% endif %} py-15 py-1025-2 relative header-color first-child-js remove-underline{% if link.links.size > 0 %} pr-1024-44{% endif %}{% if section.settings.uppercase_first_level %} uppercase{% endif %}" aria-label="{{ link.title }}"
+                                >
+                          {%- else -%}
+                            <a class="no-js-hidden menu__item-link first-level{% if settings.menu_font == 'heading_font' %} heading-font font-smoothing-initial{% endif %} py-15 py-1025-2 relative header-color first-child-js remove-underline{% if link.links.size > 0 %} pr-1024-44{% endif %}{% if section.settings.uppercase_first_level %} uppercase{% endif %}" href="{{ link.url }}" aria-label="{{ link.title }}">
+                          {%- endif -%}
+              
+                            <span class="link_text">{{ link.title }}</span>
+                          {%- if link.links.size > 0 -%}
+                            <span class="open-children-toggle touch-target absolute right-0 w-full inset-0 currentColor-svg">
+                              {% render 'icon-arrow-down', custom_width: 12 %}
+                            </span>
+                            </summary>
+                          {%- else -%}
+                            </a>
+                          {%- endif -%}
+                            {%- render 'horizontal-menu' | link: link | sub: "sub-menu" | type: "classic" | level1_index: forloop.index -%}
+                          {%- if link.links.size > 0 -%}
                             </details>
                           </header-menu>
+                          {%- endif -%}
                         </li>
                       {%- endif -%}
                     {%- endfor -%}
@@ -796,6 +815,106 @@
     </div>
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
+{% javascript %}
+  class StickyHeader extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      this.header = document.querySelector('.section-header');
+      this.headerIsAlwaysSticky = this.getAttribute('data-sticky-type') === 'always';
+      this.headerBounds = {};
+
+      this.setHeaderHeight();
+
+      window.matchMedia('(max-width: 990px)').addEventListener('change', this.setHeaderHeight.bind(this));
+
+      if (this.headerIsAlwaysSticky) {
+        this.header.classList.add('shopify-section-header-sticky');
+      };
+
+      this.currentScrollTop = 0;
+      this.preventReveal = false;
+      this.predictiveSearch = this.querySelector('predictive-search');
+
+      this.onScrollHandler = this.onScroll.bind(this);
+      this.hideHeaderOnScrollUp = () => this.preventReveal = true;
+
+      this.addEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
+      window.addEventListener('scroll', this.onScrollHandler, false);
+
+      this.createObserver();
+    }
+
+    setHeaderHeight() {
+      document.documentElement.style.setProperty('--header-height', `${this.header.offsetHeight}px`);
+    }
+
+    disconnectedCallback() {
+      this.removeEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
+      window.removeEventListener('scroll', this.onScrollHandler);
+    }
+
+    createObserver() {
+      let observer = new IntersectionObserver((entries, observer) => {
+        this.headerBounds = entries[0].intersectionRect;
+        observer.disconnect();
+      });
+
+      observer.observe(this.header);
+    }
+
+    onScroll() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (this.predictiveSearch && this.predictiveSearch.isOpen) return;
+
+      if (scrollTop > this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
+        this.header.classList.add('scrolled-past-header');
+        if (this.preventHide) return;
+        requestAnimationFrame(this.hide.bind(this));
+      } else if (scrollTop < this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
+        this.header.classList.add('scrolled-past-header');
+        if (!this.preventReveal) {
+          requestAnimationFrame(this.reveal.bind(this));
+        } else {
+          window.clearTimeout(this.isScrolling);
+
+          this.isScrolling = setTimeout(() => {
+            this.preventReveal = false;
+          }, 66);
+
+          requestAnimationFrame(this.hide.bind(this));
+        }
+      } else if (scrollTop <= this.headerBounds.top) {
+        this.header.classList.remove('scrolled-past-header');
+        requestAnimationFrame(this.reset.bind(this));
+      }
+
+      this.currentScrollTop = scrollTop;
+    }
+
+    hide() {
+      if (this.headerIsAlwaysSticky) return;
+      this.header.classList.add('shopify-section-header-hidden', 'shopify-section-header-sticky');
+    }
+
+    reveal() {
+      if (this.headerIsAlwaysSticky) return;
+      this.header.classList.add('shopify-section-header-sticky', 'animate');
+      this.header.classList.remove('shopify-section-header-hidden');
+    }
+
+    reset() {
+      if (this.headerIsAlwaysSticky) return;
+      this.header.classList.remove('shopify-section-header-hidden', 'shopify-section-header-sticky', 'animate');
+    }
+
+  }
+
+  customElements.define('sticky-header', StickyHeader);
+{% endjavascript %}
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",

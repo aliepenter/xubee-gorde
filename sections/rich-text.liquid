@@ -41,20 +41,20 @@
         {%- case block.type -%}
           {%- when 'heading' -%}
             <h2
-              class="rich-text__heading {{ block.settings.heading_size }}{% if block.settings.remove_space %} m-0{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-              {%- if settings.animations_reveal_on_scroll -%}
+              class="rich-text__heading text-transform-unset {% if block.settings.remove_letter_spacing == blank %} heading-letter-spacing{% endif %} {{ block.settings.heading_size }}{% if block.settings.remove_space %} m-0{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
                 style="--animation-order: {{ forloop.index }};"
-              {%- endif -%}
+              {% endif %}
               {{ block.shopify_attributes }}
             >
               {{ block.settings.heading }}
             </h2>
           {%- when 'subheading' -%}
             <div
-              class="rich-text-sub-heading {{ block.settings.subheading_size }}{% if block.settings.remove_space %} m-0{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-              {%- if settings.animations_reveal_on_scroll -%}
+              class="rich-text-sub-heading text-transform-unset {{ block.settings.subheading_size }}{% if block.settings.remove_space %} m-0{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
                 style="--animation-order: {{ forloop.index }};"
-              {%- endif -%}
+              {% endif %}
               {{ block.shopify_attributes }}
             >
               {{ block.settings.subheading | escape }}
@@ -62,9 +62,9 @@
           {%- when 'text' -%}
             <div
               class="rich-text__text{% if block.settings.remove_space == false %} mb-15 {% endif %} {{ block.settings.description_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-              {%- if settings.animations_reveal_on_scroll -%}
+              {% if settings.animations_reveal_on_scroll %}
                 style="--animation-order: {{ forloop.index }};"
-              {%- endif -%}
+              {% endif %}
               {{ block.shopify_attributes }}
             >
               {{ block.settings.text }}
@@ -75,24 +75,36 @@
               style=" --desktop-height: {{ block.settings.desktop_spacing }}px; --mobile_height: {{ block.settings.mobile_spacing }}px;"
             ></div>
           {%- when 'button' -%}
-            {%- if block.settings.button_label != blank -%}
-              {% if settings.animations_reveal_on_scroll %}
-                <div class="scroll-trigger animate--slide-in" style="--animation-order: {{ forloop.index }};">
-              {% endif %}
-              <a
-                {% if block.settings.button_link == blank %}
-                  role="link" aria-disabled="true" {{ block.shopify_attributes }}
-                {% else %}
-                  href="{{ block.settings.button_link }}"
+            {% if block.settings.first_button_label != blank or block.settings.second_button_label != blank %}
+              <div class="section-btn d-flex flex-wrap gap-10 justify-content-{{ section.settings.text_alignment }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                {% if block.settings.first_button_label != blank %}
+                  <a
+                    {% if block.settings.first_button_link == blank %}
+                      role="link" aria-disabled="true"
+                    {% else %}
+                      href="{{ block.settings.first_button_link | default: "#" }}"
+                    {% endif %}
+                    aria-label="{{ block.settings.first_button_label }}"
+                    class="btn remove-underline{% if block.settings.first_button_style %} btn-outline{% else %} btn-primary{% endif %}"
+                  >
+                    {{ block.settings.first_button_label }}
+                  </a>
                 {% endif %}
-                class="btn btn-{{ block.settings.button_style }} mb-15"
-              >
-                {{- block.settings.button_label | escape -}}
-              </a>
-              {% if settings.animations_reveal_on_scroll %}
-                </div>
-              {% endif %}
-            {%- endif -%}
+                {% if block.settings.second_button_label != blank %}
+                  <a
+                    {% if block.settings.second_button_link == blank %}
+                      role="link" aria-disabled="true"
+                    {% else %}
+                      href="{{ block.settings.second_button_link | default: "#" }}"
+                    {% endif %}
+                    aria-label="{{ block.settings.second_button_label }}"
+                    class="btn remove-underline {% if block.settings.second_button_style %} btn-outline{% else %} btn-primary{% endif %}"
+                  >
+                    {{ block.settings.second_button_label }}
+                  </a>
+                {% endif %}
+              </div>
+            {% endif %}
         {%- endcase -%}
       {%- endfor -%}
     </div>
@@ -105,11 +117,7 @@
   "tag": "section",
   "class": "section",
   "disabled_on": {
-    "groups": [
-      "header",
-      "footer",
-      "custom.overlay"
-    ]
+    "groups": ["header", "footer", "custom.overlay"]
   },
   "settings": [
     {
@@ -230,6 +238,12 @@
           "id": "remove_space",
           "default": false,
           "label": "t:sections.all.remove_space"
+        },
+        {
+          "type": "checkbox",
+          "id": "remove_letter_spacing",
+          "default": false,
+          "label": "t:sections.all.remove_letter_spacing"
         }
       ]
     },
@@ -318,31 +332,36 @@
       "settings": [
         {
           "type": "text",
-          "id": "button_label",
+          "id": "first_button_label",
           "default": "Shop now",
-          "label": "t:sections.all.content_setting.button_label.label",
+          "label": "t:sections.all.content_setting.first_button_label.label",
           "info": "t:sections.all.content_setting.button_label.info"
         },
         {
           "type": "url",
-          "id": "button_link",
-          "label": "t:sections.all.content_setting.link.label"
+          "id": "first_button_link",
+          "label": "t:sections.all.content_setting.first_button_label.link"
         },
         {
-          "type": "select",
-          "id": "button_style",
-          "options": [
-            {
-              "value": "fill",
-              "label": "t:sections.all.button_style.fill"
-            },
-            {
-              "value": "outline",
-              "label": "t:sections.all.button_style.outline"
-            }
-          ],
-          "default": "fill",
-          "label": "t:sections.all.button_style.label"
+          "type": "checkbox",
+          "id": "first_button_style",
+          "label": "t:sections.all.button_style.use_outline_button_style"
+        },
+        {
+          "type": "text",
+          "id": "second_button_label",
+          "label": "t:sections.all.content_setting.second_button_label.label",
+          "info": "t:sections.all.content_setting.button_label.info"
+        },
+        {
+          "type": "url",
+          "id": "second_button_link",
+          "label": "t:sections.all.content_setting.second_button_label.link"
+        },
+        {
+          "type": "checkbox",
+          "id": "second_button_style",
+          "label": "t:sections.all.button_style.use_outline_button_style"
         }
       ]
     },
@@ -385,6 +404,9 @@
         },
         {
           "type": "text"
+        },
+        {
+          "type": "spacing"
         },
         {
           "type": "button"

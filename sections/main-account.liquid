@@ -4,7 +4,7 @@
 {%- endcapture -%}
 <div class="customer account container section-padding" style="{{ style | strip | strip_newlines }}">
   <div class="text-center">
-    <h1 class="customer__title h0">{{ 'customer.account.title' | t }}</h1>
+    <h1 class="heading-letter-spacing customer__title h0">{{ 'customer.account.title' | t }}</h1>
     <a href="{{ routes.account_logout_url }}">
       {% render 'icon-account', custom_width: 25 %}
       {{ 'customer.log_out' | t }}
@@ -13,7 +13,7 @@
 
   <div>
     <div>
-      <h2 class="mb-lg-30">{{ 'customer.orders.title' | t }}</h2>
+      <h2 class="heading-letter-spacing mb-lg-30">{{ 'customer.orders.title' | t }}</h2>
 
       {% paginate customer.orders by 20 %}
         {%- if customer.orders.size > 0 -%}
@@ -125,7 +125,7 @@
     </div>
 
     <div>
-      <h2 class="mb-lg-30 xx">{{ 'customer.account.details' | t }}</h2>
+      <h2 class="mb-lg-30 heading-letter-spacing">{{ 'customer.account.details' | t }}</h2>
 
       {{ customer.default_address | format_address }}
 

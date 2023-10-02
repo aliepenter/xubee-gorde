@@ -66,6 +66,8 @@
 .thumbnail-position-left .slide-section-thumbnail .tns-controls button {
     left: 50%;
     transform: translateX(-50%) rotate(90deg);
+    width: 3.5rem;
+    height: 3.5rem;
 }
 
 .thumbnail-position-left .slide-section-thumbnail .tns-controls [data-controls=prev] {
@@ -414,6 +416,15 @@ sticky-buy .icon_plus-animation::after {
     z-index: 1;
     transition: color var(--duration-short) ease,
         opacity var(--duration-short) ease;
+}
+
+.thumbnail__badge.d-model {
+    border: 0;
+    background-color: transparent;
+}
+
+.thumbnail__badge.d-model svg {
+    border-radius: 50%;
 }
 
 .product__media-video .product__media-icon {
@@ -1121,6 +1132,18 @@ media-gallery .tns-progress {
         right: 0;
         top: 50%;
         transform: translateY(-50%);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #shopify-product-reviews .spr-summary.rte {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+
+    #shopify-product-reviews .spr-summary.rte .spr-summary-actions {
+        flex: 0 0 100%;
     }
 }
 

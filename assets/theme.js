@@ -192,18 +192,25 @@ function windowResize() {
     }
   });
 }
-
 windowResize();
 
 function pauseAllMedia(s) {
-  if (!s.container) return;
+  if (!s || !s.container) return;
   s.container.querySelectorAll('.js-youtube').forEach((video) => {
-    video.contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+    if (!video.paused) {
+      video.contentWindow?.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+    }
   });
   s.container.querySelectorAll('.js-vimeo').forEach((video) => {
-    video.contentWindow.postMessage('{"method":"pause"}', '*');
+    if (video.contentWindow && video.contentWindow.postMessage) {
+      video.contentWindow.postMessage('{"method":"pause"}', '*');
+    }
   });
-  s.container.querySelectorAll('video').forEach((video) => video.pause());
+  s.container.querySelectorAll('video').forEach((video) => {
+    if (!video.paused) {
+      video.pause();
+    }
+  });
 }
 
 var responsiveImage = (function () {
@@ -285,7 +292,30 @@ var getHeightHeader = (function () {
           divTop = document.querySelector(".section-header header").offsetHeight;
         }
       }
+      const sectionHeader = document.querySelector('.section-header');
+      const sectionAB = document.querySelector('.section-announcement-bar');
+      if (this.checkPositionAnnouncementBar(sectionHeader, sectionAB)) {
+        const ab = sectionAB.querySelector("announcement-bar");
+        if (ab) {
+          divTop += ab.offsetHeight;
+        }
+      }
       root.style.setProperty("--header-height", divTop+"px");
+    },
+
+    checkPositionAnnouncementBar(sectionHeader, sectionAB) {
+      if (sectionHeader && sectionAB) {
+        const rectA = sectionHeader.getBoundingClientRect();
+        const rectB = sectionAB.getBoundingClientRect();
+
+        const isAOnTopOfB = rectA.bottom <= rectB.top;
+
+        if (isAOnTopOfB) {
+          return true;
+        } else {
+          return false;
+        }
+      }
     }
   };
 })();
@@ -570,6 +600,9 @@ class SlideSection extends BaseSlide {
       }
     }
     this.onResize();
+    if (this.classList.contains("slide-section-slideshow")) {
+      _this.lazyloadImage();
+    }
   }
 
   onResize() {
@@ -741,6 +774,27 @@ class SlideSection extends BaseSlide {
   rebuild(){
     if(!this.slider) return;
     this.slider.rebuild();
+  }
+  lazyloadImage(){
+    if (this.querySelectorAll(".loading-animation").length != 0) {
+      this.querySelectorAll(".loading-animation").forEach((e, index) => {
+        var img = new Image();
+        if (e.getAttribute("src")) {
+          img.src = e.getAttribute("src");
+          img.addEventListener('load', function() {
+            setTimeout(() => {
+              e.classList.add("loaded-animation");
+              e.classList.remove("loading-animation");
+            }, 100);
+          });
+        }else{
+          setTimeout(() => {
+            e.classList.add("loaded-animation");
+            e.classList.remove("loading-animation");
+          }, 200);
+        }
+      });
+    }
   }
 }
 customElements.define('slide-section', SlideSection);
@@ -1073,7 +1127,7 @@ class StickyHeader extends HTMLElement {
     }
   }
 }
-customElements.define('sticky-header', StickyHeader);
+// customElements.define('sticky-header', StickyHeader);
 
 class BackBtn extends HTMLElement {
   constructor(){
@@ -1670,8 +1724,23 @@ class ActionSearch extends HTMLElement {
     link.addEventListener('click', (event) => {
       event.preventDefault();
       this.openPopup()
+      this.lazyloadImage()
     });
   }
+
+  lazyloadImage() {
+    if (this.querySelectorAll(".loading-animation").length != 0) {
+      this.querySelectorAll(".loading-animation").forEach((e, index) => {
+        var img = new Image();
+        img.src = e.getAttribute("src");
+        img.addEventListener('load', function() {
+          e.classList.add("loaded-animation");
+          e.classList.remove("loading-animation");
+        });
+      });
+    }
+  }
+  
   openPopup() {
     rootAction.add();
     setTimeout(() => {this.classList.add('active')});

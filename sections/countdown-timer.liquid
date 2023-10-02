@@ -98,7 +98,7 @@
                 </div>
               {%- endif -%}
               {%- if section.settings.heading != blank -%}
-                <h2 class="section-heading banner__heading mt-0">
+                <h2 class="section-heading heading-letter-spacing banner__heading mt-0">
                   {{ section.settings.heading }}
                 </h2>
               {%- endif -%}
@@ -148,11 +148,7 @@
   "tag": "section",
   "class": "section",
   "disabled_on": {
-    "groups": [
-      "header",
-      "footer",
-      "custom.overlay"
-    ]
+    "groups": ["header", "footer", "custom.overlay"]
   },
   "settings": [
     {

@@ -1,4 +1,6 @@
-{%- capture class -%}{%- if custom_class -%}class="{{ custom_class }}"{%- endif -%}{%- endcapture -%}
+{%- capture class -%}
+{%- if custom_class -%}class="{{ custom_class }}{% if is_predictive_search %} loading-animation{%- endif -%}"{%- endif -%}
+{%- endcapture -%}
 <img
   srcset="
     {%- if img.width >= 165 -%}{{ img | image_url: width: 165 }} 165w,{%- endif -%}
@@ -16,4 +18,5 @@
   loading="lazy"
   width="{{ img.width }}"
   height="{{ img.height }}"
+  sizes="100vw"
 >

@@ -282,11 +282,6 @@
 
     var reSize = function() {
         initPhotoSwipeFromDOM('.gallery-zoom');
-        window.addEventListener("resize", function() {
-            setTimeout(() => {
-                initPhotoSwipeFromDOM('.gallery-zoom');
-            });
-        });
     }
     reSize();
 })();

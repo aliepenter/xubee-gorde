@@ -31,29 +31,33 @@
         style="{%- if section.settings.show_collection_image and collection.image -%}--aspect-ratio: {{ collection.image.aspect_ratio }};{%- endif -%}"
       {% endif %}
     >
-      {%- if section.settings.show_collection_image and collection.image -%}
+      {% if section.settings.show_collection_image %}
         <div
-          class="banner__media z-2-impo{% if section.settings.heading_overlay %} absolute inset-0{% endif %} "
-          style="--aspect-ratio: {{ collection.image.aspect_ratio }};"
+          class="banner__media z-2-impo{% if section.settings.heading_overlay %} absolute inset-0{% endif %}"
+          style="--aspect-ratio: {%- if section.settings.show_collection_image and collection.image -%}{{ collection.image.aspect_ratio }}{%- else -%} 0.7{%- endif -%}"
         >
-          {%- liquid
-            assign alt = collection.image.alt | default: collection.title | escape
-            assign width = collection.image.width
-            assign height = collection.image.height
-          -%}
-          {{
-            collection.image
-            | image_url: width: 1500
-            | image_tag:
-              loading: 'lazy',
-              sizes: '100vw',
-              widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
-              height: height,
-              width: width,
-              alt: alt
-          }}
+          {%- if section.settings.show_collection_image and collection.image -%}
+            {%- liquid
+              assign alt = collection.image.alt | default: collection.title | escape
+              assign width = collection.image.width
+              assign height = collection.image.height
+            -%}
+            {{
+              collection.image
+              | image_url: width: 1500
+              | image_tag:
+                loading: 'lazy',
+                sizes: '100vw',
+                widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+                height: height,
+                width: width,
+                alt: alt
+            }}
+            {%- else -%}
+              {% render 'placeholder-render' | type: "collection" %}
+          {%- endif -%}
         </div>
-      {%- endif -%}
+      {% endif %}
       <div class="bls__colection-banner-content w-full section-padding z-3{% if section.settings.heading_overlay %} d-flex px-15 pt-30 px-md-30 py-md-48 {{ section.settings.desktop_content_position }} relative{% endif %}{% if section.settings.section_width == 'expand_full_width' %} px-15{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <div class="page-title w-full{% if section.settings.heading_overlay %} custom-margin mt-0 mb-40{% endif %}">
           {%- if section.settings.show_breadcrumb -%}
@@ -61,7 +65,9 @@
               {%- render 'breadcrumbs' -%}
             </div>
           {%- endif -%}
-          <h1 class="main-page-title h0{{ desktop_content_position }}">{{ collection.title }}</h1>
+          <h1 class="heading-letter-spacing main-page-title h0{{ desktop_content_position }}">
+            {{ collection.title }}
+          </h1>
           {%- if collection.description != blank and section.settings.show_collection_description -%}
             <div class="short-des rte">
               {{ collection.description }}

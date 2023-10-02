@@ -9,11 +9,6 @@
 
 }
 
-.slide-carousel[aria-hidden="true"] a.section-btn {
-  visibility: hidden;
-  opacity: 0;
-}
-
 .blog-posts-items[aria-hidden="true"],
 .article-card-wrapper[aria-hidden="true"],
 .product-wrapper[aria-hidden="true"],
@@ -74,10 +69,6 @@
   [data-items-mb="1"][data-axis="horizontal"] .slide-container:not(.tns-initialized)>* {
     flex: 0 0 auto;
     width: 100%;
-  }
-
-  [data-items-mb="1"][data-axis="horizontal"] .slide-container:not(.tns-initialized)>*:not(.tns-slide-active) {
-    display: none;
   }
 
   [data-items-mb="2"][data-axis="horizontal"] .slide-container:not(.tns-initialized)>* {
@@ -198,25 +189,6 @@
     --bs-gutter-x: 1.5rem;
   }
 }
-
-/* product-info .bls__pro-reviews .shopify-product-reviews-badge,
-product-info .bls__pro-reviews .spr-badge {
-  transition: 0.3s;
-  min-height: 19px;
-} */
-
-/* 
-.bls__pro-reviews .shopify-product-reviews-badge:empty {
-  width: 130px;
-  height: 18.5px;
-  display: flex;
-  background-image: linear-gradient(90deg, rgba(22, 24, 35, 0) 0, rgba(22, 24, 35, .05) 50%, rgba(22, 24, 35, 0) 100%);
-  -webkit-background-size: 200% 100%;
-  background-size: 200% 100%;
-  background-repeat: no-repeat;
-  -webkit-animation: 1.5s cubic-bezier(0, 0, 1, 1) infinite animation-loading-images;
-  animation: 1.5s cubic-bezier(0, 0, 1, 1) infinite animation-loading-images;
-} */
 
 html.no-js .no-js-hidden {
   display: none !important;
@@ -1829,6 +1801,10 @@ input[type="checkbox"] {
   }
 }
 
+.normal-weight {
+  font-weight: normal;
+}
+
 .medium-weight {
   font-weight: var(--medium-font-weight);
 }
@@ -1876,7 +1852,7 @@ input[type="checkbox"] {
   --sub-heading-mb: clamp(1rem, 2vw, 1.3rem);
   --heading-size: clamp(5.2rem, 5vw, 10rem);
   --heading-line-height: 1.1;
-  --heading-mb: 0;
+  --heading-mb: 0.6rem;
   --description-size: clamp(1.8rem, 1.2vw, 2.4rem);
   --description-mb: clamp(1.4rem, 2vw, 2.2rem);
   --button-spacing-top: clamp(2.6rem, 3vw, 4.4rem);
@@ -1898,6 +1874,38 @@ input[type="checkbox"] {
 .size-large.body-size {
   --scrolling-size: 1.8rem;
   --scrolling-space: clamp(5.5rem, 5vw, 7rem);
+}
+
+.col-has-small-size .size-small {
+  --sub-heading-size: 1.3rem;
+  --sub-heading-mb: 1.2rem;
+  --heading-size: clamp(2rem, 2.5vw, 2.4rem);
+  --heading-mb: 1.7rem;
+  --description-size: 1.4rem;
+  --description-mb: 2.4rem;
+  --button-spacing-top: 1rem;
+}
+
+.col-has-small-size .size-medium {
+  --sub-heading-size: 1.3rem;
+  --sub-heading-mb: clamp(1rem, 2vw, 1.3rem);
+  --heading-size: 3.2rem;
+  --heading-line-height: 1.1;
+  --heading-mb: 1.5rem;
+  --description-size: 1.4rem;
+  --description-mb: 1.3rem;
+  --button-spacing-top: clamp(2.6rem, 3vw, 4.4rem);
+}
+
+.col-has-small-size .size-large {
+  --sub-heading-size: 1.6rem;
+  --sub-heading-mb: clamp(1rem, 2vw, 1.3rem);
+  --heading-size: 3.6rem;
+  --heading-line-height: 1.1;
+  --heading-mb: 0.6rem;
+  --description-size: clamp(1.8rem, 1.2vw, 2.4rem);
+  --description-mb: clamp(1.4rem, 2vw, 2.2rem);
+  --button-spacing-top: 3rem;
 }
 
 .sub-heading {
@@ -1956,6 +1964,10 @@ input[type="checkbox"] {
   font-size: 0;
 }
 
+.fs-24 {
+  font-size: 2.4rem;
+}
+
 .fs-36 {
   font-size: 3.6rem;
 }
@@ -1974,10 +1986,16 @@ input[type="checkbox"] {
 
 .fs-small {
   font-size: calc(var(--body-font-size) - 2px);
+  --scrolling-size: calc(var(--body-font-size) - 2px);
 }
 
-.fs-small-1 {
+.fs-small-1,
+.fs-medium {
   font-size: calc(var(--body-font-size) - 1px);
+}
+
+.fs-medium {
+  --scrolling-size: 1.3rem;
 }
 
 .fs-bigger-2 {
@@ -1986,6 +2004,10 @@ input[type="checkbox"] {
 
 .fs-bigger-4 {
   font-size: calc(var(--body-font-size) + 4px);
+}
+
+.fs-large {
+  --scrolling-size: 1.4rem;
 }
 
 .fs-16 {
@@ -3759,6 +3781,10 @@ input.heading-style {
   margin-top: var(--row-gap, 0);
 }
 
+.pl-gap {
+  padding-left: calc(var(--col-gap) * .5);
+}
+
 .item-inner-width .item-content {
   width: calc(100% - var(--item-width, 0px) - var(--item-gap, 0px));
 }
@@ -4279,6 +4305,10 @@ input.heading-style {
   .row-cols-md-6>* {
     flex: 0 0 auto;
     width: 16.6666666667%;
+  }
+
+  .mt-md-0-impo {
+    margin-top: 0 !important;
   }
 }
 

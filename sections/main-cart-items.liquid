@@ -41,7 +41,7 @@
           <div class="breadcrumbs mb-10">
             {%- render 'breadcrumbs' -%}
           </div>
-          <h1 class="title title--primary h0 text-center">{{ 'sections.cart.title' | t }}</h1>
+          <h1 class="heading-letter-spacing title title--primary h0 text-center">{{ 'sections.cart.title' | t }}</h1>
           {% if settings.show_in_cart_page %}
             <free-ship-progress-bar
               data-order="{{ cart.total_price }}"
@@ -74,13 +74,13 @@
           <cart-items class="{% if cart == empty %}is-empty{% endif %}">
             {% if cart == empty %}
               <div class="cart__warnings text-center">
-                <h1 class="cart__empty-title">{{ 'sections.cart.empty' | t }}</h1>
+                <h1 class="heading-letter-spacing cart__empty-title">{{ 'sections.cart.empty' | t }}</h1>
                 <a href="{{ routes.all_products_collection_url }}" class="button">
                   {{ 'general.continue_shopping' | t }}
                 </a>
 
                 {%- if shop.customer_accounts_enabled and customer == null -%}
-                  <h2 class="cart__login-title">{{ 'sections.cart.login.title' | t }}</h2>
+                  <h2 class="heading-letter-spacing cart__login-title">{{ 'sections.cart.login.title' | t }}</h2>
                   <p class="cart__login-paragraph">
                     {{ 'sections.cart.login.paragraph_html' | t: link: routes.account_login_url }}
                   </p>
@@ -348,7 +348,13 @@
                   </div>
                 </div>
                 <p class="visually-hidden" id="cart-live-region-text" aria-live="polite" role="status"></p>
-                <p class="visually-hidden" id="shopping-cart-line-item-status" aria-live="polite" aria-hidden="true" role="status">
+                <p
+                  class="visually-hidden"
+                  id="shopping-cart-line-item-status"
+                  aria-live="polite"
+                  aria-hidden="true"
+                  role="status"
+                >
                   {{ 'accessibility.loading' | t }}
                 </p>
               </form>
@@ -516,7 +522,10 @@
                       </div>
                     </div>
                     <div class="bls__addon-actions">
-                      <button class="button btn-save w-full accent-color-second-bg heading-color" data-action="shipping">
+                      <button
+                        class="button btn-save w-full accent-color-second-bg heading-color"
+                        data-action="shipping"
+                      >
                         {{ 'sections.cart.shipping.estimate_shipping_button' | t }}
                       </button>
                     </div>

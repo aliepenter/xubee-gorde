@@ -19,10 +19,6 @@
     {%- if section.settings.mobile_image -%} --aspect-ratio-mb: {{ section.settings.mobile_image.aspect_ratio }};{%- endif -%}  
   {%- endif -%}
 {%- endcapture -%}
-{%- capture sizes -%}
-(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
-(min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
-{%- endcapture -%}
 <div
   class="color-{{ section.settings.color_scheme }} gradient{% if section.settings.reset_color %} reset-color-on-mb color-default-color-scheme{% endif %} bls__section image-with-text-overlay section-padding"
   style="{{ style | strip | strip_newlines }}"
@@ -50,7 +46,7 @@
             | image_tag:
               loading: 'lazy',
               width: section.settings.image.width,
-              sizes: sizes,
+              sizes: '100vw',
               widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
           }}
         </div>
@@ -102,10 +98,10 @@
                 </p>
               {%- when 'heading' -%}
                 <h2
-                  class="section-heading banner__heading mt-0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                  {%- if settings.animations_reveal_on_scroll -%}
+                  class="section-heading heading-letter-spacing banner__heading mt-0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  {% if settings.animations_reveal_on_scroll %}
                     style="--animation-order: {{ forloop.index }};"
-                  {%- endif -%}
+                  {% endif %}
                   {{ block.shopify_attributes }}
                 >
                   <span>{{ block.settings.heading | escape }}</span>
@@ -113,9 +109,9 @@
               {%- when 'description' -%}
                 <div
                   class="sec-des banner__text{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                  {%- if settings.animations_reveal_on_scroll -%}
+                  {% if settings.animations_reveal_on_scroll %}
                     style="--animation-order: {{ forloop.index }};"
-                  {%- endif -%}
+                  {% endif %}
                   {{ block.shopify_attributes }}
                 >
                   {{ block.settings.description }}
@@ -126,27 +122,36 @@
                   style=" --desktop-height: {{ block.settings.desktop_spacing }}px; --mobile_height: {{ block.settings.mobile_spacing }}px;"
                 ></div>
               {%- when 'button' -%}
-                {%- if block.settings.button_label != blank -%}
-                  {% if settings.animations_reveal_on_scroll %}
-                    <div class="scroll-trigger animate--slide-in" style="--animation-order: {{ forloop.index }};">
-                  {% endif %}
-                  <a
-                    {% if block.settings.button_link == blank %}
-                      role="link" aria-disabled="true"
-                    {% else %}
-                      href="{{ block.settings.button_link }}"
+                {% if block.settings.first_button_label != blank or block.settings.second_button_label != blank %}
+                  <div class="section-btn d-flex flex-wrap gap-10 justify-content-{{ section.settings.text_alignment }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                    {% if block.settings.first_button_label != blank %}
+                      <a
+                        {% if block.settings.first_button_link == blank %}
+                          role="link" aria-disabled="true"
+                        {% else %}
+                          href="{{ block.settings.first_button_link | default: "#" }}"
+                        {% endif %}
+                        aria-label="{{ block.settings.first_button_label }}"
+                        class="btn remove-underline{% if block.settings.first_button_style %} btn-outline{% else %} btn-primary{% endif %}"
+                      >
+                        {{ block.settings.first_button_label }}
+                      </a>
                     {% endif %}
-                    class="section-btn btn btn-{{ block.settings.button_style }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                    {%- if settings.animations_reveal_on_scroll -%}
-                      style="--animation-order: {{ forloop.index }};"
-                    {%- endif -%}
-                  >
-                    {{- block.settings.button_label | escape -}}
-                  </a>
-                  {% if settings.animations_reveal_on_scroll %}
-                    </div>
-                  {% endif %}
-                {%- endif -%}
+                    {% if block.settings.second_button_label != blank %}
+                      <a
+                        {% if block.settings.second_button_link == blank %}
+                          role="link" aria-disabled="true"
+                        {% else %}
+                          href="{{ block.settings.second_button_link | default: "#" }}"
+                        {% endif %}
+                        aria-label="{{ block.settings.second_button_label }}"
+                        class="btn remove-underline {% if block.settings.second_button_style %} btn-outline{% else %} btn-primary{% endif %}"
+                      >
+                        {{ block.settings.second_button_label }}
+                      </a>
+                    {% endif %}
+                  </div>
+                {% endif %}
             {%- endcase -%}
           {%- endfor -%}
         </div>
@@ -160,11 +165,7 @@
   "name": "t:sections.image-with-text-overlay.presets.name",
   "class": "section",
   "disabled_on": {
-    "groups": [
-      "header",
-      "footer",
-      "custom.overlay"
-    ]
+    "groups": ["header", "footer", "custom.overlay"]
   },
   "settings": [
     {
@@ -430,31 +431,36 @@
       "settings": [
         {
           "type": "text",
-          "id": "button_label",
+          "id": "first_button_label",
           "default": "Shop now",
-          "label": "t:sections.all.content_setting.button_label.label",
+          "label": "t:sections.all.content_setting.first_button_label.label",
           "info": "t:sections.all.content_setting.button_label.info"
         },
         {
           "type": "url",
-          "id": "button_link",
-          "label": "t:sections.all.content_setting.link.label"
+          "id": "first_button_link",
+          "label": "t:sections.all.content_setting.first_button_label.link"
         },
         {
-          "type": "select",
-          "id": "button_style",
-          "options": [
-            {
-              "value": "fill",
-              "label": "t:sections.all.button_style.fill"
-            },
-            {
-              "value": "outline",
-              "label": "t:sections.all.button_style.outline"
-            }
-          ],
-          "default": "fill",
-          "label": "t:sections.all.button_style.label"
+          "type": "checkbox",
+          "id": "first_button_style",
+          "label": "t:sections.all.button_style.use_outline_button_style"
+        },
+        {
+          "type": "text",
+          "id": "second_button_label",
+          "label": "t:sections.all.content_setting.second_button_label.label",
+          "info": "t:sections.all.content_setting.button_label.info"
+        },
+        {
+          "type": "url",
+          "id": "second_button_link",
+          "label": "t:sections.all.content_setting.second_button_label.link"
+        },
+        {
+          "type": "checkbox",
+          "id": "second_button_style",
+          "label": "t:sections.all.button_style.use_outline_button_style"
         }
       ]
     },
