@@ -132,6 +132,80 @@
         "padding_bottom": 40
       }
     },
+    "f022e147-1fed-48f1-83b3-a469d64277ca": {
+      "type": "collection-list",
+      "blocks": {
+        "template--20818995052828__f022e147-1fed-48f1-83b3-a469d64277ca-featured_collection-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": ""
+          }
+        },
+        "template--20818995052828__f022e147-1fed-48f1-83b3-a469d64277ca-featured_collection-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": ""
+          }
+        },
+        "template--20818995052828__f022e147-1fed-48f1-83b3-a469d64277ca-featured_collection-3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": ""
+          }
+        },
+        "template--20818995052828__f022e147-1fed-48f1-83b3-a469d64277ca-featured_collection-4": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": ""
+          }
+        },
+        "template--20818995052828__f022e147-1fed-48f1-83b3-a469d64277ca-featured_collection-5": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": ""
+          }
+        },
+        "template--20818995052828__f022e147-1fed-48f1-83b3-a469d64277ca-featured_collection-6": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20818995052828__f022e147-1fed-48f1-83b3-a469d64277ca-featured_collection-1",
+        "template--20818995052828__f022e147-1fed-48f1-83b3-a469d64277ca-featured_collection-2",
+        "template--20818995052828__f022e147-1fed-48f1-83b3-a469d64277ca-featured_collection-3",
+        "template--20818995052828__f022e147-1fed-48f1-83b3-a469d64277ca-featured_collection-4",
+        "template--20818995052828__f022e147-1fed-48f1-83b3-a469d64277ca-featured_collection-5",
+        "template--20818995052828__f022e147-1fed-48f1-83b3-a469d64277ca-featured_collection-6"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "",
+        "title": "CÁC DỊCH VỤ NỔI BẬT",
+        "description": "<p>Làm nên thương hiệu của Viện thẩm mỹ Xubee<\/p>",
+        "text_alignment": "left",
+        "show_view_all": true,
+        "image_ratio": "adapt",
+        "information_position": "overlay",
+        "show_product_count": false,
+        "text_information_alignment": "left",
+        "columns_desktop": 5,
+        "column_gap": "small",
+        "enable_carousel": true,
+        "show_navigation": true,
+        "show_pagination": false,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -665,6 +739,7 @@
   "order": [
     "85c86895-d3e6-4879-8c04-186884a188bb",
     "ad27c797-e75c-4265-88b2-1286682d8ddd",
+    "f022e147-1fed-48f1-83b3-a469d64277ca",
     "featured_collection",
     "3e8db2db-a0db-492c-9ef2-f468cbfb9e60",
     "65b3d10b-5b9c-4717-bcfc-846907672f04",
