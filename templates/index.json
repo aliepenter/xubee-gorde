@@ -58,9 +58,12 @@
             "subheading": "",
             "heading": "",
             "description": "",
-            "button_label": "",
-            "link": "",
-            "button_style": "fill",
+            "first_button_label": "",
+            "first_button_link": "",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style": false,
             "desktop_content_position": "bottom-left",
             "text_alignment": "left"
           }
@@ -74,9 +77,12 @@
             "subheading": "",
             "heading": "",
             "description": "",
-            "button_label": "",
-            "link": "",
-            "button_style": "fill",
+            "first_button_label": "",
+            "first_button_link": "",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style": false,
             "desktop_content_position": "bottom-left",
             "text_alignment": "left"
           }
@@ -90,9 +96,12 @@
             "subheading": "",
             "heading": "",
             "description": "",
-            "button_label": "",
-            "link": "",
-            "button_style": "fill",
+            "first_button_label": "Shop now",
+            "first_button_link": "",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style": false,
             "desktop_content_position": "bottom-left",
             "text_alignment": "left"
           }
@@ -215,7 +224,8 @@
           "settings": {
             "heading": "Our purpose is to Inspire a Better way of Living by creating conscious products that last through time.",
             "heading_size": "h2",
-            "remove_space": true
+            "remove_space": true,
+            "remove_letter_spacing": false
           }
         },
         "5b96d5d8-af03-4eb0-98ee-f2351951908e": {
@@ -302,9 +312,12 @@
         "template--18765520470307__cdbe4686-18ae-40df-a4c8-ce22e6ac4910-16825891535f748334-2": {
           "type": "button",
           "settings": {
-            "button_label": "see our philosophy",
-            "button_link": "shopify:\/\/pages\/about-us",
-            "button_style": "outline"
+            "first_button_label": "Shop now",
+            "first_button_link": "",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style": false
           }
         }
       },
@@ -340,9 +353,12 @@
             "subheading": "TOP ITEMS IN GORDE",
             "heading": "Best Seller",
             "description": "",
-            "button_label": "Shop now",
-            "button_style": "outline",
-            "button_link": "shopify:\/\/collections\/all",
+            "first_button_label": "Shop now",
+            "first_button_link": "",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style": false,
             "desktop_content_position": "end",
             "text_alignment": "left",
             "content_size": "medium",
@@ -360,9 +376,12 @@
             "subheading": "NEW ITEMS AND MORE",
             "heading": "Just Landing",
             "description": "",
-            "button_label": "Shop now",
-            "button_style": "outline",
-            "button_link": "shopify:\/\/collections\/all",
+            "first_button_label": "Shop now",
+            "first_button_link": "",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style": false,
             "desktop_content_position": "end",
             "text_alignment": "left",
             "content_size": "medium",
