@@ -132,6 +132,17 @@
         "padding_bottom": 26
       }
     },
+    "65b3d10b-5b9c-4717-bcfc-846907672f04": {
+      "type": "divider",
+      "settings": {
+        "section_width": "expand_full_width",
+        "divider_height": 1,
+        "divider_color": "#cccccc",
+        "border_style": "solid",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "f022e147-1fed-48f1-83b3-a469d64277ca": {
       "type": "collection-list",
       "blocks": {
@@ -212,6 +223,51 @@
         "padding_bottom": 40
       }
     },
+    "94c0e02c-47af-4a55-9952-682b8a669a8c": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--20818995052828__94c0e02c-47af-4a55-9952-682b8a669a8c-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image with text"
+          }
+        },
+        "template--20818995052828__94c0e02c-47af-4a55-9952-682b8a669a8c-description-1": {
+          "type": "description",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        },
+        "template--20818995052828__94c0e02c-47af-4a55-9952-682b8a669a8c-button-1": {
+          "type": "button",
+          "settings": {
+            "first_button_label": "Shop now",
+            "first_button_link": "",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style": false
+          }
+        }
+      },
+      "block_order": [
+        "template--20818995052828__94c0e02c-47af-4a55-9952-682b8a669a8c-heading-1",
+        "template--20818995052828__94c0e02c-47af-4a55-9952-682b8a669a8c-description-1",
+        "template--20818995052828__94c0e02c-47af-4a55-9952-682b8a669a8c-button-1"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "",
+        "desktop_image_width": 50,
+        "image_desktop_position": "left",
+        "desktop_content_position": "top",
+        "text_alignment": "left",
+        "content_size": "medium",
+        "column_gap": "medium",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "3e8db2db-a0db-492c-9ef2-f468cbfb9e60": {
       "type": "scrolling-text",
       "blocks": {
@@ -256,17 +312,6 @@
         "use_heading_font": true,
         "padding_top": 0,
         "padding_bottom": 75
-      }
-    },
-    "65b3d10b-5b9c-4717-bcfc-846907672f04": {
-      "type": "divider",
-      "settings": {
-        "section_width": "expand_full_width",
-        "divider_height": 1,
-        "divider_color": "#cccccc",
-        "border_style": "solid",
-        "padding_top": 0,
-        "padding_bottom": 0
       }
     },
     "dc7270cc-f3d5-470f-83fa-607409275d84": {
@@ -725,9 +770,10 @@
   "order": [
     "ad27c797-e75c-4265-88b2-1286682d8ddd",
     "85c86895-d3e6-4879-8c04-186884a188bb",
-    "f022e147-1fed-48f1-83b3-a469d64277ca",
-    "3e8db2db-a0db-492c-9ef2-f468cbfb9e60",
     "65b3d10b-5b9c-4717-bcfc-846907672f04",
+    "f022e147-1fed-48f1-83b3-a469d64277ca",
+    "94c0e02c-47af-4a55-9952-682b8a669a8c",
+    "3e8db2db-a0db-492c-9ef2-f468cbfb9e60",
     "dc7270cc-f3d5-470f-83fa-607409275d84",
     "7af70c30-856d-467b-a99b-2abad6681c8a",
     "768a7ccc-ccc3-4ca0-b745-1d7897be59a0",
