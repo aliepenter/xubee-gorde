@@ -645,7 +645,7 @@
         "description": "<p>Latest from our journal<\/p>",
         "show_view_all": true,
         "text_alignment": "left",
-        "blog": "news",
+        "blog": "dich-vu",
         "aspect_ratio": "adapt",
         "post_limit": 4,
         "columns_desktop": 3,
@@ -656,7 +656,7 @@
         "show_excerpt": true,
         "enable_carousel": true,
         "show_navigation": true,
-        "show_pagination": false,
+        "show_pagination": true,
         "padding_top": 71,
         "padding_bottom": 21
       }
