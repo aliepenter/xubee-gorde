@@ -182,13 +182,6 @@
             "collection_image": "shopify:\/\/shop_images\/chuyen_vien_phun_xem.jpg",
             "collection_title": ""
           }
-        },
-        "22d229b2-5e70-483a-8249-cdb41843d5d6": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "collection_title": ""
-          }
         }
       },
       "block_order": [
@@ -197,8 +190,7 @@
         "template--20818995052828__f022e147-1fed-48f1-83b3-a469d64277ca-featured_collection-3",
         "template--20818995052828__f022e147-1fed-48f1-83b3-a469d64277ca-featured_collection-4",
         "template--20818995052828__f022e147-1fed-48f1-83b3-a469d64277ca-featured_collection-5",
-        "template--20818995052828__f022e147-1fed-48f1-83b3-a469d64277ca-featured_collection-6",
-        "22d229b2-5e70-483a-8249-cdb41843d5d6"
+        "template--20818995052828__f022e147-1fed-48f1-83b3-a469d64277ca-featured_collection-6"
       ],
       "settings": {
         "section_width": "stretch_width",
@@ -208,13 +200,13 @@
         "text_alignment": "left",
         "show_view_all": true,
         "image_ratio": "portrait",
-        "information_position": "overlay",
+        "information_position": "below",
         "show_product_count": false,
-        "text_information_alignment": "left",
+        "text_information_alignment": "center",
         "columns_desktop": 6,
         "column_gap": "small",
-        "enable_carousel": true,
-        "show_navigation": true,
+        "enable_carousel": false,
+        "show_navigation": false,
         "show_pagination": false,
         "padding_top": 40,
         "padding_bottom": 40
