@@ -244,7 +244,7 @@
         "template--20818995052828__94c0e02c-47af-4a55-9952-682b8a669a8c-description-1"
       ],
       "settings": {
-        "section_width": "stretch_width",
+        "section_width": "fix_width",
         "color_scheme": "",
         "image": "shopify:\/\/shop_images\/z4118647409899_108e56d52371a9683cabfca2b7eb349e-removebg-preview.png",
         "desktop_image_width": 30,
