@@ -198,7 +198,7 @@
         "title": "CÁC DỊCH VỤ NỔI BẬT",
         "description": "<p>Làm nên thương hiệu của Viện thẩm mỹ Xubee<\/p>",
         "text_alignment": "left",
-        "show_view_all": true,
+        "show_view_all": false,
         "image_ratio": "portrait",
         "information_position": "below",
         "show_product_count": false,
