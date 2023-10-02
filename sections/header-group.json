@@ -50,7 +50,7 @@
         "marquee_speed": 18,
         "style_between_item": true,
         "space_between_text": "small",
-        "uppercase": true,
+        "uppercase": false,
         "scrolling_size": "small"
       }
     },
