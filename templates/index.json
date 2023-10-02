@@ -39,7 +39,7 @@
         "direction": "left",
         "marquee_speed": 20,
         "style_between_item": true,
-        "scrolling_size": "medium",
+        "scrolling_size": "small",
         "uppercase": true,
         "use_heading_font": false,
         "padding_top": 24,
