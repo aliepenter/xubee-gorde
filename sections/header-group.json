@@ -73,7 +73,8 @@
         "f313e8fd-8dd1-4043-a4c4-bdb3e61ad2b4"
       ],
       "custom_css": [
-        ".header__logo .site-logo {position: relative; top: -3px;}"
+        ".header__logo .site-logo {position: relative; top: -3px;}",
+        ".header__logo .header__heading-logo {border-radius: 50%;}"
       ],
       "settings": {
         "section_width": "stretch_width",
