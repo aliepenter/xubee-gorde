@@ -212,26 +212,6 @@
         "padding_bottom": 40
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "section_width": "stretch_width",
-        "color_scheme": "default-color-scheme",
-        "title": "Featured Dress",
-        "description": "<p>Discover your unique style today.<\/p>",
-        "show_view_all": true,
-        "text_alignment": "left",
-        "collection": "new-arrivals",
-        "products_to_show": 6,
-        "columns_desktop": 4,
-        "column_gap": "small",
-        "enable_carousel": true,
-        "show_navigation": true,
-        "show_pagination": false,
-        "padding_top": 31,
-        "padding_bottom": 71
-      }
-    },
     "3e8db2db-a0db-492c-9ef2-f468cbfb9e60": {
       "type": "scrolling-text",
       "blocks": {
@@ -746,7 +726,6 @@
     "85c86895-d3e6-4879-8c04-186884a188bb",
     "ad27c797-e75c-4265-88b2-1286682d8ddd",
     "f022e147-1fed-48f1-83b3-a469d64277ca",
-    "featured_collection",
     "3e8db2db-a0db-492c-9ef2-f468cbfb9e60",
     "65b3d10b-5b9c-4717-bcfc-846907672f04",
     "dc7270cc-f3d5-470f-83fa-607409275d84",
