@@ -8,7 +8,7 @@
     "heading_font_size_scale": 100,
     "heading_text_transform": "unset",
     "heading_letter_spacing": "1px",
-    "menu_font": "body_font",
+    "menu_font": "heading_font",
     "button_text_transform": "uppercase",
     "product_enable_quickview": true,
     "product_show_image_hover": true,
