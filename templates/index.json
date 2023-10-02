@@ -1,51 +1,5 @@
 {
   "sections": {
-    "85c86895-d3e6-4879-8c04-186884a188bb": {
-      "type": "scrolling-text",
-      "blocks": {
-        "c811f06e-b5df-4bd1-95b3-30b7d3151075": {
-          "type": "scrolling-text",
-          "settings": {
-            "text": "Viện thẩm mỹ XUBEE",
-            "link": "https:\/\/www.facebook.com\/thammyxubee?locale=vi_VN",
-            "accent_color": false
-          }
-        },
-        "268c5309-94f8-4520-a172-4acff07043e5": {
-          "type": "scrolling-text",
-          "settings": {
-            "text": "CS1: Số 176, Đ.Thống nhất, P. Đồng Quang, TP. Thái Nguyên",
-            "link": "https:\/\/goo.gl\/maps\/CuRQcesfV3QUqBcU8",
-            "accent_color": false
-          }
-        },
-        "template--18765520470307__85c86895-d3e6-4879-8c04-186884a188bb-168258868565790a02-0": {
-          "type": "scrolling-text",
-          "settings": {
-            "text": "CS2: Số 4 Tôn Đức Thắng, Phường Ba Hàng , Tp Phổ Yên",
-            "link": "https:\/\/goo.gl\/maps\/3W7fS6maBukzUpKEA",
-            "accent_color": false
-          }
-        }
-      },
-      "block_order": [
-        "c811f06e-b5df-4bd1-95b3-30b7d3151075",
-        "268c5309-94f8-4520-a172-4acff07043e5",
-        "template--18765520470307__85c86895-d3e6-4879-8c04-186884a188bb-168258868565790a02-0"
-      ],
-      "settings": {
-        "section_width": "stretch_width",
-        "color_scheme": "default-color-scheme",
-        "direction": "left",
-        "marquee_speed": 20,
-        "style_between_item": true,
-        "scrolling_size": "small",
-        "uppercase": true,
-        "use_heading_font": false,
-        "padding_top": 24,
-        "padding_bottom": 26
-      }
-    },
     "ad27c797-e75c-4265-88b2-1286682d8ddd": {
       "type": "slideshow",
       "blocks": {
@@ -129,7 +83,53 @@
         "show_text_bellow": false,
         "reset_color": false,
         "padding_top": 0,
-        "padding_bottom": 40
+        "padding_bottom": 0
+      }
+    },
+    "85c86895-d3e6-4879-8c04-186884a188bb": {
+      "type": "scrolling-text",
+      "blocks": {
+        "c811f06e-b5df-4bd1-95b3-30b7d3151075": {
+          "type": "scrolling-text",
+          "settings": {
+            "text": "Viện thẩm mỹ XUBEE",
+            "link": "https:\/\/www.facebook.com\/thammyxubee?locale=vi_VN",
+            "accent_color": true
+          }
+        },
+        "268c5309-94f8-4520-a172-4acff07043e5": {
+          "type": "scrolling-text",
+          "settings": {
+            "text": "CS1: Số 176, Đ.Thống nhất, P. Đồng Quang, TP. Thái Nguyên",
+            "link": "https:\/\/goo.gl\/maps\/CuRQcesfV3QUqBcU8",
+            "accent_color": false
+          }
+        },
+        "template--18765520470307__85c86895-d3e6-4879-8c04-186884a188bb-168258868565790a02-0": {
+          "type": "scrolling-text",
+          "settings": {
+            "text": "CS2: Số 4 Tôn Đức Thắng, Phường Ba Hàng , Tp Phổ Yên",
+            "link": "https:\/\/goo.gl\/maps\/3W7fS6maBukzUpKEA",
+            "accent_color": false
+          }
+        }
+      },
+      "block_order": [
+        "c811f06e-b5df-4bd1-95b3-30b7d3151075",
+        "268c5309-94f8-4520-a172-4acff07043e5",
+        "template--18765520470307__85c86895-d3e6-4879-8c04-186884a188bb-168258868565790a02-0"
+      ],
+      "settings": {
+        "section_width": "expand_full_width",
+        "color_scheme": "default-color-scheme",
+        "direction": "left",
+        "marquee_speed": 20,
+        "style_between_item": true,
+        "scrolling_size": "small",
+        "uppercase": true,
+        "use_heading_font": false,
+        "padding_top": 24,
+        "padding_bottom": 26
       }
     },
     "f022e147-1fed-48f1-83b3-a469d64277ca": {
@@ -723,8 +723,8 @@
     }
   },
   "order": [
-    "85c86895-d3e6-4879-8c04-186884a188bb",
     "ad27c797-e75c-4265-88b2-1286682d8ddd",
+    "85c86895-d3e6-4879-8c04-186884a188bb",
     "f022e147-1fed-48f1-83b3-a469d64277ca",
     "3e8db2db-a0db-492c-9ef2-f468cbfb9e60",
     "65b3d10b-5b9c-4717-bcfc-846907672f04",
