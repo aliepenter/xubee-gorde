@@ -139,6 +139,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "",
+            "collection_image": "shopify:\/\/shop_images\/cosmetic-tattooing-bg.jpg",
             "collection_title": ""
           }
         },
@@ -146,6 +147,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "",
+            "collection_image": "shopify:\/\/shop_images\/332394087_1161825781200113_8368106183715873883_n.jpg",
             "collection_title": ""
           }
         },
@@ -153,6 +155,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "",
+            "collection_image": "shopify:\/\/shop_images\/309424548_786492165945101_3893129434694407125_n.jpg",
             "collection_title": ""
           }
         },
@@ -160,6 +163,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "",
+            "collection_image": "shopify:\/\/shop_images\/triet_long.jpg",
             "collection_title": ""
           }
         },
@@ -167,10 +171,19 @@
           "type": "featured_collection",
           "settings": {
             "collection": "",
+            "collection_image": "shopify:\/\/shop_images\/hqdefault_1.jpg",
             "collection_title": ""
           }
         },
         "template--20818995052828__f022e147-1fed-48f1-83b3-a469d64277ca-featured_collection-6": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_image": "shopify:\/\/shop_images\/chuyen_vien_phun_xem.jpg",
+            "collection_title": ""
+          }
+        },
+        "22d229b2-5e70-483a-8249-cdb41843d5d6": {
           "type": "featured_collection",
           "settings": {
             "collection": "",
@@ -184,7 +197,8 @@
         "template--20818995052828__f022e147-1fed-48f1-83b3-a469d64277ca-featured_collection-3",
         "template--20818995052828__f022e147-1fed-48f1-83b3-a469d64277ca-featured_collection-4",
         "template--20818995052828__f022e147-1fed-48f1-83b3-a469d64277ca-featured_collection-5",
-        "template--20818995052828__f022e147-1fed-48f1-83b3-a469d64277ca-featured_collection-6"
+        "template--20818995052828__f022e147-1fed-48f1-83b3-a469d64277ca-featured_collection-6",
+        "22d229b2-5e70-483a-8249-cdb41843d5d6"
       ],
       "settings": {
         "section_width": "stretch_width",
@@ -193,7 +207,7 @@
         "description": "<p>Làm nên thương hiệu của Viện thẩm mỹ Xubee<\/p>",
         "text_alignment": "left",
         "show_view_all": true,
-        "image_ratio": "adapt",
+        "image_ratio": "portrait",
         "information_position": "overlay",
         "show_product_count": false,
         "text_information_alignment": "left",
