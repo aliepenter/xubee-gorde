@@ -235,25 +235,13 @@
         "template--20818995052828__94c0e02c-47af-4a55-9952-682b8a669a8c-description-1": {
           "type": "description",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
-          }
-        },
-        "template--20818995052828__94c0e02c-47af-4a55-9952-682b8a669a8c-button-1": {
-          "type": "button",
-          "settings": {
-            "first_button_label": "Shop now",
-            "first_button_link": "",
-            "first_button_style": false,
-            "second_button_label": "",
-            "second_button_link": "",
-            "second_button_style": false
+            "text": "<p>- Kinh nghiệm 7 năm trong ngành làm đẹp thẩm mỹ<\/p><p>- Du học Singapore về Quản Lý, Điều Hành<\/p><p>- Chứng Chỉ Phun Xăm Thẩm Mỹ do Bộ Y Tế Cấp <\/p><p>- Chứng Chỉ Phòng Chống Lây nghiễm qua đường máu do Bộ Y Tế Cấp <\/p><p>- Tốt Nghiệp Khoá Sợi Hairstroke kim Magnum của Master Hương Trà.<\/p><p>- Tốt Nghiệp Khoá Filler, botox tại Học Viện Thẩm Mỹ Việt Anh academy.<\/p><p>- Tham gia các khoá hội thảo ngắn hạn do các Master hàng đầu tổ chức giảng dạy: Grand Master Thiên Kim, Grand Master Kevin Le, Master Hà Vy, Master Ngọc Mai, Master Nam Anh Trần,..<\/p>"
           }
         }
       },
       "block_order": [
         "template--20818995052828__94c0e02c-47af-4a55-9952-682b8a669a8c-heading-1",
-        "template--20818995052828__94c0e02c-47af-4a55-9952-682b8a669a8c-description-1",
-        "template--20818995052828__94c0e02c-47af-4a55-9952-682b8a669a8c-button-1"
+        "template--20818995052828__94c0e02c-47af-4a55-9952-682b8a669a8c-description-1"
       ],
       "settings": {
         "section_width": "stretch_width",
