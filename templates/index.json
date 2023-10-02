@@ -248,11 +248,11 @@
         "color_scheme": "",
         "image": "shopify:\/\/shop_images\/z4118647409899_108e56d52371a9683cabfca2b7eb349e-removebg-preview.png",
         "desktop_image_width": 30,
-        "image_desktop_position": "left",
+        "image_desktop_position": "right",
         "desktop_content_position": "top",
         "text_alignment": "left",
-        "content_size": "medium",
-        "column_gap": "medium",
+        "content_size": "small",
+        "column_gap": "large",
         "padding_top": 40,
         "padding_bottom": 40
       }
