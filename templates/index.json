@@ -290,6 +290,7 @@
         "template--20246412624186__3e8db2db-a0db-492c-9ef2-f468cbfb9e60-scrolling-text-2",
         "5d86d8db-68b6-4bfd-acd4-b3d73d074f54"
       ],
+      "disabled": true,
       "settings": {
         "section_width": "expand_full_width",
         "color_scheme": "default-color-scheme",
@@ -343,6 +344,7 @@
         "5b96d5d8-af03-4eb0-98ee-f2351951908e",
         "ea92b601-5d7d-4986-8e0a-5c54debaf071"
       ],
+      "disabled": true,
       "settings": {
         "section_width": "stretch_width",
         "color_scheme": "",
@@ -418,6 +420,7 @@
       "block_order": [
         "template--18765520470307__cdbe4686-18ae-40df-a4c8-ce22e6ac4910-16825891535f748334-2"
       ],
+      "disabled": true,
       "settings": {
         "section_width": "stretch_width",
         "color_scheme": "",
@@ -429,6 +432,7 @@
     },
     "f3d14daf-daad-4e89-9078-ee42766b63d2": {
       "type": "spacing",
+      "disabled": true,
       "settings": {
         "desktop_spacing": 70,
         "mobile_spacing": 30
@@ -488,6 +492,7 @@
         "template--19462698303779__6af665b2-95ad-4222-88fb-5129fb5eb7bb-image_with_text_overlay-1",
         "template--19462698303779__6af665b2-95ad-4222-88fb-5129fb5eb7bb-image_with_text_overlay-2"
       ],
+      "disabled": true,
       "settings": {
         "section_width": "stretch_width",
         "column_gap": "small",
@@ -557,6 +562,7 @@
         "9e05c18c-0e16-40e1-8c36-2cd8a657c24f",
         "7ad8546f-9342-482c-b10a-18300c8af9b1"
       ],
+      "disabled": true,
       "custom_css": [
         ".collection__inner .absolute {--heading-color: #ffffff; --text-color: 255, 255, 255;}",
         ".collection__inner .absolute .product-count {color: #fff;}"
