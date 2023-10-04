@@ -39,7 +39,7 @@
           "settings": {
             "heading": "Cơ sở 1",
             "menu": "",
-            "html": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3710.1831601498757!2d105.83507611539082!3d21.578772474148746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313527630264c931%3A0xa640cee7a4aa0f3b!2sXubee%20Beauty%20Spa!5e0!3m2!1svi!2s!4v1676542208540!5m2!1svi!2s\" width=\"600\" height=\"630\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>",
+            "html": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3710.1831601498757!2d105.83507611539082!3d21.578772474148746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313527630264c931%3A0xa640cee7a4aa0f3b!2sXubee%20Beauty%20Spa!5e0!3m2!1svi!2s!4v1676542208540!5m2!1svi!2s\" width=\"600\" height=\"630\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\" class=\"rounded-corner-item\"><\/iframe>",
             "content_width": "33.333%"
           }
         },
@@ -48,7 +48,7 @@
           "settings": {
             "heading": "Cơ sở 2",
             "menu": "",
-            "html": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d928.5658940539915!2d105.8713602!3d21.4188825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31351ed43cef0707%3A0x80a9fd12f42cc502!2zNCDEkC5Uw7RuIMSQxrDMgWMgVGjEg8yBbmcsIEJhIEjDoG5nLCBQaOG7lSBZw6puLCBUaMOhaSBOZ3V5w6pu!5e0!3m2!1svi!2s!4v1696388974084!5m2!1svi!2s\" width=\"600\" height=\"630\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>",
+            "html": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d928.5658940539915!2d105.8713602!3d21.4188825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31351ed43cef0707%3A0x80a9fd12f42cc502!2zNCDEkC5Uw7RuIMSQxrDMgWMgVGjEg8yBbmcsIEJhIEjDoG5nLCBQaOG7lSBZw6puLCBUaMOhaSBOZ3V5w6pu!5e0!3m2!1svi!2s!4v1696388974084!5m2!1svi!2s\" width=\"600\" height=\"630\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\" class=\"rounded-corner-item\"><\/iframe>",
             "content_width": "33.333%"
           }
         }
