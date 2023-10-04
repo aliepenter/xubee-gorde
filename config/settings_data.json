@@ -21,6 +21,8 @@
     "color_swatch_custom": "Light Blue: rgb(201 215 231), Pine: #313730, Forest: #15524b, Orange: #e56f51, Mutil Coral: #b3cfcc, Floral: #be4797, Caro: #869e87, Leopard: #9f6a4d,Brown: #9e5d38, Navy: #06376a, Coral: #f68e54, Khaki: #cc9f73, Hot Pink: #f66d95,  Pink: #fec2b9, Blue: #6b9ecd",
     "social_media_facebook": "https:\/\/www.facebook.com\/thammyxubee",
     "social_media_youtube": "https:\/\/www.youtube.com\/@vienthammyxubeethainguyen4025",
+    "show_search_vendor": false,
+    "show_search_price": false,
     "animations_reveal_on_scroll": true,
     "enable_zoom_effect": true,
     "cart_type": "drawer",
