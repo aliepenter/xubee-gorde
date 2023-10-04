@@ -8,11 +8,11 @@
         "dd057969-14a9-4a9b-8fea-11b9191df6df": {
           "type": "store_info",
           "settings": {
-            "store_heading": "COMPANY",
+            "store_heading": "Viện thẩm mỹ Xubee",
             "image_width": 178,
             "store_description": "",
-            "store_address_heading": "Address",
-            "store_address": "<p>Street Address 2571 Oakridge<\/p>",
+            "store_address_heading": "CS1",
+            "store_address": "<p>Số 176, Đ.Thống nhất, P. Đồng Quang, TP. Thái Nguyên<\/p>",
             "working_hours": "",
             "store_phone_heading": "Phone",
             "store_phone": "+1-123-555-6789",
@@ -25,7 +25,7 @@
           "type": "link_list",
           "settings": {
             "heading": "SOCIAL",
-            "menu": "social",
+            "menu": "",
             "content_width": "16.666%"
           }
         },
@@ -33,7 +33,7 @@
           "type": "link_list",
           "settings": {
             "heading": "SHOP BY",
-            "menu": "shop",
+            "menu": "",
             "content_width": "16.666%"
           }
         },
@@ -41,7 +41,7 @@
           "type": "link_list",
           "settings": {
             "heading": "SITEMAP",
-            "menu": "sitemap",
+            "menu": "",
             "content_width": "16.666%"
           }
         },
@@ -49,7 +49,7 @@
           "type": "link_list",
           "settings": {
             "heading": "HELP",
-            "menu": "help",
+            "menu": "",
             "content_width": "16.666%"
           }
         },
