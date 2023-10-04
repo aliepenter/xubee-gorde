@@ -4,9 +4,9 @@
       "type": "main-search",
       "settings": {
         "section_width": "stretch_width",
-        "enable_sorting": true,
-        "enable_filtering": true,
-        "show_count": true,
+        "enable_sorting": false,
+        "enable_filtering": false,
+        "show_count": false,
         "filter_type": "vertical",
         "products_to_show": 16,
         "columns_desktop": 4,
