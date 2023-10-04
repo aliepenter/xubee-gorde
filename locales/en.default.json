@@ -462,9 +462,9 @@
         "one": "{{ count }} result found for “{{ terms }}”",
         "other": "{{ count }} results found for “{{ terms }}”"
       },
-      "title": "Search results",
+      "title": "Kết quả tìm kiếm",
       "title_no_search": "Search",
-      "search_for": "Search for “{{ terms }}”",
+      "search_for": "Tìm kiếm cho “{{ terms }}”",
       "suggestions": "Suggestions",
       "pages": "Pages"
     },
