@@ -234,6 +234,18 @@
                                 </div>
                               </div>
                             {%- endif -%}
+                           {%- if block.settings.store_address_heading2 != blank -%}
+                              <div class="footer__store-info mb-3 last-0 d-flex word-break">
+                                {%- if block.settings.store_address_heading2 != blank -%}
+                                  <span class="footer__info-title mr-5">
+                                    {{- block.settings.store_address_heading2 }}:
+                                  </span>
+                                {%- endif -%}
+                                <div class="footer__info-content">
+                                  {{ block.settings.store_address2 }}
+                                </div>
+                              </div>
+                            {%- endif -%}
                           </div>
                         {%- endif -%}
                         {%- if block.settings.store_email != blank -%}
