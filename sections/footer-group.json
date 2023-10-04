@@ -10,7 +10,7 @@
           "settings": {
             "store_heading": "Viện thẩm mỹ Xubee",
             "image": "shopify:\/\/shop_images\/Screenshot_178_deb37195-90bc-46af-bd16-7ac5c99afc1e.png",
-            "image_width": 200,
+            "image_width": 500,
             "store_description": "",
             "store_address_heading": "CS1",
             "store_address": "<p>Số 176, Đ.Thống nhất, P. Đồng Quang, TP. Thái Nguyên<\/p>",
@@ -47,7 +47,7 @@
         "8aa951c2-b87d-4fe9-a25b-7cdf5085ed0b"
       ],
       "custom_css": [
-        ".footer-block .collapsible-content img{max-width: 100% !important}"
+        ".footer-block .collapsible-content img {max-width: 100% !important;}"
       ],
       "settings": {
         "section_width": "stretch_width",
