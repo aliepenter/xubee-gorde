@@ -34,7 +34,7 @@
       "floral-lace-dress"
     ],
     "currency_code_enabled": true,
-    "enable_cookies": true,
+    "enable_cookies": false,
     "show_in_editor": false,
     "sections": {
       "product-quickview": {
