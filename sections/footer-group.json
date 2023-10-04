@@ -14,62 +14,36 @@
             "store_address_heading": "CS1",
             "store_address": "<p>Số 176, Đ.Thống nhất, P. Đồng Quang, TP. Thái Nguyên<\/p>",
             "working_hours": "",
-            "store_phone_heading": "Phone",
-            "store_phone": "+1-123-555-6789",
+            "store_phone_heading": "Điện thoại",
+            "store_phone": "+84 387 581 858",
             "store_email_heading": "Email",
-            "store_email": "yourstore@gmail.com",
-            "content_width": "33%"
-          }
-        },
-        "b3628586-461c-4237-8b07-795e94ae225e": {
-          "type": "link_list",
-          "settings": {
-            "heading": "SOCIAL",
-            "menu": "",
-            "content_width": "16.666%"
-          }
-        },
-        "e2be6945-a2fc-4a1d-a6b6-9aedad3273e1": {
-          "type": "link_list",
-          "settings": {
-            "heading": "SHOP BY",
-            "menu": "",
-            "content_width": "16.666%"
-          }
-        },
-        "b8d3a559-55fb-44fc-be5d-38d17c93d6e6": {
-          "type": "link_list",
-          "settings": {
-            "heading": "SITEMAP",
-            "menu": "",
-            "content_width": "16.666%"
-          }
-        },
-        "1c6e4809-1590-403e-883c-6574cc53a24b": {
-          "type": "link_list",
-          "settings": {
-            "heading": "HELP",
-            "menu": "",
-            "content_width": "16.666%"
+            "store_email": "xubeebeautyspa@gmail.com",
+            "content_width": "33.333%"
           }
         },
         "11b7a8da-0f2e-46f5-bc75-6ec10f589c94": {
           "type": "newsletter",
+          "disabled": true,
           "settings": {
             "heading": "OUR NEWSLETTER",
             "description": "",
             "email_placeholder": "Enter your email address",
             "content_width": "100%"
           }
+        },
+        "8aa951c2-b87d-4fe9-a25b-7cdf5085ed0b": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "footer",
+            "content_width": "16.666%"
+          }
         }
       },
       "block_order": [
         "dd057969-14a9-4a9b-8fea-11b9191df6df",
-        "b3628586-461c-4237-8b07-795e94ae225e",
-        "e2be6945-a2fc-4a1d-a6b6-9aedad3273e1",
-        "b8d3a559-55fb-44fc-be5d-38d17c93d6e6",
-        "1c6e4809-1590-403e-883c-6574cc53a24b",
-        "11b7a8da-0f2e-46f5-bc75-6ec10f589c94"
+        "11b7a8da-0f2e-46f5-bc75-6ec10f589c94",
+        "8aa951c2-b87d-4fe9-a25b-7cdf5085ed0b"
       ],
       "settings": {
         "section_width": "stretch_width",
