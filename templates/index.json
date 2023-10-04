@@ -396,10 +396,10 @@
       "settings": {
         "section_width": "fix_width",
         "color_scheme": "",
-        "icon_position": "left",
-        "icon_width": 30,
-        "heading_size": "large",
-        "text_alignment": "left",
+        "icon_position": "top",
+        "icon_width": 100,
+        "heading_size": "medium",
+        "text_alignment": "center",
         "column_gap": "medium",
         "padding_top": 54,
         "padding_bottom": 50
