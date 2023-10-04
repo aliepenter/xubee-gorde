@@ -46,6 +46,9 @@
         "11b7a8da-0f2e-46f5-bc75-6ec10f589c94",
         "8aa951c2-b87d-4fe9-a25b-7cdf5085ed0b"
       ],
+      "custom_css": [
+        ".footer-block .collapsible-content img{max-width: 100% !important}"
+      ],
       "settings": {
         "section_width": "stretch_width",
         "color_scheme": "",
