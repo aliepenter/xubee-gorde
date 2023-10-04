@@ -78,7 +78,7 @@
       >
         {%- if search_keyword != blank -%}
           {%- capture link_search_keyword -%}
-              {{ routes.search_url }}?type=product&options%5Bfields%5D=title,vendor,product_type,variants.title,variants.sku&options%5Bunavailable_products%5D=show&options%5Bprefix%5D=last&q=
+              {{ routes.search_url }}?options%5Bfields%5D=title,vendor,product_type,variants.title,variants.sku&options%5Bunavailable_products%5D=show&options%5Bprefix%5D=last&q=
           {%- endcapture -%}
           <div id="search-keyword" class="search-keyword align-items-center mb-30 padding-inner-x">
             <p class="search-keyword-title m-0 fs-18 btn-text-transform  heading-color mb-20">
