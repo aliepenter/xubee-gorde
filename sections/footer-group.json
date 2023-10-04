@@ -37,9 +37,10 @@
         "8aa951c2-b87d-4fe9-a25b-7cdf5085ed0b": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
-            "menu": "footer",
-            "content_width": "16.666%"
+            "heading": "Cơ sở 1",
+            "menu": "",
+            "html": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3710.1831601498757!2d105.83507611539082!3d21.578772474148746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313527630264c931%3A0xa640cee7a4aa0f3b!2sXubee%20Beauty%20Spa!5e0!3m2!1svi!2s!4v1676542208540!5m2!1svi!2s\" width=\"600\" height=\"380\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>",
+            "content_width": "33.333%"
           }
         }
       },
