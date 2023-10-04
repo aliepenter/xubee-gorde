@@ -173,6 +173,9 @@
                           </span>
                         {%- endif -%}
                       </h3>
+                      {%- if block.settings.html != blank -%}
+                        {{ block.settings.html }}
+                      {%- endif -%}
                       {%- if block.settings.menu != blank -%}
                         <div class="footer-block-border">
                           <ul class="footer__block-content list-unstyled m-0 p-0 collapsible-content">
