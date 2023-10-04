@@ -9,7 +9,8 @@
           "type": "store_info",
           "settings": {
             "store_heading": "Viện thẩm mỹ Xubee",
-            "image_width": 178,
+            "image": "shopify:\/\/shop_images\/Screenshot_178_deb37195-90bc-46af-bd16-7ac5c99afc1e.png",
+            "image_width": 200,
             "store_description": "",
             "store_address_heading": "CS1",
             "store_address": "<p>Số 176, Đ.Thống nhất, P. Đồng Quang, TP. Thái Nguyên<\/p>",
