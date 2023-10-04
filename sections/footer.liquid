@@ -287,16 +287,24 @@
                     {%- endif -%}
                     {%- if block.settings.image != blank -%}
                       {%- assign image_size_2x = block.settings.image_width | times: 2 | at_most: 5760 -%}
-                      <img
-                        srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}, {{ block.settings.image | image_url: width: image_size_2x }} 2x"
-                        src="{{ block.settings.image | image_url: width: 400 }}"
-                        class="mt-30 mb-xl-45"
-                        alt="{{ block.settings.image.alt | escape }}"
-                        loading="lazy"
-                        width="{{ block.settings.image.width }}"
-                        height="{{ block.settings.image.height }}"
-                        style="max-width: min(100%, {{ block.settings.image_width }}px);"
-                      >
+                      {%- if settings.social_media_facebook != blank -%}
+                        <a
+                          href="{{ settings.social_media_facebook }}"
+                          class="w-40 h-40 d-inline-flex middle-center link list-social__link px-10 tooltip rounded-corner-item"
+                          aria-label="{{ 'general.social.links.facebook' | t }}"
+                        >
+                          <img
+                            srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}, {{ block.settings.image | image_url: width: image_size_2x }} 2x"
+                            src="{{ block.settings.image | image_url: width: 400 }}"
+                            class="mt-30 mb-xl-45"
+                            alt="{{ block.settings.image.alt | escape }}"
+                            loading="lazy"
+                            width="{{ block.settings.image.width }}"
+                            height="{{ block.settings.image.height }}"
+                            style="max-width: min(100%, {{ block.settings.image_width }}px);"
+                          >
+                        </a>
+                      {%- endif -%}
                     {%- endif -%}
                   </div>
               {%- endcase -%}
