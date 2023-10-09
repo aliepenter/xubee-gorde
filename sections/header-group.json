@@ -15,21 +15,14 @@
         "1534ac03-339b-4e0b-bb82-824ab377c45d": {
           "type": "announcement",
           "settings": {
-            "text": "30 days return guarantee",
+            "text": "CS1: Số 176, Đ.Thống nhất, P. Đồng Quang, TP. Thái Nguyên",
             "link": ""
           }
         },
         "3d370952-9767-4c71-8b15-524e3984e3a5": {
           "type": "announcement",
           "settings": {
-            "text": "buy now, pay later with klarna",
-            "link": ""
-          }
-        },
-        "8495037d-3ade-491a-a4ab-9fc51f9455d5": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store 100% secure online payment",
+            "text": "CS2: Số 4 Tôn Đức Thắng, Phường Ba Hàng , Tp Phổ Yên",
             "link": ""
           }
         }
@@ -37,8 +30,7 @@
       "block_order": [
         "90b1bde4-807c-456a-a101-a587ea7f405a",
         "1534ac03-339b-4e0b-bb82-824ab377c45d",
-        "3d370952-9767-4c71-8b15-524e3984e3a5",
-        "8495037d-3ade-491a-a4ab-9fc51f9455d5"
+        "3d370952-9767-4c71-8b15-524e3984e3a5"
       ],
       "settings": {
         "section_width": "expand_full_width",
