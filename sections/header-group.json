@@ -23,7 +23,7 @@
           "type": "announcement",
           "settings": {
             "text": "CS2: Số 4 Tôn Đức Thắng, Phường Ba Hàng , Tp Phổ Yên",
-            "link": ""
+            "link": "https:\/\/goo.gl\/maps\/3W7fS6maBukzUpKEA"
           }
         }
       },
@@ -31,6 +31,9 @@
         "90b1bde4-807c-456a-a101-a587ea7f405a",
         "1534ac03-339b-4e0b-bb82-824ab377c45d",
         "3d370952-9767-4c71-8b15-524e3984e3a5"
+      ],
+      "custom_css": [
+        ".marquee .announcement__bar-message>* {text-decoration: none;}"
       ],
       "settings": {
         "section_width": "expand_full_width",
