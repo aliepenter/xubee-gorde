@@ -8,7 +8,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/z4751456688325_9cf9aee4aec767c42d9a15b28d480f2a.jpg",
             "mobile_image": "shopify:\/\/shop_images\/329371166_1522511764909659_4202423949314310494_n_02138121-d605-4858-96ce-fcb7d6a7f060.jpg",
-            "image_overlay_opacity": 20,
+            "image_overlay_opacity": 0,
             "subheading": "",
             "heading": "",
             "description": "",
@@ -27,7 +27,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/z4841163458978_edc642a563d5624b4c9c622907ef2156.jpg",
             "mobile_image": "shopify:\/\/shop_images\/329371166_1522511764909659_4202423949314310494_n_02138121-d605-4858-96ce-fcb7d6a7f060.jpg",
-            "image_overlay_opacity": 25,
+            "image_overlay_opacity": 0,
             "subheading": "",
             "heading": "",
             "description": "",
