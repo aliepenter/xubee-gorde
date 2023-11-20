@@ -82,7 +82,7 @@
                   {%- if blo_settings.text != blank -%}
                     <div class="announcement__bar-message d-flex justify-content-center fs-{{ section.settings.scrolling_size }}{% if section.settings.uppercase %} uppercase{% endif %}{% if section.settings.style_between_item and sec_settings.announcement_actions == "marquee" %} show-dot relative z--1{% endif %}">
                         {%- if blo_settings.link != blank -%}
-                          <a href="{{ blo_settings.link }}" class="announcement__bar-link link link--text d-block">
+                          <a href="{{ blo_settings.link }}" target="_blank" class="announcement__bar-link link link--text d-block">
                         {%- endif -%}
                           {{ blo_settings.text }}
                         {%- if blo_settings.link != blank -%}
@@ -101,7 +101,7 @@
               {%- if blo_settings.text != blank -%}
                   <div class="announcement__bar-message d-flex justify-content-center fs-{{ section.settings.scrolling_size }}{% if section.settings.uppercase %} uppercase{% endif %}{% if section.settings.style_between_item and sec_settings.announcement_actions == "marquee" %} show-dot relative z--1{% endif %} flex-wrap">
                     {%- if blo_settings.link != blank -%}
-                        <a href="{{ blo_settings.link }}" class="announcement__bar-link link link--text d-block" aria-label="{{ blo_settings.text | replace: "[deadline]", "" | truncate: 50 }}">
+                        <a href="{{ blo_settings.link }}" target="_blank" class="announcement__bar-link link link--text d-block" aria-label="{{ blo_settings.text | replace: "[deadline]", "" | truncate: 50 }}">
                       {%- endif -%}
                       {{ blo_settings.text }}
                       {%- if blo_settings.link != blank -%}
@@ -119,7 +119,7 @@
             {%- if blo_settings.text != blank -%}
                 <div class="announcement__bar-message d-flex justify-content-center fs-{{ section.settings.scrolling_size }}{% if section.settings.uppercase %} uppercase{% endif %}{% if section.settings.style_between_item and sec_settings.announcement_actions == "marquee" %} show-dot relative z--1{% endif %}">
                     {%- if blo_settings.link != blank -%}
-                      <a href="{{ blo_settings.link }}" class="announcement__bar-link link link--text d-block" aria-label="{{ blo_settings.text | replace: "[deadline]", "" | truncate: 50 }}">
+                      <a href="{{ blo_settings.link }}" target="_blank" class="announcement__bar-link link link--text d-block" aria-label="{{ blo_settings.text | replace: "[deadline]", "" | truncate: 50 }}">
                     {%- endif -%}
                     {{ blo_settings.text }}
                     {%- if blo_settings.link != blank -%}
@@ -145,7 +145,7 @@
                     {%- if blo_settings.text != blank -%}
                       <div class="announcement__bar-message d-flex justify-content-center fs-{{ section.settings.scrolling_size }}{% if section.settings.uppercase %} uppercase{% endif %}{% if section.settings.style_between_item and sec_settings.announcement_actions == "marquee" %} show-dot relative z--1{% endif %}">
                           {%- if blo_settings.link != blank -%}
-                            <a href="{{ blo_settings.link }}" class="announcement__bar-link link link--text d-block">
+                            <a href="{{ blo_settings.link }}" target="_blank" class="announcement__bar-link link link--text d-block">
                           {%- endif -%}
                             {{ blo_settings.text }}
                           {%- if blo_settings.link != blank -%}

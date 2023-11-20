@@ -762,6 +762,10 @@
                 
                 <span class="visually-hidden">{{ 'general.search.search' | t }}</span>
               </a>
+              <div class="header_tel"> 
+                <a class="search_phone remove-underline d-none d-1165-block" href="tel:0387581858"> 0387 581 858 </a>
+                <a class="remove-underline d-block d-1165-none" href="tel:0387581858">{% render 'icon-phone', custom_width: 22 %}</a>
+              </div>
             {%- endif -%}
             {%- if section.settings.show_account -%}
               <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header-account link tooltip mx-3 last-r-0 d-none d-1025-inline-flex" aria-label="{{ 'customer.account_fallback' | t }}">

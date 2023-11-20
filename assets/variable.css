@@ -5154,6 +5154,17 @@ input.heading-style {
   }
 }
 
+@media (min-width: 1165px) {
+
+  .d-1165-block {
+    display: block !important;
+  }
+
+  .d-1165-none {
+    display: none !important;
+  }
+}
+
 @media (min-width: 1025px) {
 
   .d-1025-flex {

@@ -3372,3 +3372,8 @@ age-verifier .age-banner img {
 .loaded-animation {
   animation: fadeIn .4s forwards ease;
 }
+
+.search_phone{
+  font-weight: 700;
+  color: #591212
+}
