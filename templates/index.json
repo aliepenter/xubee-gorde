@@ -47,50 +47,52 @@
         "padding_bottom": 0
       }
     },
-    "85c86895-d3e6-4879-8c04-186884a188bb": {
-      "type": "scrolling-text",
+    "icon_with_text_3dEwbC": {
+      "type": "icon-with-text",
       "blocks": {
-        "c811f06e-b5df-4bd1-95b3-30b7d3151075": {
-          "type": "scrolling-text",
+        "icon_with_text_Wdh8kh": {
+          "type": "icon-with-text",
           "settings": {
-            "text": "Viện thẩm mỹ XUBEE",
-            "link": "https:\/\/www.facebook.com\/thammyxubee?locale=vi_VN",
-            "accent_color": false
+            "icon_svg": "none",
+            "heading": "",
+            "description": "<p>Add a short description for this section.<\/p>",
+            "uppercase": false
           }
         },
-        "268c5309-94f8-4520-a172-4acff07043e5": {
-          "type": "scrolling-text",
+        "icon_with_text_94wEtw": {
+          "type": "icon-with-text",
           "settings": {
-            "text": "CS1: Số 176, Đ.Thống nhất, P. Đồng Quang, TP. Thái Nguyên",
-            "link": "https:\/\/goo.gl\/maps\/CuRQcesfV3QUqBcU8",
-            "accent_color": false
+            "icon_svg": "none",
+            "heading": "",
+            "description": "<p>Add a short description for this section.<\/p>",
+            "uppercase": false
           }
         },
-        "template--18765520470307__85c86895-d3e6-4879-8c04-186884a188bb-168258868565790a02-0": {
-          "type": "scrolling-text",
+        "icon_with_text_ND7NTk": {
+          "type": "icon-with-text",
           "settings": {
-            "text": "CS2: Số 4 Tôn Đức Thắng, Phường Ba Hàng , Tp Phổ Yên",
-            "link": "https:\/\/goo.gl\/maps\/3W7fS6maBukzUpKEA",
-            "accent_color": false
+            "icon_svg": "none",
+            "heading": "",
+            "description": "<p>Add a short description for this section.<\/p>",
+            "uppercase": false
           }
         }
       },
       "block_order": [
-        "c811f06e-b5df-4bd1-95b3-30b7d3151075",
-        "268c5309-94f8-4520-a172-4acff07043e5",
-        "template--18765520470307__85c86895-d3e6-4879-8c04-186884a188bb-168258868565790a02-0"
+        "icon_with_text_Wdh8kh",
+        "icon_with_text_94wEtw",
+        "icon_with_text_ND7NTk"
       ],
       "settings": {
         "section_width": "stretch_width",
-        "color_scheme": "default-color-scheme",
-        "direction": "right",
-        "marquee_speed": 20,
-        "style_between_item": true,
-        "scrolling_size": "small",
-        "uppercase": true,
-        "use_heading_font": false,
-        "padding_top": 24,
-        "padding_bottom": 26
+        "color_scheme": "",
+        "icon_position": "left",
+        "icon_width": 20,
+        "heading_size": "small",
+        "text_alignment": "center",
+        "column_gap": "no_gap",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "f022e147-1fed-48f1-83b3-a469d64277ca": {
@@ -169,7 +171,7 @@
         "enable_carousel": true,
         "show_navigation": true,
         "show_pagination": false,
-        "padding_top": 40,
+        "padding_top": 68,
         "padding_bottom": 40
       }
     },
@@ -700,7 +702,7 @@
   },
   "order": [
     "ad27c797-e75c-4265-88b2-1286682d8ddd",
-    "85c86895-d3e6-4879-8c04-186884a188bb",
+    "icon_with_text_3dEwbC",
     "f022e147-1fed-48f1-83b3-a469d64277ca",
     "94c0e02c-47af-4a55-9952-682b8a669a8c",
     "3e8db2db-a0db-492c-9ef2-f468cbfb9e60",
