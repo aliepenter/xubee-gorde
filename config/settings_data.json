@@ -138,7 +138,7 @@
           "button_icon": "chat_bubble",
           "button_text": "no_text",
           "button_horizontal_position": "bottom_left",
-          "button_vertical_position": "highest",
+          "button_vertical_position": "higher",
           "greeting_message": "👋 Chào bạn, hãy đặt câu hỏi cho Viện thẩm mỹ Xubee. Chúng tôi rất sẵn lòng giải đáp!"
         }
       }
