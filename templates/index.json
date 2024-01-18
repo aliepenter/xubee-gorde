@@ -33,7 +33,7 @@
       ],
       "settings": {
         "section_width": "stretch_width",
-        "color_scheme": "scheme-8fc582e8-0935-4d47-a178-d2153df1b176",
+        "color_scheme": "default-color-scheme",
         "size": "medium",
         "show_navigation": true,
         "show_pagination": true,
@@ -82,7 +82,7 @@
       ],
       "settings": {
         "section_width": "stretch_width",
-        "color_scheme": "scheme-8fc582e8-0935-4d47-a178-d2153df1b176",
+        "color_scheme": "default-color-scheme",
         "direction": "right",
         "marquee_speed": 20,
         "style_between_item": true,
