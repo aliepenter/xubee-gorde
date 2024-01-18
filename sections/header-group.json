@@ -32,7 +32,6 @@
         "1534ac03-339b-4e0b-bb82-824ab377c45d",
         "3d370952-9767-4c71-8b15-524e3984e3a5"
       ],
-      "disabled": true,
       "custom_css": [
         ".marquee .announcement__bar-message > * {text-decoration: none;}"
       ],
@@ -41,7 +40,7 @@
         "color_scheme": "scheme-8fc582e8-0935-4d47-a178-d2153df1b176",
         "show_close": false,
         "homepage_only": false,
-        "show_mobile": true,
+        "show_mobile": false,
         "announcement_actions": "marquee",
         "marquee_speed": 18,
         "style_between_item": true,
