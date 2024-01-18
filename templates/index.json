@@ -590,6 +590,13 @@
         "padding_bottom": 12
       }
     },
+    "spacing_qNkPnR": {
+      "type": "spacing",
+      "settings": {
+        "desktop_spacing": 68,
+        "mobile_spacing": 30
+      }
+    },
     "53660c74-f921-4e8f-b82f-972d71466baf": {
       "type": "spacing",
       "settings": {
@@ -638,7 +645,7 @@
       ],
       "settings": {
         "section_width": "stretch_width",
-        "color_scheme": "",
+        "color_scheme": "scheme-8fc582e8-0935-4d47-a178-d2153df1b176",
         "title": "",
         "description": "",
         "text_alignment": "left",
@@ -706,6 +713,7 @@
     "3f60e9ee-6df6-4ad3-b8df-6e62e1ecd764",
     "33189fb0-1ca6-4e30-be60-2179e14182cc",
     "0c257e43-6f29-4641-a500-74a9e8a5f4bc",
+    "spacing_qNkPnR",
     "53660c74-f921-4e8f-b82f-972d71466baf",
     "4c96c224-fc56-4b72-b031-df76b1b025b4",
     "53537227-7544-4836-909a-d312a5921d0a",
