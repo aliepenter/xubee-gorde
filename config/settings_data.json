@@ -24,7 +24,7 @@
     "social_media_youtube": "https:\/\/www.youtube.com\/@vienthammyxubeethainguyen4025",
     "show_search_vendor": false,
     "show_search_price": false,
-    "animations_reveal_on_scroll": true,
+    "animations_reveal_on_scroll": false,
     "enable_zoom_effect": true,
     "cart_type": "drawer",
     "show_in_minicart": true,
