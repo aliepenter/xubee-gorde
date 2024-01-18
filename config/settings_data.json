@@ -92,11 +92,11 @@
       "mobile-navigation-bar": {
         "type": "mobile-navigation-bar",
         "settings": {
-          "eb_mobile_navbar": true,
-          "show_homepage": true,
-          "show_shop": true,
-          "show_account": true,
-          "show_cart": true
+          "eb_mobile_navbar": false,
+          "show_homepage": false,
+          "show_shop": false,
+          "show_account": false,
+          "show_cart": false
         }
       },
       "sticky-add-cart": {
