@@ -3,12 +3,6 @@
     "heading": {
       "type": "page-heading",
       "blocks": {
-        "aaf124db-2379-4372-a1d4-25053472a222": {
-          "type": "title",
-          "settings": {
-            "page_title": "Contact Gorde"
-          }
-        },
         "e663fd80-954f-4ea2-b291-784a1828120e": {
           "type": "description",
           "settings": {
@@ -17,7 +11,6 @@
         }
       },
       "block_order": [
-        "aaf124db-2379-4372-a1d4-25053472a222",
         "e663fd80-954f-4ea2-b291-784a1828120e"
       ],
       "settings": {

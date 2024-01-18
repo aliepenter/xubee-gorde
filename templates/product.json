@@ -80,14 +80,6 @@
             "sale_badge": true
           }
         },
-        "c13de19e-7fe5-4aea-b790-2f485ec17b6d": {
-          "type": "divider",
-          "settings": {
-            "divider_height": 1,
-            "divider_color": "#cccccc",
-            "border_style": "solid"
-          }
-        },
         "3a9bea85-245b-474c-82a4-229cd543c5cb": {
           "type": "text",
           "settings": {
@@ -130,14 +122,6 @@
           "type": "trust_seal",
           "settings": {
             "heading": "Guarantee Safe Checkout"
-          }
-        },
-        "5821008b-9b15-4dc5-8ea3-c393312c6c98": {
-          "type": "divider",
-          "settings": {
-            "divider_height": 1,
-            "divider_color": "#cccccc",
-            "border_style": "solid"
           }
         },
         "5dedf6b8-a623-4669-9bf4-971df616f6b7": {
@@ -189,14 +173,12 @@
         "7e8144f5-85a4-4ce3-ae36-3642c2a86671",
         "bce72341-48c8-423b-a415-9802602cd667",
         "dbbb53df-1760-4340-89c3-aa86b98815ca",
-        "c13de19e-7fe5-4aea-b790-2f485ec17b6d",
         "3a9bea85-245b-474c-82a4-229cd543c5cb",
         "42a2fa4c-03d0-419a-8c59-f64cb7a2d33e",
         "1a936bff-8dbd-4e80-b590-76b6c5b5ca7a",
         "d600ba6f-d4f5-4aa5-a263-d0dd4ed0efa5",
         "089b5775-012b-4fb2-9578-2f8180d69dd4",
         "1bbfebae-563a-41d8-bb88-d9cd529b3dd2",
-        "5821008b-9b15-4dc5-8ea3-c393312c6c98",
         "5dedf6b8-a623-4669-9bf4-971df616f6b7",
         "1b3988fb-db24-46c7-8c00-e0cabc072a76",
         "e3332414-4f10-4e51-b9c6-9f0cff9c14d4",
@@ -300,7 +282,7 @@
         "section_width": "stretch_width",
         "color_scheme": "",
         "video_url": "",
-        "video_local": "shopify:\/\/files\/videos\/pexels-thirdman-8484890 (1080p).mp4",
+        "video_local": "",
         "cover_image": "shopify:\/\/shop_images\/gorde-product-thumb.jpg",
         "alt_description": "Our fabrics are developed\u0003specifically for us and we only produce quality apparel that lasts.",
         "image_overlay_opacity": 30,

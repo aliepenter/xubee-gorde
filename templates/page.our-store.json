@@ -3,15 +3,9 @@
     "heading": {
       "type": "page-heading",
       "blocks": {
-        "1495193f-112e-4c2a-a3dc-8eeb451b2c8b": {
-          "type": "title",
-          "settings": {
-            "page_title": ""
-          }
-        }
+        
       },
       "block_order": [
-        "1495193f-112e-4c2a-a3dc-8eeb451b2c8b"
       ],
       "settings": {
         "section_width": "stretch_width",

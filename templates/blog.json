@@ -3,12 +3,6 @@
     "heading": {
       "type": "page-heading",
       "blocks": {
-        "4c5b1fda-203a-472f-b947-03097138e750": {
-          "type": "title",
-          "settings": {
-            "page_title": "The word of Gorde"
-          }
-        },
         "5659749c-c173-4efb-ba0e-4024da8ccb86": {
           "type": "description",
           "settings": {
@@ -17,7 +11,6 @@
         }
       },
       "block_order": [
-        "4c5b1fda-203a-472f-b947-03097138e750",
         "5659749c-c173-4efb-ba0e-4024da8ccb86"
       ],
       "settings": {
