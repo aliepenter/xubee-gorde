@@ -2,11 +2,6 @@
   "sections": {
     "heading": {
       "type": "page-heading",
-      "blocks": {
-        
-      },
-      "block_order": [
-      ],
       "settings": {
         "section_width": "stretch_width",
         "text_alignment": "center",

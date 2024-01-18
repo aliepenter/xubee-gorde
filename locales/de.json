@@ -56,14 +56,14 @@
         "minimum_of": "Mindestens {{ quantity }}",
         "maximum_of": "Höchstens {{ quantity }}",
         "multiples_of": "In Schritten von {{ quantity }}",
-        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> im Warenkorb"
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}<\/span> im Warenkorb"
       },
       "pickup_availability": {
         "view_store_info": "Filialinformationen anzeigen",
         "check_other_stores": "Verfügbarkeit in anderen Filialen überprüfen",
         "pick_up_available": "Abholung möglich",
-        "pick_up_available_at_html": "Abholung möglich bei <span class=\"color-foreground bold heading-color\">{{ location_name }}</span>",
-        "pick_up_unavailable_at_html": "Abholung derzeit nicht möglich bei <span class=\"color-foreground bold heading-color\">{{ location_name }}</span>",
+        "pick_up_available_at_html": "Abholung möglich bei <span class=\"color-foreground bold heading-color\">{{ location_name }}<\/span>",
+        "pick_up_unavailable_at_html": "Abholung derzeit nicht möglich bei <span class=\"color-foreground bold heading-color\">{{ location_name }}<\/span>",
         "unavailable": "Abholverfügbarkeit konnte nicht geladen werden",
         "refresh": "Aktualisieren"
       },
@@ -95,7 +95,7 @@
       "xr_button": "In Ihrem Raum anzeigen",
       "xr_button_label": "In Ihrem Raum anzeigen, lädt Artikel in einem erweiterten Realitätsfenster",
       "include_taxes": "Inklusive Steuern.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Versand</a> wird beim Checkout berechnet."
+      "shipping_policy_html": "<a href=\"{{ link }}\">Versand<\/a> wird beim Checkout berechnet."
     },
     "modal": {
       "label": "Mediengalerie"
@@ -186,9 +186,9 @@
       "empty": "Ihr Warenkorb ist leer",
       "cart_error": "Beim Aktualisieren Ihres Warenkorbs ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
       "cart_quantity_error_html": "Sie können nur {{ quantity }} dieser Artikel zu Ihrem Warenkorb hinzufügen.",
-      "taxes_and_shipping_policy_at_checkout_html": "Steuern und <a href=\"{{ link }}\">Versand</a> werden beim Checkout berechnet",
+      "taxes_and_shipping_policy_at_checkout_html": "Steuern und <a href=\"{{ link }}\">Versand<\/a> werden beim Checkout berechnet",
       "taxes_included_but_shipping_at_checkout": "Steuer inbegriffen und Versandkosten werden beim Checkout berechnet",
-      "taxes_included_and_shipping_policy_html": "Steuer inbegriffen. <a href=\"{{ link }}\">Versand</a> wird beim Checkout berechnet.",
+      "taxes_included_and_shipping_policy_html": "Steuer inbegriffen. <a href=\"{{ link }}\">Versand<\/a> wird beim Checkout berechnet.",
       "taxes_and_shipping_at_checkout": "Versand und Steuern werden beim Checkout berechnet",
       "free_shipping": "Geben Sie {{ amount }} mehr aus und erhalten Sie kostenlosen Versand!",
       "free_shipping_avaiable": "Ihre Bestellung qualifiziert sich für kostenlosen Versand!",
@@ -204,7 +204,7 @@
       "update": "Aktualisieren",
       "login": {
         "title": "Haben Sie ein Konto?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Melden Sie sich an</a>, um schneller zur Kasse zu gehen."
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Melden Sie sich an<\/a>, um schneller zur Kasse zu gehen."
       },
       "shipping": {
         "title": "Schätzung",
@@ -212,7 +212,7 @@
         "estimate_shipping_button": "berechnen"
       },
       "gift": {
-        "gift_wrap_html": "<p>Für <strong class=\"gift-price\"> {{ price }} </strong> wickeln Sie bitte die Produkte in dieser Bestellung ein</p>"
+        "gift_wrap_html": "<p>Für <strong class=\"gift-price\"> {{ price }} <\/strong> wickeln Sie bitte die Produkte in dieser Bestellung ein<\/p>"
       },
       "view_cart": "Warenkorb anzeigen"
     },
@@ -254,7 +254,7 @@
       "empty": "Diese Sammlung ist leer",
       "no_products_found": "Keine Produkte gefunden",
       "title": "Sammlung",
-      "use_fewer_filters_html": "Verwenden Sie weniger Filter oder <a class=\"{{ class }}\" href=\"{{ link }}\">entfernen Sie alle</a>"
+      "use_fewer_filters_html": "Verwenden Sie weniger Filter oder <a class=\"{{ class }}\" href=\"{{ link }}\">entfernen Sie alle<\/a>"
     },
     "video": {
       "load_video": "Video laden",
@@ -320,7 +320,7 @@
       "login_form_password_placeholder": "Ihr Passwort",
       "login_form_error": "Falsches Passwort!",
       "login_form_submit": "Eingeben",
-      "admin_link_html": "Sind Sie der Geschäftsinhaber? <a href=\"/admin\" class=\"link underlined-link\">Hier einloggen</a>",
+      "admin_link_html": "Sind Sie der Geschäftsinhaber? <a href=\"\/admin\" class=\"link underlined-link\">Hier einloggen<\/a>",
       "powered_by_shopify_html": "Dieser Shop wird betrieben von {{ shopify }}"
     },
     "social": {
@@ -494,10 +494,10 @@
     }
   },
   "localization": {
-    "country_label": "Land/Region",
+    "country_label": "Land\/Region",
     "language_label": "Sprache",
     "update_language": "Sprache aktualisieren",
-    "update_country": "Land/Region aktualisieren"
+    "update_country": "Land\/Region aktualisieren"
   },
   "customer": {
     "account": {
@@ -527,8 +527,8 @@
       "address1": "Adresse 1",
       "address2": "Adresse 2",
       "city": "Stadt",
-      "country": "Land/Region",
-      "province": "Bundesland/Provinz",
+      "country": "Land\/Region",
+      "province": "Bundesland\/Provinz",
       "zip": "Postleitzahl",
       "phone": "Telefon",
       "set_default": "Als Standardadresse festlegen",

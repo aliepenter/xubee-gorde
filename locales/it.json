@@ -56,14 +56,14 @@
         "minimum_of": "Minimo di {{ quantity }}",
         "maximum_of": "Massimo di {{ quantity }}",
         "multiples_of": "Multipli di {{ quantity }}",
-        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> nel carrello"
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}<\/span> nel carrello"
       },
       "pickup_availability": {
         "view_store_info": "Visualizza le informazioni del negozio",
         "check_other_stores": "Verifica la disponibilità negli altri negozi",
         "pick_up_available": "Ritiro disponibile",
-        "pick_up_available_at_html": "Pickup available at <span class=\"color-foreground bold heading-color\">{{ location_name }}</span>",
-        "pick_up_unavailable_at_html": "Pickup currently unavailable at <span class=\"color-foreground bold heading-color\">{{ location_name }}</span>",
+        "pick_up_available_at_html": "Pickup available at <span class=\"color-foreground bold heading-color\">{{ location_name }}<\/span>",
+        "pick_up_unavailable_at_html": "Pickup currently unavailable at <span class=\"color-foreground bold heading-color\">{{ location_name }}<\/span>",
         "unavailable": "Impossibile caricare la disponibilità del ritiro",
         "refresh": "Aggiorna"
       },
@@ -95,7 +95,7 @@
       "xr_button": "Visualizza nel tuo spazio",
       "xr_button_label": "Visualizza nel tuo spazio, carica l'oggetto nella finestra della realtà aumentata",
       "include_taxes": "Tasse incluse.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Spedizione</a> calcolata al momento del pagamento."
+      "shipping_policy_html": "<a href=\"{{ link }}\">Spedizione<\/a> calcolata al momento del pagamento."
     },
     "modal": {
       "label": "Galleria multimediale"
@@ -186,9 +186,9 @@
       "empty": "Il tuo carrello è vuoto",
       "cart_error": "Si è verificato un errore durante l'aggiornamento del carrello. Riprova.",
       "cart_quantity_error_html": "Puoi aggiungere solo {{ quantity }} di questo articolo nel tuo carrello.",
-      "taxes_and_shipping_policy_at_checkout_html": "Tasse e <a href=\"{{ link }}\">spedizione</a> calcolate al momento del pagamento",
+      "taxes_and_shipping_policy_at_checkout_html": "Tasse e <a href=\"{{ link }}\">spedizione<\/a> calcolate al momento del pagamento",
       "taxes_included_but_shipping_at_checkout": "Tasse incluse, spese di spedizione calcolate al momento del pagamento",
-      "taxes_included_and_shipping_policy_html": "Tasse incluse. <a href=\"{{ link }}\">Spedizione</a> calcolata al momento del pagamento.",
+      "taxes_included_and_shipping_policy_html": "Tasse incluse. <a href=\"{{ link }}\">Spedizione<\/a> calcolata al momento del pagamento.",
       "taxes_and_shipping_at_checkout": "Spedizione e tasse calcolate al momento del pagamento",
       "free_shipping": "Spendi altri {{ amount }} per ottenere la spedizione gratuita!",
       "free_shipping_avaiable": "Il tuo ordine è idoneo per la spedizione gratuita!",
@@ -204,7 +204,7 @@
       "update": "Aggiorna",
       "login": {
         "title": "Hai un account?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Accedi</a> per effettuare il checkout più velocemente."
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Accedi<\/a> per effettuare il checkout più velocemente."
       },
       "shipping": {
         "title": "Stima",
@@ -212,7 +212,7 @@
         "estimate_shipping_button": "Calcola"
       },
       "gift": {
-        "gift_wrap_html": "<p>Per <strong class=\"gift-price\"> {{ price }} </strong> avvolgi gentilmente i prodotti di questo ordine</p>"
+        "gift_wrap_html": "<p>Per <strong class=\"gift-price\"> {{ price }} <\/strong> avvolgi gentilmente i prodotti di questo ordine<\/p>"
       },
       "view_cart": "Visualizza carrello"
     },
@@ -254,7 +254,7 @@
       "empty": "Questa raccolta è vuota",
       "no_products_found": "Nessun prodotto trovato",
       "title": "Collezione",
-      "use_fewer_filters_html": "Utilizza meno filtri o <a class=\"{{ class }}\" href=\"{{ link }}\">rimuovili tutti</a>"
+      "use_fewer_filters_html": "Utilizza meno filtri o <a class=\"{{ class }}\" href=\"{{ link }}\">rimuovili tutti<\/a>"
     },
     "video": {
       "load_video": "Carica video",
@@ -320,7 +320,7 @@
       "login_form_password_placeholder": "La tua password",
       "login_form_error": "Password errata!",
       "login_form_submit": "Accedi",
-      "admin_link_html": "Sei il proprietario del negozio? <a href=\"/admin\" class=\"link underlined-link\">Accedi qui</a>",
+      "admin_link_html": "Sei il proprietario del negozio? <a href=\"\/admin\" class=\"link underlined-link\">Accedi qui<\/a>",
       "powered_by_shopify_html": "Questo negozio verrà alimentato da {{ shopify }}"
     },
     "social": {
@@ -494,10 +494,10 @@
     }
   },
   "localization": {
-    "country_label": "Paese/regione",
+    "country_label": "Paese\/regione",
     "language_label": "Lingua",
     "update_language": "Aggiorna lingua",
-    "update_country": "Aggiorna paese/regione"
+    "update_country": "Aggiorna paese\/regione"
   },
   "customer": {
     "account": {
@@ -527,9 +527,9 @@
       "address1": "Indirizzo 1",
       "address2": "Indirizzo 2",
       "city": "Città",
-      "country": "Paese/regione",
+      "country": "Paese\/regione",
       "province": "Provincia",
-      "zip": "Codice postale/ZIP",
+      "zip": "Codice postale\/ZIP",
       "phone": "Telefono",
       "set_default": "Imposta come indirizzo predefinito",
       "add": "Aggiungi indirizzo",

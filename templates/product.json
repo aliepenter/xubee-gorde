@@ -282,13 +282,9 @@
         "section_width": "stretch_width",
         "color_scheme": "",
         "video_url": "",
-        "video_local": "",
         "cover_image": "shopify:\/\/shop_images\/gorde-product-thumb.jpg",
         "alt_description": "Our fabrics are developed\u0003specifically for us and we only produce quality apparel that lasts.",
         "image_overlay_opacity": 30,
-        "full_screen": false,
-        "desktop_height": 850,
-        "mobile_height": 580,
         "show_text_bellow": false,
         "reset_color": false,
         "content_max_width": 68,
@@ -301,16 +297,6 @@
     },
     "16857606234d4877c8": {
       "type": "apps",
-      "blocks": {
-        "eb06097a-d495-46d3-992a-df96a81c9baa": {
-          "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "eb06097a-d495-46d3-992a-df96a81c9baa"
-      ],
       "settings": {
         "section_width": "fix_width",
         "padding_top": 0,
