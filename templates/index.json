@@ -84,7 +84,7 @@
         "icon_with_text_ND7NTk"
       ],
       "settings": {
-        "section_width": "stretch_width",
+        "section_width": "fix_width",
         "color_scheme": "",
         "icon_position": "left",
         "icon_width": 20,
