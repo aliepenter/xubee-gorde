@@ -33,7 +33,7 @@
       ],
       "settings": {
         "section_width": "stretch_width",
-        "color_scheme": "",
+        "color_scheme": "scheme-8fc582e8-0935-4d47-a178-d2153df1b176",
         "size": "medium",
         "show_navigation": true,
         "show_pagination": true,
@@ -43,7 +43,7 @@
         "image_height": "full_screen",
         "show_text_bellow": false,
         "reset_color": false,
-        "padding_top": 40,
+        "padding_top": 0,
         "padding_bottom": 0
       }
     },
@@ -82,7 +82,7 @@
       ],
       "settings": {
         "section_width": "stretch_width",
-        "color_scheme": "default-color-scheme",
+        "color_scheme": "scheme-8fc582e8-0935-4d47-a178-d2153df1b176",
         "direction": "right",
         "marquee_speed": 20,
         "style_between_item": true,
