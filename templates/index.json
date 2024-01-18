@@ -21,29 +21,10 @@
             "desktop_content_position": "bottom-left",
             "text_alignment": "left"
           }
-        },
-        "template--19462698533155__ad27c797-e75c-4265-88b2-1286682d8ddd-168777562653c7cca3-0": {
-          "type": "slide",
-          "settings": {
-            "mobile_image": "shopify:\/\/shop_images\/329371166_1522511764909659_4202423949314310494_n_02138121-d605-4858-96ce-fcb7d6a7f060.jpg",
-            "image_overlay_opacity": 0,
-            "subheading": "",
-            "heading": "",
-            "description": "",
-            "first_button_label": "",
-            "first_button_link": "",
-            "first_button_style": false,
-            "second_button_label": "",
-            "second_button_link": "",
-            "second_button_style": false,
-            "desktop_content_position": "bottom-left",
-            "text_alignment": "left"
-          }
         }
       },
       "block_order": [
-        "template--19462698533155__ad27c797-e75c-4265-88b2-1286682d8ddd-168777562653c7cca3-1",
-        "template--19462698533155__ad27c797-e75c-4265-88b2-1286682d8ddd-168777562653c7cca3-0"
+        "template--19462698533155__ad27c797-e75c-4265-88b2-1286682d8ddd-168777562653c7cca3-1"
       ],
       "custom_css": [
         ".item-hero-full_screen {min-height: calc(100vh - 93px - var(--header-height, 8.6rem)) !important;}",
@@ -593,6 +574,7 @@
         "heading": "Sale Hoành Tráng - Làm đẹp xả láng",
         "description": "<p>Khuyến mãi đặc biệt tri ân ngày Nhà Giáo Việt Nam. Chương trình kéo dài từ ngày 20\/11 đến hết ngày 30\/11<\/p>",
         "end_times": "11-30-2023",
+        "message": "Timer expired",
         "button_label": "Đặt lịch ngay",
         "link": "",
         "button_style": "fill",
