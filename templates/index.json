@@ -29,7 +29,7 @@
       "custom_css": [
         ".item-hero-full_screen {min-height: calc(100vh - 93px - var(--header-height, 8.6rem)) !important;}",
         "@media screen and (max-width: 1024.98px) {.item-hero-full_screen {min-height: calc(100vh - 93px - var(--header-height, 8.6rem)) !important; }}",
-        ".grandient-bg:after {opacity: .2;}"
+        ".grandient-bg:after {opacity: 0.2;}"
       ],
       "settings": {
         "section_width": "stretch_width",
@@ -43,7 +43,7 @@
         "image_height": "full_screen",
         "show_text_bellow": false,
         "reset_color": false,
-        "padding_top": 0,
+        "padding_top": 40,
         "padding_bottom": 0
       }
     },
