@@ -311,7 +311,7 @@
           "type": "icon-with-text",
           "settings": {
             "image": "shopify:\/\/shop_images\/mail.webp",
-            "icon_svg": "",
+            "icon_svg": "none",
             "heading": "Facebook",
             "description": "<p>Viện thẩm mỹ Xubee<\/p>",
             "uppercase": false
@@ -321,7 +321,7 @@
           "type": "icon-with-text",
           "settings": {
             "image": "shopify:\/\/shop_images\/clock.webp",
-            "icon_svg": "",
+            "icon_svg": "none",
             "heading": "Giờ mở cửa",
             "description": "<p>8h00 đến 19h00 <\/p><p>Tất cả các ngày trong tuần<\/p>",
             "uppercase": false
@@ -331,7 +331,7 @@
           "type": "icon-with-text",
           "settings": {
             "image": "shopify:\/\/shop_images\/phone-1.webp",
-            "icon_svg": "",
+            "icon_svg": "none",
             "heading": "Hotline",
             "description": "<p>+84-387-581-858<\/p>",
             "uppercase": true
