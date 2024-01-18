@@ -33,7 +33,7 @@
         "3d370952-9767-4c71-8b15-524e3984e3a5"
       ],
       "custom_css": [
-        ".marquee .announcement__bar-message>* {text-decoration: none;}"
+        ".marquee .announcement__bar-message > * {text-decoration: none;}"
       ],
       "settings": {
         "section_width": "expand_full_width",
@@ -41,7 +41,7 @@
         "show_close": false,
         "homepage_only": false,
         "show_mobile": true,
-        "announcement_actions": "marquee",
+        "announcement_actions": "slide",
         "marquee_speed": 18,
         "style_between_item": true,
         "space_between_text": "small",
