@@ -95,6 +95,7 @@
                       {% endif %}
                       placeholder="{{ 'newsletter.label' | t }}"
                       required
+                      pattern=".+\.[a-zA-Z]{2,6}"
                     >
                     <label class="field__label" for="NewsletterForm--{{ section.id }}">
                       {{ 'newsletter.label' | t }}
@@ -369,6 +370,8 @@
       ]
     }
   ],
-  "templates": ["password"]
+  "templates": [
+    "password"
+  ]
 }
 {% endschema %}

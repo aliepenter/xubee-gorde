@@ -21,7 +21,7 @@
     right: 0;
     bottom: 0;
     top: 0;
-    border: 0 solid transparent;
+    border: 1px solid var(--border-color);
     transition: border var(--bls-transition);
 }
 
@@ -1001,9 +1001,17 @@ media-gallery .tns-progress {
     display: none;
 }
 
+gallery-grid:not(.layout_stack) .gallery-grid-js {
+    align-items: center;
+}
+
 @media screen and (max-width: 767.98px) {
     .rounded-corner media-gallery gallery-grid.rounded-corner-item {
         border-radius: 0;
+    }
+
+    gallery-grid:not(.layout_stack)[data-free-scroll] .slide-container {
+        align-items: center;
     }
 }
 
@@ -1213,4 +1221,15 @@ media-gallery .control-only-mobile .tns-controls {
 product-info .product__submit-form-cart .button_buy-now>* {
     max-width: 100% !important;
     width: 100%;
+}
+
+/* Fix css when remove section divider */
+product-info .product__form-add-cart:not(:last-of-type) {
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.trust_seal-image {
+    width: var(--image-width);
 }

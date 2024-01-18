@@ -129,7 +129,7 @@
                         <select
                           name="sort_by"
                           class="facet-filters__sort caption-large btn-text-transform fs-small lh-normal heading-color rounded-5 relative border-grey"
-                          aria-label="sort"
+                          aria-label="{{ 'products.facets.sort_button' | t }}"
                           aria-describedby="a11y-refresh-page-message"
                         >
                           {%- for option in collection.sort_options -%}
@@ -231,7 +231,7 @@
                         <select
                           name="sort_by"
                           class="facet-filters__sort caption-large btn-text-transform fs-small heading-color border-grey rounded-5 lh-normal"
-                          aria-label="sort"
+                          aria-label="{{ 'products.facets.sort_button' | t }}"
                           aria-describedby="a11y-refresh-page-message"
                         >
                           {%- for option in collection.sort_options -%}
@@ -399,7 +399,7 @@
                         <select
                           name="sort_by"
                           class="facet-filters__sort caption-large btn-text-transform fs-small lh-normal heading-color rounded-5 relative"
-                          aria-label="sort"
+                          aria-label="{{ 'products.facets.sort_button' | t }}"
                           aria-describedby="a11y-refresh-page-message"
                         >
                           {%- for option in collection.sort_options -%}
@@ -516,14 +516,16 @@
             <div class="collection collection--empty" id="product-grid" data-id="{{ section.id }}">
               <div class="loading-overlay gradient"></div>
               <div class="title-wrapper text-center">
-                <h2 class="title title--primary">
+                <h2 class="title title--primary my-0">
                   {{ 'sections.collection_template.empty' | t -}}
-                  <br>
-                  {{
-                    'sections.collection_template.use_fewer_filters_html'
-                    | t: link: collection.url, class: 'underlined-link link'
-                  }}
                 </h2>
+                <a
+                  href="{{ routes.all_products_collection_url }}"
+                  aria-label="{{- 'general.continue_shopping' | t -}}"
+                  class="btn remove-underline btn-primary d-inline-block mt-20"
+                >
+                  {{- 'general.continue_shopping' | t -}}
+                </a>
               </div>
             </div>
           {%- else -%}
@@ -564,7 +566,7 @@
                         {%- if block.settings.banner_position == index -%}
                           <div
                             {{ block.shopify_attributes }}
-                            class="{% if settings.animations_reveal_on_scroll %}scroll-trigger animate--slide-in{% endif %}"
+                            class="{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                             {% if settings.animations_reveal_on_scroll %}
                               data-cascade
                               style="--animation-order: {{ index }};"
@@ -590,7 +592,6 @@
                             <div class="product__promotion-banner relative">
                               <div
                                 class="banner__media overlay-bg"
-                                style="--aspect-ratio: {{ r }};"
                               >
                                 {%- liquid
                                   assign banner_alt = ''
@@ -606,8 +607,8 @@
                                     role="link" aria-disabled="true"
                                   {% else %}
                                     href="{{ block.settings.promotion_link }}"
-                                    aria-label="{{ banner_alt }}"
                                   {% endif %}
+                                  aria-label="{{ banner_alt }}"
                                 >
                                   {%- if block.settings.image != blank -%}
                                     {{
@@ -620,12 +621,50 @@
                                         alt: banner_alt
                                     }}
                                   {%- else -%}
-                                    <div class="placeholder banner__media media">
+                                    <div class="placeholder banner__media media" style="--aspect-ratio: {{ r }};">
                                       {%- render 'placeholder-render' | type: "collection" -%}
                                     </div>
                                   {%- endif -%}
                                 </a>
                               </div>
+                              {%- if block.settings.subheading != blank
+                                or block.settings.heading != blank
+                                or block.settings.button_label != blank
+                              -%}
+                                <div class="promotion-banner-information">
+                                  {%- if block.settings.subheading != blank -%}
+                                    <div class="btn-text-transform fs-small">{{ block.settings.subheading }}</div>
+                                  {%- endif -%}
+                                  {%- if block.settings.heading != blank -%}
+                                    <a
+                                      class="promotion-banner-text heading-style"
+                                      {% if block.settings.promotion_link == blank %}
+                                        role="link" aria-disabled="true"
+                                      {% else %}
+                                        href="{{ block.settings.promotion_link }}"
+                                        aria-label="{{ banner_alt }}"
+                                      {% endif %}
+                                    >
+                                      {{ block.settings.heading }}
+                                    </a>
+                                  {%- endif -%}
+                                  {%- if block.settings.button_label != blank -%}
+                                    <div class="mt-15">
+                                      <a
+                                        {% if block.settings.promotion_link == blank %}
+                                          role="link" aria-disabled="true"
+                                        {% else %}
+                                          href="{{ block.settings.promotion_link }}"
+                                          aria-label="{{ banner_alt }}"
+                                        {% endif %}
+                                        class="btn remove-underline btn-primary"
+                                      >
+                                        {{ block.settings.button_label }}
+                                      </a>
+                                    </div>
+                                  {%- endif -%}
+                                </div>
+                              {%- endif -%}
                             </div>
                           </div>
                         {%- endif -%}
@@ -908,6 +947,25 @@
           "step": 1,
           "default": 7,
           "label": "t:sections.main-collection-product-grid.blocks.banner_position"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "default": "Subheading",
+          "label": "t:sections.all.content_setting.subheading.label"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Heading",
+          "label": "t:sections.all.content_setting.heading.label"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "default": "Button label",
+          "label": "t:sections.all.content_setting.button_label.label",
+          "info": "t:sections.all.content_setting.button_label.info"
         }
       ]
     }

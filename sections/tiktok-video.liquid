@@ -14,7 +14,7 @@
 --section-padding-top: {{ section.settings.padding_top }}px; --section-padding-bottom: {{ section.settings.padding_bottom }}px;
     {%- endcapture -%}
 <div
-  class="d-block color-{{ section.settings.color_scheme }} gradient bls__section tiktock-section section-padding"
+  class="color-{{ section.settings.color_scheme }} gradient bls__section tiktock-section section-padding"
   style="{{ style | strip | strip_newlines }}"
 >
   <div class="section-inner{{ section_width }}">
@@ -30,49 +30,31 @@
         {%- endif -%}
       </div>
     {%- endif -%}
-    <slide-section
-      class="tiktok-slide not-round"
-      data-items="{% if section.settings.blocks_to_show > section.blocks.size %}{{ section.blocks.size }}{% else %}{{ section.settings.blocks_to_show }}{% endif %}"
-      data-controls="{{ section.settings.show_navigation }}"
-      data-nav="{{ section.settings.show_pagination }}"
-      data-free-scroll="true"
-      data-loop="false"
-      data-autoplay="false"
-      data-mouse-drag="true"
-      data-autoplay-timeout="5000"
-      data-controls-position="top"
-      data-nav-as-thumbnails="false"
-      data-autoplay-button-output="false"
-      data-axis="horizontal"
-      data-mode="carousel"
-      data-fix-height="false"
-      data-product-type="true"
-      data-slide-product="false"
-      data-gap="{{ section.settings.column_gap }}"
+    <div
+      class="grid-cols gap-{{ section.settings.column_gap }} custom-scrollbar custom-scrollbar-x"
+      style="--col-number: {{ section.blocks.size }}"
     >
-      <div class="slide-container no-js-scroll">
-        {%- for block in section.blocks -%}
-          <div
-            {{ block.shopify_attributes }}
-            class="tiktok-items text-center"
-            {% if settings.animations_reveal_on_scroll %}
-              data-cascade
-            {% endif %}
-          >
-            {%- if block.settings.tiktok_embed_url != blank -%}
-              <div class="tiktock-video w-full">
-                {{ block.settings.tiktok_embed_url }}
-              </div>
-            {%- else -%}
-              <div class="rounded-corner-item overflow-hidden">
-                {%- render 'placeholder-render' | type: "blog" | class: "rounded-corner-item img-placeholder" -%}
-              </div>
-            {%- endif -%}
-          </div>
-        {%- endfor -%}
-      </div>
-    </slide-section>
-    {%- if settings.social_media_tiktok != blank and section.settings.tiktok_handle != blank -%}
+      {%- for block in section.blocks -%}
+        <div
+          {{ block.shopify_attributes }}
+          class="tiktok-items text-center"
+          {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+          {% endif %}
+        >
+          {%- if block.settings.tiktok_embed_url != blank -%}
+            <div class="tiktock-video w-full">
+              {{ block.settings.tiktok_embed_url }}
+            </div>
+          {%- else -%}
+            <div class="rounded-corner-item overflow-hidden">
+              {%- render 'placeholder-render' | type: "blog" | class: "rounded-corner-item img-placeholder" -%}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+    {%- if section.settings.tiktok_handle != blank -%}
       <div class="social-tiktok-link w-full text-center">
         <a
           class="mb-0 mt-20 d-inline-block"
@@ -93,7 +75,11 @@
   "tag": "section",
   "class": "section",
   "disabled_on": {
-    "groups": ["header", "footer", "custom.overlay"]
+    "groups": [
+      "header",
+      "footer",
+      "custom.overlay"
+    ]
   },
   "settings": [
     {
@@ -130,13 +116,13 @@
       "type": "text",
       "id": "title",
       "label": "t:sections.all.content_setting.heading.label",
-      "default": "Experience shopping on our Tiktok"
+      "default": "Tiktock video"
     },
     {
       "type": "richtext",
       "id": "description",
       "label": "t:sections.all.content_setting.description.label",
-      "default": "<p>Connect us on TikTok for exclusive releases, unboxing and try-on videos, reviews, and more from our top brands and stylists</p>"
+      "default": "<p>Add a short description for this section.</p>"
     },
     {
       "type": "select",
@@ -155,7 +141,7 @@
           "label": "t:sections.all.text_alignment.option_3.label"
         }
       ],
-      "default": "left",
+      "default": "center",
       "label": "t:sections.all.text_alignment.label"
     },
     {
@@ -167,27 +153,6 @@
       "id": "tiktok_handle",
       "label": "t:sections.tiktok.settings.tiktok_handle.label",
       "default": "<p>@yourTiktokHandle</p>"
-    },
-    {
-      "type": "range",
-      "id": "blocks_to_show",
-      "min": 1,
-      "max": 4,
-      "step": 1,
-      "default": 4,
-      "label": "t:sections.tiktok.settings.blocks_to_show.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_navigation",
-      "default": true,
-      "label": "t:sections.testimonials.settings.carousel.show_navigation"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_pagination",
-      "default": true,
-      "label": "t:sections.all.carousel.show_pagination.label"
     },
     {
       "type": "select",
@@ -247,14 +212,26 @@
         {
           "type": "textarea",
           "id": "tiktok_embed_url",
-          "label": "t:sections.tiktok.blocks.settings.tiktok_embed_url"
+          "label": "t:sections.tiktok.blocks.settings.tiktok_embed_url",
+          "info": "t:sections.tiktok.blocks.settings.info"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "t:sections.tiktok.presets.name"
+      "name": "t:sections.tiktok.presets.name",
+      "blocks": [
+        {
+          "type": "tiktok_iitem"
+        },
+        {
+          "type": "tiktok_iitem"
+        },
+        {
+          "type": "tiktok_iitem"
+        }
+      ]
     }
   ]
 }

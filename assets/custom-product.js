@@ -210,6 +210,7 @@ customElements.define('quantity-input', QuantityInput);
             cpp.innerHTML = "";
             if (bls__price.querySelector(".price-regular .price")) {
               bls__price.querySelector(".price-regular .price").classList.remove("special-price");
+              bls__price.querySelector(".price-regular .price").innerHTML = price_format;
             }
           }
           if (!this.currentVariant.available) {
@@ -1777,7 +1778,7 @@ customElements.define('quantity-input', QuantityInput);
             }
           })
           .finally(() => {
-            if (__this.classList.contains("related-products-slide")) {
+            if (__this.classList.contains("related-products-slide") && !__this.classList.contains("complementary-products")) {
               const has_item_mb = __this.dataset?.freeScroll;
               if (has_item_mb) {
                 if (window.innerWidth <= 767) {
@@ -1787,6 +1788,8 @@ customElements.define('quantity-input', QuantityInput);
                 }
               }
               __this.onResize();
+            }else{
+              __this.initSlide();
             }
           })
           .catch(e => {

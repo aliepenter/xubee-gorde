@@ -71,7 +71,10 @@ class GalleryGrid extends SlideSection {
   init() {
     setTimeout(() => {
       this.onResize();
+      this.pauseMediaGrid();
+      this.playMediaGrid();
     }, 300);
+
   }
   onResize() {
     const _this = this;
@@ -84,9 +87,12 @@ class GalleryGrid extends SlideSection {
         windowWidth = newWindowWidth;
         isMobile = newIsMobile;
         _this.actionResize(isMobile);
+        _this.pauseMediaGrid();
+        _this.playMediaGrid();
       }
     });
     _this.actionResize(isMobile);
+
   }
   
   actionResize(isMobile) {
@@ -108,10 +114,8 @@ class GalleryGrid extends SlideSection {
         sl.innerHTML = content;
         container.innerHTML = sl.innerHTML;
       }
-      this.lazyloadImage(isMobile);
     }
   }
-
   loadContent() {
     const content = document.createElement('div');
     content.appendChild(this.querySelector('template').content.firstElementChild.cloneNode(true));
@@ -119,22 +123,28 @@ class GalleryGrid extends SlideSection {
       return content.querySelector(".content-items").innerHTML;
     }
   }
-  
-  lazyloadImage(isMobile) {
-    if (this.querySelectorAll(".loading-animation").length != 0) {
-      this.querySelectorAll(".loading-animation").forEach((e, index) => {
-        var img = new Image();
-        img.src = e.getAttribute("src");
-        img.addEventListener('load', function() {
-          if (isMobile) {
-            e.classList.remove("loading-animation");
-          }else{
-            e.classList.add("loaded-animation");
-            e.classList.remove("loading-animation");
-          }
-        });
-      });
-    }
+  pauseMediaGrid() {
+    this.querySelectorAll(".slider-model, .slider-image").forEach(e => {
+      e.addEventListener("click", () => {
+        window.pauseAllMedia(this);
+      })
+    });
+  }
+  playMediaGrid() {
+    const btnPlay = this.querySelectorAll(".overlay-btn");
+    btnPlay.forEach(e => {
+      e.addEventListener("click", () => {
+        window.pauseAllMedia(this);
+        const content = document.createElement('div');
+        const itemContainer = e.closest(".slider-external-video") || e.closest(".slider-video");
+        if (!itemContainer) return;
+        content.appendChild(itemContainer.querySelector('template.video-template').content.firstElementChild.cloneNode(true));
+
+        itemContainer.querySelector(".video-box").classList.remove("d-none");
+        itemContainer.querySelector(".video-box").appendChild(content.querySelector('video, iframe'));
+        e.remove();
+      })
+    })
   }
 }
 customElements.define("gallery-grid", GalleryGrid);

@@ -93,8 +93,8 @@
                       sizes: '100vw',
                       widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
                       alt: alt,
-                      loading: "lazy",
-                      class: "loading-animation"
+                      loading: 'lazy',
+                      class: 'loading-animation'
                   }}
                 {%- else -%}
                   {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
@@ -123,7 +123,7 @@
                       widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
                       height: height,
                       alt: alt_mobile,
-                      class: "loading-animation"
+                      class: 'loading-animation'
                   }}
                 </div>
               {%- endif -%}
@@ -184,7 +184,11 @@
   "tag": "section",
   "class": "section slideshow-section",
   "disabled_on": {
-    "groups": ["header", "footer", "custom.overlay"]
+    "groups": [
+      "header",
+      "footer",
+      "custom.overlay"
+    ]
   },
   "settings": [
     {
@@ -393,7 +397,7 @@
         {
           "type": "text",
           "id": "subheading",
-          "default": "Tell your brand's story through images",
+          "default": "Subheading",
           "label": "t:sections.all.content_setting.subheading.label"
         },
         {
@@ -405,13 +409,13 @@
         {
           "type": "richtext",
           "id": "description",
-          "default": "<p>Description</p>",
-          "label": "t:sections.all.content_setting.description.label"
+          "label": "t:sections.all.content_setting.description.label",
+          "default": "<p>Tell your brand's story through images</p>"
         },
         {
           "type": "text",
           "id": "first_button_label",
-          "default": "Shop now",
+          "default": "Button label",
           "label": "t:sections.all.content_setting.first_button_label.label",
           "info": "t:sections.all.content_setting.button_label.info"
         },

@@ -30,6 +30,11 @@
   if section.settings.padding_bottom > settings.vertical_space_mobile
     assign mb_bottom_spacing = ' bottom-mb'
   endif
+  if settings.color_swatch_trigger != blank and settings.enable_color_swatches != false
+    assign option_color_name = settings.color_swatch_trigger
+  else
+    assign option_color_name = 'Color'
+  endif
 -%}
 
 {%- capture style -%}
@@ -66,6 +71,7 @@
       class="product__main-media product__item-js tablet-2 mb-1 grid-cols gap-{{ section.settings.column_gap }}{% if product.media.size > 0 %} product-has-img{% else %}{% if product != blank %}product-no-img{% endif %}{% endif %}{% if section.settings.img_position == 'left' %} bls__grid-media-left{% endif %}{% if section.settings.img_position == 'right' %} bls__grid-media-right{% endif %}"
       data-show-badges="{%- if product_show_badges -%}true{%- else -%}false{%- endif -%}"
       style="--col-number: {%- if product.media.size > 0 -%}2{% else %}1{%- endif -%}"
+      data-option-name="{{ option_color_name }}"
     >
       {%- if product.media.size > 0 -%}
         <div class="feature-product-media relative">
@@ -149,9 +155,9 @@
                       </div>
                     {%- endif -%}
                     {%- if block.settings.sale_badge -%}</div>{%- endif -%}
-                    {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
+                    {%- if cart.tax_included or shop.shipping_policy.body != blank -%}
                       <div class="product__tax caption rte mt-5">
-                        {%- if shop.taxes_included -%}
+                        {%- if cart.tax_included -%}
                           {{ 'products.product.include_taxes' | t }}
                         {%- endif -%}
                         {%- if shop.shipping_policy.body != blank -%}
@@ -460,7 +466,11 @@
   "tag": "section",
   "class": "section section-featured-product",
   "disabled_on": {
-    "groups": ["header", "footer", "custom.overlay"]
+    "groups": [
+      "header",
+      "footer",
+      "custom.overlay"
+    ]
   },
   "settings": [
     {
@@ -697,7 +707,15 @@
     {
       "type": "custom_liquid",
       "name": "t:sections.featured-product.blocks.custom_liquid.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "liquid",
+          "id": "custom_liquid",
+          "label": "t:sections.featured-product.blocks.custom_liquid.settings.custom_liquid.label",
+          "info": "t:sections.featured-product.blocks.custom_liquid.settings.custom_liquid.info"
+        }
+      ]
     },
     {
       "type": "rating",

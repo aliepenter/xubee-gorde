@@ -109,18 +109,17 @@
               {%- endif -%}
             </div>
           {%- endif -%}
-          {%- if section.settings.end_times != blank -%}
-            <countdown-timer
-              class="no-js-hidden d-flex flex-wrap row-gap-5 heading-color align-center{% if section.settings.text_alignment == 'center' %} justify-content-center{% endif %}{% if section.settings.text_alignment == 'right' and section.settings.countdown_layout == 'vertical' %} justify-content-end{% endif %}{% if section.settings.text_alignment == 'left' and section.settings.countdown_layout == 'vertical' %} justify-content-start{% endif %}{% if section.settings.countdown_layout == 'vertical' %} section-heading{% else %} justify-content-center-xl{% endif %}"
-              data-deadline="{{ section.settings.end_times }}"
-              data-days="{{ 'sections.countdown.format.days' | t }}"
-              data-hours="{{ 'sections.countdown.format.hours' | t }}"
-              data-mins="{{ 'sections.countdown.format.mins' | t }}"
-              data-secs="{{ 'sections.countdown.format.secs' | t }}"
-              {{ block.shopify_attributes }}
-            >
-            </countdown-timer>
-          {%- endif -%}
+          <countdown-timer
+            class="no-js-hidden d-flex flex-wrap row-gap-5 heading-color align-center{% if section.settings.text_alignment == 'center' %} justify-content-center{% endif %}{% if section.settings.text_alignment == 'right' and section.settings.countdown_layout == 'vertical' %} justify-content-end{% endif %}{% if section.settings.text_alignment == 'left' and section.settings.countdown_layout == 'vertical' %} justify-content-start{% endif %}{% if section.settings.countdown_layout == 'vertical' %} section-heading{% else %} justify-content-center-xl{% endif %}"
+            data-deadline="{{ section.settings.end_times }}"
+            data-days="{{ 'sections.countdown.format.days' | t }}"
+            data-hours="{{ 'sections.countdown.format.hours' | t }}"
+            data-mins="{{ 'sections.countdown.format.mins' | t }}"
+            data-secs="{{ 'sections.countdown.format.secs' | t }}"
+            data-message="{{ section.settings.message }}"
+            {{ block.shopify_attributes }}
+          >
+          </countdown-timer>
           {%- if section.settings.button_label != blank -%}
             <div class="countdown-btn btn-large d-flex align-center justify-content-{{ section.settings.text_alignment }}{% if section.settings.countdown_layout == 'horizontal' %} justify-content-end-xl{% endif %}">
               <a
@@ -148,7 +147,11 @@
   "tag": "section",
   "class": "section",
   "disabled_on": {
-    "groups": ["header", "footer", "custom.overlay"]
+    "groups": [
+      "header",
+      "footer",
+      "custom.overlay"
+    ]
   },
   "settings": [
     {
@@ -200,31 +203,39 @@
     {
       "type": "text",
       "id": "subheading",
-      "default": "Tell your brand's story through images",
+      "default": "Subheading",
       "label": "t:sections.all.content_setting.subheading.label"
     },
     {
       "type": "text",
       "id": "heading",
-      "default": "Image slide",
+      "default": "Countdown timer",
       "label": "t:sections.all.content_setting.heading.label"
     },
     {
       "type": "richtext",
       "id": "description",
-      "default": "<p>Description</p>",
+      "default": "<p>Add a short description for this section.</p>",
       "label": "t:sections.all.content_setting.description.label"
     },
     {
       "type": "text",
       "id": "end_times",
       "label": "t:sections.countdown.blocks.timer.settings.end_time.label",
-      "info": "t:sections.countdown.blocks.timer.settings.end_time.info"
+      "info": "t:sections.countdown.blocks.timer.settings.end_time.info",
+      "default": "01-20-2024"
+    },
+    {
+      "type": "text",
+      "id": "message",
+      "label": "t:sections.countdown.blocks.timer.settings.message.label",
+      "info": "t:sections.countdown.blocks.timer.settings.message.info",
+      "default": "Timer expired"
     },
     {
       "type": "text",
       "id": "button_label",
-      "default": "Shop now",
+      "default": "Button label",
       "label": "t:sections.all.content_setting.button_label.label",
       "info": "t:sections.all.content_setting.button_label.info"
     },

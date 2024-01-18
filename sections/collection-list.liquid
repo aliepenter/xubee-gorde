@@ -77,9 +77,6 @@
           or section.settings.text_alignment == 'right'
         -%}
           {%- assign view_all_label = 'sections.collection_list.view_all' | t -%}
-          {% if section.settings.title != blank %}
-            {%- assign view_all_label = section.settings.title -%}
-          {% endif %}
           <a
             href="{{ routes.collections_url }}"
             aria-label="{{ view_all_label | escape }}"
@@ -496,7 +493,11 @@
   "class": "section section-collection-list",
   "max_blocks": 15,
   "disabled_on": {
-    "groups": ["header", "footer", "custom.overlay"]
+    "groups": [
+      "header",
+      "footer",
+      "custom.overlay"
+    ]
   },
   "settings": [
     {
@@ -607,7 +608,7 @@
           "label": "t:sections.collection-list.settings.information_position.option__2"
         }
       ],
-      "default": "overlay",
+      "default": "below",
       "label": "t:sections.collection-list.settings.information_position.label"
     },
     {
@@ -637,7 +638,7 @@
       "id": "columns_desktop",
       "label": "t:sections.all.setting.columns_desktop.label",
       "min": 2,
-      "max": 6,
+      "max": 5,
       "step": 1,
       "default": 5
     },

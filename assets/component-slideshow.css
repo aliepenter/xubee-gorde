@@ -192,6 +192,10 @@
   transition: var(--bls-transition);
 }
 
+.slideshow .tns-nav button::after {
+  background-color: var(--heading-color);
+}
+
 .slideshow .tns-nav .tns-nav-active::before {
   opacity: 1;
   transform: scale(1);

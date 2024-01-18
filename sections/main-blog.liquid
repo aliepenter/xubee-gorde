@@ -227,11 +227,6 @@
                         {%- endif -%}
                       </div>
                     {% endform %}
-                    {% if block.settings.form_text_link != blank %}
-                      <p class="subscribe-text-link">
-                        {{ block.settings.form_text_link }}
-                      </p>
-                    {% endif %}
                   </div>
                 </div>
               {%- endfor -%}
@@ -493,18 +488,13 @@
           "type": "text",
           "id": "form_title",
           "label": "t:sections.main-blog.blocks.settings.title",
-          "default": "Subscribe our newsletter"
+          "default": "Newsletter"
         },
         {
           "type": "textarea",
           "id": "form_description",
           "label": "t:sections.main-blog.blocks.settings.description",
-          "default": "Be the first to get the latest news about trends, new arrrival, promotions and much morel don't worry, we not spam."
-        },
-        {
-          "type": "richtext",
-          "id": "form_text_link",
-          "label": "t:sections.main-blog.blocks.settings.content_link"
+          "default": "Add a short description for this block."
         }
       ]
     }

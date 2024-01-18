@@ -35,28 +35,6 @@
   if section.settings.enable_sticky_desktop or sticky_content
     assign enable_sticky = true
   endif
-  if settings.color_swatch_trigger != blank and settings.enable_color_swatches != false
-    assign option_name = settings.color_swatch_trigger | split: ','
-  else
-    assign option_name = 'Color'
-  endif
-  for option in product.options_with_values
-    for c in option_name
-      if option.name == c
-        assign op = 'option' | append: option.position
-        if product.selected_or_first_available_variant[op]
-          assign p_variants = product.variants | where: op, product.selected_or_first_available_variant[op]
-        endif
-      endif
-    endfor
-  endfor
-  assign featured_images = "" | split: ","
-  for v in p_variants
-    assign featured_image = v.featured_image
-    if featured_image
-      assign featured_images = featured_images | join: "," | append: "," | append: featured_image | split: ","
-    endif
-  endfor
 %}
 {%- assign ratio = 1 -%}
 <a
@@ -74,7 +52,6 @@
     data-media-type="{{ sec_settings.gallery_layout }}"
     data-mobi-slide-status="{% if sec_settings.mobile_thumbnails == "show" %}true{% else %}false{% endif %}"
     data-slide-position="{{ position }}"
-    data-color-position="{{ op }}"
   >
     {%- if sec_settings.gallery_layout == "columns" or sec_settings.gallery_layout == "stack" -%}
         <gallery-grid
@@ -97,124 +74,232 @@
         >
           <template>
             <div class="content-items">
-              {% for image in images %}
-                {%- case image.media_type -%}
-                  {%- when 'external_video' -%}
-                    {% liquid
-                      assign video_id = image.external_id
-                    %}
-                    {%- capture video_attribute -%}
-                      {%- if sec_settings.video_looping -%}
-                          loop=1
+              {%- if product.selected_or_first_available_variant.featured_media -%}
+                {%- liquid
+                  if settings.product_image_ratio == 'adapt_to_image'
+                    assign ratio = product.selected_or_first_available_variant.featured_media.aspect_ratio
+                  elsif settings.product_image_ratio == 'square'
+                    assign ratio = 1
+                  elsif settings.product_image_ratio == 'tall'
+                    assign ratio = 3 | times: 4
+                  endif
+                -%}
+                <div
+                  class="slider-image"
+                  {% if sec_settings.image_zoom == 'lightbox' %}
+                    data-href="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 4096 }}" data-size="1100x{{ 1100 | divided_by: ratio | ceil }}" data-med="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 1024 }}" data-med-size="1024x{{ 1024 | divided_by: ratio | ceil }}" 
+                  {% endif %}
+                  {% if sec_settings.image_zoom == 'external_zoom' or sec_settings.image_zoom == 'inner_zoom' %}
+                    data-pane-container
+                  {% endif %}
+                  data-position="{{ product.selected_or_first_available_variant.featured_media.position }}"
+                  data-media-id="{{ section.id }}-{{ product.selected_or_first_available_variant.featured_media.id }}"
+                >
+                  {%- liquid
+                    assign is_stack = true
+                    if sec_settings.gallery_layout == "columns"
+                      assign is_stack = false
+                    endif
+                  -%}
+                  <div style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}{{ product.selected_or_first_available_variant.featured_media.preview_image.aspect_ratio }}{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}">
+                    <img
+                      {% if sec_settings.image_zoom == 'lightbox' %}
+                        tabindex="0"
                       {% endif %}
-                    {%- endcapture -%}
-                    <div
-                      class="slider-external-video rounded-corner-item"
-                      data-position="{{ image.position }}"
-                      data-media-id="{{ section.id }}-{{ image.id }}"
-                    >
-                      <div
-                        style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}{{ image.aspect_ratio }}{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}"
-                      >
-                        {%- if image.host == 'youtube' -%}
-                          <iframe
-                            src="https://www.youtube.com/embed/{{ video_id }}?enablejsapi=1&autoplay={% if sec_settings.image_video_autoplay -%}1{% else %}0{%- endif -%}&mute={% if sec_settings.image_video_autoplay -%}1{% else %}0{%- endif -%}&loop={%- if sec_settings.video_looping -%}1{%else%}0{% endif %}"
-                            class="js-youtube"
-                          ></iframe>
-                        {%- else -%}
-                          <iframe
-                            class="js-vimeo"
-                            src="https://player.vimeo.com/video/{{ video_id }}?autoplay={% if sec_settings.image_video_autoplay -%}1{% else %}0{%- endif -%}&muted={% if sec_settings.image_video_autoplay -%}1{% else %}0{%- endif -%}&loop={%- if sec_settings.video_looping -%}1{%else%}0{% endif %}"
-                            frameborder="0"
-                            allowfullscreen
-                          ></iframe>
+                      class="rounded-corner-item"
+                      srcset="
+                        {%- if product.selected_or_first_available_variant.featured_media.preview_image.width >= 550 -%}{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 550 }} 550w,{%- endif -%}
+                        {%- if product.selected_or_first_available_variant.featured_media.preview_image.width >= 1100 -%}{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                        {%- if product.selected_or_first_available_variant.featured_media.preview_image.width >= 1445 -%}{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 1445 }} 1445w,{%- endif -%}
+                        {%- if product.selected_or_first_available_variant.featured_media.preview_image.width >= 1680 -%}{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 1680 }} 1680w,{%- endif -%}
+                        {%- if product.selected_or_first_available_variant.featured_media.preview_image.width >= 2048 -%}{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 2048 }} 2048w,{%- endif -%}
+                        {%- if product.selected_or_first_available_variant.featured_media.preview_image.width >= 2200 -%}{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 2200 }} 2200w,{%- endif -%}
+                        {%- if product.selected_or_first_available_variant.featured_media.preview_image.width >= 2890 -%}{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 2890 }} 2890w,{%- endif -%}
+                        {%- if product.selected_or_first_available_variant.featured_media.preview_image.width >= 4096 -%}{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 4096 }} 4096w,{%- endif -%}
+                        {{ product.selected_or_first_available_variant.featured_media.preview_image | image_url }} {{ product.selected_or_first_available_variant.featured_media.preview_image.width }}w
+                      "
+                      sizes="100vw"
+                      src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 2048 }}"
+                      data-zoom="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url }}"
+                      alt="{{ product.selected_or_first_available_variant.featured_media.alt | escape }}"
+                      {% if is_stack == false %}
+                        {%- if forloop.index > 2 -%}
+                          loading="lazy"
                         {%- endif -%}
-                      </div>
-                    </div>
-                  {%- when 'video' -%}
-                    {%- capture video_attribute -%}
-                      {%- if sec_settings.video_looping -%}
-                          loop 
+                      {%- else -%}
+                        {%- if forloop.index > 1 -%}
+                          loading="lazy"
+                        {%- endif -%}
                       {% endif %}
-                      {% if sec_settings.image_video_autoplay -%}
-                          muted autoplay
-                      {%- endif -%}
-                    {%- endcapture -%}
-                    <div
-                      class="slider-video rounded-corner-item"
-                      data-position="{{ image.position }}"
-                      data-media-id="{{ section.id }}-{{ image.id }}"
+                      height="{{ product.selected_or_first_available_variant.featured_media.preview_image.width | divided_by: ratio | ceil }}"
+                      width="{{ product.selected_or_first_available_variant.featured_media.preview_image.width }}"
                     >
-                      {%- liquid
-                        assign source = image.sources
-                        assign source_url = ""
-                        for s in source
-                          if s.format == "mp4"
-                            assign source_url = s.url
-                            break
-                          endif
-                        endfor
-                      -%}
+                  </div>
+                </div>
+              {%- endif -%}
+              {% for image in images %}
+                {%- if image.id != product.selected_or_first_available_variant.featured_media.id -%}
+                  {%- case image.media_type -%}
+                    {%- when 'external_video' -%}
+                      {% liquid
+                        assign video_id = image.external_id
+                      %}
+                      {%- capture video_attribute -%}
+                        {%- if sec_settings.video_looping -%}
+                            loop=1
+                        {% endif %}
+                      {%- endcapture -%}
                       <div
-                        style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}{{ image.aspect_ratio }}{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}"
+                        class="slider-external-video rounded-corner-item relative"
+                        data-position="{{ image.position }}"
+                        data-media-id="{{ section.id }}-{{ image.id }}"
                       >
-                        <video
-                          controls="true"
-                          playsinline="true"
-                          preload="none"
-                          src="{{ source_url }}"
-                          poster="{{ image.preview_image | image_url: width: 1100 }}"
-                          {{ video_attribute }}
-                        ></video>
-                      </div>
-                    </div>
-                  {%- when 'model' -%}
-                    <div
-                      class="slider-model"
-                      data-position="{{ image.position }}"
-                      data-media-id="{{ section.id }}-{{ image.id }}"
-                    >
-                      <div
-                        style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}1/1{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}"
-                      >
-                        <product-model
-                          class="deferred-media media media--transparent no-js-hidden"
-                          data-media-id="{{ image.id }}"
+                        <template class="video-template">
+                          {%- liquid
+                              assign video_class = 'js-' | append: image.host
+            
+                          -%}
+                          {% if image.host == 'youtube' %}
+                            <iframe
+                              src="https://www.youtube.com/embed/{{ video_id }}?enablejsapi=1&autoplay=1&mute=1&loop=0"
+                              class="js-youtube"
+                            ></iframe>
+                            {%- else -%}
+                              {{ image | external_video_url: autoplay: true | external_video_tag: class: video_class, loading: "lazy" }}
+                          {% endif %}
+                        </template>
+                        <div
+                          class="video-box d-none rounded-corner-item"
+                          style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}{{ image.aspect_ratio }}{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}"
                         >
-                          <button id="Deferred-Poster-Modal-{{ image.id }}" class="deferred-media__poster" type="button">
-                            <span class="deferred-media__poster-button motion-reduce">
-                              {%- render 'icon-3d-model' -%}
-                            </span>
-                            {{
-                              image.preview_image
-                              | image_url: width: 1946
-                              | image_tag:
-                                loading: lazy,
-                                sizes: sizes,
-                                widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
-                            }}
-                          </button>
-                          <template>
-                            {%- liquid
-                              echo image | media_tag: image_size: '2048x', toggleable: true
-                            -%}
-                          </template>
-                        </product-model>
-                        <button
-                          class="button button--full-width product__xr-button"
-                          type="button"
-                          aria-label="{{ 'products.product.xr_button_label' | t }}"
-                          data-shopify-xr
-                          data-shopify-model3d-id="{{ image.id }}"
-                          data-shopify-title="{{ product.title | escape }}"
-                          data-shopify-xr-hidden
-                        >
-                          {% render 'icon-3d-model' %}
-                          {{ 'products.product.xr_button' | t }}
+                        </div>
+                        <button id="Deferred-Poster-Modal-{{ image.id }}" class="btn-reset w-full overlay-btn p-0 outline-focus-none border-0" type="button" style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}{{ image.aspect_ratio }}{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}">
+                          <img
+                            srcset="{% if image.preview_image.width >= 288 %}{{ image.preview_image | image_url: width: 288 }} 288w,{% endif %}
+                                    {% if image.preview_image.width >= 576 %}{{ image.preview_image | image_url: width: 576 }} 576w,{% endif %}
+                                    {% if image.preview_image.width >= 550 %}{{ image.preview_image | image_url: width: 550 }} 550w,{% endif %}
+                                    {% if image.preview_image.width >= 1100 %}{{ image.preview_image | image_url: width: 1100 }} 1100w,{% endif %}
+                                    {{ image.preview_image | image_url }} {{ image.preview_image.width }}w"
+                            src="{{ image | image_url: width: 550, height: 550 }}"
+                            class="rounded-corner-item"
+                            sizes="100vw"
+                            loading="lazy"
+                            width="{{ image.preview_image.width }}"
+                            height="{{ image.preview_image.width | divided_by: image.preview_image.aspect_ratio }}"
+                            alt="{{ image.preview_image.alt | escape }}"
+                          >
+                          <span class="deferred-media__poster-button motion-reduce">
+                            {%- render 'icon-play' -%}
+                          </span>
                         </button>
                       </div>
-                    </div>
-                  {%- else -%}
+                    {%- when 'video' -%}
+                      {%- capture video_attribute -%}
+                        {%- if sec_settings.video_looping -%}
+                            loop 
+                        {% endif %}
+                        {% if sec_settings.image_video_autoplay -%}
+                            muted autoplay
+                        {%- endif -%}
+                      {%- endcapture -%}
+                      <div
+                        class="slider-video rounded-corner-item relative"
+                        data-position="{{ image.position }}"
+                        data-media-id="{{ section.id }}-{{ image.id }}"
+                      >
+                        {%- liquid
+                          assign source = image.sources
+                          assign source_url = ""
+                          for s in source
+                            if s.format == "mp4"
+                              assign source_url = s.url
+                              break
+                            endif
+                          endfor
+                        -%}
+                        <template class="video-template">
+                          {%- liquid
+                              assign video_class = 'js-' | append: image.host
+                          -%}
+                          {% if image.media_type == 'video' %}
+                            {{ image | media_tag: image_size: "2048x", autoplay: true, controls: true, preload: "none" }}
+                          {% endif %}
+                        </template>
+                        
+                        <div
+                          class="video-box d-none rounded-corner-item"
+                            style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}{{ image.aspect_ratio }}{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}"
+                          >
+                        </div>
+                        <button id="Deferred-Poster-Modal-{{ image.id }}" class="btn-reset w-full btn-reset w-full overlay-btn p-0 outline-focus-none border-0 p-0 outline-focus-none border-0" type="button"
+                          style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}{{ image.aspect_ratio }}{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}"
+                        >
+                          <img
+                            srcset="{% if image.preview_image.width >= 288 %}{{ image.preview_image | image_url: width: 288 }} 288w,{% endif %}
+                                    {% if image.preview_image.width >= 576 %}{{ image.preview_image | image_url: width: 576 }} 576w,{% endif %}
+                                    {% if image.preview_image.width >= 550 %}{{ image.preview_image | image_url: width: 550 }} 550w,{% endif %}
+                                    {% if image.preview_image.width >= 1100 %}{{ image.preview_image | image_url: width: 1100 }} 1100w,{% endif %}
+                                    {{ image.preview_image | image_url }} {{ image.preview_image.width }}w"
+                            src="{{ image | image_url: width: 550, height: 550 }}"
+                            sizes="100vw"
+                            loading="lazy"
+                            class="rounded-corner-item"
+                            width="{{ image.preview_image.width }}"
+                            height="{{ image.preview_image.width | divided_by: image.preview_image.aspect_ratio }}"
+                            alt="{{ image.preview_image.alt | escape }}"
+                          >
+                          <span class="deferred-media__poster-button motion-reduce">
+                            {%- render 'icon-play' -%}
+                          </span>
+                        </button>
+                      </div>
+                    {%- when 'model' -%}
+                      <div
+                        class="slider-model"
+                        data-position="{{ image.position }}"
+                        data-media-id="{{ section.id }}-{{ image.id }}"
+                      >
+                        <div
+                          style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}1/1{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}"
+                        >
+                          <product-model
+                            class="deferred-media media media--transparent no-js-hidden"
+                            data-media-id="{{ image.id }}"
+                          >
+                            <button id="Deferred-Poster-Modal-{{ image.id }}" class="deferred-media__poster" type="button">
+                              <span class="deferred-media__poster-button motion-reduce">
+                                {%- render 'icon-3d-model' -%}
+                              </span>
+                              {{
+                                image.preview_image
+                                | image_url: width: 1946
+                                | image_tag:
+                                  loading: lazy,
+                                  sizes: sizes,
+                                  widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
+                              }}
+                            </button>
+                            <template>
+                              {%- liquid
+                                echo image | media_tag: image_size: '2048x', toggleable: true
+                              -%}
+                            </template>
+                          </product-model>
+                          <button
+                            class="button button--full-width product__xr-button"
+                            type="button"
+                            aria-label="{{ 'products.product.xr_button_label' | t }}"
+                            data-shopify-xr
+                            data-shopify-model3d-id="{{ image.id }}"
+                            data-shopify-title="{{ product.title | escape }}"
+                            data-shopify-xr-hidden
+                          >
+                            {% render 'icon-3d-model' %}
+                            {{ 'products.product.xr_button' | t }}
+                          </button>
+                        </div>
+                      </div>
+                    {%- else -%}
                     {%- liquid
                       if settings.product_image_ratio == 'adapt_to_image'
                         assign ratio = image.aspect_ratio
@@ -224,121 +309,64 @@
                         assign ratio = 3 | times: 4
                       endif
                     -%}
-                    {% if section.settings.variant_image_group %}
-                      {%- for fi in featured_images -%}
-                        {% if fi == image.preview_image %}
-                          <div
-                            class="slider-image"
-                            {% if sec_settings.image_zoom == 'lightbox' %}
-                              data-href="{{ image.preview_image | image_url: width: 4096 }}" data-size="1100x{{ 1100 | divided_by: ratio | ceil }}" data-med="{{ image.preview_image | image_url: width: 1024 }}" data-med-size="1024x{{ 1024 | divided_by: ratio | ceil }}" 
-                            {% endif %}
-                            {% if sec_settings.image_zoom == 'external_zoom' or sec_settings.image_zoom == 'inner_zoom' %}
-                              data-pane-container
-                            {% endif %}
-                            data-position="{{ image.position }}"
-                            data-media-id="{{ section.id }}-{{ image.id }}"
-                          >
-                            {%- liquid
-                              assign is_stack = true
-                              if sec_settings.gallery_layout == "columns"
-                                assign is_stack = false
-                              endif
-                            -%}
-                            <div style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}{{ image.aspect_ratio }}{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}">
-                              <img
-                                {% if sec_settings.image_zoom == 'lightbox' %}
-                                  tabindex="0"
-                                {% endif %}
-                                class="rounded-corner-item loading-animation loading-animation-768"
-                                srcset="
-                                  {%- if image.preview_image.width >= 550 -%}{{ image.preview_image | image_url: width: 550 }} 550w,{%- endif -%}
-                                  {%- if image.preview_image.width >= 1100 -%}{{ image.preview_image | image_url: width: 1100 }} 1100w,{%- endif -%}
-                                  {%- if image.preview_image.width >= 1445 -%}{{ image.preview_image | image_url: width: 1445 }} 1445w,{%- endif -%}
-                                  {%- if image.preview_image.width >= 1680 -%}{{ image.preview_image | image_url: width: 1680 }} 1680w,{%- endif -%}
-                                  {%- if image.preview_image.width >= 2048 -%}{{ image.preview_image | image_url: width: 2048 }} 2048w,{%- endif -%}
-                                  {%- if image.preview_image.width >= 2200 -%}{{ image.preview_image | image_url: width: 2200 }} 2200w,{%- endif -%}
-                                  {%- if image.preview_image.width >= 2890 -%}{{ image.preview_image | image_url: width: 2890 }} 2890w,{%- endif -%}
-                                  {%- if image.preview_image.width >= 4096 -%}{{ image.preview_image | image_url: width: 4096 }} 4096w,{%- endif -%}
-                                  {{ image.preview_image | image_url }} {{ image.preview_image.width }}w
-                                "
-                                sizes="100vw"
-                                src="{{ image.preview_image | image_url: width: 2048 }}"
-                                data-zoom="{{ image.preview_image | image_url }}"
-                                alt="{{ image.alt | escape }}"
-                                {% if is_stack == false %}
-                                  {%- if forloop.index > 2 -%}
-                                    loading="lazy"
-                                  {%- endif -%}
-                                {%- else -%}
-                                  {%- if forloop.index > 1 -%}
-                                    loading="lazy"
-                                  {%- endif -%}
-                                {% endif %}
-                                height="{{ image.preview_image.width | divided_by: ratio | ceil }}"
-                                width="{{ image.preview_image.width }}"
-                              >
-                            </div>
-                          </div>
-                        {% endif %}
-                      {%- endfor -%}
-                    {%- else -%}
-                      <div
-                        class="slider-image"
-                        {% if sec_settings.image_zoom == 'lightbox' %}
-                          data-href="{{ image.preview_image | image_url: width: 4096 }}" data-size="1100x{{ 1100 | divided_by: ratio | ceil }}" data-med="{{ image.preview_image | image_url: width: 1024 }}" data-med-size="1024x{{ 1024 | divided_by: ratio | ceil }}" 
-                        {% endif %}
-                        {% if sec_settings.image_zoom == 'external_zoom' or sec_settings.image_zoom == 'inner_zoom' %}
-                          data-pane-container
-                        {% endif %}
-                        data-position="{{ image.position }}"
-                        data-media-id="{{ section.id }}-{{ image.id }}"
-                      >
-                        {%- liquid
-                          assign is_stack = true
-                          if sec_settings.gallery_layout == "columns"
-                            assign is_stack = false
-                          endif
-                        -%}
-                        <div style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}{{ image.aspect_ratio }}{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}">
-                          <img
-                            {% if sec_settings.image_zoom == 'lightbox' %}
-                              tabindex="0"
-                            {% endif %}
-                            class="rounded-corner-item loading-animation loading-animation-768"
-                            srcset="
-                              {%- if image.preview_image.width >= 550 -%}{{ image.preview_image | image_url: width: 550 }} 550w,{%- endif -%}
-                              {%- if image.preview_image.width >= 1100 -%}{{ image.preview_image | image_url: width: 1100 }} 1100w,{%- endif -%}
-                              {%- if image.preview_image.width >= 1445 -%}{{ image.preview_image | image_url: width: 1445 }} 1445w,{%- endif -%}
-                              {%- if image.preview_image.width >= 1680 -%}{{ image.preview_image | image_url: width: 1680 }} 1680w,{%- endif -%}
-                              {%- if image.preview_image.width >= 2048 -%}{{ image.preview_image | image_url: width: 2048 }} 2048w,{%- endif -%}
-                              {%- if image.preview_image.width >= 2200 -%}{{ image.preview_image | image_url: width: 2200 }} 2200w,{%- endif -%}
-                              {%- if image.preview_image.width >= 2890 -%}{{ image.preview_image | image_url: width: 2890 }} 2890w,{%- endif -%}
-                              {%- if image.preview_image.width >= 4096 -%}{{ image.preview_image | image_url: width: 4096 }} 4096w,{%- endif -%}
-                              {{ image.preview_image | image_url }} {{ image.preview_image.width }}w
-                            "
-                            sizes="100vw"
-                            src="{{ image.preview_image | image_url: width: 2048 }}"
-                            data-zoom="{{ image.preview_image | image_url }}"
-                            alt="{{ image.alt | escape }}"
-                            {% if is_stack == false %}
-                              {%- if forloop.index > 2 -%}
-                                loading="lazy"
-                              {%- endif -%}
-                            {%- else -%}
-                              {%- if forloop.index > 1 -%}
-                                loading="lazy"
-                              {%- endif -%}
-                            {% endif %}
-                            height="{{ image.preview_image.width | divided_by: ratio | ceil }}"
-                            width="{{ image.preview_image.width }}"
-                          >
-                        </div>
+                    <div
+                      class="slider-image"
+                      {% if sec_settings.image_zoom == 'lightbox' %}
+                        data-href="{{ image.preview_image | image_url: width: 4096 }}" data-size="1100x{{ 1100 | divided_by: ratio | ceil }}" data-med="{{ image.preview_image | image_url: width: 1024 }}" data-med-size="1024x{{ 1024 | divided_by: ratio | ceil }}" 
+                      {% endif %}
+                      {% if sec_settings.image_zoom == 'external_zoom' or sec_settings.image_zoom == 'inner_zoom' %}
+                        data-pane-container
+                      {% endif %}
+                      data-position="{{ image.position }}"
+                      data-media-id="{{ section.id }}-{{ image.id }}"
+                    >
+                      {%- liquid
+                        assign is_stack = true
+                        if sec_settings.gallery_layout == "columns"
+                          assign is_stack = false
+                        endif
+                      -%}
+                      <div style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}{{ image.aspect_ratio }}{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}">
+                        <img
+                          {% if sec_settings.image_zoom == 'lightbox' %}
+                            tabindex="0"
+                          {% endif %}
+                          class="rounded-corner-item"
+                          srcset="
+                            {%- if image.preview_image.width >= 550 -%}{{ image.preview_image | image_url: width: 550 }} 550w,{%- endif -%}
+                            {%- if image.preview_image.width >= 1100 -%}{{ image.preview_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                            {%- if image.preview_image.width >= 1445 -%}{{ image.preview_image | image_url: width: 1445 }} 1445w,{%- endif -%}
+                            {%- if image.preview_image.width >= 1680 -%}{{ image.preview_image | image_url: width: 1680 }} 1680w,{%- endif -%}
+                            {%- if image.preview_image.width >= 2048 -%}{{ image.preview_image | image_url: width: 2048 }} 2048w,{%- endif -%}
+                            {%- if image.preview_image.width >= 2200 -%}{{ image.preview_image | image_url: width: 2200 }} 2200w,{%- endif -%}
+                            {%- if image.preview_image.width >= 2890 -%}{{ image.preview_image | image_url: width: 2890 }} 2890w,{%- endif -%}
+                            {%- if image.preview_image.width >= 4096 -%}{{ image.preview_image | image_url: width: 4096 }} 4096w,{%- endif -%}
+                            {{ image.preview_image | image_url }} {{ image.preview_image.width }}w
+                          "
+                          sizes="100vw"
+                          src="{{ image.preview_image | image_url: width: 2048 }}"
+                          data-zoom="{{ image.preview_image | image_url }}"
+                          alt="{{ image.alt | escape }}"
+                          {% if is_stack == false %}
+                            {%- if forloop.index > 2 -%}
+                              loading="lazy"
+                            {%- endif -%}
+                          {%- else -%}
+                            {%- if forloop.index > 1 -%}
+                              loading="lazy"
+                            {%- endif -%}
+                          {% endif %}
+                          height="{{ image.preview_image.width | divided_by: ratio | ceil }}"
+                          width="{{ image.preview_image.width }}"
+                        >
                       </div>
-                    {% endif %}
-                {%- endcase -%}
+                    </div>
+                  {%- endcase -%}
+                {%- endif -%}
               {% endfor %}
             </div>
           </template>
+          
           <div class="gallery-grid-js no-js-hidden{% if sec_settings.image_zoom == 'lightbox' %} gallery-zoom{% elsif sec_settings.image_zoom == 'external_zoom' or sec_settings.image_zoom == 'inner_zoom' %} hover-zoom{% endif %}" {% if sec_settings.image_zoom == 'external_zoom' or sec_settings.image_zoom == 'inner_zoom' %}data-zoom-option="{{ zoom_option }}"{% endif %}>
             <div class="slide-container tns-initialized d-block d-md-none">
               {% for image in images limit: 2 %}
@@ -353,7 +381,7 @@
                       {% endif %}
                     {%- endcapture -%}
                     <div
-                      class="slider-external-video rounded-corner-item"
+                      class="slider-external-video rounded-corner-item relative"
                       data-position="{{ image.position }}"
                       data-media-id="{{ section.id }}-{{ image.id }}"
                     >
@@ -385,7 +413,7 @@
                       {%- endif -%}
                     {%- endcapture -%}
                     <div
-                      class="slider-video rounded-corner-item"
+                      class="slider-video rounded-corner-item relative"
                       data-position="{{ image.position }}"
                       data-media-id="{{ section.id }}-{{ image.id }}"
                     >
@@ -468,117 +496,58 @@
                         assign ratio = 3 | times: 4
                       endif
                     -%}
-                    {% if section.settings.variant_image_group %}
-                      {%- for fi in featured_images -%}
-                        {% if fi == image.preview_image %}
-                          <div
-                            class="slider-image"
-                            {% if sec_settings.image_zoom == 'lightbox' %}
-                              data-href="{{ image.preview_image | image_url: width: 4096 }}" data-size="1100x{{ 1100 | divided_by: ratio | ceil }}" data-med="{{ image.preview_image | image_url: width: 1024 }}" data-med-size="1024x{{ 1024 | divided_by: ratio | ceil }}" 
-                            {% endif %}
-                            {% if sec_settings.image_zoom == 'external_zoom' or sec_settings.image_zoom == 'inner_zoom' %}
-                              data-pane-container
-                            {% endif %}
-                            data-position="{{ image.position }}"
-                            data-media-id="{{ section.id }}-{{ image.id }}"
-                          >
-                            {%- liquid
-                              assign is_stack = true
-                              if sec_settings.gallery_layout == "columns"
-                                assign is_stack = false
-                              endif
-                            -%}
-                            <div style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}{{ image.aspect_ratio }}{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}">
-                              <img
-                                {% if sec_settings.image_zoom == 'lightbox' %}
-                                  tabindex="0"
-                                {% endif %}
-                                class="rounded-corner-item"
-                                srcset="
-                                  {%- if image.preview_image.width >= 550 -%}{{ image.preview_image | image_url: width: 550 }} 550w,{%- endif -%}
-                                  {%- if image.preview_image.width >= 1100 -%}{{ image.preview_image | image_url: width: 1100 }} 1100w,{%- endif -%}
-                                  {%- if image.preview_image.width >= 1445 -%}{{ image.preview_image | image_url: width: 1445 }} 1445w,{%- endif -%}
-                                  {%- if image.preview_image.width >= 1680 -%}{{ image.preview_image | image_url: width: 1680 }} 1680w,{%- endif -%}
-                                  {%- if image.preview_image.width >= 2048 -%}{{ image.preview_image | image_url: width: 2048 }} 2048w,{%- endif -%}
-                                  {%- if image.preview_image.width >= 2200 -%}{{ image.preview_image | image_url: width: 2200 }} 2200w,{%- endif -%}
-                                  {%- if image.preview_image.width >= 2890 -%}{{ image.preview_image | image_url: width: 2890 }} 2890w,{%- endif -%}
-                                  {%- if image.preview_image.width >= 4096 -%}{{ image.preview_image | image_url: width: 4096 }} 4096w,{%- endif -%}
-                                  {{ image.preview_image | image_url }} {{ image.preview_image.width }}w
-                                "
-                                sizes="100vw"
-                                src="{{ image.preview_image | image_url: width: 2048 }}"
-                                data-zoom="{{ image.preview_image | image_url }}"
-                                alt="{{ image.alt | escape }}"
-                                {% if is_stack == false %}
-                                  {%- if forloop.index > 2 -%}
-                                    loading="lazy"
-                                  {%- endif -%}
-                                {%- else -%}
-                                  {%- if forloop.index > 1 -%}
-                                    loading="lazy"
-                                  {%- endif -%}
-                                {% endif %}
-                                height="{{ image.preview_image.width | divided_by: ratio | ceil }}"
-                                width="{{ image.preview_image.width }}"
-                              >
-                            </div>
-                          </div>
-                        {% endif %}
-                      {%- endfor -%}
-                    {%- else -%}
-                      <div
-                        class="slider-image"
-                        {% if sec_settings.image_zoom == 'lightbox' %}
-                          data-href="{{ image.preview_image | image_url: width: 4096 }}" data-size="1100x{{ 1100 | divided_by: ratio | ceil }}" data-med="{{ image.preview_image | image_url: width: 1024 }}" data-med-size="1024x{{ 1024 | divided_by: ratio | ceil }}" 
-                        {% endif %}
-                        {% if sec_settings.image_zoom == 'external_zoom' or sec_settings.image_zoom == 'inner_zoom' %}
-                          data-pane-container
-                        {% endif %}
-                        data-position="{{ image.position }}"
-                        data-media-id="{{ section.id }}-{{ image.id }}"
-                      >
-                        {%- liquid
-                          assign is_stack = true
-                          if sec_settings.gallery_layout == "columns"
-                            assign is_stack = false
-                          endif
-                        -%}
-                        <div style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}{{ image.aspect_ratio }}{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}">
-                          <img
-                            {% if sec_settings.image_zoom == 'lightbox' %}
-                              tabindex="0"
-                            {% endif %}
-                            class="rounded-corner-item"
-                            srcset="
-                              {%- if image.preview_image.width >= 550 -%}{{ image.preview_image | image_url: width: 550 }} 550w,{%- endif -%}
-                              {%- if image.preview_image.width >= 1100 -%}{{ image.preview_image | image_url: width: 1100 }} 1100w,{%- endif -%}
-                              {%- if image.preview_image.width >= 1445 -%}{{ image.preview_image | image_url: width: 1445 }} 1445w,{%- endif -%}
-                              {%- if image.preview_image.width >= 1680 -%}{{ image.preview_image | image_url: width: 1680 }} 1680w,{%- endif -%}
-                              {%- if image.preview_image.width >= 2048 -%}{{ image.preview_image | image_url: width: 2048 }} 2048w,{%- endif -%}
-                              {%- if image.preview_image.width >= 2200 -%}{{ image.preview_image | image_url: width: 2200 }} 2200w,{%- endif -%}
-                              {%- if image.preview_image.width >= 2890 -%}{{ image.preview_image | image_url: width: 2890 }} 2890w,{%- endif -%}
-                              {%- if image.preview_image.width >= 4096 -%}{{ image.preview_image | image_url: width: 4096 }} 4096w,{%- endif -%}
-                              {{ image.preview_image | image_url }} {{ image.preview_image.width }}w
-                            "
-                            sizes="100vw"
-                            src="{{ image.preview_image | image_url: width: 2048 }}"
-                            data-zoom="{{ image.preview_image | image_url }}"
-                            alt="{{ image.alt | escape }}"
-                            {% if is_stack == false %}
-                              {%- if forloop.index > 2 -%}
-                                loading="lazy"
-                              {%- endif -%}
-                            {%- else -%}
-                              {%- if forloop.index > 1 -%}
-                                loading="lazy"
-                              {%- endif -%}
-                            {% endif %}
-                            height="{{ image.preview_image.width | divided_by: ratio | ceil }}"
-                            width="{{ image.preview_image.width }}"
-                          >
-                        </div>
+                    <div
+                      class="slider-image"
+                      {% if sec_settings.image_zoom == 'lightbox' %}
+                        data-href="{{ image.preview_image | image_url: width: 4096 }}" data-size="1100x{{ 1100 | divided_by: ratio | ceil }}" data-med="{{ image.preview_image | image_url: width: 1024 }}" data-med-size="1024x{{ 1024 | divided_by: ratio | ceil }}" 
+                      {% endif %}
+                      {% if sec_settings.image_zoom == 'external_zoom' or sec_settings.image_zoom == 'inner_zoom' %}
+                        data-pane-container
+                      {% endif %}
+                      data-position="{{ image.position }}"
+                      data-media-id="{{ section.id }}-{{ image.id }}"
+                    >
+                      {%- liquid
+                        assign is_stack = true
+                        if sec_settings.gallery_layout == "columns"
+                          assign is_stack = false
+                        endif
+                      -%}
+                      <div style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}{{ image.aspect_ratio }}{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}">
+                        <img
+                          {% if sec_settings.image_zoom == 'lightbox' %}
+                            tabindex="0"
+                          {% endif %}
+                          class="rounded-corner-item"
+                          srcset="
+                            {%- if image.preview_image.width >= 550 -%}{{ image.preview_image | image_url: width: 550 }} 550w,{%- endif -%}
+                            {%- if image.preview_image.width >= 1100 -%}{{ image.preview_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                            {%- if image.preview_image.width >= 1445 -%}{{ image.preview_image | image_url: width: 1445 }} 1445w,{%- endif -%}
+                            {%- if image.preview_image.width >= 1680 -%}{{ image.preview_image | image_url: width: 1680 }} 1680w,{%- endif -%}
+                            {%- if image.preview_image.width >= 2048 -%}{{ image.preview_image | image_url: width: 2048 }} 2048w,{%- endif -%}
+                            {%- if image.preview_image.width >= 2200 -%}{{ image.preview_image | image_url: width: 2200 }} 2200w,{%- endif -%}
+                            {%- if image.preview_image.width >= 2890 -%}{{ image.preview_image | image_url: width: 2890 }} 2890w,{%- endif -%}
+                            {%- if image.preview_image.width >= 4096 -%}{{ image.preview_image | image_url: width: 4096 }} 4096w,{%- endif -%}
+                            {{ image.preview_image | image_url }} {{ image.preview_image.width }}w
+                          "
+                          sizes="100vw"
+                          src="{{ image.preview_image | image_url: width: 2048 }}"
+                          data-zoom="{{ image.preview_image | image_url }}"
+                          alt="{{ image.alt | escape }}"
+                          {% if is_stack == false %}
+                            {%- if forloop.index > 2 -%}
+                              loading="lazy"
+                            {%- endif -%}
+                          {%- else -%}
+                            {%- if forloop.index > 1 -%}
+                              loading="lazy"
+                            {%- endif -%}
+                          {% endif %}
+                          height="{{ image.preview_image.width | divided_by: ratio | ceil }}"
+                          width="{{ image.preview_image.width }}"
+                        >
                       </div>
-                    {% endif %}
+                    </div>
                 {%- endcase -%}
               {% endfor %}
             </div>
@@ -782,89 +751,53 @@
                       assign ratio = 3 | times: 4
                     endif
                   -%}
-                  {% if section.settings.variant_image_group %}
-                    {% if image.media_type != "image" %}
-                      <div class="slider-thumbnail{% if image.media_type == "external_video" or image.media_type == "model" or image.media_type == "video" %} relative{% endif %}" >
-                        {% case image.media_type %}
-                          {% when 'external_video' %}
-                            <span class="thumbnail__badge" aria-hidden="true">
-                            {% render 'icon-thumbnail-play' %}
-                            </span>
-                          {% when 'video' %}
-                            <span class="thumbnail__badge" aria-hidden="true">
-                              {% render 'icon-thumbnail-play' %}
-                            </span>
-                          {% when 'model' %}
-                            <span class="thumbnail__badge" aria-hidden="true">
-                              {% render 'icon-thumbnail-3d-model' %}
-                            </span>
-                        {% endcase %}
-                        <div class="rounded-10"
-                          style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}{{ image.preview_image.aspect_ratio }}{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}"
-                        >
-                          <img
-                            {% if sec_settings.image_zoom == 'lightbox' %}
-                              tabindex="0"
-                            {% endif %}
-                            class="tns-lazy-img"
-                            data-src="{{ image.preview_image | image_url: width: 550 }}"
-                            srcset="
-                              {%- if image.preview_image.width >= 550 -%}{{ image.preview_image | image_url: width: 550 }} 550w,{%- endif -%}
-                              {%- if image.preview_image.width >= 1100 -%}{{ image.preview_image | image_url: width: 1100 }} 1100w,{%- endif -%}
-                              {%- if image.preview_image.width >= 1445 -%}{{ image.preview_image | image_url: width: 1445 }} 1445w,{%- endif -%}
-                              {%- if image.preview_image.width >= 1680 -%}{{ image.preview_image | image_url: width: 1680 }} 1680w,{%- endif -%}
-                              {%- if image.preview_image.width >= 2048 -%}{{ image.preview_image | image_url: width: 2048 }} 2048w,{%- endif -%}
-                              {%- if image.preview_image.width >= 2200 -%}{{ image.preview_image | image_url: width: 2200 }} 2200w,{%- endif -%}
-                              {%- if image.preview_image.width >= 2890 -%}{{ image.preview_image | image_url: width: 2890 }} 2890w,{%- endif -%}
-                              {%- if image.preview_image.width >= 4096 -%}{{ image.preview_image | image_url: width: 4096 }} 4096w,{%- endif -%}
-                              {{ image.preview_image | image_url }} {{ image.preview_image.width }}w
-                            "
-                            sizes="100vw"
-                            src="{{ image.preview_image | image_url: width: 550 }}"
-                            alt="{{ image.alt | escape }}"
-                            loading="lazy"
-                            width="{{ image.preview_image.width }}"
-                            height="{{ image.preview_image.width | divided_by: ratio | ceil }}"
-                          >
-                        </div>
-                      </div>
-                    {%- else -%}
-                      {%- for fi in featured_images -%}
-                        {% if fi == image.preview_image %}
-                          <div class="slider-thumbnail{% if image.media_type == "external_video" or image.media_type == "model" or image.media_type == "video" %} relative{% endif %}" >
-                            <div class="rounded-10"
-                              style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}{{ image.preview_image.aspect_ratio }}{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}"
-                            >
-                              <img
-                                {% if sec_settings.image_zoom == 'lightbox' %}
-                                  tabindex="0"
-                                {% endif %}
-                                class="tns-lazy-img"
-                                data-src="{{ image.preview_image | image_url: width: 550 }}"
-                                srcset="
-                                  {%- if image.preview_image.width >= 550 -%}{{ image.preview_image | image_url: width: 550 }} 550w,{%- endif -%}
-                                  {%- if image.preview_image.width >= 1100 -%}{{ image.preview_image | image_url: width: 1100 }} 1100w,{%- endif -%}
-                                  {%- if image.preview_image.width >= 1445 -%}{{ image.preview_image | image_url: width: 1445 }} 1445w,{%- endif -%}
-                                  {%- if image.preview_image.width >= 1680 -%}{{ image.preview_image | image_url: width: 1680 }} 1680w,{%- endif -%}
-                                  {%- if image.preview_image.width >= 2048 -%}{{ image.preview_image | image_url: width: 2048 }} 2048w,{%- endif -%}
-                                  {%- if image.preview_image.width >= 2200 -%}{{ image.preview_image | image_url: width: 2200 }} 2200w,{%- endif -%}
-                                  {%- if image.preview_image.width >= 2890 -%}{{ image.preview_image | image_url: width: 2890 }} 2890w,{%- endif -%}
-                                  {%- if image.preview_image.width >= 4096 -%}{{ image.preview_image | image_url: width: 4096 }} 4096w,{%- endif -%}
-                                  {{ image.preview_image | image_url }} {{ image.preview_image.width }}w
-                                "
-                                sizes="100vw"
-                                src="{{ image.preview_image | image_url: width: 550 }}"
-                                alt="{{ image.alt | escape }}"
-                                loading="lazy"
-                                width="{{ image.preview_image.width }}"
-                                height="{{ image.preview_image.width | divided_by: ratio | ceil }}"
-                              >
-                            </div>
-                          </div>
-                        {% endif %}
-                      {%- endfor -%}
-                    {% endif %}
-                  {%- else -%}
+                  <div class="slider-thumbnail{% if image.media_type == "external_video" or image.media_type == "model" or image.media_type == "video" %} relative{% endif %}" >
+                    {% case image.media_type %}
+                      {% when 'external_video' %}
+                        <span class="thumbnail__badge" aria-hidden="true">{% render 'icon-thumbnail-play' %}</span>
+                      {% when 'video' %}
+                        <span class="thumbnail__badge" aria-hidden="true">{% render 'icon-thumbnail-play' %}</span>
+                      {% when 'model' %}
+                        <span class="thumbnail__badge d-model" aria-hidden="true">{% render 'icon-thumbnail-3d-model' %}</span>
+                    {% endcase %}
+                    <div class="rounded-10" style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}{{ image.preview_image.aspect_ratio }}{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}">
+                      <img class="tns-lazy-img" data-src="{{ image.preview_image | image_url: width: 550 }}"
+                        srcset="
+                          {%- if image.preview_image.width >= 550 -%}{{ image.preview_image | image_url: width: 550 }} 550w,{%- endif -%}
+                          {%- if image.preview_image.width >= 1100 -%}{{ image.preview_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                          {%- if image.preview_image.width >= 1445 -%}{{ image.preview_image | image_url: width: 1445 }} 1445w,{%- endif -%}
+                          {%- if image.preview_image.width >= 1680 -%}{{ image.preview_image | image_url: width: 1680 }} 1680w,{%- endif -%}
+                          {%- if image.preview_image.width >= 2048 -%}{{ image.preview_image | image_url: width: 2048 }} 2048w,{%- endif -%}
+                          {%- if image.preview_image.width >= 2200 -%}{{ image.preview_image | image_url: width: 2200 }} 2200w,{%- endif -%}
+                          {%- if image.preview_image.width >= 2890 -%}{{ image.preview_image | image_url: width: 2890 }} 2890w,{%- endif -%}
+                          {%- if image.preview_image.width >= 4096 -%}{{ image.preview_image | image_url: width: 4096 }} 4096w,{%- endif -%}
+                          {{ image.preview_image | image_url }} {{ image.preview_image.width }}w
+                        "
+                        sizes="100vw"
+                        src="{{ image.preview_image | image_url: width: 550 }}"
+                        alt="{{ image.alt | escape }}"
+                        loading="lazy"
+                        width="{{ image.preview_image.width }}"
+                        height="{{ image.preview_image.width | divided_by: ratio | ceil }}"
+                      >
+                    </div>
+                  </div>
+                {% endfor %}
+              {%- endif -%}
+            </div>
+            <template>
+              <div class="content-items">
+                {%- if images.size > 1 -%}
+                  {% for image in images %}
+                    {%- liquid
+                      if settings.product_image_ratio == 'adapt_to_image'
+                        assign ratio = image.aspect_ratio
+                      elsif settings.product_image_ratio == 'square'
+                        assign ratio = 1
+                      elsif settings.product_image_ratio == 'tall'
+                        assign ratio = 3 | times: 4
+                      endif
+                    -%}
                     <div class="slider-thumbnail{% if image.media_type == "external_video" or image.media_type == "model" or image.media_type == "video" %} relative{% endif %}" >
                       {% case image.media_type %}
                         {% when 'external_video' %}
@@ -903,15 +836,16 @@
                           sizes="100vw"
                           src="{{ image.preview_image | image_url: width: 550 }}"
                           alt="{{ image.alt | escape }}"
+                          loading="lazy"
                           width="{{ image.preview_image.width }}"
                           height="{{ image.preview_image.width | divided_by: ratio | ceil }}"
                         >
                       </div>
                     </div>
-                  {% endif %}
-                {% endfor %}
-              {%- endif -%}
-            </div>
+                  {% endfor %}
+                {%- endif -%}
+              </div>
+            </template>
           </slide-section>
         </div>
       {%- endif -%}
@@ -965,7 +899,7 @@
                     {% endif %}
                   {%- endcapture -%}
                   <div
-                    class="slider-external-video rounded-corner-item"
+                    class="slider-external-video rounded-corner-item relative"
                     data-position="{{ image.position }}"
                     data-media-id="{{ section.id }}-{{ image.id }}"
                   >
@@ -1080,52 +1014,6 @@
                     assign ratio = 3 | times: 4
                   endif
                 -%}
-                {% if section.settings.variant_image_group %}
-                  {%- for fi in featured_images -%}
-                    {% if fi == image.preview_image %}
-                      <div
-                        class="slider-image"
-                        {% if sec_settings.image_zoom == 'lightbox' %}
-                          data-href="{{ image.preview_image | image_url: width: 4096 }}" data-size="1100x{{ 1100 | divided_by: ratio | ceil }}" data-med="{{ image.preview_image | image_url: width: 1024 }}" data-med-size="1024x{{ 1024 | divided_by: ratio | ceil }}" 
-                        {% endif %}
-                        {% if sec_settings.image_zoom == 'external_zoom' or sec_settings.image_zoom == 'inner_zoom' %}
-                          data-pane-container
-                        {% endif %}
-                        data-position="{{ image.position }}"
-                        data-media-id="{{ section.id }}-{{ image.id }}"
-                      >
-                        <div style="--aspect-ratio: {% if settings.product_image_ratio == 'adapt_to_image' -%}{{ image.aspect_ratio }}{%- elsif settings.product_image_ratio == 'square' -%}1/1{%- elsif settings.product_image_ratio == 'tall' -%}3/4{%- endif -%}">
-                          <img
-                            class="rounded-corner-item"
-                            {% if sec_settings.image_zoom == 'lightbox' %}
-                              tabindex="0"
-                            {% endif %}
-                            srcset="
-                              {%- if image.preview_image.width >= 550 -%}{{ image.preview_image | image_url: width: 550 }} 550w,{%- endif -%}
-                              {%- if image.preview_image.width >= 1100 -%}{{ image.preview_image | image_url: width: 1100 }} 1100w,{%- endif -%}
-                              {%- if image.preview_image.width >= 1445 -%}{{ image.preview_image | image_url: width: 1445 }} 1445w,{%- endif -%}
-                              {%- if image.preview_image.width >= 1680 -%}{{ image.preview_image | image_url: width: 1680 }} 1680w,{%- endif -%}
-                              {%- if image.preview_image.width >= 2048 -%}{{ image.preview_image | image_url: width: 2048 }} 2048w,{%- endif -%}
-                              {%- if image.preview_image.width >= 2200 -%}{{ image.preview_image | image_url: width: 2200 }} 2200w,{%- endif -%}
-                              {%- if image.preview_image.width >= 2890 -%}{{ image.preview_image | image_url: width: 2890 }} 2890w,{%- endif -%}
-                              {%- if image.preview_image.width >= 4096 -%}{{ image.preview_image | image_url: width: 4096 }} 4096w,{%- endif -%}
-                              {{ image.preview_image | image_url }} {{ image.preview_image.width }}w
-                            "
-                            sizes="100vw"
-                            src="{{ image.preview_image | image_url: width: 4096 }}"
-                            data-zoom="{{ image.preview_image | image_url }}"
-                            alt="{{ image.alt | escape }}"
-                            {% if is_larget_content == false %}
-                              loading="lazy"
-                            {% endif %}
-                            width="{{ image.preview_image.width }}"
-                            height="{{ image.preview_image.width | divided_by: ratio | ceil }}"
-                          >
-                        </div>
-                      </div>
-                    {% endif %}
-                  {%- endfor -%}
-                {%- else -%}
                   <div
                     class="slider-image"
                     {% if sec_settings.image_zoom == 'lightbox' %}
@@ -1166,7 +1054,6 @@
                       >
                     </div>
                   </div>
-                {% endif %}
               {%- endcase -%}
             {% endfor %}
           </div>
@@ -1380,3 +1267,4 @@
         </div>
     </div>
   {% endif %}
+

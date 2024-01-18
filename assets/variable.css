@@ -9,7 +9,7 @@
 
 }
 
-.blog-posts-items[aria-hidden="true"],
+.blog--not_empty .blog-posts-items[aria-hidden="true"],
 .article-card-wrapper[aria-hidden="true"],
 .product-wrapper[aria-hidden="true"],
 .collection-items[aria-hidden="true"] {
@@ -345,6 +345,7 @@ table tr th {
   border: 0;
   clip: rect(0 0 0 0);
   word-wrap: normal !important;
+  opacity: 0;
 }
 
 /* Button style */
@@ -942,12 +943,12 @@ blockquote {
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background-color: var(--grey-color);
+  background-color: rgba(var(--dark-color), 0.4);
   transition: var(--bls-transition);
 }
 
 .tns-nav .tns-nav-active::after {
-  background-color: var(--heading-color);
+  background-color: rgb(var(--dark-color));
 }
 
 .custom-actions .controls {
@@ -1406,6 +1407,10 @@ input[type="checkbox"] {
 .custom-scrollbar::-webkit-scrollbar,
 .dlg-box::-webkit-scrollbar {
   width: 6px;
+}
+
+.custom-scrollbar-x::-webkit-scrollbar {
+  height: 5px;
 }
 
 /* Track */
@@ -1876,7 +1881,12 @@ input[type="checkbox"] {
   --scrolling-space: clamp(5.5rem, 5vw, 7rem);
 }
 
-.col-has-small-size .size-small {
+.heading-large-lspacing .col-has-small-size .heading-letter-spacing {
+  letter-spacing: 0.15em;
+}
+
+.col-has-small-size .size-small,
+.heading-large-lspacing .col-has-small-size .size-small {
   --sub-heading-size: 1.3rem;
   --sub-heading-mb: 1.2rem;
   --heading-size: clamp(2rem, 2.5vw, 2.4rem);
@@ -1884,9 +1894,11 @@ input[type="checkbox"] {
   --description-size: 1.4rem;
   --description-mb: 2.4rem;
   --button-spacing-top: 1rem;
+
 }
 
-.col-has-small-size .size-medium {
+.col-has-small-size .size-medium,
+.heading-large-lspacing .col-has-small-size .size-medium {
   --sub-heading-size: 1.3rem;
   --sub-heading-mb: clamp(1rem, 2vw, 1.3rem);
   --heading-size: 3.2rem;
@@ -1895,9 +1907,11 @@ input[type="checkbox"] {
   --description-size: 1.4rem;
   --description-mb: 1.3rem;
   --button-spacing-top: clamp(2.6rem, 3vw, 4.4rem);
+
 }
 
-.col-has-small-size .size-large {
+.col-has-small-size .size-large,
+.heading-large-lspacing .col-has-small-size .size-large {
   --sub-heading-size: 1.6rem;
   --sub-heading-mb: clamp(1rem, 2vw, 1.3rem);
   --heading-size: 3.6rem;
@@ -1906,6 +1920,7 @@ input[type="checkbox"] {
   --description-size: clamp(1.8rem, 1.2vw, 2.4rem);
   --description-mb: clamp(1.4rem, 2vw, 2.2rem);
   --button-spacing-top: 3rem;
+
 }
 
 .sub-heading {
@@ -3291,6 +3306,10 @@ input.heading-style {
 .bottom-right {
   align-items: flex-end;
   justify-content: flex-end;
+}
+
+.bottom-center.text-center .section-btn {
+  justify-content: center;
 }
 
 @media screen and (max-width: 767.98px) {
@@ -5151,17 +5170,6 @@ input.heading-style {
 
   .flex-lg-row {
     flex-direction: row;
-  }
-}
-
-@media (min-width: 1165px) {
-
-  .d-1165-block {
-    display: block !important;
-  }
-
-  .d-1165-none {
-    display: none !important;
   }
 }
 

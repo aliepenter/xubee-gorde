@@ -11,7 +11,7 @@
   if settings.currency_code_enabled
     assign money_price = price | money_with_currency
   endif
-  if target == product and product.price_varies
+  if product.price_varies and scope != 'detail'
     assign money_price = 'products.product.price.from_price_html' | t: price: money_price
   endif
   assign special_class = ''
@@ -20,8 +20,8 @@
   endif
 -%}
 <div class="card-product-price">
-  {%- if compare_at_price > price -%}
-    <div class="heading-color">
+  {%- if compare_at_price > price and scope == 'detail' -%}
+    <div class="heading-color price-regular">
       <span class="visually-hidden-price visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
       <span class="price{{ special_class }}">
         {{ money_price }}

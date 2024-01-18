@@ -27,23 +27,25 @@
         </div>
       {% endif %}
       <div class="bls__section-header{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        <h1 class="h0 mb-0 mt-0 heading-letter-spacing">
-          {% if template contains 'blog' %}
-            {{ blog.title }}
-          {% else %}
-            {{ page.title }}
-          {% endif %}
-        </h1>
         {% for block in sec_blocks %}
-          {% if block.type == 'description' %}
-            {%- if block.settings.page_description != blank -%}
-              <div class="short-des mt-10">
-                {{ block.settings.page_description }}
-              </div>
-            {%- else -%}
-              {{ page.content }}
-            {%- endif -%}
-          {% endif %}
+          {% case block.type %}
+            {% when 'title' %}
+              <h1 class="h0 mb-0 mt-0 heading-letter-spacing">
+                {% if block.settings.page_title != blank %}
+                  {{ block.settings.page_title }}
+                {% else %}
+                  {{ page.title }}
+                {% endif %}
+              </h1>
+            {% when 'description' %}
+              {%- if block.settings.page_description != blank -%}
+                <div class="short-des mt-10">
+                  {{ block.settings.page_description }}
+                </div>
+              {%- else -%}
+                {{ page.content }}
+              {%- endif -%}
+          {% endcase %}
         {% endfor %}
       </div>
     </div>
@@ -133,6 +135,18 @@
   ],
   "max_blocks": 2,
   "blocks": [
+    {
+      "type": "title",
+      "name": "t:sections.all.section_setting.page_heading.label",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "page_title",
+          "label": "t:sections.all.section_setting.page_heading.label"
+        }
+      ]
+    },
     {
       "type": "description",
       "name": "t:sections.all.section_setting.page_heading.label_description",

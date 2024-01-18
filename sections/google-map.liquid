@@ -31,20 +31,24 @@
         {%- endif -%}
       </div>
     {%- endif -%}
-    {% if map_iframe != blank %}
-      {%- if settings.animations_reveal_on_scroll -%}
-        <div
-          class="scroll-trigger animate--slide-in"
-          {%- if section.settings.title != blank or section.settings.description != blank -%}
-            style="--animation-order: 2;"
-          {%- endif -%}
-        >
-      {%- endif -%}
+    {%- if settings.animations_reveal_on_scroll -%}
+      <div
+        class="scroll-trigger animate--slide-in"
+        {%- if section.settings.title != blank or section.settings.description != blank -%}
+          style="--animation-order: 2;"
+        {%- endif -%}
+      >
+    {%- endif -%}
+    {%- if map_iframe != blank -%}
       {{ map_iframe }}
-      {%- if settings.animations_reveal_on_scroll -%}
-        </div>
-      {%- endif -%}
-    {% endif %}
+    {%- else -%}
+    <span>
+      {{ 'sections.google_map.no_iframe' | t }}
+    </span>
+    {%- endif -%}
+    {%- if settings.animations_reveal_on_scroll -%}
+      </div>
+    {%- endif -%}
   </div>
 </div>
 {% schema %}
@@ -53,7 +57,11 @@
   "tag": "section",
   "class": "section",
   "disabled_on": {
-    "groups": ["header", "footer", "custom.overlay"]
+    "groups": [
+      "header",
+      "footer",
+      "custom.overlay"
+    ]
   },
   "settings": [
     {
@@ -89,7 +97,7 @@
     {
       "type": "text",
       "id": "title",
-      "default": "Find us",
+      "default": "Google map",
       "label": "t:sections.all.content_setting.heading.label"
     },
     {
@@ -135,8 +143,7 @@
       "type": "textarea",
       "id": "map_iframe",
       "label": "t:sections.map.settings.settings_map.iframe_key",
-      "info": "t:sections.map.settings.settings_map.info_iframe",
-      "default": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25280141577!2d-74.14448449655488!3d40.69763123286593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2zVGjDoG5oIHBo4buRIE5ldyBZb3JrLCBUaeG7g3UgYmFuZyBOZXcgWW9yaywgSG9hIEvhu7M!5e0!3m2!1svi!2s!4v1689579736265!5m2!1svi!2s\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+      "info": "t:sections.map.settings.settings_map.info_iframe"
     },
     {
       "type": "header",

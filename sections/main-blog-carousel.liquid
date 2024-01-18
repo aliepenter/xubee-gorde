@@ -35,7 +35,7 @@
         data-prev="prev-post-{{ section.id }}"
         data-nav-container="pagination-custom-slideshow-{{ section.id }}"
       >
-        <div class="slide-container">
+        <div class="slide-container{%- if sec_settings.blog_cate.articles_count > 0 and sec_settings.blog_cate != blank -%} blog--not_empty{%- endif -%}">
           {%- if sec_settings.blog_cate.articles_count > 0 and sec_settings.blog_cate != blank -%}
             {%- for article in sec_settings.blog_cate.articles limit: sec_settings.post_limit -%}
               <div class="blog-posts-items">
@@ -117,7 +117,7 @@
           {%- else -%}
             {% for i in (0..2) %}
               <div class="blog-posts-items">
-                <div class="blog-posts-items_inner custom-height d-flex flex-wrap overlay-bg{% if sec_settings.image_overlay_opacity == 0 %} grandient-bg{% endif %}">
+                <div class="blog-posts-items_inner custom-height item-hero-{{ section.settings.image_height }} d-flex flex-wrap overlay-bg{% if sec_settings.image_overlay_opacity == 0 %} grandient-bg{% endif %}">
                   <div
                     class="banner__media overflow-hidden absolute z-2-impo inset-0 absolute placeholder"
                   >

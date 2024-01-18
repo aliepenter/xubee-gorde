@@ -2,8 +2,6 @@
 {%- liquid
   assign aspect_ratio = '1/1'
   case section.settings.aspect_ratio
-    when 'adapt'
-      assign aspect_ratio = 'adapt'
     when 'square'
       assign aspect_ratio = '1/1'
     when 'portrait'
@@ -78,7 +76,7 @@
         -%}
           <a
             href="{{ section.settings.blog.url }}"
-            aria-label="{{ section.settings.blog.title | escape }}"
+            aria-label="{{ 'sections.featured_blog.view_all' | t }}"
             class="link btn_view-more btn-outline animate-arrow btn-link fs-small align-self-center nowrap pointer mt-12 mt-sm-0{% if section.settings.text_alignment == 'center' %} mt-20{% endif %}"
           >
             {{ 'sections.featured_blog.view_all' | t }}
@@ -126,14 +124,14 @@
           {%- else -%}
             {% for i in (0..3) %}
               <div class="blog-placeholder">
-                <div class="placeholder banner__media media--landscape relative overflow-hidden">
-                  <a role="link" aria-disabled="true">
+                <div class="placeholder banner__media relative overflow-hidden">
+                  <a role="link" aria-disabled="true" aria-label="{{ 'sections.featured_blog.onboarding_title' | t }}" style="--aspect-ratio: {{ aspect_ratio }}">
                     {%- render 'placeholder-render', type: 'blog', index: forloop.index -%}
                   </a>
                 </div>
                 <div class="card__content mt-24">
                   <h3 class="card__heading h5 mt-0 mb-10">
-                    <a role="link" aria-disabled="true" class="heading-color">
+                    <a role="link" aria-label="{{ 'sections.featured_blog.onboarding_title' | t }}" aria-disabled="true" class="heading-color">
                       {{ 'sections.featured_blog.onboarding_title' | t }}
                     </a>
                   </h3>
@@ -169,8 +167,8 @@
         {%- else -%}
           {% for i in (0..2) %}
             <div class="blog-placeholder">
-              <div class="placeholder banner__media media--landscape relative overflow-hidden">
-                <a role="link" aria-disabled="true">
+              <div class="placeholder banner__media relative overflow-hidden">
+                <a role="link" aria-disabled="true" style="--aspect-ratio: {{ aspect_ratio }}">
                   {%- render 'placeholder-render', type: 'blog', index: forloop.index -%}
                 </a>
               </div>
@@ -213,7 +211,11 @@
   "tag": "section",
   "class": "section section-blog-post",
   "disabled_on": {
-    "groups": ["header", "footer", "custom.overlay"]
+    "groups": [
+      "header",
+      "footer",
+      "custom.overlay"
+    ]
   },
   "settings": [
     {

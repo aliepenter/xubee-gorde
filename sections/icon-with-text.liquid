@@ -103,7 +103,7 @@
           class="bls__icon-with-text-inner relative d-flex justify-content-center {{ icon_position }}{{ icon_alignment }}{% if section.settings.text_alignment == 'center' %} justify-content-center{% endif %}{% if section.settings.text_alignment == 'right' %} align-end{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
           style="--item-width: {{ section.settings.icon_width }}px; --item-gap: 1.5rem;{% if settings.animations_reveal_on_scroll %} --animation-order: {{ forloop.index }}; {% endif %}"
         >
-          {% if block.settings.icon_svg != blank %}
+          {%- if block.settings.icon_svg != "none" -%}
             <div
               class="bls__icon-with-text-img {{ icon_margin }}"
             >
@@ -118,8 +118,8 @@
                     assign alt_img = shop.name
                   endif
                 endif
-                echo block.settings.icon_svg
               -%}
+              {% render 'icon-accordion', icon: block.settings.icon_svg, custom_width: 20 %}
             </div>
           {%- else -%}
             {%- if block.settings.image != blank -%}
@@ -141,8 +141,8 @@
                 -%}
               </div>
             {%- endif -%}
-          {% endif %}
-          {%- if block.settings.image == blank and block.settings.icon_svg == blank -%}
+          {%- endif -%}
+          {%- if block.settings.image == blank and block.settings.icon_svg == "none" -%}
             <div
               class="bls__icon-with-text-img {{ icon_margin }}"
             >
@@ -174,7 +174,11 @@
   "name": "t:sections.icon-with-text.name",
   "class": "section",
   "disabled_on": {
-    "groups": ["header", "footer", "custom.overlay"]
+    "groups": [
+      "header",
+      "footer",
+      "custom.overlay"
+    ]
   },
   "settings": [
     {
@@ -343,9 +347,193 @@
           "label": "t:sections.all.image.label"
         },
         {
-          "type": "textarea",
+          "type": "select",
           "id": "icon_svg",
-          "label": "t:sections.icon-with-text.settings.icon.icon_svg"
+          "label": "t:sections.icon-with-text.settings.icon.icon_svg",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:sections.all.icon.options__1.label"
+            },
+            {
+              "value": "account",
+              "label": "t:sections.all.icon.options__3.label"
+            },
+            {
+              "value": "arrow_down",
+              "label": "t:sections.all.icon.options__4.label"
+            },
+            {
+              "value": "arrow_up",
+              "label": "t:sections.all.icon.options__5.label"
+            },
+            {
+              "value": "bag",
+              "label": "t:sections.all.icon.options__7.label"
+            },
+            {
+              "value": "box",
+              "label": "t:sections.all.icon.options__8.label"
+            },
+            {
+              "value": "cart",
+              "label": "t:sections.all.icon.options__11.label"
+            },
+            {
+              "value": "checkbox",
+              "label": "t:sections.all.icon.options__12.label"
+            },
+            {
+              "value": "clipboard",
+              "label": "t:sections.all.icon.options__14.label"
+            },
+            {
+              "value": "clock",
+              "label": "t:sections.all.icon.options__15.label"
+            },
+            {
+              "value": "close",
+              "label": "t:sections.all.icon.options__16.label"
+            },
+            {
+              "value": "comment",
+              "label": "t:sections.all.icon.options__17.label"
+            },
+            {
+              "value": "discount",
+              "label": "t:sections.all.icon.options__18.label"
+            },
+            {
+              "value": "email",
+              "label": "t:sections.all.icon.options__19.label"
+            },
+            {
+              "value": "error",
+              "label": "t:sections.all.icon.options__20.label"
+            },
+            {
+              "value": "filter",
+              "label": "t:sections.all.icon.options__22.label"
+            },
+            {
+              "value": "headset_solid",
+              "label": "t:sections.all.icon.options__23.label"
+            },
+            {
+              "value": "heart",
+              "label": "t:sections.all.icon.options__24.label"
+            },
+            {
+              "value": "home",
+              "label": "t:sections.all.icon.options__25.label"
+            },
+            {
+              "value": "info",
+              "label": "t:sections.all.icon.options__26.label"
+            },
+            {
+              "value": "info_circle_solid",
+              "label": "t:sections.all.icon.options__27.label"
+            },
+            {
+              "value": "minus",
+              "label": "t:sections.all.icon.options__29.label"
+            },
+            {
+              "value": "next",
+              "label": "t:sections.all.icon.options__30.label"
+            },
+            {
+              "value": "padlock",
+              "label": "t:sections.all.icon.options__31.label"
+            },
+            {
+              "value": "palette_solid",
+              "label": "t:sections.all.icon.options__32.label"
+            },
+            {
+              "value": "periscope",
+              "label": "t:sections.all.icon.options__33.label"
+            },
+            {
+              "value": "phone_volumn_solid",
+              "label": "t:sections.all.icon.options__34.label"
+            },
+            {
+              "value": "piggy_bank_solid",
+              "label": "t:sections.all.icon.options__35.label"
+            },
+            {
+              "value": "plane_solid",
+              "label": "t:sections.all.icon.options__37.label"
+            },
+            {
+              "value": "plus",
+              "label": "t:sections.all.icon.options__39.label"
+            },
+            {
+              "value": "prev",
+              "label": "t:sections.all.icon.options__40.label"
+            },
+            {
+              "value": "question",
+              "label": "t:sections.all.icon.options__41.label"
+            },
+            {
+              "value": "question_circle_solid",
+              "label": "t:sections.all.icon.options__42.label"
+            },
+            {
+              "value": "search",
+              "label": "t:sections.all.icon.options__43.label"
+            },
+            {
+              "value": "seeding_solid",
+              "label": "t:sections.all.icon.options__44.label"
+            },
+            {
+              "value": "share",
+              "label": "t:sections.all.icon.options__45.label"
+            },
+            {
+              "value": "share_alt_solid",
+              "label": "t:sections.all.icon.options__46.label"
+            },
+            {
+              "value": "shipping",
+              "label": "t:sections.all.icon.options__47.label"
+            },
+            {
+              "value": "shipping_fast_solid",
+              "label": "t:sections.all.icon.options__48.label"
+            },
+            {
+              "value": "shop",
+              "label": "t:sections.all.icon.options__49.label"
+            },
+            {
+              "value": "size_guide",
+              "label": "t:sections.all.icon.options__50.label"
+            },
+            {
+              "value": "star",
+              "label": "t:sections.all.icon.options__52.label"
+            },
+            {
+              "value": "success",
+              "label": "t:sections.all.icon.options__53.label"
+            },
+            {
+              "value": "thumbs_up_solid",
+              "label": "t:sections.all.icon.options__54.label"
+            },
+            {
+              "value": "zoom",
+              "label": "t:sections.all.icon.options__63.label"
+            }
+          ],
+          "default": "none",
+          "info": "t:sections.icon-with-text.settings.icon.icon_info"
         },
         {
           "type": "text",
@@ -361,7 +549,7 @@
         {
           "type": "checkbox",
           "id": "uppercase",
-          "default": true,
+          "default": false,
           "label": "t:settings_schema.typography.settings.heading.text_transform.uppercase"
         }
       ]
@@ -374,19 +562,19 @@
         {
           "type": "icon-with-text",
           "settings": {
-            "description": "<p>FREE DELIVERY ON ORDERS OVER £30</p>"
+            "description": "<p>Add a short description for this section.</p>"
           }
         },
         {
           "type": "icon-with-text",
           "settings": {
-            "description": "<p>25% off all orders with code #Save25</p>"
+            "description": "<p>Add a short description for this section.</p>"
           }
         },
         {
           "type": "icon-with-text",
           "settings": {
-            "description": "<p>HURRY - 15% STUDENT DISCOUNT</p>"
+            "description": "<p>Add a short description for this section.</p>"
           }
         }
       ]

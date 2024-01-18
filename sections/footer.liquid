@@ -107,6 +107,7 @@
                                 {% endif %}
                                 placeholder="{%- if block.settings.email_placeholder != blank -%}{{ block.settings.email_placeholder }} {%- else -%} {{ 'newsletter.label' | t }} {%- endif -%}"
                                 required
+                                pattern=".+\.[a-zA-Z]{2,6}"
                               >
                               <label class="visually-hidden" for="NewsletterForm--{{ section.id }}">
                                 {{ 'newsletter.label' | t }}
@@ -173,9 +174,6 @@
                           </span>
                         {%- endif -%}
                       </h3>
-                      {%- if block.settings.html != blank -%}
-                        {{ block.settings.html }}
-                      {%- endif -%}
                       {%- if block.settings.menu != blank -%}
                         <div class="footer-block-border">
                           <ul class="footer__block-content list-unstyled m-0 p-0 collapsible-content">
@@ -207,6 +205,20 @@
                     class="collapsible-content mb-30 mb-md-0"
                     style="--img-width: {{ block.settings.image_width }}px"
                   >
+                    {%- if block.settings.image != blank -%}
+                      {%- assign image_size_2x = block.settings.image_width | times: 2 | at_most: 5760 -%}
+                      <img
+                        srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}, {{ block.settings.image | image_url: width: image_size_2x }} 2x"
+                        src="{{ block.settings.image | image_url: width: 400 }}"
+                        class="mb-30 mb-xl-45"
+                        alt="{{ block.settings.image.alt | escape }}"
+                        loading="lazy"
+                        width="{{ block.settings.image.width }}"
+                        height="{{ block.settings.image.height }}"
+                        style="max-width: min(100%, {{ block.settings.image_width }}px);"
+                      >
+                    {%- endif -%}
+
                     {%- if block.settings.store_description != blank -%}
                       <div class="footer__block-info mb-15">
                         {{ block.settings.store_description }}
@@ -225,26 +237,18 @@
                                 {{ block.settings.working_hours }}
                               </p>
                             {%- endif -%}
-                            <div class="footer__store-info mb-3 last-0 d-flex word-break">
-                              {%- if block.settings.store_address_heading != blank -%}
-                                <span class="footer__info-title mr-5">
-                                  {{- block.settings.store_address_heading }}:
-                                </span>
-                              {%- endif -%}
-                              <div class="footer__info-content">
-                                {{ block.settings.store_address }}
+                            {%- if block.settings.store_address_heading != blank -%}
+                              <div class="footer__store-info mb-3 last-0 d-flex word-break">
+                                {%- if block.settings.store_address_heading != blank -%}
+                                  <span class="footer__info-title mr-5">
+                                    {{- block.settings.store_address_heading }}:
+                                  </span>
+                                {%- endif -%}
+                                <div class="footer__info-content">
+                                  {{ block.settings.store_address }}
+                                </div>
                               </div>
-                            </div>
-                            <div class="footer__store-info mb-3 last-0 d-flex word-break">
-                              {%- if block.settings.store_address_heading2 != blank -%}
-                                <span class="footer__info-title mr-5">
-                                  {{- block.settings.store_address_heading2 }}:
-                                </span>
-                              {%- endif -%}
-                              <div class="footer__info-content">
-                                {{ block.settings.store_address2 }}
-                              </div>
-                            </div>
+                            {%- endif -%}
                           </div>
                         {%- endif -%}
                         {%- if block.settings.store_email != blank -%}
@@ -283,27 +287,6 @@
                       <social-icon class="d-block mt-15">
                         {% render 'social-icons' %}
                       </social-icon>
-                    {%- endif -%}
-                    {%- if block.settings.image != blank -%}
-                      {%- assign image_size_2x = block.settings.image_width | times: 2 | at_most: 5760 -%}
-                      {%- if settings.social_media_facebook != blank -%}
-                        <a
-                          href="{{ settings.social_media_facebook }}"
-                          aria-label="{{ 'general.social.links.facebook' | t }}"
-                          target="_blank"
-                        >
-                          <img
-                            srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}, {{ block.settings.image | image_url: width: image_size_2x }} 2x"
-                            src="{{ block.settings.image | image_url: width: 400 }}"
-                            class="mt-30 rounded-corner-item"
-                            alt="{{ block.settings.image.alt | escape }}"
-                            loading="lazy"
-                            width="{{ block.settings.image.width }}"
-                            height="{{ block.settings.image.height }}"
-                            style="max-width: min(100%, {{ block.settings.image_width }}px);"
-                          >
-                        </a>
-                      {%- endif -%}
                     {%- endif -%}
                   </div>
               {%- endcase -%}
@@ -488,11 +471,6 @@
           "info": "t:sections.footer.blocks.link_list.settings.menu.info"
         },
         {
-          "type": "liquid",
-          "id": "html",
-          "label": "HTML"
-        },
-        {
           "type": "select",
           "id": "content_width",
           "label": "t:sections.footer.blocks.content_width.content_width",
@@ -546,19 +524,19 @@
         {
           "type": "text",
           "id": "heading",
-          "default": "Subscribe to our emails",
+          "default": "Newsletter heading",
           "label": "t:sections.footer.blocks.newsletter.settings.heading.label"
         },
         {
           "type": "richtext",
           "id": "description",
-          "default": "<p>Be the first to know about new collections and exclusive offers.</p>",
+          "default": "<p>Newsletter description</p>",
           "label": "t:sections.footer.blocks.newsletter.settings.description.label"
         },
         {
           "type": "text",
           "id": "email_placeholder",
-          "default": "Enter your email address",
+          "default": "Email placeholder",
           "label": "t:sections.footer.blocks.newsletter.settings.email_placeholder.label"
         },
         {
@@ -615,7 +593,7 @@
         {
           "type": "text",
           "id": "store_heading",
-          "default": "Company",
+          "default": "Store heading",
           "label": "t:sections.footer.blocks.link_list.settings.heading.label"
         },
         {
@@ -626,18 +604,18 @@
         {
           "type": "range",
           "id": "image_width",
-          "min": 100,
-          "max": 1000,
-          "step": 100,
+          "min": 50,
+          "max": 200,
+          "step": 2,
           "unit": "px",
           "label": "t:sections.footer.blocks.store_info.settings.image_width",
-          "default": 300
+          "default": 70
         },
         {
           "type": "richtext",
           "id": "store_description",
           "label": "t:sections.footer.blocks.store_info.settings.description",
-          "default": "<p></p>"
+          "default": "<p>Store description</p>"
         },
         {
           "type": "header",
@@ -653,25 +631,13 @@
           "type": "richtext",
           "id": "store_address",
           "label": "t:sections.footer.blocks.store_info.settings.store_address",
-          "default": "<p>Street Address 2571 Oakridge Farm Lane City Cedarburg State WI State Full Wisconsin Zipcode 53012</p>"
-        },
-        {
-          "type": "text",
-          "id": "store_address_heading2",
-          "label": "t:sections.footer.blocks.newsletter.settings.heading.label",
-          "default": "Address"
-        },
-        {
-          "type": "richtext",
-          "id": "store_address2",
-          "label": "t:sections.footer.blocks.store_info.settings.store_address",
-          "default": "<p>Street Address 2571 Oakridge Farm Lane City Cedarburg State WI State Full Wisconsin Zipcode 53012</p>"
+          "default": "<p>Store address</p>"
         },
         {
           "type": "text",
           "id": "working_hours",
           "label": "t:sections.footer.blocks.store_info.settings.working_hours",
-          "default": "9:00am - 6:00pm, Mon to Sun"
+          "default": "Working time"
         },
         {
           "type": "header",
@@ -687,7 +653,7 @@
           "type": "text",
           "id": "store_phone",
           "label": "t:sections.footer.blocks.store_info.settings.store_phone",
-          "default": "+1-123-555-6789"
+          "default": "Store phone number"
         },
         {
           "type": "header",
@@ -703,7 +669,7 @@
           "type": "text",
           "id": "store_email",
           "label": "t:sections.footer.blocks.store_info.settings.store_email",
-          "default": "yourstore@gmail.com"
+          "default": "Store email"
         },
         {
           "type": "select",

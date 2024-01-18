@@ -177,7 +177,11 @@
   "tag": "section",
   "class": "section section-video-with-text-overlay",
   "disabled_on": {
-    "groups": ["header", "footer", "custom.overlay"]
+    "groups": [
+      "header",
+      "footer",
+      "custom.overlay"
+    ]
   },
   "settings": [
     {
@@ -213,15 +217,18 @@
     {
       "type": "video_url",
       "id": "video_url",
-      "accept": ["youtube", "vimeo"],
-      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+      "accept": [
+        "youtube",
+        "vimeo"
+      ],
       "label": "t:sections.video-with-text-overlay.settings.video_link.label",
       "info": "t:sections.video-with-text-overlay.settings.video_link.info"
     },
     {
       "type": "video",
       "id": "video_local",
-      "label": "t:sections.video-with-text-overlay.settings.video_local.label"
+      "label": "t:sections.video-with-text-overlay.settings.video_local.label",
+      "info": "t:sections.video.settings.video_local.info"
     },
     {
       "type": "image_picker",
@@ -243,7 +250,7 @@
       "step": 1,
       "unit": "%",
       "label": "t:sections.main-collection-banner.settings.image_overlay_opacity.label",
-      "default": 30
+      "default": 40
     },
     {
       "type": "select",
@@ -429,7 +436,7 @@
         {
           "type": "text",
           "id": "subheading",
-          "default": "Subheading text",
+          "default": "Subheading",
           "label": "t:sections.all.content_setting.subheading.label"
         }
       ]
@@ -455,7 +462,7 @@
         {
           "type": "text",
           "id": "button_label",
-          "default": "Shop now",
+          "default": "Button label",
           "label": "t:sections.all.content_setting.button_label.label",
           "info": "t:sections.all.content_setting.button_label.info"
         },

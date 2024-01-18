@@ -177,6 +177,7 @@
         --bs-gutter-y: 0;
 
         --color-white: #FFFFFF;
+        --dark-color: 0,0,0;
 
         --h0-size: calc(var(--heading-font-scale) * 4.8rem);
         --h1-size: calc(var(--heading-font-scale) * 4rem);
@@ -185,7 +186,7 @@
         --h4-size:  calc(var(--heading-font-scale) * 2.4rem);
         --h5-size: calc(var(--heading-font-scale) * 2rem);
         --h6-size: calc(var(--heading-font-scale) * 1.8rem);
-        --heading-letter-spacing: {{ settings.heading_letter_spacing }};
+        --heading-letter-spacing: {% if settings.heading_letter_spacing == '0.25em' %}0.15em{% else %}{{ settings.heading_letter_spacing }}{% endif %};
 
         --bls-transition: all 0.4s;
         --duration-short: 0.2s;
@@ -321,7 +322,7 @@
           --h3-size: calc(var(--heading-font-scale) * 3.2rem);
           --h4-size: calc(var(--heading-font-scale) * 2.6rem);
           --h5-size:  calc(var(--heading-font-scale) * 2.4rem);
-
+          {% if settings.heading_letter_spacing == '0.25em' %}--heading-letter-spacing: {{ settings.heading_letter_spacing }};{% endif %}
           --btn-padding-y: 1.35rem;
           --btn-padding-x: 4rem;
           --input-height: 5rem;
@@ -421,7 +422,6 @@
         pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
         playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
       };
-
     </script>
     <script src="{{ 'tiny-slider.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'easydlg.js' | asset_url }}" defer="defer"></script>

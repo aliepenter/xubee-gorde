@@ -95,7 +95,9 @@
   "class": "overlay-section overlay-age-verifier",
   "limit": 1,
   "enabled_on": {
-    "groups": ["custom.overlay"]
+    "groups": [
+      "custom.overlay"
+    ]
   },
   "settings": [
     {
@@ -131,19 +133,19 @@
       "type": "text",
       "id": "decline_heading",
       "label": "t:sections.age_verifier_popup.settings.heading",
-      "default": "Come back when you're older"
+      "default": "Decline heading"
     },
     {
       "type": "richtext",
       "id": "decline_text",
       "label": "t:sections.age_verifier_popup.settings.text",
-      "default": "<p>Sorry, the content of this store can't be seen by a younger audience. Come back when you're older.</p>"
+      "default": "<p>Decline description.</p>"
     },
     {
       "type": "text",
       "id": "button_return",
       "label": "t:sections.age_verifier_popup.settings.button_return",
-      "default": "Oops, I entered incorrectly"
+      "default": "Button label"
     }
   ],
   "blocks": [
@@ -155,7 +157,7 @@
         {
           "type": "text",
           "id": "heading",
-          "default": "Confirm your age",
+          "default": "Section heading",
           "label": "t:sections.all.content_setting.heading.label"
         }
       ]
@@ -168,7 +170,7 @@
         {
           "type": "richtext",
           "id": "description",
-          "default": "<p>Are you 18 years old or older?</p>",
+          "default": "<p>Section description</p>",
           "label": "t:sections.all.content_setting.description.label"
         }
       ]
@@ -181,13 +183,13 @@
         {
           "type": "text",
           "id": "button_decline",
-          "default": "No, I'm not",
+          "default": "Button label",
           "label": "t:sections.all.content_setting.button_age_verifier_label.decline_button.label"
         },
         {
           "type": "text",
           "id": "button_approve",
-          "default": "Yes, I am",
+          "default": "Button label",
           "label": "t:sections.all.content_setting.button_age_verifier_label.approve_button.label"
         }
       ]

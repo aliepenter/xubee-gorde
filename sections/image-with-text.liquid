@@ -59,7 +59,7 @@
         </div>
       </div>
       <div class="py-50 item-content-md image-with-text__text-item flex-1 text-{{ section.settings.text_alignment }} size-{{ section.settings.content_size }}{% if section.settings.section_width == 'expand_full_width' %} max-100 mx-767-15{% endif %}">
-        <div class="image-with-text__text-item-inner{% if section.settings.section_width == 'expand_full_width' and section.settings.column_gap == 'no_gap'  %} pl-20{% else %} pl-gap{% endif %}">
+        <div class="image-with-text__text-item-inner{% if section.settings.section_width == 'expand_full_width' and section.settings.column_gap == 'no_gap' %} pl-20{% else %} pl-gap{% endif %}">
           {%- for block in section.blocks -%}
             {% case block.type %}
               {%- when 'heading' -%}
@@ -140,7 +140,11 @@
   "name": "t:sections.image-with-text.name",
   "class": "section",
   "disabled_on": {
-    "groups": ["header", "footer", "custom.overlay"]
+    "groups": [
+      "header",
+      "footer",
+      "custom.overlay"
+    ]
   },
   "settings": [
     {
@@ -367,7 +371,7 @@
         {
           "type": "text",
           "id": "first_button_label",
-          "default": "Shop now",
+          "default": "Button label",
           "label": "t:sections.all.content_setting.first_button_label.label",
           "info": "t:sections.all.content_setting.button_label.info"
         },

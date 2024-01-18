@@ -1,11 +1,11 @@
 {%- liquid
   assign section_width = ''
   if section.settings.section_width == 'fix_width'
-    assign section_width = ' container'
+    assign section_width = 'container'
   elsif section.settings.section_width == 'expand_full_width'
-    assign section_width = ' full-width px-20'
+    assign section_width = 'full-width px-20'
   else
-    assign section_width = ' full-width-gap'
+    assign section_width = 'full-width-gap'
   endif
   assign columns_small_desktop = ''
   if section.settings.columns_desktop > 3
@@ -44,78 +44,80 @@
   --section-padding-top: {{ section.settings.padding_top }}px; --section-padding-bottom: {{ section.settings.padding_bottom }}px;
     {%- endcapture -%}
 <div
-  class="color-{{ section.settings.color_scheme }} gradient bls__section bls_product-section section-padding{{ tb_top_spacing }}{{ tb_bottom_spacing }}{{ mb_top_spacing }}{{ mb_bottom_spacing }}"
+  class="color-{{ section.settings.color_scheme }} gradient bls__section bls_product-section"
   style="{{ style | strip | strip_newlines }}"
 >
-  <div class="section-inner{{ section_width }}">
-    {%- if section.settings.title != blank or section.settings.description != blank -%}
-      <div class="bls__section-header mb-40 mb-sm-35 text-{{ section.settings.text_alignment }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        {%- if section.settings.title != blank -%}
-          <h2 class="bls_section-heading heading-letter-spacing mt-0 mb-7 mb-md-15">{{ section.settings.title }}</h2>
-        {%- endif -%}
-        {%- if section.settings.description != blank -%}
-          <div class="short-des">
-            {{ section.settings.description }}
-          </div>
-        {%- endif -%}
-      </div>
-    {%- endif -%}
-    {%- if section.settings.enable_carousel -%}
-      <recently-viewed-products
-        class="recently-viewed-products-slide"
-        data-items="{{ section.settings.columns_desktop }}"
-        data-controls="{{ section.settings.show_navigation }}"
-        data-nav="{{ section.settings.show_pagination }}"
-        data-free-scroll="true"
-        data-loop="false"
-        data-autoplay="false"
-        data-mouse-drag="true"
-        data-autoplay-timeout="5000"
-        data-controls-position="top"
-        data-nav-as-thumbnails="false"
-        data-autoplay-button-output="false"
-        data-axis="horizontal"
-        data-mode="carousel"
-        data-fix-height="false"
-        data-product-type="true"
-        data-slide-product="true"
-        data-gap="{{ section.settings.column_gap }}"
-        data-limit="{{ section.settings.products_to_show }}"
-        data-url="{{ routes.search_url }}?section_id={{ section.id }}"
-        data-is-carousel="true"
-        data-nav-center-postion="product__inner"
-      >
-        <div class="slide-container no-js-scroll{% if settings.animations_reveal_on_scroll %} slide-animation opacity-0 opacity-1-768{% endif %}">
-          {%- if search.results != blank -%}
-            {% for item in search.results %}
-              {% render 'card-product', card_product: item, section_id: section.id, indexFor: forloop.index %}
-            {% endfor %}
+  <div class="{{ section_width }}">
+    <div class="section-inner border-top section-padding {{ tb_top_spacing }}{{ tb_bottom_spacing }}{{ mb_top_spacing }}{{ mb_bottom_spacing }}">
+      {%- if section.settings.title != blank or section.settings.description != blank -%}
+        <div class="bls__section-header mb-40 mb-sm-35 text-{{ section.settings.text_alignment }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {%- if section.settings.title != blank -%}
+            <h2 class="bls_section-heading heading-letter-spacing mt-0 mb-7 mb-md-15">{{ section.settings.title }}</h2>
+          {%- endif -%}
+          {%- if section.settings.description != blank -%}
+            <div class="short-des">
+              {{ section.settings.description }}
+            </div>
           {%- endif -%}
         </div>
-      </recently-viewed-products>
-    {%- else -%}
-      <recently-viewed-products
-        class="recently-viewed-products-grid grid-cols gap-{{ section.settings.column_gap }}{{ columns_small_desktop }}{{ columns_tablet }}{{ columns_mobile }}"
-        style="--col-number: {{ section.settings.columns_desktop }}"
-        data-limit="{{ section.settings.products_to_show }}"
-        data-url="{{ routes.search_url }}?section_id={{ section.id }}"
-      >
-        {%- if search.results != blank -%}
-          {% for item in search.results %}
-            {% render 'card-product',
-              card_product: item,
-              section_id: section.id,
-              customClass: ' scroll-trigger animate--slide-in',
-              indexFor: forloop.index
-            %}
-          {% endfor %}
-        {%- endif -%}
-      </recently-viewed-products>
-    {%- endif -%}
-    <div class="d-none no-product">
-      <span>
-        {{ 'sections.recently_viewed_products.no_product' | t }}
-      </span>
+      {%- endif -%}
+      {%- if section.settings.enable_carousel -%}
+        <recently-viewed-products
+          class="recently-viewed-products-slide"
+          data-items="{{ section.settings.columns_desktop }}"
+          data-controls="{{ section.settings.show_navigation }}"
+          data-nav="{{ section.settings.show_pagination }}"
+          data-free-scroll="true"
+          data-loop="false"
+          data-autoplay="false"
+          data-mouse-drag="true"
+          data-autoplay-timeout="5000"
+          data-controls-position="top"
+          data-nav-as-thumbnails="false"
+          data-autoplay-button-output="false"
+          data-axis="horizontal"
+          data-mode="carousel"
+          data-fix-height="false"
+          data-product-type="true"
+          data-slide-product="true"
+          data-gap="{{ section.settings.column_gap }}"
+          data-limit="{{ section.settings.products_to_show }}"
+          data-url="{{ routes.search_url }}?section_id={{ section.id }}"
+          data-is-carousel="true"
+          data-nav-center-postion="product__inner"
+        >
+          <div class="slide-container no-js-scroll{% if settings.animations_reveal_on_scroll %} slide-animation opacity-0 opacity-1-768{% endif %}">
+            {%- if search.results != blank -%}
+              {% for item in search.results %}
+                {% render 'card-product', card_product: item, section_id: section.id, indexFor: forloop.index %}
+              {% endfor %}
+            {%- endif -%}
+          </div>
+        </recently-viewed-products>
+      {%- else -%}
+        <recently-viewed-products
+          class="recently-viewed-products-grid grid-cols gap-{{ section.settings.column_gap }}{{ columns_small_desktop }}{{ columns_tablet }}{{ columns_mobile }}"
+          style="--col-number: {{ section.settings.columns_desktop }}"
+          data-limit="{{ section.settings.products_to_show }}"
+          data-url="{{ routes.search_url }}?section_id={{ section.id }}"
+        >
+          {%- if search.results != blank -%}
+            {% for item in search.results %}
+              {% render 'card-product',
+                card_product: item,
+                section_id: section.id,
+                customClass: ' scroll-trigger animate--slide-in',
+                indexFor: forloop.index
+              %}
+            {% endfor %}
+          {%- endif -%}
+        </recently-viewed-products>
+      {%- endif -%}
+      <div class="d-none no-product">
+        <span>
+          {{ 'sections.recently_viewed_products.no_product' | t }}
+        </span>
+      </div>
     </div>
   </div>
 </div>
@@ -125,7 +127,11 @@
   "tag": "section",
   "class": "section section-recently-viewed-products no-js-hidden",
   "disabled_on": {
-    "groups": ["header", "footer", "custom.overlay"]
+    "groups": [
+      "header",
+      "footer",
+      "custom.overlay"
+    ]
   },
   "settings": [
     {
@@ -270,7 +276,7 @@
       "step": 1,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
-      "default": 40
+      "default": 80
     },
     {
       "type": "range",

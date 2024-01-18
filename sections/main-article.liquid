@@ -499,7 +499,10 @@
                 {%- if blog.moderated? -%}
                   <p class="mt-10 article-template__comment-warning caption">{{ 'blogs.article.moderated' | t }}</p>
                 {%- endif -%}
-                <input type="submit" class="btn-large btn mt-25" value="{{ 'blogs.article.post' | t }}">
+                <div class="text-left mt-25">
+                  <span class="required-field">{{ 'customer.account.required' | t }}</span>
+                </div>
+                <input type="submit" class="btn-large btn mt-15" value="{{ 'blogs.article.post' | t }}">
               {% endform %}
             </div>
           </div>
@@ -693,7 +696,7 @@
           "type": "text",
           "id": "related_title",
           "label": "t:sections.main-article.related.title",
-          "default": "Related Posts"
+          "default": "Related posts"
         },
         {
           "type": "select",

@@ -68,8 +68,8 @@
               role="link" aria-disabled="true"
             {% else %}
               href="{{ section.settings.collection.url }}"
-              aria-label="{{ section.settings.collection | escape }}"
             {% endif %}
+            aria-label="{{ 'sections.featured_collection.view_all' | t }}"
             class="link btn_view-more btn-outline animate-arrow btn-link fs-small align-self-center nowrap pointer mt-12 mt-sm-0{% if section.settings.text_alignment == 'center' %} mt-20{% endif %}"
           >
             {{ 'sections.featured_collection.view_all' | t }}
@@ -155,7 +155,11 @@
   "tag": "section",
   "class": "section section-featured-collection",
   "disabled_on": {
-    "groups": ["header", "footer", "custom.overlay"]
+    "groups": [
+      "header",
+      "footer",
+      "custom.overlay"
+    ]
   },
   "settings": [
     {

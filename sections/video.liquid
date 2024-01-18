@@ -184,7 +184,11 @@
   "tag": "section",
   "class": "section",
   "disabled_on": {
-    "groups": ["header", "footer", "custom.overlay"]
+    "groups": [
+      "header",
+      "footer",
+      "custom.overlay"
+    ]
   },
   "settings": [
     {
@@ -226,7 +230,8 @@
     {
       "type": "richtext",
       "id": "description",
-      "label": "t:sections.all.content_setting.description.label"
+      "label": "t:sections.all.content_setting.description.label",
+      "default": "<p>Add a short description for this section.</p>"
     },
     {
       "type": "select",
@@ -255,7 +260,10 @@
     {
       "type": "video_url",
       "id": "video_url",
-      "accept": ["youtube", "vimeo"],
+      "accept": [
+        "youtube",
+        "vimeo"
+      ],
       "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
       "label": "t:sections.video.settings.video_link.label",
       "info": "t:sections.video.settings.video_link.info"
@@ -263,7 +271,8 @@
     {
       "type": "video",
       "id": "video_local",
-      "label": "t:sections.video.settings.video_local.label"
+      "label": "t:sections.video.settings.video_local.label",
+      "info": "t:sections.video.settings.video_local.info"
     },
     {
       "type": "image_picker",
@@ -274,8 +283,7 @@
       "type": "text",
       "id": "alt_description",
       "label": "t:sections.video.settings.alt_description.label",
-      "info": "t:sections.video.settings.alt_description.info",
-      "default": "Our product"
+      "info": "t:sections.video.settings.alt_description.info"
     },
     {
       "type": "checkbox",

@@ -210,7 +210,7 @@
                             name="sort_by"
                             class="facet-filters__sort caption-large btn-text-transform fs-small lh-normal heading-color rounded-5 relative border-grey"
                             aria-describedby="a11y-refresh-page-message"
-                            aria-label="sort"
+                            aria-label="{{ 'products.facets.sort_button' | t }}"
                           >
                             {%- for option in search.sort_options -%}
                               <option
@@ -311,7 +311,7 @@
                           <select
                             name="sort_by"
                             class="facet-filters__sort caption-large btn-text-transform fs-small heading-color border-grey rounded-5 lh-normal"
-                            aria-label="sort"
+                            aria-label="{{ 'products.facets.sort_button' | t }}"
                             aria-describedby="a11y-refresh-page-message"
                           >
                             {%- for option in search.sort_options -%}
@@ -485,7 +485,7 @@
                           <select
                             name="sort_by"
                             class="facet-filters__sort caption-large btn-text-transform fs-small lh-normal heading-color rounded-5 relative"
-                            aria-label="sort"
+                            aria-label="{{ 'products.facets.sort_button' | t }}"
                             aria-describedby="a11y-refresh-page-message"
                           >
                             {%- for option in search.sort_options -%}
@@ -604,7 +604,7 @@
                 <div class="loading-overlay gradient"></div>
                 <div class="title-wrapper text-center">
                   <h2 class="title title--primary">
-                    {{ 'sections.collection_template.empty' | t -}}
+                    {{ 'sections.collection_template.no_products_found' | t -}}
                     <br>
                     {{
                       'sections.collection_template.use_fewer_filters_html'

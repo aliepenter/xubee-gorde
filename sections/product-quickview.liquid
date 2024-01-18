@@ -42,9 +42,9 @@
               >
                 <div class="fs-bigger-2">
                   {%- render 'price' | scope: 'detail' | product: product | show_badges: false | price_class: 'price--large' -%}
-                  {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
+                  {%- if cart.tax_included or shop.shipping_policy.body != blank -%}
                     <div class="product__tax caption rte mt-5">
-                      {%- if shop.taxes_included -%}
+                      {%- if cart.tax_included -%}
                         {{ 'products.product.include_taxes' | t }}
                       {%- endif -%}
                       {%- if shop.shipping_policy.body != blank -%}

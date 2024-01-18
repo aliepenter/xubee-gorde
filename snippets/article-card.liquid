@@ -52,13 +52,13 @@
             {% if article.tags.size > 0 %}
               {% for tag in article.tags limit: 5 %}
                 {% if current_tags contains tag %}
-                  <span class="{% if settings.rounded_corner %}outline-style reset-hover{% endif %} remove-underline d-inline-flex align-center mb-7 no-links">
+                  <span class="blog-tag {% if settings.rounded_corner %}outline-style reset-hover{% endif %} remove-underline d-inline-flex align-center mb-7 no-links">
                     {{ tag }}
                   </span>
                 {% else %}
-                  <span class="{% if settings.rounded_corner %}outline-style reset-hover{% endif %} remove-underline d-inline-flex align-center mb-7">
-                    {{- tag -}}
-                  </span>
+                  <div class="blog-tag {% if settings.rounded_corner %}show-outline-style{% endif %} mb-7">
+                    {{ tag | link_to_tag: tag }}
+                  </div>
                 {% endif %}
               {% endfor %}
             {% endif %}
@@ -67,7 +67,11 @@
             {% assign blog_name = article.handle | split: '/' | first %}
             {% if blog_name != blank %}
               <div class="blog-meta-tag blog-cate mb-7">
-                <a class="post-tags remove-underline" href="/blogs/{{ blog_name }}" aria-label="blog category">
+                <a
+                  class="post-tags outline-style remove-underline d-inline-flex align-center"
+                  href="{{ blog.url }}"
+                  aria-label="blog category"
+                >
                   {{ blog_name | capitalize }}
                 </a>
               </div>

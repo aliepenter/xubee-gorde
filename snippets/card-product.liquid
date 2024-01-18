@@ -42,7 +42,6 @@
           class="product-image focus-inset"
           draggable="false"
           href="{{ card_product.url }}"
-          aria-label="{{ card_product.title }}"
         >
           {%- liquid
             assign p_media = card_product.featured_media
@@ -93,7 +92,7 @@
               endif
             -%}
             <div
-              class="product__media hover-effect {{ settings.product_hover_effect }}"
+              class="product__media hover-effect{% if settings.enable_zoom_effect %} zoom-in{% else %} fade-in{% endif %}"
               style="--aspect-ratio: {{ ratio }};"
             >
               {% render 'placeholder-render' %}
@@ -130,7 +129,7 @@
             <button-quickview
               tabindex="0"
               data-item="overlay-quickbuy"
-              class="no-js-hidden btn button-quickview btn-white text-center border {{ settings.product_hover_effect }}"
+              class="no-js-hidden btn button-quickview btn-white text-center border{% if settings.enable_zoom_effect %} zoom-in {% else %} fade-in {% endif %}"
               data-product-handle="{{ card_product.id }}"
               data-url="{{ shop.url }}/products/{{ card_product.handle }}?section_id=product-quickview"
             >

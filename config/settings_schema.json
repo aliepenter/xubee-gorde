@@ -4,8 +4,8 @@
     "theme_name": "Gorde",
     "theme_version": "1.0.0",
     "theme_author": "Blueskytechco",
-    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
-    "theme_support_url": "https:\/\/support.shopify.com\/"
+    "theme_documentation_url": "https:\/\/gorde-theme-shopifys-organizatio.gitbook.io\/gorde-theme\/?locale=en",
+    "theme_support_url": "https:\/\/www.blueskytechco.store\/pages\/gorde"
   },
   {
     "name": "t:settings_schema.favicon.name",
@@ -391,22 +391,6 @@
           }
         ],
         "default": "adapt_to_image"
-      },
-      {
-        "type": "select",
-        "id": "product_hover_effect",
-        "label": "t:settings_schema.product.settings.product_hover_effect.label",
-        "options": [
-          {
-            "value": "zoom-in",
-            "label": "t:settings_schema.product.settings.product_hover_effect.zoom_in"
-          },
-          {
-            "value": "fade-in",
-            "label": "t:settings_schema.product.settings.product_hover_effect.fade-in"
-          }
-        ],
-        "default": "zoom-in"
       },
       {
         "type": "checkbox",

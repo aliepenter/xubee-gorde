@@ -15,8 +15,6 @@ document.addEventListener('shopify:section:select', (e) => {
     if (document.querySelectorAll("button-quickview").length !== 0) {
       if (JSON.parse(qbe).id === e.detail.sectionId) {
         document.querySelector("button-quickview").quickview();
-      }else{
-        document.querySelector("button-quickview").close();
       }
     } else {
       if (JSON.parse(qbe).id === e.detail.sectionId) {
