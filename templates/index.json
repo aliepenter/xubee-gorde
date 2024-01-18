@@ -53,27 +53,27 @@
         "icon_with_text_Wdh8kh": {
           "type": "icon-with-text",
           "settings": {
-            "icon_svg": "none",
+            "icon_svg": "star",
             "heading": "",
-            "description": "<p>Add a short description for this section.<\/p>",
+            "description": "<p>Dịch vụ chuyên nghiệp<\/p>",
             "uppercase": false
           }
         },
         "icon_with_text_94wEtw": {
           "type": "icon-with-text",
           "settings": {
-            "icon_svg": "none",
+            "icon_svg": "clock",
             "heading": "",
-            "description": "<p>Add a short description for this section.<\/p>",
+            "description": "<p>Hẹn lịch thuận tiện<\/p>",
             "uppercase": false
           }
         },
         "icon_with_text_ND7NTk": {
           "type": "icon-with-text",
           "settings": {
-            "icon_svg": "none",
+            "icon_svg": "headset_solid",
             "heading": "",
-            "description": "<p>Add a short description for this section.<\/p>",
+            "description": "<p>Tư vấn trực tuyến<\/p>",
             "uppercase": false
           }
         }
@@ -84,15 +84,15 @@
         "icon_with_text_ND7NTk"
       ],
       "settings": {
-        "section_width": "fix_width",
+        "section_width": "stretch_width",
         "color_scheme": "",
         "icon_position": "left",
         "icon_width": 20,
         "heading_size": "small",
         "text_alignment": "center",
         "column_gap": "no_gap",
-        "padding_top": 0,
-        "padding_bottom": 0
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
     "f022e147-1fed-48f1-83b3-a469d64277ca": {
