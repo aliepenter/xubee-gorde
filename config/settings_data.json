@@ -131,9 +131,10 @@
     "blocks": {
       "15683396631634586217": {
         "type": "shopify:\/\/apps\/inbox\/blocks\/chat\/841fc607-4181-4ad1-842d-e24d7f8bad6b",
-        "disabled": true,
+        "disabled": false,
         "settings": {
-          "button_color": "#217bc6",
+          "button_color": "#ffe870",
+          "secondary_color": "#FFFFFF",
           "button_icon": "chat_bubble",
           "button_text": "no_text",
           "button_horizontal_position": "bottom_right",
