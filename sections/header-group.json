@@ -77,7 +77,7 @@
         "logo": "shopify:\/\/shop_images\/332184433_584819916885479_9055422392377250673_n.jpg",
         "logo_width": 90,
         "logo_width_mobile": 70,
-        "sticky_header_type": "always",
+        "sticky_header_type": "on-scroll-up",
         "menu": "main-menu",
         "uppercase_first_level": true,
         "show_search": true,
