@@ -59,7 +59,7 @@
         "desktop_panigation_position": "right",
         "slide_auto_change": true,
         "change_slide_every": 4,
-        "image_height": "adapt",
+        "image_height": "full_screen",
         "show_text_bellow": false,
         "reset_color": false,
         "padding_top": 0,
