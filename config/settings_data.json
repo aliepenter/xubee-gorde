@@ -127,6 +127,20 @@
     "content_for_index": [
 
     ],
+    "blocks": {
+      "15683396631634586217": {
+        "type": "shopify:\/\/apps\/inbox\/blocks\/chat\/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "disabled": true,
+        "settings": {
+          "button_color": "#217bc6",
+          "button_icon": "chat_bubble",
+          "button_text": "no_text",
+          "button_horizontal_position": "bottom_right",
+          "button_vertical_position": "lowest",
+          "greeting_message": "👋 Chào bạn, hãy đặt câu hỏi cho Viện thẩm mỹ Xubee. Chúng tôi rất sẵn lòng giải đáp!"
+        }
+      }
+    },
     "color_schemes": {
       "default-color-scheme": {
         "settings": {
@@ -245,20 +259,6 @@
           "fill_button_border_hover": "#000000",
           "color_button_outline": "#000000",
           "color_button_outline_border": "#999999"
-        }
-      }
-    },
-    "blocks": {
-      "15683396631634586217": {
-        "type": "shopify:\/\/apps\/inbox\/blocks\/chat\/841fc607-4181-4ad1-842d-e24d7f8bad6b",
-        "disabled": true,
-        "settings": {
-          "button_color": "#217bc6",
-          "button_icon": "chat_bubble",
-          "button_horizontal_position": "bottom_right",
-          "button_vertical_position": "lowest",
-          "button_text": "no_text",
-          "greeting_message": "👋 Chào bạn, hãy đặt câu hỏi cho Viện thẩm mỹ Xubee. Chúng tôi rất sẵn lòng giải đáp!"
         }
       }
     }
