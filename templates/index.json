@@ -50,12 +50,12 @@
     "icon_with_text_3dEwbC": {
       "type": "icon-with-text",
       "blocks": {
-        "icon_with_text_Wdh8kh": {
+        "icon_with_text_ND7NTk": {
           "type": "icon-with-text",
           "settings": {
-            "icon_svg": "star",
+            "icon_svg": "headset_solid",
             "heading": "",
-            "description": "<p>Dịch vụ chuyên nghiệp<\/p>",
+            "description": "<p>Tư vấn trực tuyến<\/p>",
             "uppercase": false
           }
         },
@@ -68,20 +68,20 @@
             "uppercase": false
           }
         },
-        "icon_with_text_ND7NTk": {
+        "icon_with_text_Wdh8kh": {
           "type": "icon-with-text",
           "settings": {
-            "icon_svg": "headset_solid",
+            "icon_svg": "star",
             "heading": "",
-            "description": "<p>Tư vấn trực tuyến<\/p>",
+            "description": "<p>Dịch vụ chuyên nghiệp<\/p>",
             "uppercase": false
           }
         }
       },
       "block_order": [
-        "icon_with_text_Wdh8kh",
+        "icon_with_text_ND7NTk",
         "icon_with_text_94wEtw",
-        "icon_with_text_ND7NTk"
+        "icon_with_text_Wdh8kh"
       ],
       "settings": {
         "section_width": "stretch_width",
